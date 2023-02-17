@@ -1,0 +1,125 @@
+/*
+* Set up
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@font-face {
+	font-family: 'Old London';
+	src: url("/fonts/OldLondon.ttf") format('truetype');
+}
+
+html,
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #505962;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+* Common Section
+*/
+#main {
+    width: 100%;
+    height: fit-content;
+    padding: 6rem 5rem 10rem;
+}
+
+#main h1 {
+    font-size: 2.5rem;
+}
+
+#main h2 {
+    font-size: 2rem;
+}
+
+.title-separator {
+    margin: .1rem 0 0 0;
+}
+
+/*
+* Breadcrumb
+*/
+/* Style the list */
+ul.breadcrumb {
+    padding: 0;
+    margin: 0 0 4rem;
+    list-style: none;
+    width: fit-content;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    white-space: nowrap;
+    font-size: .8rem;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li:last-of-type a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/*
+* Simple Unordered List
+*/
+ul.simple-ulist {
+    padding: 0;
+    margin: 0 0 1rem;
+    list-style: none;
+}
+
+ul.simple-ulist li:first-of-type {
+    font-weight: bold;
+}
+
+ul.simple-ulist li:not(:first-of-type) {
+    padding-left: .5rem;
+}
+
+/*
+* Misc
+*/
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    text-align: justify;
+}
+
+.img-description {
+    margin-top: 0;
+    font-size: .8rem;
+}
+
+.special-font {
+	font-family: 'Old London';
+}

@@ -1,0 +1,66 @@
+@import "$lib/scss/_shared";
+
+#how-to-participate {
+    width: 100vw;
+    height: 150vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15rem;
+}
+
+.form {
+    width: 40%;
+
+    form {
+        width: 70%;
+
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 100%;
+            height: 2.3rem;
+            color: #fff;
+            background-color: #414447;
+            border: .15rem solid #515458;
+            border-radius: 0;
+            padding: .4rem .75rem;
+            margin-bottom: .1rem;
+        }
+
+        button {
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+            opacity: .8;
+            background: transparent;
+            border: .2rem solid #fff;
+            padding: .8rem 1.2rem;
+            transition: opacity .3s ease-out;
+            outline: none;
+
+            @include for-sm-devices {
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+
+.text {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+
+    .headline {
+        margin: 0;
+    }
+
+    .sub-headline {
+        margin: 1rem 0 0 0;
+        font-weight: lighter;
+    }
+}

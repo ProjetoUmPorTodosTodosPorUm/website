@@ -1,0 +1,120 @@
+@import "$lib/scss/_shared";
+
+#landing {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(https://via.placeholder.com/1920x1080.webp);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+    padding-left: 10rem;
+    padding-top: 10rem;
+}
+
+.headline {
+    white-space: pre-wrap;
+    font-size: 3.2rem;
+    letter-spacing: .2rem;
+    margin: 0;
+
+    @include for-sm-devices {
+        font-size: 3.6rem;
+    }
+
+    @include for-md-devices {
+        font-size: 3rem;
+    }
+}
+
+.sub-headline {
+    font-size: .9rem;
+    font-weight: lighter;
+    margin: 2rem 0 0 0;
+
+    @include for-sm-devices {
+        font-size: 1rem;
+    }
+
+    @include for-md-devices {
+        font-size: 1.2rem;
+    }
+}
+
+.call-to-action {
+    margin: 4rem 0 0 0;
+
+    border: medium solid #fff;
+    padding: .7rem 1.5rem;
+
+    text-transform: inherit;
+    color: #fff;
+    font-size: .8rem;
+    letter-spacing: 0;
+
+    @include for-md-devices {
+        font-size: 1rem;
+    }
+
+    @include for-xl-devices {
+        font-size: 1rem;
+    }
+}
+
+.cards {
+    position: absolute;
+    bottom: -21rem;
+    left: 0;
+
+    width: 100%;
+    height: 26rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: red;
+    width: 22%;
+    height: 100%;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+
+    .icon {
+        font-size: 5rem;
+    }
+
+    &:first-child {
+        border-top-left-radius: .4rem;
+        border-bottom-left-radius: .4rem;
+
+        background-image: url(https://via.placeholder.com/500x700.webp);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &:nth-child(2) {
+        background-image: url(https://via.placeholder.com/500x700.webp);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &:last-child {
+        border-top-right-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+
+        background-image: url(https://via.placeholder.com/500x700.webp);
+        background-size: cover;
+        background-position: center center;
+    }
+}

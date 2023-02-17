@@ -1,0 +1,93 @@
+@import "$lib/scss/_shared";
+
+#testimonial {
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 40vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6rem 5rem;
+}
+
+.sc-carousel__carousel-container {
+    width: 50% !important;
+}
+
+.custom-arrow {
+    opacity: 0;
+    z-index: 1;
+
+    align-self: center;
+    position: absolute;
+
+    cursor: pointer;
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    border-color: #fafafa;
+    outline: 0;
+    transition: .3s ease;
+
+    @include for-lg-devices {
+        opacity: 0.35;
+        height: 30px;
+        width: 30px;
+    }
+
+    &:hover {
+        border-color: #fff;
+        opacity: .8;
+    }
+
+    &.left {
+        transform: rotate(-135deg);
+        left: -1rem;
+
+        @include for-xl-devices {
+            left: -2rem;
+        }
+    }
+
+    &.right {
+        transform: rotate(45deg);
+        right: -1rem;
+
+        @include for-xl-devices {
+            right: -2rem;
+        }
+    }
+}
+
+// class not id
+.testimonial {
+    display: flex;
+
+
+    .avatar {
+        height: 150px;
+        width: 150px;
+
+        img {
+            height: 100%;
+            width: fit-content;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+
+        .text {
+            display: initial;
+            width: 100%;
+            text-align: justify;
+        }
+
+        .name {
+            text-align: right;
+        }
+    }
+}
