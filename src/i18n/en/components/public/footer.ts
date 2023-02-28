@@ -29,7 +29,7 @@ export default {
             welcomedFamilies: 'Welcomed Families',
             offerorFamilies: 'Offeror Families',
             churchesInUnity: 'Churches in Unity',
-            monthlyOffers: 'Monthly Offers',
+            collectedOffers: 'Collected Offers',
             reports: 'Reports',
             volunteers: 'Volunteers'
         }

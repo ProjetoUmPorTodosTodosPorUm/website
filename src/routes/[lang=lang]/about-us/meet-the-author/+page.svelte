@@ -8,6 +8,8 @@
 
 	export let data: PageData;
 
+	const namespaces: Namespaces[] = ['components', 'routes'];
+
 	onMount(async () => {
 		await loadNamespaceAsync(data.locale, 'routes');
 		await loadNamespaceAsync(data.locale, 'components');
@@ -69,7 +71,7 @@
 		{/each}
 	</ul>
 </section>
-<Footer locale={data.locale} />
+<Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
 	h1,

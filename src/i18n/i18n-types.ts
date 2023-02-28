@@ -82,6 +82,72 @@ type RootTranslation = {
 					text: string
 				}
 			}
+			howToParticipate: {
+				/**
+				 * H​o​w​ ​T​o​ ​P​a​r​t​i​c​i​p​a​t​e
+				 */
+				text: string
+			}
+			fields: {
+				/**
+				 * F​i​e​l​d​s
+				 */
+				text: string
+				collaborators: {
+					/**
+					 * C​o​l​l​a​b​o​r​a​t​o​r​s
+					 */
+					text: string
+				}
+				welcomedFamilies: {
+					/**
+					 * W​e​l​c​o​m​e​d​ ​F​a​m​i​l​i​e​s
+					 */
+					text: string
+				}
+				offerorFamilies: {
+					/**
+					 * O​f​f​e​r​o​r​ ​F​a​m​i​l​i​e​s
+					 */
+					text: string
+				}
+				churchesInUnity: {
+					/**
+					 * C​h​u​r​c​h​e​s​ ​i​n​ ​U​n​i​t​y
+					 */
+					text: string
+				}
+				collectedOffers: {
+					/**
+					 * C​o​l​l​e​c​t​e​d​ ​O​f​f​e​r​s
+					 */
+					text: string
+					monthly: {
+						/**
+						 * M​o​n​t​h​l​y
+						 */
+						text: string
+					}
+					annual: {
+						/**
+						 * A​n​n​u​a​l
+						 */
+						text: string
+					}
+				}
+				reports: {
+					/**
+					 * R​e​p​o​r​t​s
+					 */
+					text: string
+				}
+				volunteers: {
+					/**
+					 * V​o​l​u​n​t​e​e​r​s
+					 */
+					text: string
+				}
+			}
 		}
 	}
 }
@@ -314,9 +380,9 @@ export type NamespaceComponentsTranslation = {
 					 */
 					churchesInUnity: string
 					/**
-					 * M​o​n​t​h​l​y​ ​O​f​f​e​r​s
+					 * C​o​l​l​e​c​t​e​d​ ​O​f​f​e​r​s
 					 */
-					monthlyOffers: string
+					collectedOffers: string
 					/**
 					 * R​e​p​o​r​t​s
 					 */
@@ -833,6 +899,72 @@ export type TranslationFunctions = {
 					text: () => LocalizedString
 				}
 			}
+			howToParticipate: {
+				/**
+				 * How To Participate
+				 */
+				text: () => LocalizedString
+			}
+			fields: {
+				/**
+				 * Fields
+				 */
+				text: () => LocalizedString
+				collaborators: {
+					/**
+					 * Collaborators
+					 */
+					text: () => LocalizedString
+				}
+				welcomedFamilies: {
+					/**
+					 * Welcomed Families
+					 */
+					text: () => LocalizedString
+				}
+				offerorFamilies: {
+					/**
+					 * Offeror Families
+					 */
+					text: () => LocalizedString
+				}
+				churchesInUnity: {
+					/**
+					 * Churches in Unity
+					 */
+					text: () => LocalizedString
+				}
+				collectedOffers: {
+					/**
+					 * Collected Offers
+					 */
+					text: () => LocalizedString
+					monthly: {
+						/**
+						 * Monthly
+						 */
+						text: () => LocalizedString
+					}
+					annual: {
+						/**
+						 * Annual
+						 */
+						text: () => LocalizedString
+					}
+				}
+				reports: {
+					/**
+					 * Reports
+					 */
+					text: () => LocalizedString
+				}
+				volunteers: {
+					/**
+					 * Volunteers
+					 */
+					text: () => LocalizedString
+				}
+			}
 		}
 	}
 	components: {
@@ -1063,9 +1195,9 @@ export type TranslationFunctions = {
 						 */
 						churchesInUnity: () => LocalizedString
 						/**
-						 * Monthly Offers
+						 * Collected Offers
 						 */
-						monthlyOffers: () => LocalizedString
+						collectedOffers: () => LocalizedString
 						/**
 						 * Reports
 						 */

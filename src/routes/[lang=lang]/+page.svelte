@@ -12,8 +12,11 @@
 	import { onMount } from 'svelte';
 	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
 	import { setLocale } from '$i18n/i18n-svelte';
+	import type { Namespaces } from '$i18n/i18n-types';
 
 	export let data: PageData;
+
+	const namespaces: Namespaces[] = ['components'];
 
 	onMount(async () => {
 		await loadNamespaceAsync(data.locale, 'components');
@@ -28,4 +31,4 @@
 <AgendaAnnouncement locale={data.locale} />
 <WhereWeOperate />
 <Testimonial />
-<Footer locale={data.locale} />
+<Footer locale={data.locale} {namespaces} />

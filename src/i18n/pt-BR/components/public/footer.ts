@@ -29,7 +29,7 @@ export default {
             welcomedFamilies: 'Famílias Acolhidas',
             offerorFamilies: 'Famílias Ofertantes',
             churchesInUnity: 'Igrejas em Unidade',
-            monthlyOffers: 'Ofertas Mensais',
+            collectedOffers: 'Ofertas Coletadas',
             reports: 'Relatórios',
             volunteers: 'Voluntários'
         }

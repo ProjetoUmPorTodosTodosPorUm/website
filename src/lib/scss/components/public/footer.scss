@@ -182,5 +182,9 @@
     grid-area: info;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+
+    .text {
+        text-align: right;
+    }
 }

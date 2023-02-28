@@ -1,0 +1,44 @@
+@import "$lib/scss/_shared";
+
+.announcements {
+    height: 88%;
+    overflow-y: scroll;
+}
+
+.announcement {
+    background-color: aliceblue;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    margin-bottom: .4rem;
+
+    .title {
+        margin: 0;
+    }
+
+    .text {
+        margin: 0;
+        width: 100%;
+    }
+
+    .info {
+        display: flex;
+        justify-content: flex-end;
+        font-size: .9rem;
+
+        p {
+            text-indent: 0;
+        }
+
+        .attachments {
+            margin-right: auto;
+
+            a {
+                margin-right: .2rem;
+            }
+        }
+
+        .fixed {
+            margin-left: .2rem;
+        }
+    }
+}

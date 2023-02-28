@@ -1,40 +1,58 @@
 <script lang="ts">
-	import LL from '$i18n/i18n-svelte';
 	import '$lib/scss/components/public/testimonial.scss';
+	import type { TestimonialDto, Pagination } from '$lib/types';
+	import { fromPaginationToQuery } from '$lib/utils/functions';
+	import axios from '$lib/axios';
+	import Axios from 'axios';
+	import { onMount } from 'svelte';
 
-	import Carousel from 'svelte-carousel';
-	import { browser } from '$app/environment';
+	import Carousel from './carousel.svelte';
 
-	let carousel;
+	let isLoading = false;
+	let testimonials: TestimonialDto[] = [];
+	let pagination = {
+		itemsPerPage: 20,
+		page: 1,
+		deleted: false,
+		orderKey: 'createdAt',
+		orderValue: 'desc'
+	} as Pagination;
+	$: queryString = fromPaginationToQuery(pagination);
+
+	onMount(async () => {
+		await loadData();
+	});
+
+	async function loadData() {
+		try {
+			isLoading = true;
+			testimonials = (await axios.get(`/testimonial?${queryString}`)).data.data;
+			isLoading = false;
+		} catch (error) {
+			isLoading = false;
+
+			if (error instanceof Axios.AxiosError) {
+				console.warn(error);
+			}
+			console.warn(error);
+		}
+	}
 </script>
 
-<section id="testimonial">
-	{#if browser}
-		<Carousel
-			bind:this={carousel}
-			let:showPrevPage
-			let:showNextPage
-			autoplay={true}
-			pauseOnFocus={true}
-			dots={false}
-		>
+<section id="testimonials">
+	{#if testimonials?.length > 0}
+	<Carousel>
+		{#each testimonials as testimonial (testimonial.id)}
 			<div class="testimonial">
 				<div class="avatar">
 					<img src="https://via.placeholder.com/350x350.webp" alt="Avatar" />
 				</div>
 				<div class="content">
-					<p class="text">
-						There are many variations of passages of Lorem Ipsum available, but the majority have
-						suffered alteration in some form, by injected humour, or randomised words which don't
-						look even slightly believable.
-					</p>
-					<p class="name">–John Doe</p>    
+					<p class="text">{testimonial.text}</p>
+					<p class="name">–{testimonial.name}</p>
 				</div>
 			</div>
-
-			<!-- Custom Arrows -->
-			<div slot="prev" on:click={showPrevPage} class="custom-arrow left" />
-			<div slot="next" on:click={showNextPage} class="custom-arrow right" />
-		</Carousel>
+		{/each}
+	</Carousel>
 	{/if}
 </section>

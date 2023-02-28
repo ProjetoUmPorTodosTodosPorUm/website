@@ -6,12 +6,18 @@
 	import { default as Axios } from 'axios';
 	import { delay } from '$lib/utils/functions';
 	import type { Locale } from 'typesafe-i18n/types/runtime/src/core.mjs';
+	import SwitchLocale from './switch-locale.svelte';
+	import type { Namespaces } from '$i18n/i18n-types';
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FaWindowClose from 'svelte-icons-pack/fa/FaWindowClose';
 	import AiOutlineLoading from 'svelte-icons-pack/ai/AiOutlineLoading';
-	
+
+	// Foward Data
+	export let namespaces: Namespaces[] = [];
+
+	// Component Data
 	export let locale: Locale;
 
 	const schema = yup.object().shape({
@@ -202,12 +208,14 @@
 						>
 					</li>
 					<li class="nav-sub-item">
-						<a href="/{locale}/fields/monthly-offers"
-							>{$LL.components.public.footer.navigation.fields.monthlyOffers()}</a
+						<a href="/{locale}/fields/collected-offers"
+							>{$LL.components.public.footer.navigation.fields.collectedOffers()}</a
 						>
 					</li>
 					<li class="nav-sub-item">
-						<a href="/{locale}/fields/reports">{$LL.components.public.footer.navigation.fields.reports()}</a>
+						<a href="/{locale}/fields/reports"
+							>{$LL.components.public.footer.navigation.fields.reports()}</a
+						>
 					</li>
 					<li class="nav-sub-item">
 						<a href="/{locale}/fields/volunteers"
@@ -264,5 +272,8 @@
 			</button>
 		</form>
 	</div>
-	<div class="info">© 2023 {$LL.components.public.footer.info.project()}.</div>
+	<div class="info">
+		<SwitchLocale {namespaces} />
+		<div class="text">© 2023 {$LL.components.public.footer.info.project()}.</div>
+	</div>
 </section>

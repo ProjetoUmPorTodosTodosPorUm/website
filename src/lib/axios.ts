@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { PUBLIC_API_URL } from '$env/static/public';
 import { saveToLocalStorage, getFromLocalStorage } from '$lib/utils/functions';
-import type { CustomAxiosInstance } from '$lib/utils/types';
+import type { CustomAxiosInstance } from '$lib/types';
 
 const axiosInstance = axios.create({
     baseURL: PUBLIC_API_URL,

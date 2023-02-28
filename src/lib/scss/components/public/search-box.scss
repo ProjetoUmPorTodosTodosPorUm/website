@@ -1,0 +1,66 @@
+@import "$lib/scss/_shared";
+
+.search-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .search {
+        width: 40%;
+        display: grid;
+        grid-template-areas: 'input button';
+        grid-template-columns: 90% 10%;
+
+        input {
+            grid-area: input;
+            min-height: 2.5rem;
+            padding: 0.4rem 0.75rem;
+            border: 0rem solid #515458;
+            border-radius: 0;
+        }
+
+        button {
+            background-color: #fff;
+            grid-area: button;
+            cursor: pointer;
+            min-height: 2.5rem;
+            padding: 0.4rem 0.75rem;
+            border: 0;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .res-items {
+        position: absolute;
+        top: 2.5rem;
+        width: 40%;
+        max-height: 0px;
+        transition: max-height 0.6s ease-in-out;
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        &.open {
+            max-height: 600px;
+        }
+
+        .res-item {
+            background-color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-top: 1px solid #515458;
+
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}
