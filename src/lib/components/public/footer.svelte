@@ -8,11 +8,14 @@
 	import type { Locale } from 'typesafe-i18n/types/runtime/src/core.mjs';
 	import SwitchLocale from './switch-locale.svelte';
 	import type { Namespaces } from '$i18n/i18n-types';
+	import { createEventDispatcher, type ComponentEvents } from 'svelte';
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FaWindowClose from 'svelte-icons-pack/fa/FaWindowClose';
 	import AiOutlineLoading from 'svelte-icons-pack/ai/AiOutlineLoading';
+
+	const dispatch = createEventDispatcher();
 
 	// Foward Data
 	export let namespaces: Namespaces[] = [];
@@ -136,6 +139,13 @@
 			formResponseRef.parentElement?.classList.remove('success', 'fail');
 			formMessages = [];
 		}, 700); // See transition time, +100ms
+	}
+
+	// Forward Event
+	function onSwitchLocale(event: ComponentEvents<SwitchLocale>['switchLocale']) {
+		dispatch('switchLocale', {
+			newLocale: event.detail.newLocale
+		});
 	}
 </script>
 
@@ -273,7 +283,7 @@
 		</form>
 	</div>
 	<div class="info">
-		<SwitchLocale {namespaces} />
+		<SwitchLocale {namespaces} on:switchLocale={onSwitchLocale} />
 		<div class="text">© 2023 {$LL.components.public.footer.info.project()}.</div>
 	</div>
 </section>

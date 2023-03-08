@@ -91,7 +91,6 @@
 	}
 
 	function onToggleReport(event: Event) {
-		console.log(event.currentTarget.parentNode);
 		// @ts-ignore
 		const reportElement = event.currentTarget.parentNode;
 		const bodyElement = reportElement.querySelector('.body');
@@ -134,7 +133,9 @@
 	</div>
 
 	{#if reports?.length > 0}
-		<h3>Mensais</h3>
+		{#if monthlyReports.length > 0}
+			<h3>Mensais</h3>
+		{/if}
 
 		{#each monthlyReports as report}
 			<div class="report">
@@ -163,7 +164,9 @@
 			</div>
 		{/each}
 
-		<h3>Semestral</h3>
+		{#if semesterReports.length > 0}
+			<h3>Semestral</h3>
+		{/if}
 		{#each semesterReports as report}
 			<div class="report">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -191,7 +194,9 @@
 			</div>
 		{/each}
 
-		<h3>Anual</h3>
+		{#if annualReports.length > 0}
+			<h3>Anual</h3>
+		{/if}
 		{#each annualReports as report}
 			<div class="report">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -247,7 +252,7 @@
 	.report {
 		width: 40%;
 		background-color: #fff;
-		margin-bottom: .2rem;
+		margin-bottom: 0.2rem;
 
 		.head {
 			display: flex;
@@ -278,7 +283,7 @@
 	}
 
 	:global(.report .body.open) {
-		padding: 1rem .5rem 1rem !important;
+		padding: 1rem 0.5rem 1rem !important;
 		max-height: 500px !important;
 	}
 

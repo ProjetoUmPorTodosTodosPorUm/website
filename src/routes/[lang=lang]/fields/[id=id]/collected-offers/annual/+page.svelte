@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
-    import MainNavbar from '$lib/components/public/navbar.svelte';
+	import MainNavbar from '$lib/components/public/navbar.svelte';
 	import Footer from '$lib/components/public/footer.svelte';
 	import type { MonthlyOfferDto } from '$lib/types';
 	import { fromPaginationToQuery } from '$lib/utils/functions';
@@ -19,25 +19,12 @@
 		LinearScale,
 		BarController,
 		BarElement,
-        Filler
+		Filler
 	} from 'chart.js';
 
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
-	const months = [
-		'Janeiro',
-		'Fevereiro',
-		'Março',
-		'Abril',
-		'Maio',
-		'Junho',
-		'Julho',
-		'Setembro',
-		'Agosto',
-		'Outubro',
-		'Novembro',
-		'Dezembro'
-	];
+	const namespaces: Namespaces[] = ['components', 'routes', 'utils'];
+	let months: string[] = [];
 
 	let isLoading = false;
 	let foodChart: Chart<'line'>;
@@ -58,7 +45,7 @@
 	$: annualQueryString, loadAnnualData();
 
 	onMount(async () => {
-        Chart.register(
+		Chart.register(
 			LineController,
 			CategoryScale,
 			LinearScale,
@@ -66,12 +53,15 @@
 			LineElement,
 			BarController,
 			BarElement,
-            Filler
+			Filler
 		);
 
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		namespaces.forEach(async (ns) => {
+			await loadNamespaceAsync(data.locale, ns);
+		});
 		setLocale(data.locale);
+
+		months = Object.keys($LL.utils.months).map((m) => $LL.utils.months[m]());
 	});
 
 	async function loadAnnualData() {
@@ -197,6 +187,11 @@
 			}
 		};
 	}
+
+	function onSwitchLocale(event: any) {
+		months = Object.keys($LL.utils.months).map((m) => $LL.utils.months[m]());
+		annualOffer = annualOffer;
+	}
 </script>
 
 <MainNavbar locale={data.locale} />
@@ -214,7 +209,7 @@
 				>{$LL.breadcrumbs.home.fields.collectedOffers.text()}</a
 			>
 		</li>
-        <li>
+		<li>
 			<a href="/{data.locale}/fields/{data.field.id}/collected-offers/annual"
 				>{$LL.breadcrumbs.home.fields.collectedOffers.annual.text()}</a
 			>
@@ -227,12 +222,11 @@
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
 
 	<div class="date-picker">
-		<select class="year" on:change={(v) => (annualQuery.year = Number(v.currentTarget.value))}>
-			<option value="2020">2020</option>
-			<option value="2021">2021</option>
-			<option value="2022">2022</option>
-			<option value="2023">2023</option>
-		</select>
+		<div class="years">
+			{#each Object.keys(data.period) as year}
+				<button on:click={() => (annualQuery.year = Number(year))}>{year}</button>
+			{/each}
+		</div>
 	</div>
 
 	<div class="annual-offers">
@@ -284,10 +278,10 @@
 		</p>
 	</div>
 </section>
-<Footer locale={data.locale} {namespaces} />
+<Footer locale={data.locale} {namespaces} on:switchLocale={onSwitchLocale} />
 
 <style lang="scss">
-    h1,
+	h1,
 	h2 {
 		margin: 0 0 0rem;
 	}
@@ -296,7 +290,7 @@
 		font-size: 1.2rem !important;
 	}
 
-    .annual-offers {
+	.annual-offers {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -320,7 +314,7 @@
 		}
 	}
 
-    .observation {
+	.observation {
 		width: 50%;
 		margin: 6rem auto 0rem;
 	}

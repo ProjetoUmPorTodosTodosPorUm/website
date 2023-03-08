@@ -10,19 +10,23 @@ import pt_BR from './pt-BR'
 
 import en_components from './en/components'
 import en_routes from './en/routes'
+import en_utils from './en/utils'
 import pt_BR_components from './pt-BR/components'
 import pt_BR_routes from './pt-BR/routes'
+import pt_BR_utils from './pt-BR/utils'
 
 const localeTranslations = {
 	en: {
 		...en,
 		components: en_components,
-		routes: en_routes
+		routes: en_routes,
+		utils: en_utils
 	},
 	'pt-BR': {
 		...pt_BR,
 		components: pt_BR_components,
-		routes: pt_BR_routes
+		routes: pt_BR_routes,
+		utils: pt_BR_utils
 	},
 }
 

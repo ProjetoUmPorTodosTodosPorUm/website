@@ -14,7 +14,8 @@ export type Translation = RootTranslation & DisallowNamespaces
 export type Translations = RootTranslation &
 {
 	components: NamespaceComponentsTranslation,
-	routes: NamespaceRoutesTranslation
+	routes: NamespaceRoutesTranslation,
+	utils: NamespaceUtilsTranslation
 }
 
 type RootTranslation = {
@@ -820,9 +821,63 @@ export type NamespaceRoutesTranslation = {
 	}
 }
 
+export type NamespaceUtilsTranslation = {
+	months: {
+		/**
+		 * J​a​n​u​a​r​y
+		 */
+		january: string
+		/**
+		 * F​e​b​r​u​a​r​y
+		 */
+		february: string
+		/**
+		 * M​a​r​c​h
+		 */
+		march: string
+		/**
+		 * A​p​r​i​l
+		 */
+		april: string
+		/**
+		 * M​a​y
+		 */
+		may: string
+		/**
+		 * J​u​n​e
+		 */
+		june: string
+		/**
+		 * J​u​l​y
+		 */
+		july: string
+		/**
+		 * A​u​g​u​s​t
+		 */
+		august: string
+		/**
+		 * S​e​p​t​e​m​b​e​r
+		 */
+		september: string
+		/**
+		 * O​c​t​o​b​e​r
+		 */
+		october: string
+		/**
+		 * N​o​v​e​m​b​e​r
+		 */
+		november: string
+		/**
+		 * D​e​c​e​m​b​e​r
+		 */
+		december: string
+	}
+}
+
 export type Namespaces =
 	| 'components'
 	| 'routes'
+	| 'utils'
 
 type DisallowNamespaces = {
 	/**
@@ -836,6 +891,12 @@ type DisallowNamespaces = {
 	 * you need to use the `./routes/index.ts` file instead
 	 */
 	routes?: "[typesafe-i18n] reserved for 'routes'-namespace. You need to use the `./routes/index.ts` file instead."
+
+	/**
+	 * reserved for 'utils'-namespace\
+	 * you need to use the `./utils/index.ts` file instead
+	 */
+	utils?: "[typesafe-i18n] reserved for 'utils'-namespace. You need to use the `./utils/index.ts` file instead."
 }
 
 export type TranslationFunctions = {
@@ -1630,6 +1691,58 @@ export type TranslationFunctions = {
 					secondParagraph: () => LocalizedString
 				}
 			}
+		}
+	}
+	utils: {
+		months: {
+			/**
+			 * January
+			 */
+			january: () => LocalizedString
+			/**
+			 * February
+			 */
+			february: () => LocalizedString
+			/**
+			 * March
+			 */
+			march: () => LocalizedString
+			/**
+			 * April
+			 */
+			april: () => LocalizedString
+			/**
+			 * May
+			 */
+			may: () => LocalizedString
+			/**
+			 * June
+			 */
+			june: () => LocalizedString
+			/**
+			 * July
+			 */
+			july: () => LocalizedString
+			/**
+			 * August
+			 */
+			august: () => LocalizedString
+			/**
+			 * September
+			 */
+			september: () => LocalizedString
+			/**
+			 * October
+			 */
+			october: () => LocalizedString
+			/**
+			 * November
+			 */
+			november: () => LocalizedString
+			/**
+			 * December
+			 */
+			december: () => LocalizedString
 		}
 	}
 }

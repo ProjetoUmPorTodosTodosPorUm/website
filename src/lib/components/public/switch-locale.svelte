@@ -9,10 +9,13 @@
 	import { replaceLocaleInUrl } from '$lib/utils/functions';
 	import { getContext } from 'svelte';
 	import type { SettingsStore } from '$lib/store/settings';
+	import { createEventDispatcher } from 'svelte';
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import IoLanguage from 'svelte-icons-pack/io/IoLanguage';
+
+	const dispatch = createEventDispatcher();
 
 	export let namespaces: Namespaces[] = [];
 	let language: string;
@@ -43,6 +46,15 @@
 
 		// updates store
 		settingsStore.updateLanguage(newLocale);
+
+		// send event
+		onSwitchLocale(newLocale);
+	}
+
+	function onSwitchLocale(newLocale: Locales) {
+		dispatch('switchLocale', {
+			newLocale
+		});
 	}
 </script>
 

@@ -1,27 +1,26 @@
 <script lang="ts">
-	import type { PageData } from "./$types";
-    import { onMount } from 'svelte';
-    import type { MonthlyOfferDto } from '$lib/types';
+	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import type { MonthlyOfferDto } from '$lib/types';
 	import { fromPaginationToQuery } from '$lib/utils/functions';
-    import axios from '$lib/axios';
-    import Axios from 'axios';
-    import MainNavbar from '$lib/components/public/navbar.svelte';
+	import axios from '$lib/axios';
+	import Axios from 'axios';
+	import MainNavbar from '$lib/components/public/navbar.svelte';
 	import Footer from '$lib/components/public/footer.svelte';
-    import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-    import LL, { setLocale } from '$i18n/i18n-svelte';
-    import type { Namespaces } from '$i18n/i18n-types';
+	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	import type { Namespaces } from '$i18n/i18n-types';
 	import { CountUp } from 'countup.js';
 
-    // icon
+	// icon
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FiBox from 'svelte-icons-pack/fi/FiBox';
 	import FiDollarSign from 'svelte-icons-pack/fi/FiDollarSign';
 	import FiPackage from 'svelte-icons-pack/fi/FiPackage';
-    
 
-    export let data: PageData;
-    const namespaces: Namespaces[] = ['components', 'routes'];
-    const COUNT_UP_DURATION = 5; // in seconds
+	export let data: PageData;
+	const namespaces: Namespaces[] = ['components', 'routes', 'utils'];
+	const COUNT_UP_DURATION = 5; // in seconds
 	const months = [
 		'Janeiro',
 		'Fevereiro',
@@ -36,27 +35,33 @@
 		'Novembro',
 		'Dezembro'
 	];
-    let isLoading = false;
+	let isLoading = false;
 	let monthlyOffer: MonthlyOfferDto;
 	let monthlyQuery = {
-		month: 1,
-		year: 2020,
-		field: data.field.id
+		searchSpecificField: 'fieldId,year,month',
+		searchSpecificValue: data.field.id,
+		month: 0,
+		year: 0
 	};
-	$: monthlyQueryString = fromPaginationToQuery(monthlyQuery);
-	$: monthlyQueryString, loadMonthlyData();
+	$: monthlyQueryString = fromPaginationToQuery({
+		searchSpecificField: monthlyQuery.searchSpecificField,
+		searchSpecificValue: `${monthlyQuery.searchSpecificValue},${monthlyQuery.year},${monthlyQuery.month}`
+	});
+	$: if (monthlyQuery.year !== 0 && monthlyQuery.month !== 0) {
+		loadMonthlyData();
+	}
 
-    onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+	onMount(async () => {
+		namespaces.forEach(async (ns) => {
+			await loadNamespaceAsync(data.locale, ns);
+		});
 		setLocale(data.locale);
-
 	});
 
-    async function loadMonthlyData() {
+	async function loadMonthlyData() {
 		try {
 			isLoading = true;
-			monthlyOffer = (await axios.get(`/monthly-offer/date?${monthlyQueryString}`)).data.data;
+			monthlyOffer = (await axios.get(`/monthly-offer?${monthlyQueryString}`)).data.data[0];
 			isLoading = false;
 		} catch (error) {
 			isLoading = false;
@@ -68,7 +73,16 @@
 		}
 	}
 
-    function foodCountUp(node: HTMLElement, monthlyOffer: MonthlyOfferDto) {
+	function onYearSelect(year: number) {
+		monthlyQuery.year = year;
+		monthlyQuery.month = 0;
+	}
+
+	function onMonthSelect(month: number) {
+		monthlyQuery.month = month;
+	}
+
+	function foodCountUp(node: HTMLElement, monthlyOffer: MonthlyOfferDto) {
 		return {
 			update(monthlyOffer: MonthlyOfferDto) {
 				const countUp = new CountUp(node, monthlyOffer.foodQnt, {
@@ -126,7 +140,7 @@
 				>{$LL.breadcrumbs.home.fields.collectedOffers.text()}</a
 			>
 		</li>
-        <li>
+		<li>
 			<a href="/{data.locale}/fields/{data.field.id}/collected-offers/monthly"
 				>{$LL.breadcrumbs.home.fields.collectedOffers.monthly.text()}</a
 			>
@@ -137,54 +151,55 @@
 	<h1>Ofertas Coletadas</h1>
 	<h2>Campo Missionário - {data.field.designation}</h2>
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
-		<div class="date-picker">
-			<select class="month" on:change={(v) => (monthlyQuery.month = Number(v.currentTarget.value))}>
-				{#each months as month, index}
-					<option value={index + 1}>{month}</option>
+	<div class="date-picker">
+		<div class="years">
+			{#each Object.keys(data.period) as year}
+				<button on:click={() => onYearSelect(Number(year))}>{year}</button>
+			{/each}
+		</div>
+		<div class="months">
+			{#if monthlyQuery.year !== 0}
+				{#each data.period[monthlyQuery.year] as month}
+					<button on:click={() => onMonthSelect(Number(month))}>{months[Number(month) - 1]}</button>
 				{/each}
-			</select>
-			<select class="year" on:change={(v) => (monthlyQuery.year = Number(v.currentTarget.value))}>
-				<option value="2020">2020</option>
-				<option value="2021">2021</option>
-				<option value="2022">2022</option>
-				<option value="2023">2023</option>
-			</select>
+			{/if}
+		</div>
+	</div>
+
+	<div class="monthly-offers">
+		<div class="number">
+			<div class="icon">
+				<Icon src={FiBox} />
+			</div>
+			<div class="value" use:foodCountUp={monthlyOffer}>0</div>
 		</div>
 
-		<div class="monthly-offers">
-			<div class="number">
-				<div class="icon">
-					<Icon src={FiBox} />
-				</div>
-				<div class="value" use:foodCountUp={monthlyOffer}>0</div>
+		<div class="number">
+			<div class="icon">
+				<Icon src={FiDollarSign} />
 			</div>
-
-			<div class="number">
-				<div class="icon">
-					<Icon src={FiDollarSign} />
-				</div>
-				<div class="value" use:monetaryCountUp={monthlyOffer}>R$ 0,00</div>
-			</div>
-
-			<div class="number">
-				<div class="icon">
-					<Icon src={FiPackage} />
-				</div>
-				<div class="value" use:othersCountUp={monthlyOffer}>0</div>
-			</div>
-
-			<div class="text">
-				<p>
-					It is a long established fact that a reader will be distracted by the readable content of
-					a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-					more-or-less normal distribution of letters, as opposed to using 'Content here, content
-					here', making it look like readable English. Many desktop publishing packages and web page
-					editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-					will uncover many web sites still in their infancy. Various versions have evolved over the
-					years, sometimes by accident, sometimes on purpose (injected humour and the like).
-				</p>
-			</div>
+			<div class="value" use:monetaryCountUp={monthlyOffer}>R$ 0,00</div>
 		</div>
+
+		<div class="number">
+			<div class="icon">
+				<Icon src={FiPackage} />
+			</div>
+			<div class="value" use:othersCountUp={monthlyOffer}>0</div>
+		</div>
+
+		<div class="text">
+			<p>
+				It is a long established fact that a reader will be distracted by the readable content of a
+				page when looking at its layout. The point of using Lorem Ipsum is that it has a
+				more-or-less normal distribution of letters, as opposed to using 'Content here, content
+				here', making it look like readable English. Many desktop publishing packages and web page
+				editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+				uncover many web sites still in their infancy. Various versions have evolved over the years,
+				sometimes by accident, sometimes on purpose (injected humour and the like).
+			</p>
+		</div>
+	</div>
 
 	<div class="observation">
 		<p>
@@ -199,7 +214,7 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
-    h1,
+	h1,
 	h2 {
 		margin: 0 0 0rem;
 	}
@@ -241,7 +256,7 @@
 		}
 	}
 
-    .date-picker {
+	.date-picker {
 		display: flex;
 		justify-content: center;
 
@@ -252,7 +267,7 @@
 		}
 	}
 
-    .observation {
+	.observation {
 		width: 50%;
 		margin: 6rem auto 0rem;
 	}

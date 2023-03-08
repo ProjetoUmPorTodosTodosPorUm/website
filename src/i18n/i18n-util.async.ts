@@ -13,11 +13,13 @@ const localeTranslationLoaders = {
 const localeNamespaceLoaders = {
 	en: {
 		components: () => import('./en/components'),
-		routes: () => import('./en/routes')
+		routes: () => import('./en/routes'),
+		utils: () => import('./en/utils')
 	},
 	'pt-BR': {
 		components: () => import('./pt-BR/components'),
-		routes: () => import('./pt-BR/routes')
+		routes: () => import('./pt-BR/routes'),
+		utils: () => import('./pt-BR/utils')
 	}
 }
 
