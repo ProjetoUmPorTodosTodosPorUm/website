@@ -1,4 +1,5 @@
-import type { Pagination } from "$lib/types";
+import type { Occupation } from "$lib/enums";
+import type { Pagination, VolunteerDto } from "$lib/types";
 
 export function delay(ms: number) {
     return new Promise((res) => setTimeout(res, ms));
@@ -54,4 +55,29 @@ export function fromPaginationToQuery(pagination: any) {
 
 export function getDays(year: number, month: number) {
     return new Date(year, month, 0).getDate()
+}
+
+// based on simple bubble sort
+export function sortVolunteersByOccupations(volunteers: VolunteerDto[], occupations: Occupation[]) {
+    let swapped = false;
+
+    for (var i = 0; i <= volunteers.length - 1; i++) {
+        swapped = false;
+        for (var j = 0; j < (volunteers.length - i - 1); j++) {
+            let currOccIndex = occupations.indexOf(volunteers[j].occupation);
+            let lastOccIndex = occupations.indexOf(volunteers[j + 1].occupation);
+            if (currOccIndex > lastOccIndex) {
+                // Swap them if the condition is true 
+                var temp = volunteers[j]
+                volunteers[j] = volunteers[j + 1]
+                volunteers[j + 1] = temp
+                swapped = true;
+            }
+        }
+
+        if (!swapped) {
+            return volunteers;
+        }
+    }
+    return volunteers;
 }
