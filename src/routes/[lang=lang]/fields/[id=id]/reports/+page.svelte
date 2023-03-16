@@ -119,7 +119,6 @@
 				>{$LL.breadcrumbs.home.fields.reports.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
 	</ul>
 
 	<h1>Relatórios</h1>
@@ -128,7 +127,9 @@
 
 	<div class="date-picker">
 		{#each years as year}
-			<button class="year" on:click={() => onYearSelect(year)}>{year}</button>
+			<button class={query.year == Number(year) ? 'active' : ''} on:click={() => onYearSelect(year)}
+				>{year}</button
+			>
 		{/each}
 	</div>
 
@@ -153,12 +154,15 @@
 					</ul>
 
 					<div class="attachments">
-						<Icon src={FiPaperclip} />
-						{#each report.attachments as attachment}
-							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
-							</li>
-						{/each}
+						<Icon src={FiPaperclip} className="icon" />
+						<ul>
+							{#each report.attachments as attachment}
+								<li>
+									<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
+									>
+								</li>
+							{/each}
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -183,12 +187,15 @@
 					</ul>
 
 					<div class="attachments">
-						<Icon src={FiPaperclip} />
-						{#each report.attachments as attachment}
-							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
-							</li>
-						{/each}
+						<Icon src={FiPaperclip} className="icon" />
+						<ul>
+							{#each report.attachments as attachment}
+								<li>
+									<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
+									>
+								</li>
+							{/each}
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -213,12 +220,15 @@
 					</ul>
 
 					<div class="attachments">
-						<Icon src={FiPaperclip} />
-						{#each report.attachments as attachment}
-							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
-							</li>
-						{/each}
+						<Icon src={FiPaperclip} className="icon" />
+						<ul>
+							{#each report.attachments as attachment}
+								<li>
+									<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
+									>
+								</li>
+							{/each}
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -228,31 +238,73 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import '$lib/scss/_shared';
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
 	}
 
 	.date-picker {
+		min-height: 200px;
+
 		display: flex;
 		justify-content: center;
+		align-items: center;
 
-		.year {
-			cursor: pointer;
-			margin-right: 0.5rem;
-			height: 2.5rem;
-			padding: 0.5rem;
+		button {
+			font-size: 1.4rem;
+			margin-right: 0.2rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			outline: none;
+
+			&.active {
+				color: var(--link-font-color);
+			}
+
+			@include for-md-devices {
+				padding: 0.4rem 1rem;
+			}
+
+			@include for-lg-devices {
+				margin-right: 0.5rem;
+
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
 		}
 	}
 
 	.report {
-		width: 40%;
-		background-color: #fff;
-		margin-bottom: 0.2rem;
+		background-color: var(--primary-background);
+		color: var(--contrast-primary-background);
+		padding: 0.2rem 0.4rem;
+		border-radius: 0.3rem;
+
+		margin-bottom: 0.5rem;
+
+		@include for-lg-devices {
+			width: 80%;
+		}
+
+		@include for-xl-devices {
+			width: 60%;
+		}
 
 		.head {
 			display: flex;
@@ -263,6 +315,7 @@
 			h4 {
 				margin: 0;
 				display: inline-block;
+				font-size: calc(var(--h3-font-size) - 0.7rem);
 			}
 
 			.icon {
@@ -272,22 +325,51 @@
 
 		.body {
 			max-height: 0px;
-			transition: all 0.6s ease-in-out;
 			overflow-y: hidden;
-			padding: 0;
+			padding: 0.2rem 0.4rem;
+
+			transition: all 0.6s ease-in-out;
 
 			.text {
 				margin: 0;
+			}
+
+			.data {
+				list-style: none;
+				padding: 0;
+			}
+
+			.attachments {
+				display: flex;
+
+				ul {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+				}
 			}
 		}
 	}
 
 	:global(.report .body.open) {
-		padding: 1rem 0.5rem 1rem !important;
+		//padding: 0.2rem 0.4rem !important;
 		max-height: 500px !important;
 	}
 
 	:global(.report .head .icon.open) {
 		transform: rotate(-180deg);
+	}
+
+	:global(.report .body .attachments .icon) {
+		margin-top: 0.1rem;
+		margin-right: 0.2rem;
+	}
+
+	#main {
+		min-height: 300px;
+
+		@include for-xl-devices {
+			min-height: 60vh;
+		}
 	}
 </style>

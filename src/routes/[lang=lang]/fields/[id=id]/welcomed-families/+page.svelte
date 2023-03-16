@@ -62,33 +62,78 @@
 				>{$LL.breadcrumbs.home.fields.welcomedFamilies.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Famílias Acolhidas</h1>
 	<h2>Campo Missionário - {data.field.designation}</h2>
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
 
-	<div class="welcomed-families">
-		{#each welcomedFamilies as welcomedFamily (welcomedFamily.id)}
-			<div class="welcomed-family">
-				<ul class="simple-ulist">
-					<li>{welcomedFamily.representative}</li>
-					<li>{welcomedFamily.observation}</li>
-				</ul>
-			</div>
-		{/each}
+	<div class="welcomed-families centered">
+		<table>
+			<thead>
+				<tr>
+					<th>Representante</th>
+					<th>Observações</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each welcomedFamilies as welcomedFamily (welcomedFamily.id)}
+					<tr>
+						<td class="rep">{welcomedFamily.representative}</td>
+						{#if welcomedFamily.observation}
+							<td>{welcomedFamily.observation}</td>
+						{/if}
+					</tr>
+				{/each}
+			</tbody>
+		</table>
 	</div>
 </section>
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import "$lib/scss/_shared";
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
+	}
+
+	.welcomed-families table {
+		width: 100%;
+		
+		color: var(--contrast-primary-background);
+		background-color: var(--primary-background);
+		border-collapse: collapse;
+
+		@include for-lg-devices {
+			margin-top: 2rem;
+			width: 80%;
+		}
+
+		@include for-xl-devices {
+			width: 60%;
+		}
+
+		td, th {
+			border: .1rem solid var(--link-font-color);
+			padding: .2rem .4rem;
+			text-align: left;
+		}
+
+		th {
+			font-size: 1.2rem;
+			padding: .4rem !important;
+		}
+
+		.rep {
+			white-space: nowrap;
+		}
 	}
 </style>

@@ -27,7 +27,7 @@
 				>{$LL.breadcrumbs.home.howToParticipate.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Como Participar</h1>

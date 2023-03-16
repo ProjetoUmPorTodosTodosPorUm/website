@@ -145,7 +145,6 @@
 				>{$LL.breadcrumbs.home.fields.collectedOffers.monthly.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
 	</ul>
 
 	<h1>Ofertas Coletadas</h1>
@@ -154,13 +153,19 @@
 	<div class="date-picker">
 		<div class="years">
 			{#each Object.keys(data.period) as year}
-				<button on:click={() => onYearSelect(Number(year))}>{year}</button>
+				<button
+					class={monthlyQuery.year == Number(year) ? 'active' : ''}
+					on:click={() => onYearSelect(Number(year))}>{year}</button
+				>
 			{/each}
 		</div>
 		<div class="months">
 			{#if monthlyQuery.year !== 0}
 				{#each data.period[monthlyQuery.year] as month}
-					<button on:click={() => onMonthSelect(Number(month))}>{months[Number(month) - 1]}</button>
+					<button
+						class={monthlyQuery.month == Number(month) ? 'active' : ''}
+						on:click={() => onMonthSelect(Number(month))}>{months[Number(month) - 1]}</button
+					>
 				{/each}
 			{/if}
 		</div>
@@ -214,44 +219,59 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import '$lib/scss/_shared';
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
 	}
 
 	.monthly-offers {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
-		margin: 2rem 0;
-		flex-wrap: wrap;
+		align-items: center;
+
+		@include for-lg-devices {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
 
 		.number {
-			background-color: red;
+			width: fit-content;
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
 
 			display: flex;
 			align-items: center;
-			margin-right: 1rem;
+			margin-bottom: 0.5rem;
 			padding: 1rem;
 
 			.icon,
 			.value {
-				font-size: 5rem;
+				font-size: 4rem;
 			}
 
 			&:not(:nth-child(2)) > .icon {
 				margin-bottom: -1rem;
 			}
+
+			@include for-lg-devices {
+				margin-right: 1rem;
+			}
 		}
 
 		.text {
-			flex-basis: 100%;
-			p {
-				margin: 3rem auto 0rem;
-				width: 50%;
+			margin-top: 2rem;
+
+			@include for-xl-devices {
+				margin: 2rem auto 0;
+				width: 70% !important;
 			}
 		}
 	}
@@ -259,16 +279,54 @@
 	.date-picker {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 1rem;
 
-		select {
-			margin-right: 0.5rem;
-			height: 2.5rem;
-			padding: 0.5rem;
+		@include for-lg-devices {
+			margin-bottom: 2rem;
+		}
+
+		@include for-xl-devices {
+			margin-bottom: 4rem;
+		}
+
+		button {
+			font-size: 1.4rem;
+			margin-right: 0.2rem;
+			margin-bottom: 0.2rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			outline: none;
+
+			&.active {
+				color: var(--link-font-color);
+			}
+
+			@include for-md-devices {
+				padding: 0.4rem 1rem;
+			}
+
+			@include for-lg-devices {
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
 		}
 	}
 
 	.observation {
-		width: 50%;
-		margin: 6rem auto 0rem;
+		margin-top: 2rem;
+
+		@include for-xl-devices {
+			margin: 2rem auto 0;
+			width: 70% !important;
+		}
 	}
 </style>

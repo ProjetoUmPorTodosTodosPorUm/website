@@ -35,16 +35,10 @@
 				>{$LL.breadcrumbs.home.fields.churchesInUnity.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Igrejas em Unidade</h1>
 	<SearchField locale={data.locale} {onFieldSelection} />
 </section>
 <Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	h1 {
-		margin: 0 0 1rem;
-	}
-</style>

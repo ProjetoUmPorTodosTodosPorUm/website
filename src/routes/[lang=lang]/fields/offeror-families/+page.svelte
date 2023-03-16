@@ -110,14 +110,16 @@
 				>{$LL.breadcrumbs.home.fields.offerorFamilies.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Famílias Ofertantes</h1>
 
 	{#if option === SearchOption.ALL}
-		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a class="reset-option" href="#" on:click|preventDefault={resetOption}>Ver Opções</a>
+		<div class="reset-option">
+			<button on:click={resetOption}>Voltar</button>
+		</div>
+
 		<div class="centered">
 			<SearchBox
 				bind:searchInput
@@ -143,8 +145,9 @@
 			<Pagination bind:page={pagination.page} maxPage={totalPages} on:pageChange={loadData} />
 		</div>
 	{:else if option === SearchOption.SPECIFIC}
-		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a class="reset-option" href="#" on:click|preventDefault={resetOption}>Ver Opções</a>
+		<div class="reset-option">
+			<button on:click={resetOption}>Voltar</button>
+		</div>
 		<SearchField locale={data.locale} {onFieldSelection} />
 	{:else}
 		<div class="option-container">
@@ -158,24 +161,75 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
-	h1 {
-		margin: 0 0 1rem;
-	}
+	@import '$lib/scss/_shared';
 
 	.reset-option {
-		display: block;
-		width: 40%;
-		margin: 0.5rem auto;
+		@include for-lg-devices {
+			margin: 0 auto;
+			width: 60%;
+		}
+
+		@include for-xl-devices {
+			width: 50%;
+		}
+
+		button {
+			margin-bottom: 0.5rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			@include for-lg-devices {
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
+		}
 	}
 
 	.option-container {
+		min-height: 200px;
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		.option {
-			height: 2.5rem;
+			font-size: 1rem;
 			margin-right: 0.5rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			@include for-md-devices {
+				padding: 0.4rem 1rem;
+			}
+
+			@include for-lg-devices {
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
+		}
+	}
+
+	#main {
+		min-height: 300px;
+
+		@include for-xl-devices {
+			min-height: 60vh;
 		}
 	}
 </style>

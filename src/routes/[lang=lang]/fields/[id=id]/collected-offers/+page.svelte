@@ -41,7 +41,6 @@
 				>{$LL.breadcrumbs.home.fields.collectedOffers.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
 	</ul>
 
 	<h1>Ofertas Coletadas</h1>
@@ -56,23 +55,56 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import '$lib/scss/_shared';
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
 	}
 
 	.option-container {
+		min-height: 200px;
+
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		.option {
-			height: 2.5rem;
+			font-size: 1.4rem;
 			margin-right: 0.5rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			@include for-md-devices {
+				padding: 0.4rem 1rem;
+			}
+
+			@include for-lg-devices {
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
+		}
+	}
+
+	#main {
+		min-height: 300px;
+
+		@include for-xl-devices {
+			min-height: 60vh;
 		}
 	}
 </style>

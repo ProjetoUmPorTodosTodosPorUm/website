@@ -25,7 +25,7 @@
 		<li>
 			<a href="/{data.locale}/about-us/services">{$LL.breadcrumbs.home.aboutUs.services.text()}</a>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>{$LL.routes.aboutUs.services.firstSection.mainTitle()}</h1>

@@ -33,16 +33,10 @@
 		<li>
 			<a href="/{data.locale}/fields/reports">{$LL.breadcrumbs.home.fields.reports.text()}</a>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Relatórios</h1>
 	<SearchField locale={data.locale} {onFieldSelection} />
 </section>
 <Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	h1 {
-		margin: 0 0 1rem;
-	}
-</style>

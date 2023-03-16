@@ -8,27 +8,48 @@
     justify-content: center;
     align-items: center;
 
+    @include for-lg-devices {
+        width: 60%;
+    }
+
+    @include for-xl-devices {
+        width: 50%;
+    }
+
     .search {
-        width: 40%;
+        width: 100%;
         display: grid;
         grid-template-areas: 'input button';
-        grid-template-columns: 90% 10%;
+        grid-template-columns: 90% auto;
 
         input {
             grid-area: input;
             min-height: 2.5rem;
             padding: 0.4rem 0.75rem;
-            border: 0rem solid #515458;
-            border-radius: 0;
+
+            outline: none;
+            //font-size: 1.1rem;
+
+            color: var(--contrast-primary-background);
+            background-color: var(--secondary-background);
+            border: .1rem solid var(--secondary-background);
+
+            &::placeholder {
+                color: var(--contrast-primary-background);
+            }
         }
 
         button {
-            background-color: #fff;
             grid-area: button;
             cursor: pointer;
             min-height: 2.5rem;
             padding: 0.4rem 0.75rem;
-            border: 0;
+            position: relative;
+            left: -1px;
+
+            color: var(--contrast-primary-background);
+            background-color: var(--secondary-background);
+            border: .1rem solid var(--secondary-background);
 
             &:disabled {
                 cursor: not-allowed;

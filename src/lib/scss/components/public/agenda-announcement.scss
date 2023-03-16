@@ -1,22 +1,43 @@
 @import "$lib/scss/_shared";
 
 #agenda-announcement {
-    background-color: antiquewhite;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 
     display: flex;
-    align-items: start;
-    justify-content: space-around;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
 
-    padding: 6rem 5rem;
+    @include for-md-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include for-lg-devices {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include for-xl-devices {
+        padding-left: 8rem;
+        padding-right: 8rem;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
 
 .container {
-    background-color: aqua;
-    height: 100%;
-    width: 40%;
-    padding: 1.5rem 1rem; 
+    width: 100%;
+    padding: 0 .2rem;
+
+    @include for-xl-devices {
+        width: 45%;
+    }
 
     h1 {
         text-align: center;

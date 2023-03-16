@@ -1,35 +1,57 @@
 @import "$lib/scss/_shared";
+@import "$lib/scss/_variables";
 
 #faq {
-    background-color: wheat;
+    position: relative;
     width: 100vw;
-    height: 100vh;
-    
-    background-image: url(https://via.placeholder.com/1920x1080.webp);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
+    min-height: fit-content;
+
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
 
-    padding: 6rem 5rem;
+    // hides background
+    overflow: hidden;
+
+    @include for-md-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include for-lg-devices {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include for-xl-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        opacity: .1;
+        background-image: url(/images/faq-background.webp);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+    }
 }
 
 h1 {
-    margin-top: 0;
-    font-size: 3.2rem;
-    letter-spacing: .2rem;
-
-    @include for-sm-devices {
-        font-size: 3.6rem;
-    }
-
-    @include for-md-devices {
-        font-size: 3rem;
-    }
+    margin: 1rem 0;
+    font-size: $h1-font-size;
 }
 
 .questions {
@@ -41,24 +63,46 @@ h1 {
 
 .question-block {
     height: fit-content;
-    width: min-content;
+    width: 100%;
 
-    background-color: white;
-    padding: 1rem;
+    background-color: var(--primary-background);
+    color: var(--contrast-primary-background);
+    padding: .4rem .8rem;
     border-radius: .3rem;
 
-    margin-right: 2rem;
     margin-bottom: 1rem;
+
+    @include for-xl-devices {
+        width: min-content;
+        min-width: 26rem;
+        margin: .5rem;
+    }
 }
 
 .question {
     margin: 0;
-    font-size: 1.2rem;
-    white-space: nowrap;
-    cursor: pointer;
+    font-size: calc($h2-font-size - .8rem);
+
+    @include for-md-devices {
+        display: flex;
+    }
+
+    @include for-lg-devices {
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    @include for-xl-devices {
+        width: 100%;
+    }
 
     .icon {
         transition: transform .2s ease-out;
+
+        @include for-md-devices {
+            margin-left: auto;
+        }
+
         &.open {
             transform: rotate(-180deg);
         }
@@ -71,5 +115,4 @@ h1 {
 
     max-height: 0;
     overflow: hidden;
-
 }

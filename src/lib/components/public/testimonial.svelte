@@ -40,6 +40,7 @@
 </script>
 
 <section id="testimonials">
+	<h1>Testimonials</h1>
 	{#if testimonials?.length > 0}
 	<Carousel>
 		{#each testimonials as testimonial (testimonial.id)}

@@ -25,7 +25,7 @@
 		<li>
 			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Campos Missionários</h1>

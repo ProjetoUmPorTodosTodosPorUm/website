@@ -26,11 +26,11 @@
 	</div>
 	<div class="text">
 		<h1 class="headline">{$LL.components.public.howToParticipate.headline()}</h1>
-		<p class="sub-headline">
+		<p>
 			{@html $LL.components.public.howToParticipate.firstParagraph()}
 		</p>
 
-		<p class="sub-headline">
+		<p>
 			{@html $LL.components.public.howToParticipate.secondParagraph()}
 		</p>
 	</div>

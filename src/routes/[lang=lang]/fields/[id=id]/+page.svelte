@@ -27,7 +27,7 @@
 		<li>
 			<a href="/{data.locale}/fields/{data.field.id}">{data.field.designation}</a>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>{data.field.designation}</h1>

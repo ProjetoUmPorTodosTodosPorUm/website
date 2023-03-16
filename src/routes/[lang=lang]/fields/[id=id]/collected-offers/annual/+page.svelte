@@ -214,7 +214,6 @@
 				>{$LL.breadcrumbs.home.fields.collectedOffers.annual.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
 	</ul>
 
 	<h1>Ofertas Coletadas</h1>
@@ -224,7 +223,10 @@
 	<div class="date-picker">
 		<div class="years">
 			{#each Object.keys(data.period) as year}
-				<button on:click={() => (annualQuery.year = Number(year))}>{year}</button>
+				<button
+					class={annualQuery.year == Number(year) ? 'active' : ''}
+					on:click={() => (annualQuery.year = Number(year))}>{year}</button
+				>
 			{/each}
 		</div>
 	</div>
@@ -281,13 +283,16 @@
 <Footer locale={data.locale} {namespaces} on:switchLocale={onSwitchLocale} />
 
 <style lang="scss">
+	@import '$lib/scss/_shared';
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
 	}
 
 	.annual-offers {
@@ -297,9 +302,9 @@
 		align-items: center;
 
 		.graph-block {
-			height: 500px !important;
-			width: 50% !important;
-			margin-bottom: 2rem;
+			@include for-xl-devices {
+				width: 70% !important;
+			}
 		}
 	}
 
@@ -307,15 +312,45 @@
 		display: flex;
 		justify-content: center;
 
-		select {
-			margin-right: 0.5rem;
-			height: 2.5rem;
-			padding: 0.5rem;
+		button {
+			font-size: 1.4rem;
+			margin-right: 0.2rem;
+			padding: 0.2rem 0.5rem;
+
+			background-color: var(--primary-background);
+			color: var(--contrast-primary-background);
+
+			border-radius: 0.3rem;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+
+			outline: none;
+
+			&.active {
+				color: var(--link-font-color);
+			}
+
+			@include for-md-devices {
+				padding: 0.4rem 1rem;
+			}
+
+			@include for-lg-devices {
+				margin-right: 0.5rem;
+
+				cursor: pointer;
+
+				&:hover {
+					color: var(--link-font-color);
+				}
+			}
 		}
 	}
 
 	.observation {
-		width: 50%;
-		margin: 6rem auto 0rem;
+		margin-top: 2rem;
+
+		@include for-xl-devices {
+			margin: 2rem auto 0;
+			width: 70% !important;
+		}
 	}
 </style>

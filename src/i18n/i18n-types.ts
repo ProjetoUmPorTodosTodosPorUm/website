@@ -166,26 +166,32 @@ export type NamespaceComponentsTranslation = {
 				 */
 				howToParticipate: string
 				/**
-				 * F​i​e​l​d​s
+				 * M​i​s​s​i​o​n​a​r​y​ ​F​i​e​l​d​s
 				 */
 				fields: string
 				/**
 				 * C​o​n​t​a​c​t
 				 */
 				contact: string
-				/**
-				 * F​i​l​t​e​r
-				 */
-				filter: string
 			}
 		}
 		landing: {
+			headline: {
+				/**
+				 * P​r​o​j​e​c​t
+				 */
+				firstLine: string
+				/**
+				 * O​n​e​ ​f​o​r​ ​A​l​l​!
+				 */
+				secondLine: string
+				/**
+				 * A​l​l​ ​f​o​r​ ​O​n​e​.
+				 */
+				lastLine: string
+			}
 			/**
-			 * P​r​o​j​e​c​t​ ​O​n​e​ ​f​o​r​ ​A​l​l​!​ ​A​l​l​ ​f​o​r​ ​O​n​e​.
-			 */
-			headline: string
-			/**
-			 * R​e​s​c​u​i​n​g​ ​l​i​v​e​s​ ​f​o​r​ ​C​h​r​i​s​t​.
+			 * S​e​d​ ​u​t​ ​p​e​r​s​p​i​c​i​a​t​i​s​ ​u​n​d​e​ ​o​m​n​i​s​ ​i​s​t​e​ ​n​a​t​u​s​ ​e​r​r​o​r​ ​s​i​t​ ​v​o​l​u​p​t​a​t​e​m​ ​a​c​c​u​s​a​n​t​i​u​m​ ​d​o​l​o​r​e​m​q​u​e​ ​l​a​u​d​a​n​t​i​u​m​,​ ​t​o​t​a​m​ ​r​e​m​ ​a​p​e​r​i​a​m​,​ ​e​a​q​u​e​ ​i​p​s​a​ ​q​u​a​e​ ​a​b​ ​i​l​l​o​ ​i​n​v​e​n​t​o​r​e​ ​v​e​r​i​t​a​t​i​s​ ​e​t​ ​q​u​a​s​i​ ​a​r​c​h​i​t​e​c​t​o​ ​b​e​a​t​a​e​ ​v​i​t​a​e​ ​d​i​c​t​a​ ​s​u​n​t​ ​e​x​p​l​i​c​a​b​o​.
 			 */
 			subHeadline: string
 			/**
@@ -1041,26 +1047,32 @@ export type TranslationFunctions = {
 					 */
 					howToParticipate: () => LocalizedString
 					/**
-					 * Fields
+					 * Missionary Fields
 					 */
 					fields: () => LocalizedString
 					/**
 					 * Contact
 					 */
 					contact: () => LocalizedString
-					/**
-					 * Filter
-					 */
-					filter: () => LocalizedString
 				}
 			}
 			landing: {
+				headline: {
+					/**
+					 * Project
+					 */
+					firstLine: () => LocalizedString
+					/**
+					 * One for All!
+					 */
+					secondLine: () => LocalizedString
+					/**
+					 * All for One.
+					 */
+					lastLine: () => LocalizedString
+				}
 				/**
-				 * Project One for All! All for One.
-				 */
-				headline: () => LocalizedString
-				/**
-				 * Rescuing lives for Christ.
+				 * Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 				 */
 				subHeadline: () => LocalizedString
 				/**

@@ -63,7 +63,7 @@
 				>{$LL.breadcrumbs.home.fields.collaborators.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Colaboradores</h1>
@@ -91,25 +91,50 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import '$lib/scss/_shared';
+
 	h1,
 	h2 {
-		margin: 0 0 0rem;
+		margin-bottom: 0.2rem;
 	}
 
 	h2 {
-		font-size: 1.2rem !important;
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
 	}
 
 	.collaborators {
-		width: 50%;
-		margin: 0 auto;
+		margin-top: 2rem;
+
+		@include for-lg-devices {
+			width: 80% !important;
+			margin: 2rem auto 0;
+		}
+
+		@include for-xl-devices {
+			width: 50% !important;
+		}
 
 		.collaborator {
 			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@include for-lg-devices {
+				flex-direction: row;
+			}
 
 			.image {
+				height: 300px;
+				width: 300px;
+
+				@include for-md-devices {
+					align-self: flex-start;
+				}
+
 				img {
-					width: 250px;
+					height: 100%;
+					width: fit-content;
 					object-fit: cover;
 				}
 			}
@@ -117,16 +142,21 @@
 			.content {
 				display: flex;
 				flex-direction: column;
-				padding-left: 2rem;
+
+				@include for-md-devices {
+					margin-left: 1rem;
+				}
 
 				.title {
-					font-size: initial;
+					margin: 1rem 0;
 				}
 
 				.text {
 					display: initial;
 					width: 100%;
 					text-align: justify;
+
+					margin-top: 0;
 				}
 			}
 		}

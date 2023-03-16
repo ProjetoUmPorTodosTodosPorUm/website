@@ -35,16 +35,10 @@
 				>{$LL.breadcrumbs.home.fields.collaborators.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Colaboradores</h1>
 	<SearchField locale={data.locale} {onFieldSelection} />
 </section>
 <Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	h1 {
-		margin: 0 0 1rem;
-	}
-</style>

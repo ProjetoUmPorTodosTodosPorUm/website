@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/scss/components/public/search-field.scss';
 	import { onMount } from 'svelte';
 	import type { FieldDto, Pagination as PaginationType } from '$lib/types';
 	import { fromPaginationToQuery } from '$lib/utils/functions';

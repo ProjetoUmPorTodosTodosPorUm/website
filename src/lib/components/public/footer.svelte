@@ -237,7 +237,7 @@
 		</ul>
 	</nav>
 	<div class="contact">
-		<h1>{$LL.components.public.footer.contact.title()}</h1>
+		<h3>{$LL.components.public.footer.contact.title()}</h3>
 		<form bind:this={formRef} on:submit|preventDefault|stopPropagation={onSubmit}>
 			<div class="res-container">
 				<p bind:this={formResponseRef} />

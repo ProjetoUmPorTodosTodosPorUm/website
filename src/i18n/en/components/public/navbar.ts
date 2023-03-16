@@ -2,8 +2,8 @@ export default {
     navItems: {
         aboutUs: 'About Us',
         howToParticipate: 'How To Participate',
-        fields: 'Fields',
+        fields: 'Missionary Fields',
         contact: 'Contact',
-        filter: 'Filter'
+
     }
 }

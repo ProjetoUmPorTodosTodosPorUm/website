@@ -35,7 +35,7 @@
 				>{$LL.breadcrumbs.home.fields.volunteers.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
+		
 	</ul>
 
 	<h1>Voluntários</h1>

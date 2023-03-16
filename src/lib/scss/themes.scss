@@ -1,0 +1,44 @@
+@import "variables";
+
+// Default theme
+$theme-map-light: (
+    $--primary: #B957EB,
+    $--secondary: #D39FED,
+    $--primary-background: #9144B8,
+    $--secondary-background: #5F486B,
+    $--font-color: #3c4245,
+    $--info-font-color: #a09d9d,
+    $--link-font-color: #D39FED,
+    $--contrast-primary-background: #FFFFFF,
+    $h1-font-size: 2.5rem,
+    $h2-font-size: 2rem,
+    $h3-font-size: 1.75rem,
+);
+
+// @TODO
+$theme-map-dark: (
+    $--primary: #B957EB,
+    $--secondary: #D39FED,
+    $--primary-background: #9144B8,
+    $--secondary-background: #5F486B,
+    $--font-color: #000000,
+    $--info-font-color: #a09d9d,
+    $--link-font-color: #D39FED,
+    $--contrast-primary-background: #FFFFFF,
+    $h1-font-size: 2.5rem,
+    $h2-font-size: 2rem,
+    $h3-font-size: 1.75rem,
+);
+
+@mixin spread-map($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}
+
+:root.light {
+    @include spread-map($theme-map-light);
+}
+:root.dark {
+    @include spread-map($theme-map-dark);
+}

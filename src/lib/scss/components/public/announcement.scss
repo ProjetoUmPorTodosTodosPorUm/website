@@ -1,12 +1,13 @@
 @import "$lib/scss/_shared";
 
 .announcements {
-    height: 88%;
+    height: 500px;
     overflow-y: scroll;
 }
 
 .announcement {
-    background-color: aliceblue;
+    color: var(--contrast-primary-background);
+    background-color: var(--primary-background);
     padding: .5rem 1rem;
     border-radius: .5rem;
     margin-bottom: .4rem;
@@ -33,12 +34,25 @@
             margin-right: auto;
 
             a {
+                color: var(--link-font-color);
                 margin-right: .2rem;
+            }
+
+            .icon {
+                position: relative;
+                top: .1rem;
             }
         }
 
-        .fixed {
+        .icon {
             margin-left: .2rem;
         }
+    }
+
+    .pill {
+        background-color: var(--contrast-primary-background);
+        color: var(--primary-background);
+        padding: .2rem .3rem;
+        border-radius: .5rem;
     }
 }

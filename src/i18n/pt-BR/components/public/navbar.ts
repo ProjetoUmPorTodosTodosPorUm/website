@@ -2,8 +2,7 @@ export default {
     navItems: {
         aboutUs: 'Quem Somos',
         howToParticipate: 'Como Participar',
-        fields: 'Campos',
+        fields: 'Campos Missionários',
         contact: 'Contato',
-        filter: 'Filtro'
     }
 }

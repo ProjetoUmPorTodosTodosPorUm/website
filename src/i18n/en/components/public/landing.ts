@@ -1,6 +1,10 @@
 export default {
-    headline: 'Project \One for All! All for One.',
-    subHeadline: 'Rescuing lives for Christ.',
+    headline: {
+        firstLine: 'Project',
+        secondLine: 'One for All!',
+        lastLine: 'All for One.'
+    },
+    subHeadline: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
     callToAction: 'I Want To Participate',
     cards: {
         firstCard: {

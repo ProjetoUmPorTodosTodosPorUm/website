@@ -27,7 +27,6 @@
 				>{$LL.breadcrumbs.home.aboutUs.meetTheAuthor.text()}</a
 			>
 		</li>
-		<hr class="title-separator" />
 	</ul>
 
 	<h1>{$LL.routes.aboutUs.meetTheAuthor.firstTitle()}</h1>
@@ -74,13 +73,19 @@
 <Footer locale={data.locale} {namespaces} />
 
 <style lang="scss">
+	@import "$lib/scss/_shared";
+
 	h1,
 	h2 {
 		margin: 0 0 1rem;
 	}
 
 	.responsive {
-		max-width: 50%;
+		width: 100%;
 		margin-bottom: 1rem;
+
+		@include for-xl-devices {
+			width: 50%;
+		}
 	}
 </style>

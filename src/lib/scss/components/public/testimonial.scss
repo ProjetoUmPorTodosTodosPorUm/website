@@ -1,18 +1,35 @@
 @import "$lib/scss/_shared";
 
 #testimonials {
-    background-color: antiquewhite;
     width: 100vw;
-    height: 40vh;
+    padding: 2rem .2rem 4rem;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 
-    padding: 6rem 5rem;
+    h1 {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
 
-    .sc-carousel__carousel-container {
-        width: 50% !important;
+    @include for-md-devices {
+        .sc-carousel__carousel-container {
+            width: 90% !important;
+        }
+    }
+
+    @include for-lg-devices {
+        .sc-carousel__carousel-container {
+            width: 60% !important;
+        }
+    }
+
+    @include for-xl-devices {
+        .sc-carousel__carousel-container {
+            width: 50% !important;
+        }
     }
 }
 
@@ -22,8 +39,13 @@
 
 
     .avatar {
-        height: 150px;
-        width: 150px;
+        height: 100px;
+        width: 100px;
+
+        @include for-md-devices {
+            height: 150px;
+            width: 150px;
+        }
 
         img {
             height: 100%;
@@ -34,7 +56,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        padding-left: 2rem;
+        padding-left: .5rem;
 
         .text {
             display: initial;

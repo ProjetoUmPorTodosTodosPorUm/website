@@ -1,15 +1,27 @@
 @import "$lib/scss/_shared";
 
 #where-we-operate {
-    background-color: azure;
+    position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
 
-    display: flex;
-    align-items: start;
-    justify-content: space-around;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 
-    padding: 6rem 5rem;
+    @include for-md-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include for-lg-devices {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include for-xl-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 #map {

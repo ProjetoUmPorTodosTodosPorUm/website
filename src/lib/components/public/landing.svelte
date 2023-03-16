@@ -10,7 +10,12 @@
 </script>
 
 <section id="landing">
-	<h1 class="headline">{$LL.components.public.landing.headline()}</h1>
+	<div class="headline">
+		<h1>{$LL.components.public.landing.headline.firstLine()}</h1>
+		<h1>{$LL.components.public.landing.headline.secondLine()}</h1>
+		<h1>{$LL.components.public.landing.headline.lastLine()}</h1>
+	</div>
+	
 	<h2 class="sub-headline">{$LL.components.public.landing.subHeadline()}</h2>
 	<a href="#how-to-participate" class="call-to-action"
 		>{$LL.components.public.landing.callToAction()}</a
