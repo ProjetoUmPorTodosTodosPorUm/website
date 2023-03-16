@@ -96,7 +96,6 @@
 				>{$LL.breadcrumbs.home.fields.volunteers.text()}</a
 			>
 		</li>
-		
 	</ul>
 
 	<h1>Voluntários</h1>
@@ -113,9 +112,11 @@
 					<p>{volunteer.occupation}</p>
 				</div>
 				<div class="body">
-					<li>{volunteer.joinedDate}</li>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
+					<ul>
+						<li>{volunteer.church}</li>
+						<li>{volunteer.priest}</li>
+						<li>Data de Entrada: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
+					</ul>
 				</div>
 				<div class="footer">
 					<p>{volunteer.observation}</p>
@@ -131,9 +132,11 @@
 					<p>{volunteer.occupation}</p>
 				</div>
 				<div class="body">
-					<li>{volunteer.joinedDate}</li>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
+					<ul>
+						<li>{new Date(volunteer.joinedDate).toLocaleDateString()}</li>
+						<li>{volunteer.church}</li>
+						<li>{volunteer.priest}</li>
+					</ul>
 				</div>
 				<div class="footer">
 					<p>{volunteer.observation}</p>
@@ -149,9 +152,11 @@
 					<p>{volunteer.occupation}</p>
 				</div>
 				<div class="body">
-					<li>{volunteer.joinedDate}</li>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
+					<ul>
+						<li>{new Date(volunteer.joinedDate).toLocaleDateString()}</li>
+						<li>{volunteer.church}</li>
+						<li>{volunteer.priest}</li>
+					</ul>
 				</div>
 				<div class="footer">
 					<p>{volunteer.observation}</p>
@@ -161,3 +166,130 @@
 	</div>
 </section>
 <Footer locale={data.locale} {namespaces} />
+
+<style lang="scss">
+	@import '$lib/scss/_shared';
+
+	h1,
+	h2 {
+		margin-bottom: 0.2rem;
+	}
+
+	h2 {
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
+	}
+
+	h3:not(:first-of-type) {
+		margin-top: 4rem;
+	}
+
+	.volunteer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		color: var(--contrast-primary-background);
+		background-color: var(--primary-background);
+
+		padding: 2rem 1rem;
+		margin-bottom: 1rem;
+
+		border-radius: 0.4rem;
+
+		@include for-md-devices {
+			display: grid;
+			grid-template-areas:
+				'img .'
+				'img name'
+				'img occupation'
+				'img body'
+				'img footer';
+			grid-template-columns: 30% 70%;
+		}
+
+		@include for-lg-devices {
+			width: 680px;
+		}
+
+		.head {
+			width: 300px;
+
+			@include for-md-devices {
+				width: 100%;
+				display: contents;
+			}
+
+			img {
+				height: 300px;
+				width: 200px;
+				object-fit: cover;
+
+				padding: 0.5rem;
+				background-color: var(--contrast-primary-background);
+
+				display: block;
+				margin: 0 auto;
+
+				@include for-md-devices {
+					grid-area: img;
+					margin: initial;
+				}
+			}
+
+			h3 {
+				margin: 0.5rem 0 0.1rem 0;
+
+				@include for-md-devices {
+					grid-area: name;
+					margin-left: 1rem;
+				}
+			}
+
+			p {
+				text-indent: 0;
+				margin-top: 0;
+				font-size: 0.9rem;
+
+				@include for-md-devices {
+					grid-area: occupation;
+					margin-left: 1rem;
+				}
+			}
+		}
+
+		.body {
+			width: 300px;
+
+			@include for-md-devices {
+				grid-area: body;
+				width: 100%;
+				height: 100%;
+
+				margin-left: 1rem;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		.footer {
+			width: 300px;
+
+			@include for-md-devices {
+				grid-area: footer;
+				width: 100%;
+				height: 100%;
+
+				margin-left: 1rem;
+			}
+
+			p {
+				text-indent: 0.5rem;
+			}
+		}
+	}
+</style>

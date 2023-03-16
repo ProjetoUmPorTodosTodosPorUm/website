@@ -21,20 +21,8 @@
 	export let data: PageData;
 	const namespaces: Namespaces[] = ['components', 'routes', 'utils'];
 	const COUNT_UP_DURATION = 5; // in seconds
-	const months = [
-		'Janeiro',
-		'Fevereiro',
-		'Março',
-		'Abril',
-		'Maio',
-		'Junho',
-		'Julho',
-		'Setembro',
-		'Agosto',
-		'Outubro',
-		'Novembro',
-		'Dezembro'
-	];
+	let months: string[] = [];
+
 	let isLoading = false;
 	let monthlyOffer: MonthlyOfferDto;
 	let monthlyQuery = {
@@ -56,6 +44,8 @@
 			await loadNamespaceAsync(data.locale, ns);
 		});
 		setLocale(data.locale);
+
+		onSwitchLocale(null);
 	});
 
 	async function loadMonthlyData() {
@@ -122,6 +112,10 @@
 				countUp.start();
 			}
 		};
+	}
+
+	function onSwitchLocale(event: any) {
+		months = Object.keys($LL.utils.months).map((m) => $LL.utils.months[m]());
 	}
 </script>
 
@@ -216,7 +210,7 @@
 		</p>
 	</div>
 </section>
-<Footer locale={data.locale} {namespaces} />
+<Footer locale={data.locale} {namespaces} on:switchLocale={onSwitchLocale} />
 
 <style lang="scss">
 	@import '$lib/scss/_shared';

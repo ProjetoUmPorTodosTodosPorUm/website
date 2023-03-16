@@ -43,7 +43,7 @@ export default {
                 text: 'Relatórios'
             },
             volunteers: {
-                text: 'Volunteers'
+                text: 'Voluntários'
             }
         }
     }

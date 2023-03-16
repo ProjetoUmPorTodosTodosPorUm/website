@@ -95,7 +95,6 @@
 				>{$LL.breadcrumbs.home.fields.offerorFamilies.text()}</a
 			>
 		</li>
-		
 	</ul>
 
 	<h1>Famílias Ofertantes</h1>
@@ -123,3 +122,15 @@
 	</div>
 </section>
 <Footer locale={data.locale} {namespaces} />
+
+<style lang="scss">
+	h1,
+	h2 {
+		margin-bottom: 0.2rem;
+	}
+
+	h2 {
+		margin-top: 0;
+		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
+	}
+</style>
