@@ -1,0 +1,21 @@
+@import "$lib/scss/_shared";
+
+.ec-event {
+    background-color: var(--primary-background) !important;
+
+    // fixes above navbar
+    z-index: 0 !important;
+    display: block;
+}
+
+.ec-event-title {
+    cursor: pointer;
+
+    background-color: var(--primary-background) !important;
+    color: var( --contrast-primary-background) !important;
+}
+
+.ec-today {
+    background-color: var(--primary-background) !important;
+    color: var( --contrast-primary-background) !important;
+}

@@ -1,0 +1,32 @@
+# Folders
+.github/
+.svelte-kit/
+node_modules/
+**/test/
+
+# Files
+.env*
+*.md
+*.json
+*.sh
+
+.dockerignore
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierignore
+.prettierrc
+.tool-versions
+playwright.config.ts
+docker-compose.yml
+docker-compose.test.yml
+Dockerfile
+prisma.dockerfile
+TODO
+
+!typesafe-i18n.json
+!package-lock.json
+!package.json
+!svelte.config.js
+!ts*.json
+!vite.config.ts

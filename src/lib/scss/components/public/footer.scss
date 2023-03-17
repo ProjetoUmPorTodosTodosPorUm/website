@@ -1,0 +1,263 @@
+@import "$lib/scss/_shared";
+@import "$lib/scss/_variables";
+
+#footer {
+    background-color: var(--secondary-background);
+    color: var(--contrast-primary-background);
+
+    width: 100vw;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    display: grid;
+    grid-template-areas:
+        "navigation"
+        "contact"
+        "info";
+    grid-template-columns: 100%;
+
+    @include for-md-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include for-lg-devices {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include for-xl-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        grid-template-areas:
+            "navigation contact"
+            "info info";
+        grid-template-rows: 90% 10%;
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.navigation {
+    grid-area: navigation;
+    padding: 0 .2rem;
+
+    .nav-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        @include for-md-devices {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+        }
+
+        .nav-sub-items {
+            list-style: none;
+            padding: 0;
+            margin-top: .8rem;
+        }
+    }
+
+    .nav-item {
+        padding: 0;
+        margin-right: 2rem;
+
+        @include for-xl-devices {
+            margin-right: 4rem;
+        }
+
+        >a {
+            font-size: var(--h3-font-size);
+            color: var(--contrast-primary-background);
+
+            @include for-lg-devices {
+                padding: .2rem .2rem;
+                transition: .2s ease-out;
+
+                &:hover {
+                    color: var(--primary-background);
+                    background-color: var(--contrast-primary-background);
+                }
+            }
+        }
+
+        .nav-sub-item {
+            margin-bottom: .4rem;
+
+            >a {
+                color: var(--contrast-primary-background);
+
+                @include for-lg-devices {
+                    padding: .2rem .2rem;
+                    transition: .2s ease-out;
+
+                    &:hover {
+                        color: var(--primary-background);
+                        background-color: var(--contrast-primary-background);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    grid-area: contact;
+
+    h3 {
+        font-size: var(--h3-font-size); 
+        font-weight: normal;
+        
+        margin-bottom: .5rem;
+        padding: 0 .2rem;
+
+        @include for-xl-devices {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        margin: 0 0 .5rem 0;
+    }
+
+    // @TODO Use MODAL
+    .res-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        height: 0;
+        opacity: 0;
+        transition: all .3s ease-out;
+
+        p {
+            color: inherit;
+            margin: 0;
+            display: inline;
+            font-size: .7rem;
+        }
+
+        svg {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    }
+
+    @mixin res-container {
+        margin-bottom: .3rem;
+        padding: .3rem;
+        border: 1px solid transparent;
+        height: initial;
+    }
+
+    .success {
+        color: #155724;
+        fill: #155724;
+        border-color: #c3e6cb;
+        background-color: #d4edda;
+        @include res-container;
+    }
+
+    .fail {
+        color: #721c24;
+        fill: #721c24;
+        border-color: #f5c6cb;
+        background-color: #f8d7da;
+        @include res-container;
+    }
+
+    .show {
+        opacity: 1;
+    }
+
+
+    form {
+        width: 100%;
+        padding: 0 .2rem;
+
+        transition: opacity .6s ease-out;
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: .4rem;
+            outline: none;
+            font-size: 1.1rem;
+            padding: .4rem .75rem;
+        }
+
+        input:disabled,
+        textarea:disabled,
+        button:disabled {
+            cursor: not-allowed;
+        }
+
+        input {
+            height: 2.3rem;
+            color: var(--contrast-primary-background);
+            background-color: var(--secondary-background);
+            border: .1rem solid var(--contrast-primary-background);
+
+            &::placeholder {
+                color: var(--contrast-primary-background);
+            }
+        }
+
+        textarea {
+            min-height: 7rem;
+            resize: none;
+            color: var(--contrast-primary-background);
+            background-color: var(--secondary-background);
+            border: .1rem solid var(--contrast-primary-background);
+
+            &::placeholder {
+                color: var(--contrast-primary-background);
+            }
+        }
+
+        button {
+            //cursor: pointer;
+            //margin: 0 auto;
+
+            width: 100%;
+            color: var(--contrast-primary-background);
+            opacity: .8;
+            background: transparent;
+            border: .2rem solid var(--contrast-primary-background);
+            ;
+            padding: .8rem 1.2rem;
+            font-size: 1.2rem;
+            transition: opacity .3s ease-out;
+            outline: none;
+
+            @include for-sm-devices {
+                margin: initial;
+            }
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.info {
+    grid-area: info;
+    padding: 0 .2rem;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+        text-align: right;
+    }
+}

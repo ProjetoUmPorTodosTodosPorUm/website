@@ -1,0 +1,37 @@
+@import '$lib/scss/_shared';
+
+.custom-arrow {
+    opacity: 0;
+    z-index: 1;
+
+    align-self: center;
+    position: absolute;
+
+    cursor: pointer;
+    border-width: 5px 5px 0 0;
+    border-style: solid;
+    border-color: var(--primary-background);
+    outline: 0;
+    transition: .3s ease;
+
+    @include for-lg-devices {
+        opacity: .45;
+        height: 30px;
+        width: 30px;
+    }
+
+    &:hover {
+        border-color: var(--primary-background);
+        opacity: .9;
+    }
+
+    &.left {
+        transform: rotate(-135deg);
+        left: -2rem;
+    }
+
+    &.right {
+        transform: rotate(45deg);
+        right: -2rem;
+    }
+}

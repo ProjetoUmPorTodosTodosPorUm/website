@@ -1,0 +1,33 @@
+/*
+* Media queries
+*/
+
+@mixin for-xs-devices {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin for-sm-devices {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for-md-devices {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-lg-devices {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-xl-devices {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

@@ -1,0 +1,27 @@
+@import "$lib/scss/_shared";
+
+.data-items {
+    width: 100%;
+    margin: .5rem auto;
+
+    @include for-lg-devices {
+        width: 60%;
+    }
+
+    @include for-xl-devices {
+        width: 50%;
+    }
+}
+
+.data-item {
+    margin-bottom: .2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    color: var(--contrast-primary-background);
+    background-color: var(--primary-background);
+}
+
+.data-item:hover {
+    opacity: .9;
+}

@@ -1,0 +1,58 @@
+@import "$lib/scss/_shared";
+
+.announcements {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.announcement {
+    color: var(--contrast-primary-background);
+    background-color: var(--primary-background);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    margin-bottom: .4rem;
+
+    .title {
+        margin: 0;
+    }
+
+    .text {
+        margin: 0;
+        width: 100%;
+    }
+
+    .info {
+        display: flex;
+        justify-content: flex-end;
+        font-size: .9rem;
+
+        p {
+            text-indent: 0;
+        }
+
+        .attachments {
+            margin-right: auto;
+
+            a {
+                color: var(--link-font-color);
+                margin-right: .2rem;
+            }
+
+            .icon {
+                position: relative;
+                top: .1rem;
+            }
+        }
+
+        .icon {
+            margin-left: .2rem;
+        }
+    }
+
+    .pill {
+        background-color: var(--contrast-primary-background);
+        color: var(--primary-background);
+        padding: .2rem .3rem;
+        border-radius: .5rem;
+    }
+}

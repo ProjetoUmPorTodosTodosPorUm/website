@@ -1,0 +1,196 @@
+@import "$lib/scss/_shared";
+
+#main-nav {
+  width: 100%;
+  height: 4rem;
+  z-index: 1;
+
+  //background-color: var(--secondary-background);
+
+  display: grid;
+  grid-template-areas:
+    "brand . icon"
+    "links links links";
+  grid-template-rows: 4rem auto;
+  grid-template-columns: 40% 20% 40%;
+
+  transition: .2s ease-out;
+
+  &.open {
+    background-color: var(--secondary-background);
+  }
+
+  @include for-md-devices {
+    height: 6rem;
+    grid-template-rows: 6rem auto;
+  }
+
+  @include for-lg-devices {
+    grid-template-areas:
+      "brand links";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+  }
+}
+
+#main-nav .nav-brand {
+  grid-area: brand;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+
+  @include for-md-devices {
+    margin-left: 1.2rem;
+
+    /* Mozilla fix */
+    @-moz-document url-prefix() {
+      margin-top: .7rem;
+    }
+  }
+
+  a {
+    height: 3rem;
+
+    @include for-md-devices {
+      height: 4rem;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+#main-nav .nav-toggle-icon {
+  grid-area: icon;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1rem;
+
+  transition: .6s ease-out;
+
+  a {
+    font-size: 2rem;
+    padding: .2rem;
+    height: 2.4rem;
+    border-radius: .15rem;
+
+    color: var(--contrast-primary-background);
+    background-color: var(--primary-background);
+  }
+
+  &.open {
+    a {
+      color: var(--primary-background);
+      background-color: var(--contrast-primary-background);
+    }
+  }
+
+  @include for-lg-devices {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+#main-nav .nav-responsive {
+  grid-area: links;
+  padding: 1rem;
+  margin-top: -.1rem;
+  z-index: 1;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: .2s ease-out;
+
+  @include for-lg-devices {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @include for-xl-devices {
+    margin-right: 2rem;
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: initial;
+    background-color: var(--secondary-background);
+  }
+}
+
+#main-nav .nav-items {
+  position: relative;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include for-lg-devices {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+#main-nav .nav-item {
+  width: fit-content;
+  margin-bottom: .5rem;
+
+  a {
+    transition: .2s ease-out;
+
+    padding: .5rem 1rem;
+    color: var(--primary-background);
+    background-color: var(--contrast-primary-background);
+
+    @include for-lg-devices {
+      background-color: initial;
+    }
+
+    &:hover {
+      color: var(--contrast-primary-background);
+      background-color: var(--primary-background);
+    }
+  }
+
+  @include for-lg-devices {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    letter-spacing: .1rem;
+  }
+
+  @include for-xl-devices {
+    margin-right: 1.5rem;
+  }
+}
+
+#main-nav .nav-link {
+  display: block;
+  margin: 0 0 .2rem .3rem;
+  padding: .6rem .5rem;
+  color: inherit;
+  font-size: .9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  transition: color .2s ease-out;
+
+  @include for-xl-devices {
+    margin: 0;
+  }
+}
+
+#main-nav .nav-link-active {
+  color: var(--contrast-primary-background);
+  background-color: var(--primary-background);
+}

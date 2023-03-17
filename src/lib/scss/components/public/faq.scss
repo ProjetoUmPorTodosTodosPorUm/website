@@ -1,0 +1,118 @@
+@import "$lib/scss/_shared";
+@import "$lib/scss/_variables";
+
+#faq {
+    position: relative;
+    width: 100vw;
+    min-height: fit-content;
+
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+    // hides background
+    overflow: hidden;
+
+    @include for-md-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include for-lg-devices {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    @include for-xl-devices {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        opacity: .1;
+        background-image: url(/images/faq-background.webp);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+    }
+}
+
+h1 {
+    margin: 1rem 0;
+    font-size: $h1-font-size;
+}
+
+.questions {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question-block {
+    height: fit-content;
+    width: 100%;
+
+    background-color: var(--primary-background);
+    color: var(--contrast-primary-background);
+    padding: .4rem .8rem;
+    border-radius: .3rem;
+
+    margin-bottom: 1rem;
+
+    @include for-xl-devices {
+        width: min-content;
+        min-width: 26rem;
+        margin: .5rem;
+    }
+}
+
+.question {
+    margin: 0;
+    font-size: calc($h2-font-size - .8rem);
+
+    @include for-md-devices {
+        display: flex;
+    }
+
+    @include for-lg-devices {
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    @include for-xl-devices {
+        width: 100%;
+    }
+
+    .icon {
+        transition: transform .2s ease-out;
+
+        @include for-md-devices {
+            margin-left: auto;
+        }
+
+        &.open {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.answer {
+    transition: max-height 0.2s ease-out;
+    text-align: justify;
+
+    max-height: 0;
+    overflow: hidden;
+}
