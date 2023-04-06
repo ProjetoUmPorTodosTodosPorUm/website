@@ -1,5 +1,5 @@
 ## ENVS
-ARG PUBLIC_API_URL=http://api.localhost
+ARG PUBLIC_API_URL=http://api.projetoumportodostodosporum.org
 ARG PUBLIC_GOOGLE_MAP_API=AIzaSyABC1AW8m5olqyHRUgAlTli8kPzj1iij_0
 
 ###################
