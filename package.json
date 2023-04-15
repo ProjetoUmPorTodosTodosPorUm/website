@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev --mode dev",
+		"dev": "vite dev --mode dev --port 3001 --host",
 		"build": "dotenv -e .env.dev -- vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
@@ -14,8 +14,7 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"typesafe-i18n": "typesafe-i18n",
 		"build:docker": "docker build --target prod-image -t renangalvao/project-web:latest .",
-		"postbuild:docker": "docker push renangalvao/project-web:latest",
-		"dev:build:docker": "docker build --target prod-image -t renangalvao/project-web:dev ."
+		"postbuild:docker": "docker push renangalvao/project-web:latest"
 	},
 	"devDependencies": {
 		"@event-calendar/core": "^0.15.3",
