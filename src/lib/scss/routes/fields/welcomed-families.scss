@@ -1,0 +1,34 @@
+@import '$lib/scss/_shared';
+
+.welcomed-families table {
+    width: 100%;
+
+    color: var(--contrast-primary-background);
+    background-color: var(--primary-background);
+    border-collapse: collapse;
+
+    @include for-lg-devices {
+        margin-top: 2rem;
+        width: 80%;
+    }
+
+    @include for-xl-devices {
+        width: 60%;
+    }
+
+    td,
+    th {
+        border: 0.1rem solid var(--link-font-color);
+        padding: 0.2rem 0.4rem;
+        text-align: left;
+    }
+
+    th {
+        font-size: 1.2rem;
+        padding: 0.4rem !important;
+    }
+
+    .rep {
+        white-space: nowrap;
+    }
+}

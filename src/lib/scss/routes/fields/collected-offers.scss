@@ -1,0 +1,159 @@
+@import '$lib/scss/_shared';
+
+h2 {
+    margin-top: 0;
+    font-size: calc(var(--h1-font-size) - 0.6rem) !important;
+}
+
+.option-container {
+    min-height: 200px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .option {
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+        padding: 0.2rem 0.5rem;
+
+        background-color: var(--primary-background);
+        color: var(--contrast-primary-background);
+
+        border-radius: 0.3rem;
+        border: 0.2rem solid rgba(0, 0, 0, 0);
+
+        @include for-md-devices {
+            padding: 0.4rem 1rem;
+        }
+
+        @include for-lg-devices {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--link-font-color);
+            }
+        }
+    }
+}
+
+#main {
+    min-height: 300px;
+
+    @include for-xl-devices {
+        min-height: 60vh;
+    }
+}
+
+.annual-offers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .graph-block {
+        @include for-xl-devices {
+            width: 70% !important;
+        }
+    }
+}
+
+.monthly-offers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include for-lg-devices {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .number {
+        width: fit-content;
+        background-color: var(--primary-background);
+        color: var(--contrast-primary-background);
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+
+        .icon,
+        .value {
+            font-size: 4rem;
+        }
+
+        &:not(:nth-child(2))>.icon {
+            margin-bottom: -1rem;
+        }
+
+        @include for-lg-devices {
+            margin-right: 1rem;
+        }
+    }
+
+    .text {
+        margin-top: 2rem;
+
+        @include for-xl-devices {
+            margin: 2rem auto 0;
+            width: 70% !important;
+        }
+    }
+}
+
+.date-picker {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include for-lg-devices {
+        margin-bottom: 2rem;
+    }
+
+    @include for-xl-devices {
+        margin-bottom: 4rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+        padding: 0.2rem 0.5rem;
+
+        background-color: var(--primary-background);
+        color: var(--contrast-primary-background);
+
+        border-radius: 0.3rem;
+        border: 0.2rem solid rgba(0, 0, 0, 0);
+
+        outline: none;
+
+        &.active {
+            color: var(--link-font-color);
+        }
+
+        @include for-md-devices {
+            padding: 0.4rem 1rem;
+        }
+
+        @include for-lg-devices {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--link-font-color);
+            }
+        }
+    }
+}
+
+.observation {
+    margin-top: 2rem;
+
+    @include for-xl-devices {
+        margin: 2rem auto 0;
+        width: 70% !important;
+    }
+}

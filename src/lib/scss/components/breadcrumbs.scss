@@ -1,0 +1,41 @@
+/* Style the list */
+ul.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    list-style: none;
+
+    padding: .2rem .6rem;
+    margin: 0 0 2rem;
+
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--primary-background);
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    white-space: nowrap;
+    font-size: .8rem;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: var(--contrast-primary-background);
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li:last-of-type a {
+    color: var(--contrast-primary-background);
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: var(--contrast-primary-background);
+    text-decoration: underline;
+}

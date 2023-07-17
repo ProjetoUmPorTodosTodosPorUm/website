@@ -1,56 +1,63 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	import MainNavbar from '$lib/components/public/navbar.svelte';
-	import Footer from '$lib/components/public/footer.svelte';
+	import MainNavbar from '$lib/components/navbar.svelte';
+	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	import { onMount } from 'svelte';
+
+	// i18n
 	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import type { Namespaces } from '$i18n/i18n-types';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	$: i18n = $LL['fields'];
 
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
 
 	onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		await loadNamespaceAsync(data.locale, 'fields');
 		setLocale(data.locale);
 	});
 </script>
 
 <MainNavbar locale={data.locale} />
 <section id="main">
-	<ul class="breadcrumb">
-		<li><a href="/{data.locale}/">{$LL.breadcrumbs.home.text()}</a></li>
-		<li>
-			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/{data.field.id}">{data.field.designation}</a>
-		</li>
-	</ul>
+	<Breadcrumbs locale={data.locale} field={data.field} />
 
 	<h1>{data.field.designation}</h1>
 	<h2>{data.field.country} - {data.field.state}</h2>
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
 
-	<h3>Páginas</h3>
+	<h3>{i18n.pages()}</h3>
 	<ul class="pages">
-		<li><a href="/{data.locale}/fields/{data.field.id}/collaborators">Colaboradores</a></li>
 		<li>
-			<a href="/{data.locale}/fields/{data.field.id}/welcomed-families">Famílias Acolhidas</a>
+			<a href="/{data.locale}/fields/{data.field.id}/collaborators">{i18n.collaborators.title()}</a>
 		</li>
 		<li>
-			<a href="/{data.locale}/fields/{data.field.id}/offeror-families">Famílias Ofertantes</a>
+			<a href="/{data.locale}/fields/{data.field.id}/welcomed-families"
+				>{i18n.welcomedFamilies.title()}</a
+			>
 		</li>
 		<li>
-			<a href="/{data.locale}/fields/{data.field.id}/churches-in-unity">Igrejas Em unidade</a>
+			<a href="/{data.locale}/fields/{data.field.id}/offeror-families"
+				>{i18n.offerorFamilies.title()}</a
+			>
 		</li>
-		<li><a href="/{data.locale}/fields/{data.field.id}/collected-offers">Ofertas Coletadas</a></li>
-		<li><a href="/{data.locale}/fields/{data.field.id}/reports">Relatórios</a></li>
-		<li><a href="/{data.locale}/fields/{data.field.id}/volunteers">Voluntários</a></li>
+		<li>
+			<a href="/{data.locale}/fields/{data.field.id}/churches-in-unity"
+				>{i18n.churchesInUnity.title()}</a
+			>
+		</li>
+		<li>
+			<a href="/{data.locale}/fields/{data.field.id}/collected-offers"
+				>{i18n.collectedOffers.title()}</a
+			>
+		</li>
+		<li><a href="/{data.locale}/fields/{data.field.id}/reports">{i18n.reports.title()}</a></li>
+		<li>
+			<a href="/{data.locale}/fields/{data.field.id}/volunteers">{i18n.volunteers.title()}</a>
+		</li>
 	</ul>
 </section>
-<Footer locale={data.locale} {namespaces} />
+<Footer locale={data.locale} />
 
 <style lang="scss">
 	@import '$lib/scss/_shared';
@@ -76,7 +83,7 @@
 		margin: 0;
 
 		li {
-			margin-bottom: .2rem;
+			margin-bottom: 0.2rem;
 			a {
 				color: var(--font-color);
 

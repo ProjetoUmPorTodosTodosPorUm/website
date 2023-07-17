@@ -8,7 +8,7 @@ import { detectLocale as detectLocaleFn } from 'typesafe-i18n/detectors'
 import { initExtendDictionary } from 'typesafe-i18n/utils'
 import type { Formatters, Locales, Namespaces, Translations, TranslationFunctions } from './i18n-types'
 
-export const baseLocale: Locales = 'en'
+export const baseLocale: Locales = 'pt-BR'
 
 export const locales: Locales[] = [
 	'en',
@@ -16,8 +16,18 @@ export const locales: Locales[] = [
 ]
 
 export const namespaces: Namespaces[] = [
-	'components',
-	'routes',
+	'about-us',
+	'agenda-announcement',
+	'breadcrumbs',
+	'faq',
+	'fields',
+	'footer',
+	'how-to-participate',
+	'how-to-participate-component',
+	'landing',
+	'navbar',
+	'search-field',
+	'testimonial',
 	'utils'
 ]
 

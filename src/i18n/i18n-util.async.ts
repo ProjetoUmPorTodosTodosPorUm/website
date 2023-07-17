@@ -12,13 +12,33 @@ const localeTranslationLoaders = {
 
 const localeNamespaceLoaders = {
 	en: {
-		components: () => import('./en/components'),
-		routes: () => import('./en/routes'),
+		'about-us': () => import('./en/about-us'),
+		'agenda-announcement': () => import('./en/agenda-announcement'),
+		breadcrumbs: () => import('./en/breadcrumbs'),
+		faq: () => import('./en/faq'),
+		fields: () => import('./en/fields'),
+		footer: () => import('./en/footer'),
+		'how-to-participate': () => import('./en/how-to-participate'),
+		'how-to-participate-component': () => import('./en/how-to-participate-component'),
+		landing: () => import('./en/landing'),
+		navbar: () => import('./en/navbar'),
+		'search-field': () => import('./en/search-field'),
+		testimonial: () => import('./en/testimonial'),
 		utils: () => import('./en/utils')
 	},
 	'pt-BR': {
-		components: () => import('./pt-BR/components'),
-		routes: () => import('./pt-BR/routes'),
+		'about-us': () => import('./pt-BR/about-us'),
+		'agenda-announcement': () => import('./pt-BR/agenda-announcement'),
+		breadcrumbs: () => import('./pt-BR/breadcrumbs'),
+		faq: () => import('./pt-BR/faq'),
+		fields: () => import('./pt-BR/fields'),
+		footer: () => import('./pt-BR/footer'),
+		'how-to-participate': () => import('./pt-BR/how-to-participate'),
+		'how-to-participate-component': () => import('./pt-BR/how-to-participate-component'),
+		landing: () => import('./pt-BR/landing'),
+		navbar: () => import('./pt-BR/navbar'),
+		'search-field': () => import('./pt-BR/search-field'),
+		testimonial: () => import('./pt-BR/testimonial'),
 		utils: () => import('./pt-BR/utils')
 	}
 }

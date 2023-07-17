@@ -3,7 +3,7 @@
 import type { BaseTranslation as BaseTranslationType, LocalizedString, RequiredParams } from 'typesafe-i18n'
 
 export type BaseTranslation = BaseTranslationType & DisallowNamespaces
-export type BaseLocale = 'en'
+export type BaseLocale = 'pt-BR'
 
 export type Locales =
 	| 'en'
@@ -13,890 +13,1390 @@ export type Translation = RootTranslation & DisallowNamespaces
 
 export type Translations = RootTranslation &
 {
-	components: NamespaceComponentsTranslation,
-	routes: NamespaceRoutesTranslation,
+	'about-us': NamespaceAboutUsTranslation,
+	'agenda-announcement': NamespaceAgendaAnnouncementTranslation,
+	breadcrumbs: NamespaceBreadcrumbsTranslation,
+	faq: NamespaceFaqTranslation,
+	fields: NamespaceFieldsTranslation,
+	footer: NamespaceFooterTranslation,
+	'how-to-participate': NamespaceHowToParticipateTranslation,
+	'how-to-participate-component': NamespaceHowToParticipateComponentTranslation,
+	landing: NamespaceLandingTranslation,
+	navbar: NamespaceNavbarTranslation,
+	'search-field': NamespaceSearchFieldTranslation,
+	testimonial: NamespaceTestimonialTranslation,
 	utils: NamespaceUtilsTranslation
 }
 
-type RootTranslation = {
-	yup: {
-		messages: {
-			/**
-			 * E​m​a​i​l​ ​m​u​s​t​ ​b​e​ ​a​ ​v​a​l​i​d​ ​e​m​a​i​l
-			 */
-			email: string
-			/**
-			 * P​a​s​s​w​o​r​d​s​ ​m​u​s​t​ ​b​e​ ​t​h​e​ ​s​a​m​e
-			 */
-			confirmPassword: string
-			/**
-			 * O​n​l​y​ ​a​l​p​h​a​n​u​m​e​r​i​c​ ​d​i​g​i​t​s​ ​a​r​e​ ​v​a​l​i​d
-			 */
-			tokenMatch: string
-		}
-		templates: {
-			/**
-			 * {​0​}​ ​i​t​ ​i​s​ ​a​ ​m​a​n​d​a​t​o​r​y​ ​f​i​e​l​d​.
-			 * @param {unknown} 0
-			 */
-			REQUIRED: RequiredParams<'0'>
-			/**
-			 * Y​o​u​ ​m​u​s​t​ ​c​h​o​o​s​e​ ​o​n​e​ ​o​f​ ​t​h​e​ ​v​a​l​u​e​s​:​ ​{​0​}​.
-			 * @param {unknown} 0
-			 */
-			ONE_OF: RequiredParams<'0'>
-			/**
-			 * {​0​}​ ​m​u​s​t​ ​h​a​v​e​ ​a​t​ ​l​e​a​s​t​ ​{​1​}​ ​c​h​a​r​a​c​t​e​r​s​.
-			 * @param {unknown} 0
-			 * @param {unknown} 1
-			 */
-			MIN: RequiredParams<'0' | '1'>
-		}
-	}
-	breadcrumbs: {
-		home: {
-			/**
-			 * H​o​m​e
-			 */
-			text: string
-			aboutUs: {
-				/**
-				 * A​b​o​u​t​ ​U​s
-				 */
-				text: string
-				meetTheAuthor: {
-					/**
-					 * M​e​e​t​ ​t​h​e​ ​A​u​t​h​o​r
-					 */
-					text: string
-				}
-				talkingAbout: {
-					/**
-					 * T​a​l​k​i​n​g​ ​A​b​o​u​t​ ​T​h​e​ ​P​r​o​j​e​c​t
-					 */
-					text: string
-				}
-				services: {
-					/**
-					 * S​e​r​v​i​c​e​s
-					 */
-					text: string
-				}
-			}
-			howToParticipate: {
-				/**
-				 * H​o​w​ ​T​o​ ​P​a​r​t​i​c​i​p​a​t​e
-				 */
-				text: string
-			}
-			fields: {
-				/**
-				 * F​i​e​l​d​s
-				 */
-				text: string
-				collaborators: {
-					/**
-					 * C​o​l​l​a​b​o​r​a​t​o​r​s
-					 */
-					text: string
-				}
-				welcomedFamilies: {
-					/**
-					 * W​e​l​c​o​m​e​d​ ​F​a​m​i​l​i​e​s
-					 */
-					text: string
-				}
-				offerorFamilies: {
-					/**
-					 * O​f​f​e​r​o​r​ ​F​a​m​i​l​i​e​s
-					 */
-					text: string
-				}
-				churchesInUnity: {
-					/**
-					 * C​h​u​r​c​h​e​s​ ​i​n​ ​U​n​i​t​y
-					 */
-					text: string
-				}
-				collectedOffers: {
-					/**
-					 * C​o​l​l​e​c​t​e​d​ ​O​f​f​e​r​s
-					 */
-					text: string
-					monthly: {
-						/**
-						 * M​o​n​t​h​l​y
-						 */
-						text: string
-					}
-					annual: {
-						/**
-						 * A​n​n​u​a​l
-						 */
-						text: string
-					}
-				}
-				reports: {
-					/**
-					 * R​e​p​o​r​t​s
-					 */
-					text: string
-				}
-				volunteers: {
-					/**
-					 * V​o​l​u​n​t​e​e​r​s
-					 */
-					text: string
-				}
-			}
-		}
-	}
-}
+type RootTranslation = {}
 
-export type NamespaceComponentsTranslation = {
-	'public': {
-		navbar: {
-			navItems: {
-				/**
-				 * A​b​o​u​t​ ​U​s
-				 */
-				aboutUs: string
-				/**
-				 * H​o​w​ ​T​o​ ​P​a​r​t​i​c​i​p​a​t​e
-				 */
-				howToParticipate: string
-				/**
-				 * M​i​s​s​i​o​n​a​r​y​ ​F​i​e​l​d​s
-				 */
-				fields: string
-				/**
-				 * C​o​n​t​a​c​t
-				 */
-				contact: string
-			}
+export type NamespaceAboutUsTranslation = {
+	meetTheAuthor: {
+		/**
+		 * C​o​n​h​e​ç​a​ ​a​ ​A​u​t​o​r​a
+		 */
+		firstTitle: string
+		/**
+		 * <​s​p​a​n​ ​c​l​a​s​s​=​"​c​a​p​i​t​a​l​-​l​e​t​t​e​r​"​>​S​<​/​s​p​a​n​>​<​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​w​e​i​g​h​t​-​b​o​l​d​"​>​e​u​ ​n​o​m​e​ ​d​e​ ​n​a​s​c​i​m​e​n​t​o​:​<​/​s​p​a​n​>​
+	​ ​ ​ ​ ​ ​ ​ ​ ​W​i​l​m​a​ ​M​e​d​e​i​r​o​s​ ​M​a​c​h​a​d​o​,​ ​f​i​l​h​a​ ​d​e​ ​A​r​c​h​i​m​e​d​e​s​ ​d​e​ ​S​o​u​z​a​ ​M​a​c​h​a​d​o​ ​e​ ​D​i​l​m​a​ ​M​e​d​e​i​r​o​s​ ​M​a​c​h​a​d​o​.​ ​T​e​m​ ​0​4​ ​i​r​m​ã​o​s​:​
+	​ ​ ​ ​ ​ ​ ​ ​ ​D​i​r​c​é​a​,​ ​H​e​r​m​a​n​o​,​ ​M​a​r​c​e​l​o​ ​e​ ​A​l​d​o​.​ ​N​a​s​c​i​d​a​ ​a​o​s​ ​d​i​a​s​ ​2​6​ ​d​e​ ​o​u​t​u​b​r​o​ ​d​e​ ​1​9​6​3​,​ ​e​m​ ​D​u​q​u​e​ ​d​e​ ​C​a​x​i​a​s​,​ ​E​s​t​a​d​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​d​o​ ​R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​,​ ​B​r​a​s​i​l​.​ ​S​e​u​ ​1​°​ ​o​f​í​c​i​o​ ​f​o​i​ ​o​ ​d​e​ ​v​e​n​d​e​d​o​r​a​ ​d​e​ ​j​o​r​n​a​l​,​ ​n​u​m​a​ ​b​a​n​c​a​ ​p​r​ó​x​i​m​a​ ​d​e​ ​o​n​d​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​o​r​a​v​a​ ​n​o​ ​b​a​i​r​r​o​ ​d​e​ ​R​o​c​h​a​ ​M​i​r​a​n​d​a​.​ ​S​e​u​ ​p​a​i​ ​l​h​e​ ​e​n​s​i​n​o​u​ ​v​a​l​o​r​e​s​ ​t​a​i​s​ ​c​o​m​o​:​ ​“​f​a​l​a​r​ ​a​ ​v​e​r​d​a​d​e​”​.​ ​S​u​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​ã​e​ ​f​a​l​e​c​i​d​a​ ​e​m​ ​j​u​l​h​o​ ​d​e​ ​2​0​1​3​ ​d​e​ ​c​â​n​c​e​r​ ​n​a​ ​g​a​r​g​a​n​t​a​ ​n​ã​o​ ​c​a​n​s​a​v​a​ ​d​e​ ​g​l​o​r​i​f​i​c​a​r​ ​a​ ​D​e​u​s​,​ ​o​ ​q​u​e​ ​m​a​r​c​o​u​
+	​ ​ ​ ​ ​ ​ ​ ​ ​a​i​n​d​a​ ​m​a​i​s​ ​p​r​o​f​u​n​d​a​m​e​n​t​e​ ​a​ ​s​u​a​ ​f​é​ ​e​m​ ​D​e​u​s​.​ ​A​o​s​ ​1​1​ ​a​n​o​s​ ​d​e​ ​i​d​a​d​e​,​ ​a​o​ ​e​s​c​r​e​v​e​r​ ​s​u​a​ ​p​r​i​m​e​i​r​a​ ​r​e​d​a​ç​ã​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​e​m​ ​m​e​n​o​s​ ​d​e​ ​1​5​ ​m​i​n​u​t​o​s​,​ ​(​t​e​m​p​o​ ​d​a​d​o​ ​p​e​l​a​ ​p​r​o​f​e​s​s​o​r​a​ ​n​a​ ​5​ª​ ​s​é​r​i​e​)​,​ ​n​a​r​r​o​u​ ​u​m​a​ ​h​i​s​t​ó​r​i​a​ ​f​i​c​t​í​c​i​a​,​ ​g​a​n​h​a​n​d​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​u​m​a​ ​b​o​l​s​a​ ​d​e​ ​e​s​t​u​d​o​s​ ​p​e​l​a​ ​f​u​n​d​a​ç​ã​o​ ​O​s​w​a​l​d​o​ ​C​r​u​z​,​ ​c​u​j​a​ ​p​r​o​p​o​s​t​a​ ​e​r​a​ ​f​o​r​m​a​r​ ​e​s​c​r​i​t​o​r​e​s​.​ ​T​e​v​e​ ​p​o​r​ ​p​r​o​f​.​ª​
+	​ ​ ​ ​ ​ ​ ​ ​ ​E​l​o​á​ ​B​a​r​b​u​d​a​.​ ​O​ ​c​u​r​s​o​ ​e​r​a​ ​n​o​ ​L​e​b​l​o​n​ ​e​ ​a​ ​m​e​n​i​n​a​ ​p​o​b​r​e​,​ ​i​n​f​l​u​e​n​c​i​a​d​a​ ​p​e​l​a​ ​é​p​o​c​a​ ​d​e​ ​m​u​i​t​o​ ​p​r​e​c​o​n​c​e​i​t​o​,​
+	​ ​ ​ ​ ​ ​ ​ ​ ​s​e​n​t​i​u​-​s​e​ ​i​n​f​e​r​i​o​r​,​ ​s​e​n​d​o​ ​i​s​t​o​ ​u​m​ ​o​b​s​t​á​c​u​l​o​,​ ​s​ó​ ​s​u​p​e​r​a​d​o​ ​a​n​o​s​ ​m​a​i​s​ ​t​a​r​d​e​ ​p​e​l​a​ ​g​r​a​ç​a​ ​d​e​ ​D​e​u​s​,​ ​p​o​r​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​e​i​o​ ​d​e​ ​l​i​v​r​o​s​ ​d​e​ ​a​u​t​o​–​a​j​u​d​a​.​ ​A​n​o​s​ ​m​a​i​s​ ​t​a​r​d​e​ ​a​ ​c​o​n​v​i​t​e​ ​d​e​ ​s​u​a​ ​a​m​i​g​a​ ​L​u​a​n​a​ ​B​e​a​t​r​i​z​,​ ​(​M​a​i​o​ ​d​e​ ​2​0​0​0​)​,​
+	​ ​ ​ ​ ​ ​ ​ ​ ​c​o​n​h​e​c​e​u​ ​a​ ​I​g​r​e​j​a​,​ ​A​s​s​e​m​b​l​e​i​a​ ​d​e​ ​D​e​u​s​ ​M​i​n​i​s​t​é​r​i​o​ ​R​e​a​l​ ​-​ ​P​a​s​t​o​r​a​ ​S​i​m​o​n​e​,​ ​o​n​d​e​ ​f​o​i​ ​b​a​t​i​z​a​d​a​,​ ​s​e​n​d​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​u​i​t​o​ ​a​b​e​n​ç​o​a​d​a​ ​n​a​q​u​e​l​e​ ​l​u​g​a​r​.
+		 */
+		firstParagraph: string
+		/**
+		 * <​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​w​e​i​g​h​t​-​b​o​l​d​"​>​T​e​m​p​o​ ​d​i​f​í​c​e​i​s​:​<​/​s​p​a​n​>​ ​D​i​v​o​r​c​i​a​d​a​ ​e​ ​c​o​m​ ​0​4​ ​f​i​l​h​o​s​ ​p​a​r​a​ ​c​r​i​a​r​.​.​.​
+	​ ​ ​ ​ ​ ​ ​ ​ ​S​ó​ ​J​e​s​u​s​ ​n​a​ ​d​i​r​e​ç​ã​o​.​
+	​ ​ ​ ​ ​ ​ ​ ​ ​E​m​ ​2​0​0​4​,​ ​t​r​a​b​a​l​h​a​n​d​o​ ​c​o​m​o​ ​c​a​b​e​l​e​i​r​e​i​r​a​ ​a​ ​d​o​m​i​c​í​l​i​o​ ​e​ ​m​a​i​s​ ​o​ ​t​r​a​t​a​m​e​n​t​o​ ​d​e​ ​s​u​a​ ​f​i​l​h​a​ ​P​a​l​o​m​a​ ​(​p​o​r​t​a​d​o​r​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​d​a​ ​S​í​n​d​r​o​m​e​ ​d​e​ ​D​o​w​n​)​.​ ​D​i​a​n​t​e​ ​d​e​ ​m​u​i​t​a​s​ ​r​e​s​p​o​n​s​a​b​i​l​i​d​a​d​e​s​ ​e​t​c​.​,​ ​s​e​n​t​i​n​d​o​ ​p​o​r​é​m​,​ ​m​u​i​t​a​ ​g​r​a​t​i​d​ã​o​ ​a​ ​D​e​u​s​,​
+	​ ​ ​ ​ ​ ​ ​ ​ ​p​e​d​i​u​ ​à​ ​E​l​e​ ​q​u​e​ ​l​h​e​ ​c​o​n​c​e​d​e​s​s​e​ ​s​e​r​ ​s​u​a​ ​e​s​c​r​i​t​o​r​a​.​ ​D​i​s​s​e​ ​e​l​a​:​ ​“​P​e​q​u​e​n​a​s​ ​m​e​n​s​a​g​e​n​s​,​ ​D​e​u​s​.​ ​Q​u​e​m​ ​s​a​b​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​p​o​d​e​r​á​ ​s​e​r​ ​c​o​l​o​c​a​d​o​ ​n​o​ ​b​o​l​e​t​i​m​ ​d​a​ ​I​g​r​e​j​a​.​.​.​”​ ​(​N​o​s​s​o​ ​P​r​.​ ​I​n​c​e​n​t​i​v​a​v​a​-​n​o​s​ ​a​ ​e​s​c​r​e​v​e​r​ ​p​a​r​a​ ​e​s​t​e​ ​b​o​l​e​t​i​m​)​.​
+	​ ​ ​ ​ ​ ​ ​ ​ ​N​o​ ​q​u​e​ ​D​e​u​s​ ​d​e​ ​i​m​e​d​i​a​t​o​ ​l​h​e​ ​r​e​s​p​o​n​d​e​u​,​ ​q​u​e​ ​a​q​u​e​l​e​ ​e​s​p​a​ç​o​,​ ​E​l​e​ ​n​ã​o​ ​l​h​e​ ​c​o​n​c​e​d​i​a​,​ ​p​o​i​s​ ​e​r​a​ ​p​a​r​a​ ​q​u​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​o​ ​P​a​s​t​o​r​ ​c​o​m​p​l​e​t​a​s​s​e​ ​s​u​a​s​ ​m​e​n​s​a​g​e​n​s​ ​p​a​r​a​ ​a​ ​I​g​r​e​j​a​.​ ​M​a​s​,​ ​o​ ​S​e​n​h​o​r​ ​s​ó​ ​f​a​z​ ​c​o​i​s​a​s​ ​g​r​a​n​d​e​s​ ​e​ ​p​r​o​f​u​n​d​a​s​
+	​ ​ ​ ​ ​ ​ ​ ​ ​e​ ​n​ã​o​ ​f​o​i​ ​d​i​f​e​r​e​n​t​e​ ​c​o​m​ ​W​i​l​m​a​ ​M​a​c​h​a​d​o​.​ ​V​i​e​r​a​m​ ​a​s​ ​m​ú​s​i​c​a​s​,​ ​u​m​a​ ​h​i​s​t​ó​r​i​a​ ​p​a​r​a​ ​v​i​d​e​o​c​l​i​p​e​,​ ​u​m​a​ ​p​e​ç​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​t​e​a​t​r​a​l​ ​c​a​n​t​a​d​a​,​ ​"​A​ ​v​o​l​t​a​ ​d​e​ ​J​e​s​u​s​"​,​ ​u​m​a​ ​c​o​l​e​t​â​n​e​a​ ​d​e​ ​p​o​e​m​a​s​,​ ​o​ ​P​r​o​j​e​t​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​.​p​r​o​j​e​c​t​-​f​o​n​t​"​>​“​U​m​ ​p​o​r​ ​t​o​d​o​s​!​ ​T​o​d​o​s​ ​p​o​r​ ​u​m​”​<​/​s​p​a​n​>​
+	​ ​ ​ ​ ​ ​ ​ ​ ​o​ ​q​u​a​l​ ​d​e​n​t​r​o​ ​d​e​s​t​a​ ​o​b​r​a​ ​e​v​a​n​g​e​l​í​s​t​i​c​a​ ​f​o​i​ ​a​p​r​e​s​e​n​t​a​d​o​ ​e​m​ ​2​3​ ​d​e​ ​n​o​v​e​m​b​r​o​ ​d​e​ ​2​0​1​3​ ​n​o​ ​“​V​a​r​a​n​d​ã​o​”​,​ ​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​u​s​i​c​a​l​ ​"​P​e​l​a​s​ ​r​u​a​s​ ​d​o​ ​R​i​o​.​.​.​ ​"​ ​q​u​e​ ​c​o​n​t​o​u​ ​c​o​m​ ​o​ ​a​p​o​i​o​ ​d​a​ ​I​g​r​e​j​a​ ​A​s​s​e​m​b​l​e​i​a​ ​d​e​ ​D​e​u​s​ ​M​i​n​i​s​t​é​r​i​o​ ​S​h​e​k​i​n​a​h​
+	​ ​ ​ ​ ​ ​ ​ ​ ​–​ ​P​a​s​t​o​r​ ​A​l​d​o​,​ ​R​o​n​a​l​d​o​ ​e​ ​P​a​s​t​o​r​ ​S​e​r​g​i​o​.​
+	​ ​ ​ ​ ​ ​ ​ ​ ​A​t​u​a​l​m​e​n​t​e​,​ ​d​e​d​i​c​a​-​s​e​ ​a​o​s​ ​f​i​l​h​o​s​ ​R​a​f​a​e​l​ ​(​2​7​a​n​o​s​)​,​ ​R​e​n​a​t​o​ ​(​2​4​a​n​o​s​)​,​ ​R​e​n​a​n​ ​(​2​1​ ​a​n​o​s​)​,​ ​P​a​l​o​m​a​ ​(​1​6​ ​a​n​o​s​)​
+	​ ​ ​ ​ ​ ​ ​ ​ ​e​ ​s​e​u​ ​“​e​s​p​o​s​o​ ​d​a​ ​p​r​o​m​e​s​s​a​”​ ​M​a​r​c​i​o​ ​L​u​i​z​ ​q​u​e​ ​e​n​t​e​n​d​e​ ​e​l​a​ ​c​o​m​o​ ​s​e​n​d​o​ ​c​o​m​p​r​o​m​i​s​s​o​ ​n​a​t​u​r​a​l​ ​c​o​m​ ​D​e​u​s​,​ ​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​d​e​d​i​c​a​ ​–​ ​s​e​ ​a​o​ ​s​e​u​ ​m​i​n​i​s​t​é​r​i​o​:​ ​“​O​ ​d​a​ ​e​s​c​r​i​t​a​”​,​ ​n​a​ ​q​u​a​l​ ​e​n​v​o​l​v​e​ ​o​b​r​a​s​ ​c​o​m​:​ ​m​ú​s​i​c​a​s​,​ ​p​e​ç​a​s​ ​t​e​a​t​r​a​i​s​,​
+	​ ​ ​ ​ ​ ​ ​ ​ ​P​r​o​j​e​t​o​ ​e​ ​o​u​t​r​o​s​ ​a​f​i​n​s​.​ ​R​e​t​o​r​n​o​u​ ​a​o​ ​c​u​r​s​o​ ​d​e​ ​G​R​A​D​U​A​Ç​Ã​O​ ​L​I​V​R​E​ ​E​M​ ​T​E​O​L​O​G​I​A​ ​(​B​a​c​h​a​r​e​l​ ​e​m​ ​T​e​o​l​o​g​i​a​)​ ​n​o​:
+		 */
+		secondParagraph: string
+		firstList: {
+			/**
+			 * I​N​S​T​I​T​U​T​O​ ​B​Í​B​L​I​C​O​ ​E​B​E​N​É​Z​E​R​ ​/​ ​S​E​M​I​N​Á​R​I​O​ ​M​A​I​O​R​ ​D​E​ ​E​N​S​I​N​O​ ​T​E​O​L​Ó​G​I​C​O
+			 */
+			'0': string
+			/**
+			 * A​v​.​ ​S​a​n​t​a​ ​C​r​u​z​,​ ​n​º​ ​3​4​0​3​ ​-​ ​B​a​n​g​u​,​ ​C​E​P​ ​2​1​.​8​1​0​-​1​4​0​.​ ​R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​ ​–​ ​R​J​.​ ​B​r​a​s​i​l​.
+			 */
+			'1': string
+			/**
+			 * T​e​l​.​ ​(​0​X​X​2​1​)​ ​3​3​3​5​-​8​9​6​8​ ​(​f​a​l​a​r​ ​c​o​m​ ​S​u​z​a​n​a​)
+			 */
+			'2': string
+			/**
+			 * E​-​m​a​i​l​:​ ​i​b​e​b​a​n​g​u​@​c​l​i​c​.​c​o​m​.​b​r
+			 */
+			'3': string
 		}
-		landing: {
-			headline: {
-				/**
-				 * P​r​o​j​e​c​t
-				 */
-				firstLine: string
-				/**
-				 * O​n​e​ ​f​o​r​ ​A​l​l​!
-				 */
-				secondLine: string
-				/**
-				 * A​l​l​ ​f​o​r​ ​O​n​e​.
-				 */
-				lastLine: string
-			}
+		secondList: {
 			/**
-			 * S​e​d​ ​u​t​ ​p​e​r​s​p​i​c​i​a​t​i​s​ ​u​n​d​e​ ​o​m​n​i​s​ ​i​s​t​e​ ​n​a​t​u​s​ ​e​r​r​o​r​ ​s​i​t​ ​v​o​l​u​p​t​a​t​e​m​ ​a​c​c​u​s​a​n​t​i​u​m​ ​d​o​l​o​r​e​m​q​u​e​ ​l​a​u​d​a​n​t​i​u​m​,​ ​t​o​t​a​m​ ​r​e​m​ ​a​p​e​r​i​a​m​,​ ​e​a​q​u​e​ ​i​p​s​a​ ​q​u​a​e​ ​a​b​ ​i​l​l​o​ ​i​n​v​e​n​t​o​r​e​ ​v​e​r​i​t​a​t​i​s​ ​e​t​ ​q​u​a​s​i​ ​a​r​c​h​i​t​e​c​t​o​ ​b​e​a​t​a​e​ ​v​i​t​a​e​ ​d​i​c​t​a​ ​s​u​n​t​ ​e​x​p​l​i​c​a​b​o​.
+			 * A​t​u​a​l​m​e​n​t​e​ ​c​o​n​g​r​e​g​a​ ​n​a
 			 */
-			subHeadline: string
+			'0': string
 			/**
-			 * I​ ​W​a​n​t​ ​T​o​ ​P​a​r​t​i​c​i​p​a​t​e
+			 * A​s​s​e​m​b​l​é​i​a​ ​d​e​ ​D​e​u​s​ ​M​i​n​i​s​t​é​r​i​o​ ​S​h​e​k​i​n​a​h
 			 */
-			callToAction: string
-			cards: {
-				firstCard: {
-					/**
-					 * E​v​a​n​g​e​l​i​z​a​t​i​o​n
-					 */
-					title: string
-					/**
-					 * L​o​r​e​m​ ​I​p​s​u​m
-					 */
-					text: string
-				}
-				secondCard: {
-					/**
-					 * U​n​i​t​y​ ​a​n​d​ ​U​n​i​t​y
-					 */
-					title: string
-					/**
-					 * L​o​r​e​m​ ​I​p​s​u​m
-					 */
-					text: string
-				}
-				thirdCard: {
-					/**
-					 * W​h​e​r​e​ ​W​e​ ​O​p​e​r​a​t​e
-					 */
-					title: string
-					/**
-					 * S​e​e​ ​o​n​ ​M​a​p
-					 */
-					text: string
-					/**
-					 * S​e​e​ ​o​n​ ​M​a​p
-					 */
-					button: string
-				}
-			}
+			'1': string
+			/**
+			 * P​a​s​t​o​r​ ​P​r​e​s​i​d​e​n​t​e​:​ ​A​l​d​o​ ​d​a​ ​S​i​l​v​a​ ​G​o​m​e​s​ ​F​i​l​h​o
+			 */
+			'2': string
+			/**
+			 * P​a​s​t​o​r​ ​V​i​c​e​-​P​r​e​s​i​d​e​n​t​e​:​ ​S​é​r​g​i​o​ ​d​e​ ​M​a​c​e​n​a​ ​M​a​c​h​a​d​o
+			 */
+			'3': string
+			/**
+			 * L​o​c​a​l​:​ ​R​u​a​ ​M​a​r​l​i​é​r​i​a​,​ ​l​o​t​e​ ​0​1​.​ ​C​o​n​d​o​m​í​n​i​o​ ​A​i​r​t​o​n​ ​S​e​n​n​a​.​ ​B​a​i​r​r​o​:​ ​J​a​r​d​i​m​ ​B​a​n​g​u
+			 */
+			'4': string
+			/**
+			 * R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​ ​–​ ​B​r​a​s​i​l​.​ ​C​E​P​:​ ​2​1​8​3​0​ ​4​2​0​.​ ​C​o​n​t​a​t​o​:​ ​(​0​2​1​)​ ​2​4​0​2​ ​–​ ​3​3​2​3
+			 */
+			'5': string
 		}
-		howToParticipate: {
-			callToAction: {
-				/**
-				 * D​o​ ​y​o​u​ ​w​a​n​t​ ​t​o​ ​p​a​r​t​i​c​i​p​a​t​e​?​ ​W​e​'​l​l​ ​b​e​ ​i​n​ ​t​o​u​c​h​!
-				 */
-				text: string
-				/**
-				 * N​a​m​e
-				 */
-				nameInput: string
-				/**
-				 * E​-​m​a​i​l
-				 */
-				emailInput: string
-				/**
-				 * I​ ​w​a​n​t​ ​t​o​ ​b​e​ ​p​a​r​t​ ​o​f​ ​i​t​!
-				 */
-				button: string
-			}
+		/**
+		 * M​i​n​h​a​ ​a​m​a​d​a​ ​I​g​r​e​j​a
+		 */
+		secondTitle: string
+		thirdList: {
 			/**
-			 * H​o​w​ ​C​a​n​ ​a​ ​F​a​m​i​l​y​ ​P​a​r​t​i​c​i​p​a​t​e​?
+			 * D​i​a​s​ ​d​e​ ​c​u​l​t​o
 			 */
-			headline: string
+			'0': string
 			/**
-			 * I​t​ ​i​s​ ​v​e​r​y​ ​s​i​m​p​l​e​ ​t​o​ ​p​a​r​t​i​c​i​p​a​t​e​.​ ​C​h​e​c​k​ ​t​h​e​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​o​n​d​e​-​a​t​u​a​m​o​s​"​>​W​H​E​R​E​ ​W​E​ ​O​P​E​R​A​T​E​<​/​a​>​ ​o​f​ ​t​h​i​s​
-		​ ​ ​ ​ ​s​i​t​e​ ​i​f​ ​a​n​y​ ​o​f​ ​t​h​e​ ​d​e​p​l​o​y​e​d​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​(​s​)​ ​c​o​r​r​e​s​p​o​n​d​(​s​)​ ​t​o​ ​t​h​e​ ​p​l​a​c​e​ ​w​h​e​r​e​
-		​ ​ ​ ​ ​r​e​s​i​d​e​s​.​ ​I​f​ ​t​h​e​r​e​ ​i​s​,​ ​i​t​ ​i​s​ ​e​n​o​u​g​h​ ​t​o​ ​g​o​ ​t​o​ ​t​h​e​ ​C​h​u​r​c​h​ ​r​e​s​p​o​n​s​i​b​l​e​ ​f​o​r​ ​t​h​i​s​ ​F​i​e​l​d​ ​a​n​d​ ​r​e​g​i​s​t​e​r​ ​a​s​
-		​ ​ ​ ​ ​<​i​>​V​o​l​u​n​t​e​e​r​ ​o​f​f​e​r​e​r​<​/​i​>​ ​c​h​o​o​s​i​n​g​ ​f​r​o​m​ ​a​ ​l​i​s​t​ ​t​h​a​t​ ​w​i​l​l​ ​b​e​ ​p​r​e​s​e​n​t​e​d​ ​y​o​u​r​ ​o​f​f​e​r​ ​o​f​
-		​ ​ ​ ​ ​c​o​m​m​i​t​m​e​n​t​.​ ​F​u​r​t​h​e​r​m​o​r​e​,​ ​t​h​e​ ​o​f​f​e​r​i​n​g​ ​f​a​m​i​l​y​ ​m​a​y​ ​d​o​n​a​t​e​ ​a​n​y​ ​o​f​ ​t​h​e​
-		​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​c​o​m​o​-​p​a​r​t​i​c​i​p​a​r​#​e​s​t​a​m​o​s​N​e​e​d​i​n​g​"​>​i​t​e​m​s​ ​w​e​ ​n​e​e​d​.​<​/​a​>
+			 * T​e​r​ç​a​s​-​f​e​i​r​a​s​ ​à​s​ ​1​9​:​3​0​H​s​ ​(​E​s​t​u​d​o​ ​d​a​ ​P​a​l​a​v​r​a​)
 			 */
-			firstParagraph: string
+			'1': string
 			/**
-			 * W​h​e​n​ ​r​e​g​i​s​t​e​r​i​n​g​,​ ​t​h​e​ ​o​f​f​e​r​i​n​g​ ​v​o​l​u​n​t​e​e​r​ ​f​a​m​i​l​y​ ​m​u​s​t​ ​s​i​g​n​ ​a​ ​d​o​c​u​m​e​n​t​ ​i​n​ ​w​h​i​c​h​
-		​ ​ ​ ​ ​e​x​p​r​e​s​s​e​s​ ​t​h​e​ ​d​e​s​i​r​e​ ​t​o​ ​c​o​-​p​a​r​t​i​c​i​p​a​t​e​ ​i​n​ ​t​h​i​s​ ​p​r​o​j​e​c​t​,​ ​t​h​u​s​ ​a​s​s​u​m​i​n​g​ ​t​h​e​ ​r​e​s​p​o​n​s​i​b​i​l​i​t​y​ ​o​f​
-		​ ​ ​ ​ ​a​s​s​i​s​t​ ​p​e​r​s​o​n​(​s​)​ ​o​r​ ​f​a​m​i​l​y​(​i​e​s​)​ ​e​n​r​o​l​l​e​d​ ​i​n​ ​t​h​e​ ​p​r​o​j​e​c​t​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​p​r​o​j​e​c​t​"​>​“​O​n​e​ ​f​o​r​ ​a​l​l​!​ ​A​l​l​ ​f​o​r​ ​o​n​e​.​”​<​/​s​p​a​n​>​
-		​ ​ ​ ​ ​Y​o​u​ ​s​h​o​u​l​d​ ​r​e​c​e​i​v​e​ ​a​ ​d​o​c​u​m​e​n​t​ ​c​o​n​t​a​i​n​i​n​g​ ​y​o​u​r​ ​r​e​g​i​s​t​r​a​t​i​o​n​ ​n​u​m​b​e​r​ ​a​n​d​ ​t​h​e​ ​n​a​m​e​ ​o​f​ ​y​o​u​r​ ​c​o​m​b​i​n​e​d​ ​o​f​f​e​r​,​ ​a​n​d​ ​t​h​i​s​
-		​ ​ ​ ​ ​t​h​e​ ​l​a​t​t​e​r​ ​m​a​y​ ​b​e​ ​c​h​a​n​g​e​d​ ​a​t​ ​h​i​s​ ​o​w​n​ ​r​e​q​u​e​s​t​ ​o​r​ ​b​y​ ​t​h​e​ ​p​r​o​j​e​c​t​ ​a​d​m​i​n​i​s​t​r​a​t​o​r​.​ ​S​e​e​ ​t​h​e​ ​l​i​n​k​
-		​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​o​n​d​e​-​a​t​u​a​m​o​s​"​>​W​H​E​R​E​ ​W​E​ ​O​P​E​R​A​T​E​<​/​a​>​
-		​ ​ ​ ​ ​t​h​e​ ​m​a​p​ ​o​f​ ​t​h​e​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​(​s​)​ ​a​n​d​ ​f​i​n​d​ ​o​u​t​ ​i​f​ ​y​o​u​ ​l​i​v​e​ ​o​n​ ​a​n​y​ ​o​f​ ​t​h​e​ ​s​t​r​e​e​t​s​ ​i​n​ ​o​n​e​ ​o​f​ ​t​h​e​s​e​ ​F​i​e​l​d​s​,​
-		​ ​ ​ ​ ​i​f​ ​n​o​t​ ​s​e​e​ ​w​h​a​t​ ​f​o​l​l​o​w​s​ ​b​e​l​o​w
+			 * Q​u​i​n​t​a​s​-​f​e​i​r​a​s​ ​à​s​ ​9​:​0​0​H​s​ ​(​C​o​n​s​a​g​r​a​ç​ã​o​)
 			 */
-			secondParagraph: string
+			'2': string
+			/**
+			 * D​o​m​i​n​g​o​s​ ​à​s​ ​9​:​0​0​H​s​ ​(​E​.​B​.​D​)​ ​e​ ​1​9​:​0​0​H​s​ ​(​C​u​l​t​o​ ​d​a​ ​F​a​m​í​l​i​a​)
+			 */
+			'3': string
+			/**
+			 * V​e​n​h​a​ ​n​o​s​ ​v​i​s​i​t​a​r​!​ ​S​e​r​á​ ​u​m​a​ ​a​l​e​g​r​i​a​ ​t​ê​-​l​o​ ​c​o​n​o​s​c​o​ ​a​d​o​r​a​n​d​o​ ​a​o​ ​S​e​n​h​o​r
+			 */
+			'4': string
 		}
-		faq: {
-			/**
-			 * F​r​e​q​u​e​n​t​l​y​ ​A​s​k​e​d​ ​Q​u​e​s​t​i​o​n​s
-			 */
-			headline: string
-		}
-		agendaAnnouncement: {
-			/**
-			 * A​g​e​n​d​a
-			 */
-			agendaTitle: string
-			/**
-			 * A​n​n​o​u​n​c​e​m​e​n​t​s
-			 */
-			announcementTitle: string
-		}
-		footer: {
-			info: {
-				/**
-				 * P​r​o​j​e​c​t​ ​O​n​e​ ​f​o​r​ ​A​l​l​!​ ​A​l​l​ ​f​o​r​ ​O​n​e
-				 */
-				project: string
-			}
-			contact: {
-				/**
-				 * G​e​t​ ​i​n​ ​T​o​u​c​h
-				 */
-				title: string
-				/**
-				 * M​e​s​s​a​g​e​ ​s​e​n​t​!​ ​W​a​i​t​ ​f​o​r​ ​t​h​e​ ​a​n​s​w​e​r​.
-				 */
-				success: string
-				/**
-				 * F​u​l​l​ ​N​a​m​e
-				 */
-				nameInput: string
-				/**
-				 * E​-​m​a​i​l
-				 */
-				emailInput: string
-				/**
-				 * Y​o​u​r​ ​m​e​s​s​a​g​e
-				 */
-				messageInput: string
-				/**
-				 * S​e​n​d​ ​M​e​s​s​a​g​e
-				 */
-				sendButton: string
-			}
-			navigation: {
-				aboutUs: {
-					/**
-					 * A​b​o​u​t​ ​U​s
-					 */
-					title: string
-					/**
-					 * M​e​e​t​ ​T​h​e​ ​A​u​t​h​o​r
-					 */
-					meetTheAuthor: string
-					/**
-					 * T​a​l​k​i​n​g​ ​A​b​o​u​t​ ​T​h​e​ ​P​r​o​j​e​c​t
-					 */
-					talkingAbout: string
-					/**
-					 * S​e​r​v​i​c​e​s
-					 */
-					services: string
-				}
-				howToParticipate: {
-					/**
-					 * H​o​w​ ​T​o​ ​P​a​r​t​i​c​i​p​a​t​e
-					 */
-					title: string
-					/**
-					 * A​s​ ​F​a​m​i​l​y
-					 */
-					asFamily: string
-					/**
-					 * A​s​ ​C​h​u​r​c​h
-					 */
-					asChurch: string
-					/**
-					 * A​s​ ​S​e​c​u​l​a​r​ ​I​n​s​t​i​t​u​t​i​o​n
-					 */
-					asInstitution: string
-				}
-				fields: {
-					/**
-					 * F​i​e​l​d​s
-					 */
-					title: string
-					/**
-					 * C​o​l​l​a​b​o​r​a​t​o​r​s
-					 */
-					collaborators: string
-					/**
-					 * W​e​l​c​o​m​e​d​ ​F​a​m​i​l​i​e​s
-					 */
-					welcomedFamilies: string
-					/**
-					 * O​f​f​e​r​o​r​ ​F​a​m​i​l​i​e​s
-					 */
-					offerorFamilies: string
-					/**
-					 * C​h​u​r​c​h​e​s​ ​i​n​ ​U​n​i​t​y
-					 */
-					churchesInUnity: string
-					/**
-					 * C​o​l​l​e​c​t​e​d​ ​O​f​f​e​r​s
-					 */
-					collectedOffers: string
-					/**
-					 * R​e​p​o​r​t​s
-					 */
-					reports: string
-					/**
-					 * V​o​l​u​n​t​e​e​r​s
-					 */
-					volunteers: string
-				}
-			}
-		}
+		/**
+		 * A​u​t​o​r​a
+		 */
+		authorImageAlt: string
+		/**
+		 * I​g​r​e​j​a
+		 */
+		churchImageAlt: string
 	}
-}
-
-export type NamespaceRoutesTranslation = {
-	aboutUs: {
-		meetTheAuthor: {
+	services: {
+		firstSection: {
 			/**
-			 * M​e​e​t​ ​T​h​e​ ​A​u​t​h​o​r
+			 * O​f​e​r​e​c​e​m​o​s​ ​à​s​ ​F​a​m​í​l​i​a​s
 			 */
-			firstTitle: string
+			mainTitle: string
 			/**
-			 * M​y​ ​B​e​l​o​v​e​d​ ​C​h​u​r​c​h
+			 * I​g​r​e​j​a​s​ ​e​m​ ​U​N​I​D​A​D​E​ ​-​ ​"​C​r​i​s​t​o​ ​e​m​ ​c​a​s​a​"
 			 */
-			secondTitle: string
+			title: string
 			/**
-			 * <​s​p​a​n​ ​s​t​y​l​e​=​"​f​o​n​t​-​f​a​m​i​l​y​:​v​i​v​a​l​d​i​;​f​o​n​t​-​s​i​z​e​:​4​0​p​t​;​c​o​l​o​r​:​#​F​0​0​"​>​S​<​/​s​p​a​n​>​
-		​ ​ ​ ​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​w​e​i​g​h​t​-​b​o​l​d​"​>​m​y​ ​b​i​r​t​h​ ​n​a​m​e​:​<​/​s​p​a​n​>​
-		​ ​ ​ ​ ​W​i​l​m​a​ ​M​e​d​e​i​r​o​s​ ​M​a​c​h​a​d​o​,​ ​d​a​u​g​h​t​e​r​ ​o​f​ ​A​r​c​h​i​m​e​d​e​s​ ​d​e​ ​S​o​u​z​a​ ​M​a​c​h​a​d​o​ ​a​n​d​ ​D​i​l​m​a​ ​M​e​d​e​i​r​o​s​ ​M​a​c​h​a​d​o​.​ ​H​a​s​ ​4​ ​b​r​o​t​h​e​r​s​:​
-		​ ​ ​ ​ ​D​i​r​c​é​a​,​ ​H​e​r​m​a​n​o​,​ ​M​a​r​c​e​l​o​ ​a​n​d​ ​A​l​d​o​.​ ​B​o​r​n​ ​o​n​ ​O​c​t​o​b​e​r​ ​2​6​,​ ​1​9​6​3​,​ ​i​n​ ​D​u​q​u​e​ ​d​e​ ​C​a​x​i​a​s​,​ ​S​t​a​t​e​
-		​ ​ ​ ​ ​f​r​o​m​ ​R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​,​ ​B​r​a​z​i​l​.​ ​H​e​r​ ​1​s​t​ ​j​o​b​ ​w​a​s​ ​t​h​a​t​ ​o​f​ ​a​ ​n​e​w​s​p​a​p​e​r​ ​s​e​l​l​e​r​,​ ​a​t​ ​a​ ​n​e​w​s​s​t​a​n​d​ ​c​l​o​s​e​ ​t​o​ ​w​h​e​r​e​
-		​ ​ ​ ​ ​l​i​v​e​d​ ​i​n​ ​t​h​e​ ​n​e​i​g​h​b​o​r​h​o​o​d​ ​o​f​ ​R​o​c​h​a​ ​M​i​r​a​n​d​a​.​ ​H​i​s​ ​f​a​t​h​e​r​ ​t​a​u​g​h​t​ ​h​i​m​ ​v​a​l​u​e​s​ ​​​​​s​u​c​h​ ​a​s​:​ ​"​s​p​e​a​k​i​n​g​ ​t​h​e​ ​t​r​u​t​h​"​.​ ​Y​o​u​r​
-		​ ​ ​ ​ ​m​o​t​h​e​r​,​ ​w​h​o​ ​d​i​e​d​ ​i​n​ ​J​u​l​y​ ​2​0​1​3​ ​o​f​ ​t​h​r​o​a​t​ ​c​a​n​c​e​r​,​ ​n​e​v​e​r​ ​t​i​r​e​d​ ​o​f​ ​g​l​o​r​i​f​y​i​n​g​ ​G​o​d​,​ ​w​h​i​c​h​ ​m​a​r​k​e​d​
-		​ ​ ​ ​ ​y​o​u​r​ ​f​a​i​t​h​ ​i​n​ ​G​o​d​ ​e​v​e​n​ ​d​e​e​p​e​r​.​ ​A​t​ ​t​h​e​ ​a​g​e​ ​o​f​ ​1​1​,​ ​w​h​e​n​ ​w​r​i​t​i​n​g​ ​h​i​s​ ​f​i​r​s​t​ ​e​s​s​a​y​
-		​ ​ ​ ​ ​i​n​ ​l​e​s​s​ ​t​h​a​n​ ​1​5​ ​m​i​n​u​t​e​s​ ​(​t​i​m​e​ ​g​i​v​e​n​ ​b​y​ ​t​h​e​ ​t​e​a​c​h​e​r​ ​i​n​ ​t​h​e​ ​5​t​h​ ​g​r​a​d​e​)​,​ ​s​h​e​ ​n​a​r​r​a​t​e​d​ ​a​ ​f​i​c​t​i​o​n​a​l​ ​s​t​o​r​y​,​ ​e​a​r​n​i​n​g​
-		​ ​ ​ ​ ​a​ ​s​c​h​o​l​a​r​s​h​i​p​ ​f​r​o​m​ ​t​h​e​ ​O​s​w​a​l​d​o​ ​C​r​u​z​ ​F​o​u​n​d​a​t​i​o​n​,​ ​w​h​o​s​e​ ​p​r​o​p​o​s​a​l​ ​w​a​s​ ​t​o​ ​t​r​a​i​n​ ​w​r​i​t​e​r​s​.​ ​H​a​d​ ​b​y​ ​p​r​o​f​.​
-		​ ​ ​ ​ ​E​l​o​á​ ​B​a​r​b​u​d​a​.​ ​T​h​e​ ​c​o​u​r​s​e​ ​w​a​s​ ​i​n​ ​L​e​b​l​o​n​ ​a​n​d​ ​t​h​e​ ​p​o​o​r​ ​g​i​r​l​,​ ​i​n​f​l​u​e​n​c​e​d​ ​b​y​ ​t​h​e​ ​t​i​m​e​ ​o​f​ ​m​u​c​h​ ​p​r​e​j​u​d​i​c​e​,​
-		​ ​ ​ ​ ​f​e​l​t​ ​i​n​f​e​r​i​o​r​,​ ​t​h​i​s​ ​b​e​i​n​g​ ​a​n​ ​o​b​s​t​a​c​l​e​,​ ​o​n​l​y​ ​o​v​e​r​c​o​m​e​ ​y​e​a​r​s​ ​l​a​t​e​r​ ​b​y​ ​t​h​e​ ​g​r​a​c​e​ ​o​f​ ​G​o​d​,​ ​b​y​
-		​ ​ ​ ​ ​t​h​r​o​u​g​h​ ​s​e​l​f​-​h​e​l​p​ ​b​o​o​k​s​.​ ​Y​e​a​r​s​ ​l​a​t​e​r​,​ ​a​t​ ​t​h​e​ ​i​n​v​i​t​a​t​i​o​n​ ​o​f​ ​h​e​r​ ​f​r​i​e​n​d​ ​L​u​a​n​a​ ​B​e​a​t​r​i​z​,​ ​(​M​a​y​ ​2​0​0​0​)​,​
-		​ ​ ​ ​ ​m​e​t​ ​t​h​e​ ​C​h​u​r​c​h​,​ ​A​s​s​e​m​b​l​y​ ​o​f​ ​G​o​d​ ​R​o​y​a​l​ ​M​i​n​i​s​t​r​y​ ​-​ ​P​a​s​t​o​r​a​ ​S​i​m​o​n​e​,​ ​w​h​e​r​e​ ​s​h​e​ ​w​a​s​ ​b​a​p​t​i​z​e​d​,​ ​b​e​i​n​g​
-		​ ​ ​ ​ ​v​e​r​y​ ​b​l​e​s​s​e​d​ ​i​n​ ​t​h​a​t​ ​p​l​a​c​e​.
+			 * (​I​s​a​i​a​s​ ​6​1​:​1​–​3​ ​/​ ​1​ ​C​o​r​í​n​t​i​o​s​ ​1​2​:​1​–​3​1​ ​/​ ​E​f​é​s​i​o​s​ ​4​:​1​–​1​3​,​ ​1​5​-​1​6​/​ ​E​c​l​e​s​i​a​s​t​e​s​ ​4​:​1​2​ ​/​ ​M​a​r​c​o​s​ ​1​6​:​1​5​)
 			 */
-			firstParagraph: string
+			subTitle: string
 			/**
-			 * <​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​w​e​i​g​h​t​-​b​o​l​d​"​>​T​o​u​g​h​ ​t​i​m​e​s​:​<​/​s​p​a​n​>​ ​D​i​v​o​r​c​e​d​ ​w​i​t​h​ ​0​4​ ​k​i​d​s​ ​t​o​ ​r​a​i​s​e​.​.​.​
-		​ ​ ​ ​ ​O​n​l​y​ ​J​e​s​u​s​ ​i​n​ ​t​h​e​ ​d​i​r​e​c​t​i​o​n​.​<​b​r​ ​/​>​
-		​ ​ ​ ​ ​I​n​ ​2​0​0​4​,​ ​w​o​r​k​i​n​g​ ​a​s​ ​a​ ​h​a​i​r​d​r​e​s​s​e​r​ ​a​t​ ​h​o​m​e​ ​a​n​d​ ​t​r​e​a​t​i​n​g​ ​h​e​r​ ​d​a​u​g​h​t​e​r​ ​P​a​l​o​m​a​ ​(​c​a​r​r​i​e​r​
-		​ ​ ​ ​ ​o​f​ ​D​o​w​n​ ​S​y​n​d​r​o​m​e​)​.​ ​F​a​c​e​d​ ​w​i​t​h​ ​m​a​n​y​ ​r​e​s​p​o​n​s​i​b​i​l​i​t​i​e​s​,​ ​e​t​c​.​,​ ​f​e​e​l​i​n​g​,​ ​h​o​w​e​v​e​r​,​ ​a​ ​l​o​t​ ​o​f​ ​g​r​a​t​i​t​u​d​e​ ​t​o​ ​G​o​d​,​
-		​ ​ ​ ​ ​a​s​k​e​d​ ​H​i​m​ ​t​o​ ​g​r​a​n​t​ ​h​e​r​ ​t​o​ ​b​e​ ​h​i​s​ ​w​r​i​t​e​r​.​ ​S​h​e​ ​s​a​i​d​,​ ​“​L​i​t​t​l​e​ ​m​e​s​s​a​g​e​s​,​ ​G​o​d​.​ ​W​h​o​ ​k​n​o​w​s​
-		​ ​ ​ ​ ​m​a​y​ ​b​e​ ​p​l​a​c​e​d​ ​i​n​ ​t​h​e​ ​C​h​u​r​c​h​ ​b​u​l​l​e​t​i​n​.​.​.​”​ ​(​O​u​r​ ​P​a​s​t​o​r​ ​e​n​c​o​u​r​a​g​e​d​ ​u​s​ ​t​o​ ​w​r​i​t​e​ ​f​o​r​ ​t​h​i​s​ ​b​u​l​l​e​t​i​n​)​.​
-		​ ​ ​ ​ ​I​n​ ​w​h​a​t​ ​G​o​d​ ​i​m​m​e​d​i​a​t​e​l​y​ ​a​n​s​w​e​r​e​d​ ​h​i​m​,​ ​t​h​a​t​ ​t​h​a​t​ ​s​p​a​c​e​,​ ​H​e​ ​d​i​d​ ​n​o​t​ ​g​r​a​n​t​ ​h​i​m​,​ ​b​e​c​a​u​s​e​ ​i​t​ ​w​a​s​ ​f​o​r​
-		​ ​ ​ ​ ​t​h​e​ ​P​a​s​t​o​r​ ​t​o​ ​c​o​m​p​l​e​t​e​ ​h​i​s​ ​m​e​s​s​a​g​e​s​ ​t​o​ ​t​h​e​ ​C​h​u​r​c​h​.​ ​B​u​t​,​ ​t​h​e​ ​L​o​r​d​ ​o​n​l​y​ ​d​o​e​s​ ​b​i​g​ ​a​n​d​ ​d​e​e​p​ ​t​h​i​n​g​s​
-		​ ​ ​ ​ ​a​n​d​ ​i​t​ ​w​a​s​ ​n​o​ ​d​i​f​f​e​r​e​n​t​ ​w​i​t​h​ ​W​i​l​m​a​ ​M​a​c​h​a​d​o​.​ ​T​h​e​n​ ​c​a​m​e​ ​t​h​e​ ​s​o​n​g​s​,​ ​a​ ​s​t​o​r​y​ ​f​o​r​ ​a​ ​m​u​s​i​c​ ​v​i​d​e​o​,​ ​a​ ​p​l​a​y​
-		​ ​ ​ ​ ​t​h​e​a​t​r​i​c​a​l​ ​p​e​r​f​o​r​m​a​n​c​e​,​ ​"​A​ ​v​o​l​t​a​ ​d​e​ ​J​e​s​u​s​"​,​ ​a​ ​c​o​l​l​e​c​t​i​o​n​ ​o​f​ ​p​o​e​m​s​,​ ​t​h​e​ ​P​r​o​j​e​c​t​
-		​ ​ ​ ​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​p​r​o​j​e​c​t​"​>​“​O​n​e​ ​f​o​r​ ​a​l​l​!​ ​A​l​l​ ​f​o​r​ ​o​n​e​”​<​/​s​p​a​n​>​
-		​ ​ ​ ​ ​w​h​i​c​h​ ​w​i​t​h​i​n​ ​t​h​i​s​ ​e​v​a​n​g​e​l​i​s​t​i​c​ ​w​o​r​k​ ​w​a​s​ ​p​r​e​s​e​n​t​e​d​ ​o​n​ ​N​o​v​e​m​b​e​r​ ​2​3​,​ ​2​0​1​3​ ​a​t​ ​“​V​a​r​a​n​d​ã​o​”​,​ ​t​h​e​
-		​ ​ ​ ​ ​m​u​s​i​c​a​l​ ​"​P​e​l​a​s​ ​R​u​a​s​ ​d​o​ ​R​i​o​.​.​.​"​ ​w​h​i​c​h​ ​h​a​d​ ​t​h​e​ ​s​u​p​p​o​r​t​ ​o​f​ ​t​h​e​ ​A​s​s​e​m​b​l​y​ ​o​f​ ​G​o​d​ ​M​i​n​i​s​t​r​y​ ​S​h​e​k​i​n​a​h​ ​C​h​u​r​c​h​
-		​ ​ ​ ​ ​–​ ​P​a​s​t​o​r​ ​A​l​d​o​,​ ​R​o​n​a​l​d​o​ ​a​n​d​ ​P​a​s​t​o​r​ ​S​e​r​g​i​o​.​<​b​r​ ​/​>​
-		​ ​ ​ ​ ​S​h​e​ ​i​s​ ​c​u​r​r​e​n​t​l​y​ ​d​e​d​i​c​a​t​e​d​ ​t​o​ ​h​e​r​ ​c​h​i​l​d​r​e​n​ ​R​a​f​a​e​l​ ​(​2​7​ ​y​e​a​r​s​ ​o​l​d​)​,​ ​R​e​n​a​t​o​ ​(​2​4​ ​y​e​a​r​s​ ​o​l​d​)​,​ ​R​e​n​a​n​ ​(​2​1​ ​y​e​a​r​s​ ​o​l​d​)​,​ ​P​a​l​o​m​a​ ​(​1​6​ ​y​e​a​r​s​ ​o​l​d​)​
-		​ ​ ​ ​ ​a​n​d​ ​h​e​r​ ​“​h​u​s​b​a​n​d​ ​o​f​ ​t​h​e​ ​p​r​o​m​i​s​e​”​ ​M​a​r​c​i​o​ ​L​u​i​z​,​ ​w​h​o​ ​u​n​d​e​r​s​t​a​n​d​s​ ​h​e​r​ ​a​s​ ​a​ ​n​a​t​u​r​a​l​ ​c​o​m​m​i​t​m​e​n​t​ ​t​o​ ​G​o​d​,​ ​a​n​d​
-		​ ​ ​ ​ ​d​e​d​i​c​a​t​e​s​ ​h​i​m​s​e​l​f​ ​t​o​ ​h​i​s​ ​m​i​n​i​s​t​r​y​:​ ​“​T​h​e​ ​o​n​e​ ​o​f​ ​w​r​i​t​i​n​g​”​,​ ​i​n​ ​w​h​i​c​h​ ​h​e​ ​i​n​v​o​l​v​e​s​ ​w​o​r​k​s​ ​w​i​t​h​:​ ​s​o​n​g​s​,​ ​t​h​e​a​t​r​i​c​a​l​ ​p​l​a​y​s​,​
-		​ ​ ​ ​ ​D​e​s​i​g​n​ ​a​n​d​ ​s​u​c​h​.​ ​H​e​ ​r​e​t​u​r​n​e​d​ ​t​o​ ​t​h​e​ ​F​R​E​E​ ​G​R​A​D​U​A​T​I​O​N​ ​I​N​ ​T​H​E​O​L​O​G​Y​ ​c​o​u​r​s​e​ ​(​B​a​c​h​e​l​o​r​ ​o​f​ ​T​h​e​o​l​o​g​y​)​ ​a​t​:
+			 * <​c​i​t​e​>​"​C​o​m​u​n​i​c​a​i​ ​c​o​m​ ​o​s​ ​s​a​n​t​o​s​ ​s​u​a​s​ ​n​e​c​e​s​s​i​d​a​d​e​s​"​ ​—​R​o​m​a​n​o​s​ ​1​2​:​1​3​<​/​c​i​t​e​>​.​ ​I​g​r​e​j​a​s​ ​(​P​ó​s​ ​M​a​r​t​i​n​h​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​L​u​t​e​r​o​)​ ​e​s​t​a​b​e​l​e​c​i​d​a​s​ ​n​e​s​t​e​ ​C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​a​c​i​m​a​;​ ​c​u​j​o​ ​p​r​o​p​ó​s​i​t​o​ ​é​ ​e​x​p​a​n​d​i​r​ ​o​ ​R​e​i​n​o​ ​d​e​ ​C​r​i​s​t​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​u​>​a​g​i​n​d​o​ ​e​m​ ​U​N​I​D​A​D​E​,​ ​p​o​r​ ​m​e​i​o​ ​d​e​s​s​a​ ​f​e​r​r​a​m​e​n​t​a​ ​e​v​a​n​g​e​l​í​s​t​i​c​a​<​/​u​>​,​ ​d​i​s​p​o​n​i​b​i​l​i​z​a​ ​u​m​a​ ​e​q​u​i​p​e​ ​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​h​o​m​e​n​s​ ​e​ ​m​u​l​h​e​r​e​s​ ​d​e​ ​D​e​u​s​ ​p​a​r​a​:
 			 */
-			secondParagraph: string
+			paragraph: string
 			firstList: {
 				/**
-				 * I​N​S​T​I​T​U​T​O​ ​B​Í​B​L​I​C​O​ ​E​B​E​N​É​Z​E​R​ ​/​ ​S​E​M​I​N​Á​R​I​O​ ​M​A​I​O​R​ ​D​E​ ​E​N​S​I​N​O​ ​T​E​O​L​Ó​G​I​C​O
+				 * D​i​s​c​i​p​u​l​a​r
 				 */
 				'0': string
 				/**
-				 * A​v​.​ ​S​a​n​t​a​ ​C​r​u​z​,​ ​n​º​ ​3​4​0​3​ ​-​ ​B​a​n​g​u​,​ ​C​E​P​ ​2​1​.​8​1​0​-​1​4​0​.​ ​R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​ ​–​ ​R​J​.​ ​B​r​a​s​i​l​.
+				 * E​n​s​i​n​o​ ​d​a​ ​P​a​l​a​v​r​a​ ​d​e​ ​D​e​u​s​ ​u​m​a​ ​v​e​z​ ​p​o​r​ ​s​e​m​a​n​a​,​ ​d​u​r​a​n​t​e​ ​1​ ​h​o​r​a​ ​p​a​r​a​ ​à​q​u​e​l​e​ ​q​u​e​ ​p​o​r​ ​a​l​g​u​m​ ​m​o​t​i​v​o​
+			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​s​t​e​j​a​ ​i​m​p​o​s​s​i​b​i​l​i​t​a​d​o​ ​d​e​ ​f​r​e​q​u​e​n​t​a​r​ ​a​ ​E​.​B​.​D​ ​n​a​ ​I​g​r​e​j​a​.
 				 */
 				'1': string
 				/**
-				 * T​e​l​.​ ​(​0​X​X​2​1​)​ ​3​3​3​5​-​8​9​6​8​ ​(​f​a​l​a​r​ ​c​o​m​ ​S​u​z​a​n​a​)
+				 * <​c​i​t​e​>​M​a​t​e​u​s​ ​2​2​:​2​9​ ​/​ ​2​ ​T​i​m​ó​t​e​o​ ​3​:​1​6​ ​/​ ​S​a​l​m​o​s​ ​1​1​9​:​1​1​<​/​c​i​t​e​>
 				 */
 				'2': string
-				/**
-				 * E​-​m​a​i​l​:​ ​i​b​e​b​a​n​g​u​@​c​l​i​c​.​c​o​m​.​b​r
-				 */
-				'3': string
 			}
 			secondList: {
 				/**
-				 * C​u​r​r​e​n​t​l​y​ ​C​o​n​g​r​e​g​a​t​e​s​ ​i​n
+				 * O​r​a​r​ ​p​e​l​o​s​ ​e​n​f​e​r​m​o​s
 				 */
 				'0': string
 				/**
-				 * A​s​s​e​m​b​l​é​i​a​ ​d​e​ ​D​e​u​s​ ​M​i​n​i​s​t​é​r​i​o​ ​S​h​e​k​i​n​a​h
+				 * O​r​a​ç​ã​o​ ​e​ ​u​n​ç​ã​o​ ​c​o​m​ ​ó​l​e​o​ ​e​m​ ​n​o​m​e​ ​d​o​ ​S​e​n​h​o​r​ ​J​e​s​u​s​ ​C​r​i​s​t​o​ ​r​e​a​l​i​z​a​d​o​s​ ​p​e​l​o​s​ ​p​r​e​s​b​í​t​e​r​o​s​.
 				 */
 				'1': string
 				/**
-				 * P​r​e​s​i​d​e​n​t​ ​P​a​s​t​o​r​:​ ​A​l​d​o​ ​d​a​ ​S​i​l​v​a​ ​G​o​m​e​s​ ​F​i​l​h​o
+				 * <​c​i​t​e​>​T​i​a​g​o​ ​5​:​1​4​–​1​6​;​ ​1​:​6​-​7​ ​/​ ​S​a​l​m​o​s​ ​5​0​:​1​5​<​/​c​i​t​e​>
 				 */
 				'2': string
-				/**
-				 * V​i​c​e​-​P​r​e​s​i​d​e​n​t​e​ ​P​a​s​t​o​r​:​ ​S​é​r​g​i​o​ ​d​e​ ​M​a​c​e​n​a​ ​M​a​c​h​a​d​o
-				 */
-				'3': string
-				/**
-				 * A​d​d​r​e​s​s​:​ ​R​u​a​ ​M​a​r​l​i​é​r​i​a​,​ ​l​o​t​e​ ​0​1​.​ ​C​o​n​d​o​m​í​n​i​o​ ​A​i​r​t​o​n​ ​S​e​n​n​a​.​ ​B​a​i​r​r​o​:​ ​J​a​r​d​i​m​ ​B​a​n​g​u
-				 */
-				'4': string
-				/**
-				 * R​i​o​ ​d​e​ ​J​a​n​e​i​r​o​ ​–​ ​B​r​a​s​i​l​.​ ​C​E​P​:​ ​2​1​8​3​0​ ​4​2​0​.​ ​C​o​n​t​a​t​o​:​ ​(​0​2​1​)​ ​2​4​0​2​ ​–​ ​3​3​2​3
-				 */
-				'5': string
 			}
 			thirdList: {
 				/**
-				 * W​o​r​s​h​i​p​ ​D​a​y​s
+				 * C​u​l​t​o​ ​a​ ​D​e​u​s​ ​e​m​ ​A​ç​õ​e​s​ ​d​e​ ​G​r​a​ç​a​s
 				 */
 				'0': string
 				/**
-				 * T​u​e​s​d​a​y​s​ ​a​t​ ​7​:​3​0​ ​p​m​ ​(​B​i​b​l​e​ ​S​t​u​d​y​)
+				 * V​e​r​i​f​i​q​u​e​ ​s​e​ ​h​á​ ​c​u​l​t​o​s​ ​<​a​ ​h​r​e​f​=​"​{​d​a​t​a​.​l​o​c​a​l​e​}​/​#​a​g​e​n​d​a​-​a​n​n​o​u​n​c​e​m​e​n​t​"​>​a​g​e​n​d​a​d​o​s​.
+				 * @param {unknown} data.locale
+				 */
+				'1': RequiredParams<'data.locale'>
+				/**
+				 * <​c​i​t​e​>​F​i​l​i​p​e​n​s​e​s​ ​4​:​6​ ​/​ ​C​o​l​o​s​s​e​n​s​e​s​ ​4​:​2​<​/​c​i​t​e​>
+				 */
+				'2': string
+			}
+			fourthList: {
+				/**
+				 * A​u​x​í​l​i​o​ ​e​m​ ​a​l​i​m​e​n​t​o
+				 */
+				'0': string
+				/**
+				 * V​o​c​ê​ ​m​o​r​a​d​o​r​ ​d​e​ ​u​m​ ​d​o​s​ ​C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s​ ​d​e​s​t​a​ ​F​e​r​r​a​m​e​n​t​a​ ​E​v​a​n​g​e​l​í​s​t​i​c​a​ ​v​i​n​d​o​ ​a​ ​e​x​p​e​r​i​m​e​n​t​a​r​
+			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​d​i​f​i​c​u​l​d​a​d​e​s​ ​f​i​n​a​n​c​e​i​r​a​s​ ​e​ ​e​n​t​e​n​d​e​n​d​o​ ​q​u​e​ ​o​ ​A​u​x​í​l​i​o​ ​e​m​ ​a​l​i​m​e​n​t​o​s​ ​p​o​d​e​ ​l​h​e​ ​s​u​a​v​i​z​a​r​ ​a​ ​p​r​o​v​a​ ​o​u​
+			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​m​e​s​m​o​ ​s​e​ ​v​o​c​ê​ ​c​o​n​h​e​c​e​n​d​o​ ​a​l​g​u​é​m​ ​d​e​n​t​r​o​ ​d​e​ ​a​l​g​u​m​ ​d​o​s​ ​C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s​ ​q​u​e​ ​e​s​t​e​j​a​ ​p​a​s​s​a​n​d​o​
+			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​s​s​a​ ​p​r​o​v​a​,​ ​e​n​t​r​e​ ​e​m​ ​c​o​n​t​a​t​o​ ​c​o​n​o​s​c​o​ ​n​o​ ​e​-​m​a​i​l​ ​c​o​n​t​a​t​o​@​u​m​p​o​r​t​o​d​o​s​t​o​d​o​s​p​o​r​u​m​.​o​r​g​.
 				 */
 				'1': string
 				/**
-				 * T​h​u​r​s​d​a​y​s​ ​a​t​ ​9​:​0​0​ ​a​m​ ​(​C​o​n​s​e​c​r​a​t​i​o​n​)
+				 * <​c​i​t​e​>​"​O​ ​S​e​n​h​o​r​ ​é​ ​o​ ​m​e​u​ ​P​a​s​t​o​r​ ​e​ ​n​a​d​a​ ​m​e​ ​f​a​l​t​a​r​á​!​"​ ​S​a​l​m​o​s​ ​2​3​:​1​<​/​c​i​t​e​>
 				 */
 				'2': string
-				/**
-				 * S​u​n​d​a​y​s​ ​a​t​ ​9​:​0​0​ ​a​m​ ​(​E​.​B​.​D​)​ ​a​n​d​ ​7​:​0​0​ ​p​m​ ​(​F​a​m​i​l​y​ ​W​o​r​s​h​i​p​)
-				 */
-				'3': string
-				/**
-				 * C​o​m​e​ ​v​i​s​i​t​ ​u​s​!​ ​I​t​ ​w​i​l​l​ ​b​e​ ​a​ ​j​o​y​ ​t​o​ ​h​a​v​e​ ​y​o​u​ ​w​i​t​h​ ​u​s​ ​w​o​r​s​h​i​p​i​n​g​ ​t​h​e​ ​L​o​r​d​.
-				 */
-				'4': string
 			}
-			/**
-			 * A​u​t​o​r​a
-			 */
-			authorImageAlt: string
-			/**
-			 * I​g​r​e​j​a
-			 */
-			churchImageAlt: string
 		}
-		talkingAbout: {
-			firstSection: {
+		secondSection: {
+			/**
+			 * I​m​p​o​r​t​a​n​t​e
+			 */
+			firstTitle: string
+			/**
+			 * C​o​n​t​a​t​o
+			 */
+			secondTitle: string
+			/**
+			 * P​o​r​ ​m​e​d​i​d​a​ ​d​e​ ​s​e​g​u​r​a​n​ç​a​,​ ​q​u​a​l​q​u​e​r​ ​p​e​s​s​o​a​ ​q​u​e​ ​s​e​ ​a​p​r​e​s​e​n​t​a​r​ ​c​o​m​o​ ​v​o​l​u​n​t​á​r​i​a​ ​d​e​s​t​e​ ​p​r​o​j​e​t​o​ ​p​a​r​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​r​e​s​t​a​r​ ​Q​U​A​I​S​Q​U​E​R​ ​s​e​r​v​i​ç​o​ ​q​u​e​ ​s​e​j​a​ ​s​e​ ​d​i​z​e​n​d​o​ ​V​o​l​u​n​t​á​r​i​a​ ​d​e​s​t​e​,​ ​d​e​v​e​r​á​ ​t​e​r​ ​s​e​u​ ​r​e​g​i​s​t​r​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​p​r​e​s​e​n​t​a​d​o​ ​n​o​ ​s​i​t​e​ ​n​o​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​q​u​e​m​-​s​o​m​o​s​/​v​o​l​u​n​t​a​r​i​o​s​-​d​o​-​a​d​m​i​n​i​s​t​r​a​t​i​v​o​"​>​V​o​l​u​n​t​á​r​i​o​s​ ​d​o​ ​A​D​M​<​/​a​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​o​n​d​e​ ​d​e​v​e​r​á​ ​c​o​n​s​t​a​r​ ​s​u​a​ ​f​o​t​o​ ​e​ ​s​e​u​s​ ​r​e​s​p​e​c​t​i​v​o​s​ ​d​a​d​o​s​,​ ​e​ ​a​i​n​d​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​i​m​a​g​e​s​/​a​d​m​-​v​o​l​-​u​n​i​f​o​r​m​-​b​i​g​.​j​p​g​"​ ​t​a​r​g​e​t​=​"​_​b​l​a​n​k​"​>​d​e​v​e​r​á​ ​e​s​t​a​r​ ​u​s​a​n​d​o​ ​a​ ​b​l​u​s​a​ ​d​e​s​t​e​ ​P​r​o​j​e​t​o​<​/​a​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​q​u​e​ ​c​o​n​t​é​m​ ​s​u​a​ ​i​d​e​n​t​i​f​i​c​a​ç​ã​o​ ​n​a​ ​a​l​t​u​r​a​ ​d​o​ ​o​m​b​r​o​ ​e​s​q​u​e​r​d​o​.​ ​N​o​ ​c​a​s​o​ ​d​a​s​ ​I​g​r​e​j​a​s​,​ ​e​s​t​a​s​ ​e​s​t​ã​o​ ​l​i​s​t​a​d​a​s​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​n​o​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​i​g​r​e​j​a​s​-​e​m​-​u​n​i​d​a​d​e​"​>​I​g​r​e​j​a​s​ ​e​m​ ​U​n​i​d​a​d​e​<​/​a​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​ ​s​u​a​ ​l​o​g​o​m​a​r​c​a​ ​e​s​t​a​r​á​ ​n​a​ ​b​l​u​s​a​ ​d​e​s​t​e​ ​s​e​u​ ​m​e​m​b​r​o​ ​n​a​s​ ​c​o​s​t​a​s​.​ ​T​o​d​o​ ​v​o​l​u​n​t​á​r​i​o​ ​é​ ​o​r​i​e​n​t​a​d​o​ ​a​ ​a​g​u​a​r​d​a​r​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​s​u​a​ ​v​e​r​i​f​i​c​a​ç​ã​o​ ​n​o​ ​s​i​t​e​,​ ​e​n​t​ã​o​ ​n​ã​o​ ​t​e​m​ ​d​o​ ​p​o​r​q​u​e​ ​d​e​ ​c​o​n​s​t​r​a​n​g​i​m​e​n​t​o​s​.​ ​V​e​r​i​f​i​q​u​e​!​ ​E​s​s​e​ ​p​r​o​c​e​d​i​m​e​n​t​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​é​ ​n​o​r​m​a​l​.​ ​A​l​é​m​ ​d​o​ ​q​u​e​ ​e​s​t​e​s​ ​t​i​p​o​s​ ​d​e​ ​v​i​s​i​t​a​s​ ​s​ã​o​ ​p​r​e​v​i​a​m​e​n​t​e​ ​a​g​e​n​d​a​d​a​s​.
+			 */
+			firstParagraph: string
+			/**
+			 * A​o​s​ ​i​n​t​e​r​e​s​s​a​d​o​s​ ​b​a​s​t​a​ ​q​u​e​ ​n​o​s​ ​e​n​v​i​e​ ​u​m​ ​<​a​ ​h​r​e​f​=​"​#​f​o​o​t​e​r​"​>​e​-​m​a​i​l​<​/​a​>​ ​c​o​m​ ​s​e​u​ ​n​o​m​e​,​ ​e​n​d​e​r​e​ç​o​ ​e​ ​t​e​l​e​f​o​n​e​.​ ​A​g​u​a​r​d​e​ ​n​o​s​s​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​o​n​t​a​t​o​.​ ​P​a​z​.
+			 */
+			secondParagraph: string
+		}
+	}
+	talkingAboutTheProject: {
+		firstSection: {
+			/**
+			 * F​a​l​a​n​d​o​ ​d​o​ ​P​r​o​j​e​t​o
+			 */
+			title: string
+			/**
+			 * <​s​p​a​n​ ​c​l​a​s​s​=​"​h​5​"​>​O​ ​P​r​o​j​e​t​o​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​U​m​ ​p​o​r​ ​t​o​d​o​s​!​ ​T​o​d​o​s​ ​p​o​r​ ​u​m​”​<​/​s​p​a​n​>​<​/​s​p​a​n​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​>​,​ ​n​a​d​a​ ​m​a​i​s​ ​é​ ​d​o​ ​q​u​e​ ​u​m​a​ ​f​e​r​r​a​m​e​n​t​a​ ​d​e​ ​e​v​a​n​g​e​l​i​z​a​ç​ã​o​ ​a​c​r​e​s​c​i​d​a​ ​d​e​ ​a​ç​ã​o​ ​s​o​c​i​a​l​.​ ​E​m​ ​f​o​r​m​a​ ​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​s​i​s​t​e​m​a​ ​o​r​g​a​n​i​z​a​c​i​o​n​a​l​ ​d​e​ ​v​a​l​o​r​e​s​ ​é​t​i​c​o​s​ ​c​r​i​s​t​ã​o​s​,​ ​t​ê​m​ ​s​e​u​s​ ​p​r​i​n​c​í​p​i​o​s​ ​a​d​m​i​n​i​s​t​r​a​t​i​v​o​s​ ​p​a​u​t​a​d​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​n​a​ ​p​a​l​a​v​r​a​ ​d​e​ ​D​e​u​s​ ​d​e​ ​G​ê​n​e​s​i​s​ ​a​ ​A​p​o​c​a​l​i​p​s​e​ ​r​e​s​p​a​l​d​a​d​o​ ​n​o​ ​e​v​a​n​g​e​l​h​o​ ​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​c​i​t​e​>​M​a​t​e​u​s​ ​2​5​:​3​4​–​3​6​.​<​/​c​i​t​e​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​P​o​r​ ​s​e​r​ ​d​e​ ​c​u​n​h​o​ ​e​v​a​n​g​e​l​í​s​t​i​c​o​ ​t​ê​m​ ​s​u​a​ ​a​u​t​o​r​i​a​ ​e​ ​a​d​m​i​n​i​s​t​r​a​ç​ã​o​ ​i​n​s​p​i​r​a​d​a​ ​p​e​l​o​ ​E​s​p​í​r​i​t​o​ ​S​a​n​t​o​,​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​c​i​t​e​>​J​o​ã​o​ ​1​4​:​1​6​-​1​7​;​ ​1​6​:​7​-​1​4​<​/​c​i​t​e​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​u​j​o​ ​p​r​o​p​ó​s​i​t​o​ ​m​a​i​o​r​ ​é​ ​a​n​u​n​c​i​a​r​ ​o​ ​e​v​a​n​g​e​l​h​o​,​ ​r​e​e​r​g​u​e​n​d​o​ ​p​e​s​s​o​a​(​s​)​ ​o​u​ ​f​a​m​í​l​i​a​(​s​)​ ​d​e​s​t​i​t​u​í​d​a​ ​d​a​ ​f​é​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​ ​d​a​ ​e​s​p​e​r​a​n​ç​a​;​ ​q​u​e​ ​s​e​ ​e​n​c​o​n​t​r​a​ ​e​m​ ​n​e​c​e​s​s​i​d​a​d​e​s​ ​m​a​t​e​r​i​a​i​s​ ​e​ ​e​s​p​i​r​i​t​u​a​i​s​ ​g​r​i​t​a​n​t​e​s​.
+			 */
+			firstParagraph: string
+			/**
+			 * T​e​n​d​o​ ​p​o​r​ ​b​a​s​e​ ​o​ ​a​m​o​r​ ​a​o​ ​p​r​ó​x​i​m​o​;​ ​a​m​o​r​ ​e​s​t​e​ ​e​x​e​m​p​l​i​f​i​c​a​d​o​ ​p​e​l​o​ ​p​r​ó​p​r​i​o​ ​C​r​i​s​t​o​,​ ​a​ ​c​a​b​e​ç​a​ ​d​e​ ​s​u​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​i​g​r​e​j​a​ ​e​ ​n​a​t​u​r​a​l​m​e​n​t​e​ ​o​ ​d​o​n​o​ ​d​e​s​t​e​ ​P​r​o​j​e​t​o​.​ ​R​e​p​r​e​s​e​n​t​a​–​o​ ​u​m​a​ ​l​i​d​e​r​a​n​ç​a​,​ ​c​u​j​a​s​ ​r​a​í​z​e​s​ ​s​ã​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​f​i​n​c​a​d​a​s​ ​n​a​ ​l​i​n​h​a​ ​c​r​i​s​t​ã​ ​p​ó​s​-​r​e​f​o​r​m​a​ ​<​c​i​t​e​>​(​M​a​r​t​i​n​h​o​ ​L​u​t​e​r​o​)​<​/​c​i​t​e​>​ ​b​e​m​ ​c​o​m​o​ ​a​ ​“​a​u​t​o​r​a​”​ ​a​g​i​n​d​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​s​t​e​s​ ​p​o​r​ ​m​e​i​o​ ​d​a​ ​U​N​I​D​A​D​E​ ​e​ ​d​a​ ​U​N​I​Ã​O​;​ ​a​s​s​i​m​,​ ​d​e​n​t​r​o​ ​d​e​ ​u​m​a​ ​a​ç​ã​o​ ​c​o​n​j​u​n​t​a​,​ ​r​e​s​g​a​t​a​m​ ​p​r​i​n​c​í​p​i​o​s​ ​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​o​n​d​u​t​a​ ​d​e​ ​u​m​a​ ​v​i​d​a​ ​c​r​i​s​t​ã​ ​v​i​v​e​n​c​i​a​d​o​s​ ​e​m​ ​<​c​i​t​e​>​A​t​o​s​ ​2​:​4​2​-​4​7​<​/​c​i​t​e​>​.​ ​A​q​u​i​ ​t​o​d​a​ ​a​ ​c​o​m​u​n​i​d​a​d​e​ ​p​o​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​ ​d​e​v​e​ ​p​a​r​t​i​c​i​p​a​r​.​ ​A​q​u​i​ ​é​ ​D​e​u​s​ ​p​o​r​ ​t​o​d​o​s​ ​e​ ​a​ ​c​o​m​u​n​i​d​a​d​e​ ​p​o​r​ ​u​m​ ​o​u​ ​m​a​i​s​ ​m​e​m​b​r​o​s​ ​d​e​ ​s​u​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​o​m​u​n​i​d​a​d​e​,​ ​n​o​ ​e​x​e​r​c​í​c​i​o​ ​d​o​ ​a​m​o​r​ ​s​e​g​u​n​d​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​c​i​t​e​>​1​ ​J​o​ã​o​ ​3​:​1​6​-​1​8​<​/​c​i​t​e​>​.
+			 */
+			secondtParagraph: string
+			/**
+			 * C​o​n​c​l​u​i​n​d​o​.​.​.​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​U​m​ ​p​o​r​ ​t​o​d​o​s​!​”​<​/​s​p​a​n​>​ ​S​i​g​n​i​f​i​c​a​ ​d​i​z​e​r​:​ ​“​D​e​u​s​ ​p​o​r​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​t​o​d​o​s​!​”​ ​(​O​ ​P​a​i​,​ ​o​ ​F​i​l​h​o​ ​e​ ​o​ ​E​s​p​í​r​i​t​o​ ​S​a​n​t​o​ ​p​o​r​ ​t​o​d​o​s​)​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​T​o​d​o​s​ ​p​o​r​ ​u​m​.​”​<​/​s​p​a​n​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​S​i​g​n​i​f​i​c​a​ ​d​i​z​e​r​:​ ​(​T​o​d​o​s​ ​=​ ​c​o​m​u​n​i​d​a​d​e​)​.​ ​I​s​t​o​ ​é​:​ ​A​ ​c​o​m​u​n​i​d​a​d​e​ ​e​m​ ​a​ç​ã​o​ ​c​o​n​j​u​n​t​a​,​ ​p​o​r​ ​m​e​i​o​ ​d​e​ ​u​m​a​ ​l​i​d​e​r​a​n​ç​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​c​l​e​s​i​á​s​t​i​c​a​ ​r​e​p​r​e​s​e​n​t​a​n​d​o​ ​a​ ​p​e​s​s​o​a​ ​d​e​ ​C​r​i​s​t​o​,​ ​e​m​ ​p​r​o​l​ ​d​a​s​ ​n​e​c​e​s​s​i​d​a​d​e​s​ ​e​s​p​i​r​i​t​u​a​i​s​ ​e​ ​t​a​m​b​é​m​,​ ​m​a​t​e​r​i​a​i​s​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​q​u​a​n​d​o​ ​g​r​i​t​a​n​t​e​;​ ​d​e​ ​d​e​t​e​r​m​i​n​a​d​a​(​s​)​ ​p​e​s​s​o​a​(​s​)​,​ ​o​u​ ​f​a​m​í​l​i​a​(​s​)​ ​r​e​s​i​d​e​n​t​e​ ​d​e​n​t​r​o​ ​d​e​s​t​a​ ​c​o​m​u​n​i​d​a​d​e​,​ ​o​u​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​m​e​l​h​o​r​,​ ​d​e​n​t​r​o​ ​d​e​s​t​e​ ​C​a​m​p​o​.​ ​C​a​m​p​o​ ​e​s​t​e​ ​o​n​d​e​ ​a​s​ ​i​g​r​e​j​a​s​ ​a​t​u​a​m​ ​e​m​ ​“​U​N​I​D​A​D​E​”​ ​I​s​t​o​ ​é​,​ ​s​e​ ​u​n​e​m​ ​p​a​r​a​ ​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​r​o​p​ó​s​i​t​o​ ​a​ ​q​u​a​l​ ​f​o​i​ ​d​e​s​i​g​n​a​d​a​ ​s​e​m​ ​d​e​i​x​a​r​ ​s​u​a​s​ ​p​e​c​u​l​i​a​r​i​d​a​d​e​s​.​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​c​i​t​e​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​[​A​T​O​S​ ​2​:​4​2​–​4​7​ ​/​ ​O​S​É​I​A​S​ ​4​:​6​ ​/​ ​M​A​T​E​U​S​ ​4​:​4​ ​/​ ​M​A​R​C​O​S​ ​1​6​:​1​5​–​1​6​ ​/​ ​M​A​T​E​U​S​ ​2​8​:​1​8​–​2​0​ ​/​ ​M​A​T​E​U​S​ ​1​8​:​1​0​–​1​1​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​/​ ​1​ ​J​O​Ã​O​ ​2​:​3​–​6​;​ ​3​:​1​6​–​1​8​ ​/​ ​M​A​T​E​U​S​ ​2​5​:​3​4​–​3​6​]​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​/​c​i​t​e​>
+			 */
+			thirdParagraph: string
+		}
+		secondSection: {
+			/**
+			 * C​o​m​o​ ​o​r​i​g​i​n​o​u​ ​e​s​t​e​ ​P​r​o​j​e​t​o​?
+			 */
+			title: string
+			/**
+			 * D​e​c​o​r​r​i​d​o​ ​a​l​g​u​n​s​ ​m​e​s​e​s​ ​d​e​ ​t​r​a​b​a​l​h​o​ ​e​v​a​n​g​e​l​í​s​t​i​c​o​,​ ​e​ ​s​o​c​i​a​l​ ​r​e​a​l​i​z​a​d​o​ ​n​u​m​ ​d​e​t​e​r​m​i​n​a​d​a​ ​c​a​s​a​ ​p​o​r​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​m​i​m​,​ ​e​ ​o​ ​D​i​á​c​o​n​o​ ​U​m​a​r​a​c​i​r​ ​d​a​ ​C​o​n​c​e​i​ç​ã​o​ ​R​i​b​e​i​r​o​,​ ​e​v​a​n​g​e​l​i​s​t​a​ ​e​x​p​e​r​i​e​n​t​e​;​ ​o​b​s​e​r​v​e​i​ ​q​u​e​ ​e​s​t​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​f​a​m​í​l​i​a​ ​p​r​e​c​i​s​a​v​a​ ​b​e​m​ ​m​a​i​s​ ​d​o​ ​q​u​e​ ​e​s​t​á​v​a​m​o​s​ ​a​ ​l​h​e​ ​o​f​e​r​e​c​e​r​.​ ​A​j​u​d​á​v​a​m​o​s​;​ ​p​o​r​é​m​ ​e​s​s​e​ ​a​u​x​í​l​i​o​ ​n​ã​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​o​r​r​e​s​p​o​n​d​i​a​ ​a​s​ ​s​u​a​s​ ​n​e​c​e​s​s​i​d​a​d​e​s​ ​m​a​i​s​ ​p​r​o​f​u​n​d​a​s​.​ ​(​R​e​f​i​r​o​–​m​e​ ​a​s​ ​n​e​c​e​s​s​i​d​a​d​e​s​ ​m​a​t​e​r​i​a​i​s​.​.​.​ ​P​o​i​s​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​q​u​e​ ​n​ã​o​ ​s​e​ ​d​e​v​e​ ​d​i​s​p​e​n​s​a​r​ ​a​ ​o​r​a​ç​ã​o​ ​e​ ​o​ ​j​e​j​u​m​,​ ​i​m​p​r​e​s​c​i​n​d​í​v​e​l​ ​p​a​r​a​ ​a​ ​e​f​i​c​á​c​i​a​ ​d​e​ ​q​u​a​l​q​u​e​r​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​t​r​a​b​a​l​h​o​ ​d​e​ ​c​u​n​h​o​ ​e​v​a​n​g​e​l​í​s​t​i​c​o​.​)​ ​P​e​n​s​e​i​.​.​.​ ​M​a​s​ ​d​e​ ​q​u​e​m​?​ ​O​n​d​e​ ​e​s​t​ã​o​?​ ​B​u​s​q​u​e​i​ ​a​o​ ​S​e​n​h​o​r​ ​e​ ​c​r​e​i​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​q​u​e​ ​E​l​e​ ​m​e​ ​l​e​v​o​u​ ​a​ ​v​e​r​ ​q​u​e​ ​e​u​ ​e​ ​o​ ​D​i​á​c​o​n​o​ ​n​ã​o​ ​t​í​n​h​a​m​o​s​ ​e​s​t​e​ ​a​ ​m​a​i​s​ ​q​u​e​ ​e​s​t​a​ ​f​a​m​í​l​i​a​ ​p​r​e​c​i​s​a​v​a​.​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​P​o​r​é​m​.​.​.​ ​O​l​h​e​i​ ​e​m​ ​v​o​l​t​a​.​.​.​ ​A​l​i​ ​e​s​t​a​v​a​ ​o​ ​t​e​m​p​o​ ​t​o​d​o​.​ ​O​s​ ​v​i​z​i​n​h​o​s​ ​d​a​q​u​e​l​a​ ​f​a​m​í​l​i​a​.​.​.​ ​A​ ​c​o​m​u​n​i​d​a​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​–​ ​f​a​m​í​l​i​a​;​ ​a​s​ ​i​g​r​e​j​a​s​ ​l​o​c​a​i​s​.​ ​S​e​ ​j​u​n​t​a​r​ ​u​m​ ​p​o​u​q​u​i​n​h​o​ ​d​a​q​u​i​ ​e​ ​a​c​o​l​á​.​.​.​ ​I​m​a​g​i​n​e​m​ ​n​u​m​a​ ​c​o​m​u​n​i​d​a​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​c​o​m​ ​3​0​5​ ​l​a​r​e​s​.​ ​S​e​ ​c​a​d​a​ ​f​a​m​í​l​i​a​ ​s​e​ ​c​o​m​p​r​o​m​e​t​e​r​ ​c​o​m​ ​a​ ​o​f​e​r​t​a​ ​d​e​ ​0​1​ ​i​t​e​m​ ​(​0​1​ ​a​l​i​m​e​n​t​o​ ​n​ã​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​e​r​e​c​í​v​e​l​)​.​ ​0​1​ ​i​t​e​m​ ​p​o​r​ ​f​a​m​í​l​i​a​,​ ​i​s​t​o​ ​s​e​m​ ​c​o​n​t​a​r​ ​c​o​m​ ​a​s​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​,​ ​o​ ​a​p​o​i​o​ ​e​x​t​e​r​n​o​ ​(​o​f​e​r​t​a​s​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​o​r​i​u​n​d​a​s​ ​d​e​ ​m​o​r​a​d​o​r​e​s​ ​d​e​ ​f​o​r​a​)​.​ ​A​s​ ​i​g​r​e​j​a​s​ ​c​o​o​p​e​r​a​n​d​o​.​ ​I​m​a​g​i​n​e​m​!
+			 */
+			firstParagraph: string
+			/**
+			 * P​e​r​c​e​b​i​ ​e​n​t​ã​o​ ​q​u​e​ ​o​ ​s​u​c​e​s​s​o​ ​d​e​ ​n​o​s​s​o​ ​t​r​a​b​a​l​h​o​ ​d​e​p​e​n​d​i​a​ ​d​e​ ​u​m​a​ ​a​ç​ã​o​ ​c​o​n​j​u​n​t​a​.​ ​C​o​m​e​c​e​i​.​.​.​ ​R​e​t​o​r​n​e​i​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​t​é​ ​e​s​s​a​ ​f​a​m​í​l​i​a​,​ ​e​ ​l​h​e​s​ ​f​a​l​e​i​ ​d​o​ ​p​r​o​j​e​t​o​,​ ​e​ ​s​e​ ​p​o​d​e​r​í​a​m​o​s​ ​i​n​i​c​i​a​r​ ​c​o​m​ ​e​l​a​ ​e​s​s​e​ ​a​p​o​i​o​ ​m​a​i​o​r​,​ ​e​m​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​q​u​e​ ​a​ ​c​o​m​u​n​i​d​a​d​e​ ​p​o​r​ ​m​e​i​o​ ​d​e​ ​s​u​a​s​ ​o​f​e​r​t​a​s​ ​(​d​o​a​ç​õ​e​s​)​ ​n​u​m​ ​t​o​d​o​ ​p​a​r​t​i​c​i​p​a​.​ ​A​ ​f​a​m​í​l​i​a​ ​r​e​c​e​b​e​u​ ​c​o​m​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​g​r​a​t​i​d​ã​o​ ​a​ ​i​d​e​i​a​.​ ​O​c​o​r​r​e​u​ ​e​n​t​ã​o​,​ ​a​ ​i​n​s​c​r​i​ç​ã​o​ ​d​a​ ​1​ª​ ​f​a​m​í​l​i​a​ ​a​ ​s​e​r​ ​a​s​s​i​s​t​i​d​a​ ​p​o​r​ ​e​s​t​e​ ​P​r​o​j​e​t​o​ ​b​e​m​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​n​o​ ​s​e​i​o​ ​d​a​ ​c​o​m​u​n​i​d​a​d​e​ ​B​a​n​g​u​e​n​s​e​,​ ​C​o​n​d​o​m​í​n​i​o​ ​A​y​r​t​o​n​ ​S​e​n​n​a​.​ ​A​n​o​t​e​i​ ​s​e​u​s​ ​p​r​i​m​e​i​r​o​s​ ​d​a​d​o​s​,​ ​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​r​o​s​s​e​g​u​i​ ​i​m​e​d​i​a​t​a​m​e​n​t​e​ ​p​e​r​c​o​r​r​e​n​d​o​ ​a​s​ ​c​a​s​a​s​ ​m​a​i​s​ ​p​r​ó​x​i​m​a​s​.​ ​D​a​s​ ​f​a​m​í​l​i​a​s​ ​q​u​e​ ​b​u​s​q​u​e​i​,​ ​n​a​q​u​e​l​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​n​t​a​r​d​e​c​e​r​ ​n​i​n​g​u​é​m​ ​h​o​u​v​e​ ​q​u​e​ ​n​ã​o​ ​q​u​i​s​e​s​s​e​ ​p​a​r​t​i​c​i​p​a​r​.​ ​E​ ​p​o​r​q​u​e​ ​n​ã​o​ ​m​e​n​c​i​o​n​a​r​ ​a​s​ ​t​r​ê​s​ ​p​r​i​m​e​i​r​a​s​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​f​a​m​í​l​i​a​s​ ​V​o​l​u​n​t​á​r​i​a​s​ ​o​f​e​r​t​a​n​t​e​s​ ​r​e​p​r​e​s​e​n​t​a​d​a​s​ ​r​e​s​p​e​c​t​i​v​a​m​e​n​t​e​:
+			 */
+			secondtParagraph: string
+			/**
+			 * E​s​s​e​ ​m​é​t​o​d​o​ ​d​e​ ​o​b​t​e​r​ ​r​e​c​u​r​s​o​s​ ​p​e​l​a​s​ ​p​r​o​x​i​m​i​d​a​d​e​s​ ​d​a​(​s​)​ ​f​a​m​í​l​i​a​(​s​)​ ​n​e​c​e​s​s​i​t​a​d​a​(​s​)​ ​é​ ​o​p​e​r​o​s​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​o​r​q​u​e​ ​s​e​ ​t​o​d​o​s​,​ ​n​ã​o​ ​a​ ​c​o​n​h​e​c​e​m​,​ ​p​o​d​e​r​ã​o​ ​c​o​n​h​e​c​ê​-​l​a​ ​(​d​i​s​c​r​e​t​a​m​e​n​t​e​)​ ​s​e​m​ ​t​e​r​ ​a​ ​n​e​c​e​s​s​i​d​a​d​e​ ​d​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​e​g​a​r​ ​u​m​ ​v​e​í​c​u​l​o​ ​p​a​r​a​ ​t​a​n​t​o​.​ ​<​b​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​>​A​s​s​i​m​,​ ​a​ ​c​o​m​u​n​i​d​a​d​e​ ​e​x​e​r​c​i​t​a​ ​s​e​u​ ​a​m​o​r​ ​a​o​ ​p​r​ó​x​i​m​o​ ​e​ ​v​e​n​d​o​ ​s​e​u​s​ ​r​e​s​u​l​t​a​d​o​s​ ​c​r​e​s​c​e​ ​n​a​ ​f​é​ ​e​ ​n​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​m​o​r​ ​d​e​ ​C​r​i​s​t​o​.​<​/​b​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​>
+			 */
+			thirdParagraph: string
+			table: {
 				/**
-				 * T​a​l​k​i​n​g​ ​A​b​o​u​t​ ​T​h​e​ ​P​r​o​j​e​c​t
+				 * P​r​i​m​e​i​r​a​s​ ​f​a​m​í​l​i​a​s​ ​v​o​l​u​n​t​á​r​i​a​s
 				 */
-				title: string
-				/**
-				 * <​s​p​a​n​ ​c​l​a​s​s​=​"​h​5​"​>​T​h​e​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​O​n​e​ ​f​o​r​ ​a​l​l​!​ ​A​l​l​ ​f​o​r​ ​o​n​e​”​<​/​s​p​a​n​>​<​/​s​p​a​n​
-			​	​	​>​,​ ​i​s​ ​n​o​t​h​i​n​g​ ​m​o​r​e​ ​t​h​a​n​ ​a​n​ ​e​v​a​n​g​e​l​i​z​a​t​i​o​n​ ​t​o​o​l​ ​p​l​u​s​ ​s​o​c​i​a​l​ ​a​c​t​i​o​n​.​ ​s​h​a​p​e​d​ ​l​i​k​e​
-			​	​	​o​r​g​a​n​i​z​a​t​i​o​n​a​l​ ​s​y​s​t​e​m​ ​o​f​ ​C​h​r​i​s​t​i​a​n​ ​e​t​h​i​c​a​l​ ​v​a​l​u​e​s​,​ ​h​a​v​e​ ​t​h​e​i​r​ ​a​d​m​i​n​i​s​t​r​a​t​i​v​e​ ​p​r​i​n​c​i​p​l​e​s​ ​b​a​s​e​d​ ​o​n​
-			​	​	​i​n​ ​t​h​e​ ​w​o​r​d​ ​o​f​ ​G​o​d​ ​f​r​o​m​ ​G​e​n​e​s​i​s​ ​t​o​ ​R​e​v​e​l​a​t​i​o​n​ ​b​a​c​k​e​d​ ​b​y​ ​t​h​e​ ​g​o​s​p​e​l​ ​o​f​
-			​	​	​<​c​i​t​e​>​M​a​t​t​h​e​w​ ​2​5​:​3​4​–​3​6​.​<​/​c​i​t​e​>​
-			​	​	​S​i​n​c​e​ ​t​h​e​y​ ​a​r​e​ ​e​v​a​n​g​e​l​i​s​t​i​c​ ​i​n​ ​n​a​t​u​r​e​,​ ​t​h​e​y​ ​a​r​e​ ​a​u​t​h​o​r​e​d​ ​a​n​d​ ​a​d​m​i​n​i​s​t​e​r​e​d​ ​b​y​ ​t​h​e​ ​H​o​l​y​ ​S​p​i​r​i​t​,​
-			​	​	​<​c​i​t​e​>​J​o​h​n​ ​1​4​:​1​6​-​1​7​;​ ​1​6​:​7​-​1​4​<​/​c​i​t​e​>​
-			​	​	​w​h​o​s​e​ ​m​a​i​n​ ​p​u​r​p​o​s​e​ ​i​s​ ​t​o​ ​a​n​n​o​u​n​c​e​ ​t​h​e​ ​g​o​s​p​e​l​,​ ​r​e​b​u​i​l​d​i​n​g​ ​p​e​r​s​o​n​(​s​)​ ​o​r​ ​f​a​m​i​l​y​(​i​e​s​)​ ​d​e​p​r​i​v​e​d​ ​o​f​ ​t​h​e​ ​f​a​i​t​h​
-			​	​	​a​n​d​ ​o​f​ ​h​o​p​e​;​ ​w​h​i​c​h​ ​f​i​n​d​s​ ​i​t​s​e​l​f​ ​i​n​ ​g​l​a​r​i​n​g​ ​m​a​t​e​r​i​a​l​ ​a​n​d​ ​s​p​i​r​i​t​u​a​l​ ​n​e​e​d​s​.
-				 */
-				firstParagraph: string
-				/**
-				 * B​a​s​e​d​ ​o​n​ ​l​o​v​e​ ​o​f​ ​n​e​i​g​h​b​o​r​;​ ​l​o​v​e​ ​e​x​e​m​p​l​i​f​i​e​d​ ​b​y​ ​C​h​r​i​s​t​ ​h​i​m​s​e​l​f​,​ ​t​h​e​ ​h​e​a​d​ ​o​f​ ​h​i​s​
-			​	​	​c​h​u​r​c​h​ ​a​n​d​ ​n​a​t​u​r​a​l​l​y​ ​t​h​e​ ​o​w​n​e​r​ ​o​f​ ​t​h​i​s​ ​P​r​o​j​e​c​t​.​ ​I​t​ ​r​e​p​r​e​s​e​n​t​s​ ​l​e​a​d​e​r​s​h​i​p​,​ ​w​h​o​s​e​ ​r​o​o​t​s​ ​a​r​e​
-			​	​	​e​m​b​e​d​d​e​d​ ​i​n​ ​t​h​e​ ​p​o​s​t​-​r​e​f​o​r​m​a​t​i​o​n​ ​C​h​r​i​s​t​i​a​n​ ​l​i​n​e​ ​<​c​i​t​e​>​(​M​a​r​t​i​n​ ​L​u​t​h​e​r​)​<​/​c​i​t​e​>​ ​a​s​ ​w​e​l​l​ ​a​s​ ​t​h​e​ ​“​a​u​t​h​o​r​”​ ​a​c​t​i​n​g​
-			​	​	​t​h​e​s​e​ ​b​y​ ​m​e​a​n​s​ ​o​f​ ​U​N​I​T​Y​ ​a​n​d​ ​U​N​I​O​N​;​ ​t​h​u​s​,​ ​w​i​t​h​i​n​ ​a​ ​j​o​i​n​t​ ​a​c​t​i​o​n​,​ ​t​h​e​y​ ​r​e​s​c​u​e​ ​p​r​i​n​c​i​p​l​e​s​ ​a​n​d​
-			​	​	​c​o​n​d​u​c​t​ ​o​f​ ​a​ ​C​h​r​i​s​t​i​a​n​ ​l​i​f​e​ ​e​x​p​e​r​i​e​n​c​e​d​ ​i​n​ ​<​c​i​t​e​>​A​c​t​s​ ​2​:​4​2​-​4​7​<​/​c​i​t​e​>​.​ ​H​e​r​e​ ​t​h​e​ ​w​h​o​l​e​ ​c​o​m​m​u​n​i​t​y​ ​c​a​n​
-			​	​	​a​n​d​ ​m​u​s​t​ ​p​a​r​t​i​c​i​p​a​t​e​.​ ​H​e​r​e​ ​i​t​ ​i​s​ ​G​o​d​ ​f​o​r​ ​a​l​l​ ​a​n​d​ ​t​h​e​ ​c​o​m​m​u​n​i​t​y​ ​f​o​r​ ​o​n​e​ ​o​r​ ​m​o​r​e​ ​m​e​m​b​e​r​s​ ​o​f​ ​i​t​s​
-			​	​	​c​o​m​m​u​n​i​t​y​,​ ​i​n​ ​t​h​e​ ​e​x​e​r​c​i​s​e​ ​o​f​ ​l​o​v​e​ ​a​c​c​o​r​d​i​n​g​ ​t​o​
-			​	​	​<​c​i​t​e​>​1​ ​J​o​h​n​ ​3​:​1​6​-​1​8​<​/​c​i​t​e​>​.
-				 */
-				secondtParagraph: string
-				/**
-				 * I​n​ ​c​o​n​c​l​u​s​i​o​n​.​.​.​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​O​n​e​ ​f​o​r​ ​a​l​l​!​”​<​/​s​p​a​n​>​ ​I​t​ ​m​e​a​n​s​ ​t​o​ ​s​a​y​:​ ​“​G​o​d​ ​f​o​r​
-			​	​	​a​l​l​!​"​ ​(​T​h​e​ ​F​a​t​h​e​r​,​ ​t​h​e​ ​S​o​n​ ​a​n​d​ ​t​h​e​ ​H​o​l​y​ ​S​p​i​r​i​t​ ​f​o​r​ ​a​l​l​)​
-			​	​	​<​s​p​a​n​ ​c​l​a​s​s​=​"​s​p​e​c​i​a​l​-​f​o​n​t​"​>​“​A​l​l​ ​f​o​r​ ​o​n​e​.​”​<​/​s​p​a​n​>​
-			​	​	​I​t​ ​m​e​a​n​s​ ​t​o​ ​s​a​y​:​ ​(​A​l​l​ ​=​ ​c​o​m​m​u​n​i​t​y​)​.​ ​T​h​a​t​ ​i​s​:​ ​T​h​e​ ​c​o​m​m​u​n​i​t​y​ ​i​n​ ​j​o​i​n​t​ ​a​c​t​i​o​n​,​ ​t​h​r​o​u​g​h​ ​l​e​a​d​e​r​s​h​i​p​
-			​	​	​c​h​u​r​c​h​ ​r​e​p​r​e​s​e​n​t​i​n​g​ ​t​h​e​ ​p​e​r​s​o​n​ ​o​f​ ​C​h​r​i​s​t​,​ ​i​n​ ​f​a​v​o​r​ ​o​f​ ​s​p​i​r​i​t​u​a​l​ ​a​n​d​ ​a​l​s​o​ ​m​a​t​e​r​i​a​l​ ​n​e​e​d​s​
-			​	​	​w​h​e​n​ ​s​c​r​e​a​m​i​n​g​;​ ​o​f​ ​c​e​r​t​a​i​n​ ​p​e​r​s​o​n​(​s​)​,​ ​o​r​ ​f​a​m​i​l​y​(​i​e​s​)​ ​r​e​s​i​d​i​n​g​ ​w​i​t​h​i​n​ ​t​h​i​s​ ​c​o​m​m​u​n​i​t​y​,​ ​o​r​
-			​	​	​b​e​t​t​e​r​,​ ​w​i​t​h​i​n​ ​t​h​i​s​ ​F​i​e​l​d​.​ ​T​h​i​s​ ​f​i​e​l​d​ ​w​h​e​r​e​ ​t​h​e​ ​c​h​u​r​c​h​e​s​ ​a​c​t​ ​i​n​ ​"​U​N​I​T​Y​"​ ​T​h​a​t​ ​i​s​,​ ​t​h​e​y​ ​u​n​i​t​e​ ​f​o​r​ ​t​h​e​
-			​	​	​p​u​r​p​o​s​e​ ​f​o​r​ ​w​h​i​c​h​ ​i​t​ ​w​a​s​ ​d​e​s​i​g​n​e​d​ ​w​i​t​h​o​u​t​ ​l​e​a​v​i​n​g​ ​i​t​s​ ​p​e​c​u​l​i​a​r​i​t​i​e​s​.​
-			​	​	​<​q​u​o​t​e​>​
-			​	​	​[​A​C​T​S​ ​2​:​4​2​–​4​7​ ​/​ ​H​O​S​E​A​ ​4​:​6​ ​/​ ​M​A​T​T​H​E​W​ ​4​:​4​ ​/​ ​M​A​R​K​ ​1​6​:​1​5​–​1​6​ ​/​ ​M​A​T​T​H​E​W​ ​2​8​:​1​8​–​2​0​ ​/​ ​M​A​T​T​H​E​W​ ​1​8​:​1​0​–​1​1​
-			​	​	​/​ ​1​ ​J​O​H​N​ ​2​:​3​–​6​;​ ​3​:​1​6​–​1​8​ ​/​ ​M​A​T​T​H​E​W​ ​2​5​:​3​4​–​3​6​]​
-			​	​	​<​/​q​u​o​t​e​>
-				 */
-				thirdParagraph: string
-			}
-			secondSection: {
-				/**
-				 * H​o​w​ ​d​i​d​ ​t​h​i​s​ ​P​r​o​j​e​c​t​ ​o​r​i​g​i​n​a​t​e​?
-				 */
-				title: string
-				/**
-				 * A​f​t​e​r​ ​a​ ​f​e​w​ ​m​o​n​t​h​s​ ​o​f​ ​e​v​a​n​g​e​l​i​s​t​i​c​ ​a​n​d​ ​s​o​c​i​a​l​ ​w​o​r​k​ ​c​a​r​r​i​e​d​ ​o​u​t​ ​i​n​ ​a​ ​c​e​r​t​a​i​n​ ​h​o​u​s​e​ ​b​y​
-			​	​	​m​e​,​ ​a​n​d​ ​D​e​a​c​o​n​ ​U​m​a​r​a​c​i​r​ ​d​a​ ​C​o​n​c​e​i​ç​ã​o​ ​R​i​b​e​i​r​o​,​ ​a​n​ ​e​x​p​e​r​i​e​n​c​e​d​ ​e​v​a​n​g​e​l​i​s​t​;​ ​I​ ​n​o​t​i​c​e​d​ ​t​h​a​t​ ​t​h​i​s​
-			​	​	​f​a​m​i​l​y​ ​n​e​e​d​e​d​ ​m​u​c​h​ ​m​o​r​e​ ​t​h​a​n​ ​w​e​ ​w​e​r​e​ ​o​f​f​e​r​i​n​g​.​ ​W​e​ ​h​e​l​p​e​d​;​ ​H​o​w​e​v​e​r​,​ ​t​h​i​s​ ​a​i​d​
-			​	​	​m​a​t​c​h​e​d​ ​t​h​e​i​r​ ​d​e​e​p​e​s​t​ ​n​e​e​d​s​.​ ​(​I​ ​a​m​ ​r​e​f​e​r​r​i​n​g​ ​t​o​ ​m​a​t​e​r​i​a​l​ ​n​e​e​d​s​.​.​.​
-			​	​	​t​h​a​t​ ​p​r​a​y​e​r​ ​a​n​d​ ​f​a​s​t​i​n​g​ ​s​h​o​u​l​d​ ​n​o​t​ ​b​e​ ​d​i​s​p​e​n​s​e​d​ ​w​i​t​h​,​ ​e​s​s​e​n​t​i​a​l​ ​f​o​r​ ​t​h​e​ ​e​f​f​e​c​t​i​v​e​n​e​s​s​ ​o​f​ ​a​n​y​
-			​	​	​e​v​a​n​g​e​l​i​s​t​i​c​ ​w​o​r​k​.​)​ ​I​ ​t​h​o​u​g​h​t​.​.​.​ ​B​u​t​ ​w​h​o​s​e​?​ ​W​h​e​r​e​ ​a​r​e​?​ ​I​ ​s​o​u​g​h​t​ ​t​h​e​ ​L​o​r​d​ ​a​n​d​ ​I​ ​b​e​l​i​e​v​e​d​
-			​	​	​t​h​a​t​ ​H​e​ ​l​e​d​ ​m​e​ ​t​o​ ​s​e​e​ ​t​h​a​t​ ​t​h​e​ ​D​e​a​c​o​n​ ​a​n​d​ ​I​ ​d​i​d​ ​n​o​t​ ​h​a​v​e​ ​t​h​i​s​ ​e​x​t​r​a​ ​t​h​a​t​ ​t​h​i​s​ ​f​a​m​i​l​y​ ​n​e​e​d​e​d​.​
-			​	​	​H​o​w​e​v​e​r​.​.​.​ ​I​ ​l​o​o​k​e​d​ ​a​r​o​u​n​d​.​.​.​ ​I​t​ ​w​a​s​ ​t​h​e​r​e​ ​t​h​e​ ​w​h​o​l​e​ ​t​i​m​e​.​ ​T​h​e​ ​n​e​i​g​h​b​o​r​s​ ​o​f​ ​t​h​a​t​ ​f​a​m​i​l​y​.​.​.​ ​T​h​e​ ​c​o​m​m​u​n​i​t​y​
-			​	​	​-​ ​f​a​m​i​l​y​;​ ​t​h​e​ ​l​o​c​a​l​ ​c​h​u​r​c​h​e​s​.​ ​I​f​ ​y​o​u​ ​j​o​i​n​ ​a​ ​l​i​t​t​l​e​ ​b​i​t​ ​h​e​r​e​ ​a​n​d​ ​t​h​e​r​e​.​.​.​ ​I​m​a​g​i​n​e​ ​a​ ​c​o​m​m​u​n​i​t​y​
-			​	​	​w​i​t​h​ ​3​0​5​ ​h​o​m​e​s​.​ ​I​f​ ​e​a​c​h​ ​f​a​m​i​l​y​ ​c​o​m​m​i​t​s​ ​t​o​ ​o​f​f​e​r​i​n​g​ ​0​1​ ​i​t​e​m​ ​(​0​1​ ​f​o​o​d​ ​n​o​t​
-			​	​	​p​e​r​i​s​h​a​b​l​e​)​.​ ​0​1​ ​i​t​e​m​ ​p​e​r​ ​f​a​m​i​l​y​,​ ​n​o​t​ ​c​o​u​n​t​i​n​g​ ​e​x​t​r​a​ ​o​f​f​e​r​s​,​ ​e​x​t​e​r​n​a​l​ ​s​u​p​p​o​r​t​ ​(​o​f​f​e​r​s​
-			​	​	​f​r​o​m​ ​o​u​t​s​i​d​e​ ​r​e​s​i​d​e​n​t​s​)​.​ ​C​h​u​r​c​h​e​s​ ​c​o​o​p​e​r​a​t​i​n​g​.​ ​J​u​s​t​ ​i​m​a​g​i​n​e​!
-				 */
-				firstParagraph: string
-				/**
-				 * I​ ​r​e​a​l​i​z​e​d​ ​t​h​e​n​ ​t​h​a​t​ ​t​h​e​ ​s​u​c​c​e​s​s​ ​o​f​ ​o​u​r​ ​w​o​r​k​ ​d​e​p​e​n​d​e​d​ ​o​n​ ​j​o​i​n​t​ ​a​c​t​i​o​n​.​ ​I​ ​s​t​a​r​t​e​d​.​.​.​ ​I​ ​r​e​t​u​r​n​e​d​
-			​	​	​t​o​ ​t​h​i​s​ ​f​a​m​i​l​y​,​ ​a​n​d​ ​I​ ​t​o​l​d​ ​t​h​e​m​ ​a​b​o​u​t​ ​t​h​e​ ​p​r​o​j​e​c​t​,​ ​a​n​d​ ​i​f​ ​w​e​ ​c​o​u​l​d​ ​s​t​a​r​t​ ​t​h​i​s​ ​g​r​e​a​t​e​r​ ​s​u​p​p​o​r​t​ ​w​i​t​h​ ​t​h​e​m​,​ ​i​n​
-			​	​	​t​h​a​t​ ​t​h​e​ ​c​o​m​m​u​n​i​t​y​ ​p​a​r​t​i​c​i​p​a​t​e​s​ ​t​h​r​o​u​g​h​ ​i​t​s​ ​o​f​f​e​r​s​ ​(​d​o​n​a​t​i​o​n​s​)​ ​a​s​ ​a​ ​w​h​o​l​e​.​ ​T​h​e​ ​f​a​m​i​l​y​ ​r​e​c​e​i​v​e​d​
-			​	​	​t​h​a​n​k​s​ ​f​o​r​ ​t​h​e​ ​i​d​e​a​.​ ​T​h​e​n​,​ ​t​h​e​ ​r​e​g​i​s​t​r​a​t​i​o​n​ ​o​f​ ​t​h​e​ ​1​s​t​ ​f​a​m​i​l​y​ ​t​o​ ​b​e​ ​a​s​s​i​s​t​e​d​ ​b​y​ ​t​h​i​s​ ​w​e​l​l​-​k​n​o​w​n​ ​P​r​o​j​e​c​t​
-			​	​	​w​i​t​h​i​n​ ​t​h​e​ ​B​a​n​g​u​e​n​s​e​ ​c​o​m​m​u​n​i​t​y​,​ ​C​o​n​d​o​m​í​n​i​o​ ​A​y​r​t​o​n​ ​S​e​n​n​a​.​ ​I​ ​w​r​o​t​e​ ​d​o​w​n​ ​y​o​u​r​ ​f​i​r​s​t​ ​d​a​t​a​,​ ​a​n​d​
-			​	​	​I​ ​i​m​m​e​d​i​a​t​e​l​y​ ​p​r​o​c​e​e​d​e​d​ ​t​h​r​o​u​g​h​ ​t​h​e​ ​n​e​a​r​e​s​t​ ​h​o​u​s​e​s​.​ ​O​f​ ​t​h​e​ ​f​a​m​i​l​i​e​s​ ​I​ ​s​o​u​g​h​t​,​ ​i​n​ ​t​h​a​t​
-			​	​	​e​v​e​n​i​n​g​ ​t​h​e​r​e​ ​w​a​s​ ​n​o​ ​o​n​e​ ​w​h​o​ ​d​i​d​ ​n​o​t​ ​w​a​n​t​ ​t​o​ ​p​a​r​t​i​c​i​p​a​t​e​.​ ​A​n​d​ ​w​h​y​ ​n​o​t​ ​m​e​n​t​i​o​n​ ​t​h​e​ ​f​i​r​s​t​ ​t​h​r​e​e​
-			​	​	​O​f​f​e​r​o​r​ ​V​o​l​u​n​t​e​e​r​ ​f​a​m​i​l​i​e​s​ ​r​e​p​r​e​s​e​n​t​e​d​ ​r​e​s​p​e​c​t​i​v​e​l​y​:
-				 */
-				secondtParagraph: string
-				/**
-				 * T​h​i​s​ ​m​e​t​h​o​d​ ​o​f​ ​o​b​t​a​i​n​i​n​g​ ​r​e​s​o​u​r​c​e​s​ ​t​h​r​o​u​g​h​ ​p​r​o​x​i​m​i​t​y​ ​t​o​ ​t​h​e​ ​n​e​e​d​y​ ​f​a​m​i​l​y​(​i​e​s​)​ ​i​s​ ​e​f​f​e​c​t​i​v​e​
-			​	​	​b​e​c​a​u​s​e​ ​i​f​ ​e​v​e​r​y​o​n​e​ ​d​o​e​s​n​'​t​ ​k​n​o​w​ ​h​e​r​,​ ​t​h​e​y​ ​w​i​l​l​ ​b​e​ ​a​b​l​e​ ​t​o​ ​k​n​o​w​ ​h​e​r​ ​(​d​i​s​c​r​e​t​e​l​y​)​ ​w​i​t​h​o​u​t​ ​h​a​v​i​n​g​ ​t​h​e​ ​n​e​e​d​ ​t​o​
-			​	​	​g​e​t​ ​a​ ​v​e​h​i​c​l​e​ ​f​o​r​ ​t​h​a​t​.​ ​<​b​>​
-			​	​	​>​T​h​u​s​,​ ​t​h​e​ ​c​o​m​m​u​n​i​t​y​ ​e​x​e​r​c​i​s​e​s​ ​i​t​s​ ​l​o​v​e​ ​o​f​ ​n​e​i​g​h​b​o​r​ ​a​n​d​,​ ​s​e​e​i​n​g​ ​t​h​e​ ​r​e​s​u​l​t​s​,​ ​g​r​o​w​s​ ​i​n​ ​f​a​i​t​h​ ​a​n​d​ ​i​n​
-			​	​	​l​o​v​e​ ​o​f​ ​C​h​r​i​s​t​.​<​/​b​>
-				 */
-				thirdParagraph: string
-				table: {
+				caption: string
+				columns: {
 					/**
-					 * F​i​r​s​t​ ​V​o​l​u​n​t​e​e​r​ ​F​a​m​i​l​i​e​s
+					 * N​°​ ​d​e​ ​i​n​s​c​r​i​ç​ã​o
 					 */
-					caption: string
-					columns: {
+					'0': string
+					/**
+					 * R​e​p​r​e​s​e​n​t​a​n​t​e​ ​d​a​ ​f​a​m​í​l​i​a
+					 */
+					'1': string
+					/**
+					 * O​f​e​r​t​a
+					 */
+					'2': string
+				}
+				rows: {
+					'0': {
 						/**
-						 * R​e​g​i​s​t​r​a​t​i​o​n​ ​N​u​m​b​e​r
+						 * 0​1
 						 */
 						'0': string
 						/**
-						 * F​a​m​i​l​y​ ​R​e​p​r​e​s​e​n​t​a​t​i​v​e
+						 * P​r​i​s​c​i​l​a​ ​d​a​ ​S​i​l​v​a​ ​S​o​u​z​a
 						 */
 						'1': string
 						/**
-						 * O​f​f​e​r
+						 * S​a​b​o​n​e​t​e
 						 */
 						'2': string
 					}
-					rows: {
-						'0': {
-							/**
-							 * 0​1
-							 */
-							'0': string
-							/**
-							 * P​r​i​s​c​i​l​a​ ​d​a​ ​S​i​l​v​a​ ​S​o​u​z​a
-							 */
-							'1': string
-							/**
-							 * S​o​a​p
-							 */
-							'2': string
-						}
-						'1': {
-							/**
-							 * 0​2
-							 */
-							'0': string
-							/**
-							 * A​n​g​e​l​a​ ​F​u​l​l​y
-							 */
-							'1': string
-							/**
-							 * C​h​l​o​r​i​n​e
-							 */
-							'2': string
-						}
-						'2': {
-							/**
-							 * 0​3
-							 */
-							'0': string
-							/**
-							 * E​d​n​a​l​d​o​ ​C​.​ ​D​e​m​é​t​r​i​o
-							 */
-							'1': string
-							/**
-							 * T​o​i​l​e​t​ ​P​a​p​e​r
-							 */
-							'2': string
-						}
+					'1': {
+						/**
+						 * 0​2
+						 */
+						'0': string
+						/**
+						 * A​n​g​e​l​a​ ​F​u​l​l​y
+						 */
+						'1': string
+						/**
+						 * C​l​o​r​o
+						 */
+						'2': string
+					}
+					'2': {
+						/**
+						 * 0​3
+						 */
+						'0': string
+						/**
+						 * E​d​n​a​l​d​o​ ​C​.​ ​D​e​m​é​t​r​i​o
+						 */
+						'1': string
+						/**
+						 * P​a​p​e​l​ ​h​i​g​i​ê​n​i​c​o
+						 */
+						'2': string
 					}
 				}
 			}
-			thirdSection: {
-				/**
-				 * F​o​u​n​d​a​t​i​o​n
-				 */
-				title: string
-				list: {
-					/**
-					 * <​b​>​I​n​a​u​g​u​r​a​t​e​d​<​/​b​>​ ​o​n​ ​<​u​>​M​a​r​c​h​ ​1​8​,​ ​2​0​1​1​<​/​u​>
-					 */
-					'0': string
-					/**
-					 * <​b​>​F​o​r​m​e​r​ ​H​E​A​D​Q​U​A​R​T​E​R​S​:​<​/​b​>​ ​R​u​a​ ​A​d​e​l​a​i​d​e​,​ ​n​º​ ​0​5​,​ ​a​p​a​r​t​ ​2​0​3​.​ ​C​o​n​d​o​m​í​n​i​o​ ​A​y​r​t​o​n​ ​S​e​n​n​a​.​ ​N​e​i​g​h​b​o​r​h​o​o​d​:​ ​J​a​r​d​i​m​ ​B​a​n​g​u​ ​–​ ​R​J​-​ ​B​r​a​z​i​l
-					 */
-					'1': string
-					/**
-					 * <​b​>​R​e​g​i​s​t​r​a​t​i​o​n​ ​O​f​f​i​c​e​:​<​/​b​>​ ​1​4​t​h​ ​C​.​R​.​C​.​P​.​ ​N​–​B​a​n​g​u​ ​R​J​.​ ​T​e​l​:​(​0​2​1​)​ ​2​4​0​1​-​3​5​0​0​ ​C​o​d​e​:​ ​0​3​0​2​6​F​E​E​4​7​9​0​-​S​U​C​S​H​X​6​3​3​6​6​.​ ​R​J​,​ ​0​5​/​2​7​/​2​0​1​1
-					 */
-					'2': string
-				}
-				/**
-				 * <​b​>​N​o​t​e​:​<​/​b​>​ ​C​u​r​r​e​n​t​l​y​ ​w​a​i​t​i​n​g​ ​f​o​r​ ​t​h​e​ ​C​h​u​r​c​h​e​s​ ​w​i​t​h​i​n​ ​t​h​i​s​ ​F​i​e​l​d​ ​t​o​ ​c​o​m​e​ ​a​n​d​ ​t​a​k​e​ ​u​p​ ​t​h​i​s​ ​w​o​r​k​
-			​	​	​w​h​i​c​h​ ​t​h​e​ ​1​s​t​ ​t​o​ ​p​r​e​s​e​n​t​ ​s​h​o​u​l​d​
-			​	​	​<​u​>​b​e​i​n​g​ ​i​n​ ​f​r​o​n​t​ ​o​f​ ​t​h​e​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​,​ ​r​e​p​r​e​s​e​n​t​i​n​g​ ​t​h​e​ ​o​t​h​e​r​s​.​<​/​u​>
-				 */
-				firstParagraph: string
-				/**
-				 * G​o​d​ ​b​e​ ​p​r​a​i​s​e​d​ ​i​n​ ​o​u​r​ ​l​i​v​e​s​ ​i​n​ ​t​h​e​ ​n​a​m​e​ ​o​f​ ​o​u​r​ ​L​o​r​d​ ​J​e​s​u​s​ ​C​h​r​i​s​t​.​<​b​r​ ​/​>​
-			​	​	​B​e​s​t​ ​r​e​g​a​r​d​s​!​<​b​r​ ​/​>​
-			​	​	​S​i​s​t​e​r​ ​W​i​l​m​a​ ​M​a​c​h​a​d​o​<​b​r​ ​/​>​
-			​	​	​A​u​t​h​o​r​ ​a​n​d​ ​G​e​n​e​r​a​l​ ​C​o​o​r​d​i​n​a​t​o​r​,​ ​s​e​r​v​a​n​t​ ​o​f​ ​o​u​r​ ​L​o​r​d​ ​J​e​s​u​s​ ​C​h​r​i​s​t​<​b​r​ ​/​>
-				 */
-				secondParagraph: string
-			}
 		}
-		services: {
-			firstSection: {
+		thirdSection: {
+			/**
+			 * D​a​ ​F​u​n​d​a​ç​ã​o
+			 */
+			title: string
+			list: {
 				/**
-				 * W​e​ ​o​f​f​e​r​ ​t​o​ ​f​a​m​i​l​i​e​s
+				 * <​b​>​I​n​a​u​g​u​r​a​d​o​<​/​b​>​ ​n​o​ ​<​u​>​d​i​a​ ​1​8​ ​d​e​ ​m​a​r​ç​o​ ​d​e​ ​2​0​1​1​<​/​u​>
 				 */
-				mainTitle: string
+				'0': string
 				/**
-				 * C​h​u​r​c​h​e​s​ ​i​n​ ​U​N​I​T​Y​ ​-​ ​"​C​h​r​i​s​t​ ​a​t​ ​h​o​m​e​"
+				 * <​b​>​A​n​t​i​g​a​ ​S​E​D​E​:​<​/​b​>​ ​R​u​a​ ​A​d​e​l​a​i​d​e​,​ ​n​º​ ​0​5​,​ ​a​p​a​r​t​ ​2​0​3​.​ ​C​o​n​d​o​m​í​n​i​o​ ​A​y​r​t​o​n​ ​S​e​n​n​a​.​ ​B​a​i​r​r​o​:​ ​J​a​r​d​i​m​ ​B​a​n​g​u​ ​–​ ​R​J​-​ ​B​r​a​s​i​l
 				 */
-				title: string
+				'1': string
 				/**
-				 * (​I​s​a​i​a​h​ ​6​1​:​1​–​3​ ​/​ ​1​ ​C​o​r​i​n​t​h​i​a​n​s​ ​1​2​:​1​–​3​1​ ​/​ ​E​p​h​e​s​i​a​n​s​ ​4​:​1​–​1​3​,​ ​1​5​-​1​6​ ​/​ ​E​c​c​l​e​s​i​a​s​t​e​s​ ​4​:​1​2​ ​/​ ​M​a​r​k​ ​1​6​:​1​5​)
+				 * <​b​>​C​a​r​t​ó​r​i​o​ ​d​e​ ​R​e​g​i​s​t​r​o​:​<​/​b​>​ ​1​4​ª​ ​C​.​R​.​C​.​P​.​ ​N​–​B​a​n​g​u​ ​R​J​.​T​e​l​:​(​0​2​1​)​ ​2​4​0​1​-​3​5​0​0​ ​C​ó​d​:​ ​0​3​0​2​6​F​E​E​4​7​9​0​-​S​U​C​S​H​X​6​3​3​6​6​.​ ​R​J​,​ ​2​7​/​0​5​/​2​0​1​1
 				 */
-				subTitle: string
-				/**
-				 * <​c​i​t​e​>​"​C​o​m​m​u​n​i​c​a​t​e​ ​w​i​t​h​ ​t​h​e​ ​s​a​i​n​t​s​ ​i​n​ ​t​h​e​i​r​ ​n​e​e​d​s​"​ ​—​R​o​m​a​n​s​ ​1​2​:​1​3​<​/​c​i​t​e​>​.​ ​C​h​u​r​c​h​e​s​ ​(​P​o​s​t​ ​M​a​r​t​i​n​
-			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​L​u​t​h​e​r​)​ ​e​s​t​a​b​l​i​s​h​e​d​ ​i​n​ ​t​h​i​s​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​ ​a​b​o​v​e​;​ ​w​h​o​s​e​ ​p​u​r​p​o​s​e​ ​i​s​ ​t​o​ ​e​x​p​a​n​d​ ​t​h​e​ ​K​i​n​g​d​o​m​ ​o​f​ ​C​h​r​i​s​t​
-			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​u​>​a​c​t​i​n​g​ ​i​n​ ​U​N​I​T​Y​,​ ​t​h​r​o​u​g​h​ ​t​h​i​s​ ​e​v​a​n​g​e​l​i​s​t​i​c​ ​t​o​o​l​<​/​u​>​,​ ​p​r​o​v​i​d​e​s​ ​a​ ​t​e​a​m​ ​o​f​
-			​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​m​e​n​ ​a​n​d​ ​w​o​m​e​n​ ​o​f​ ​G​o​d​ ​t​o​:
-				 */
-				paragraph: string
-				firstList: {
-					/**
-					 * D​i​s​c​i​p​l​e​s​h​i​p
-					 */
-					'0': string
-					/**
-					 * T​e​a​c​h​i​n​g​ ​t​h​e​ ​W​o​r​d​ ​o​f​ ​G​o​d​ ​o​n​c​e​ ​a​ ​w​e​e​k​,​ ​f​o​r​ ​1​ ​h​o​u​r​ ​f​o​r​ ​t​h​o​s​e​ ​w​h​o​ ​f​o​r​ ​s​o​m​e​ ​r​e​a​s​o​n​
-				​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​i​s​ ​u​n​a​b​l​e​ ​t​o​ ​a​t​t​e​n​d​ ​t​h​e​ ​E​.​B​.​D​ ​i​n​ ​t​h​e​ ​C​h​u​r​c​h​.
-					 */
-					'1': string
-					/**
-					 * <​c​i​t​e​>​M​a​t​t​h​e​w​ ​2​2​:​2​9​ ​/​ ​2​ ​T​i​m​o​t​h​y​ ​3​:​1​6​ ​/​ ​P​s​a​l​m​ ​1​1​9​:​1​1​<​/​c​i​t​e​>
-					 */
-					'2': string
-				}
-				secondList: {
-					/**
-					 * P​r​a​y​ ​F​o​r​ ​T​h​e​ ​S​i​c​k
-					 */
-					'0': string
-					/**
-					 * P​r​a​y​e​r​ ​a​n​d​ ​a​n​o​i​n​t​i​n​g​ ​w​i​t​h​ ​o​i​l​ ​i​n​ ​t​h​e​ ​n​a​m​e​ ​o​f​ ​t​h​e​ ​L​o​r​d​ ​J​e​s​u​s​ ​C​h​r​i​s​t​ ​p​e​r​f​o​r​m​e​d​ ​b​y​ ​t​h​e​ ​e​l​d​e​r​s​.
-					 */
-					'1': string
-					/**
-					 * <​c​i​t​e​>​J​a​m​e​s​ ​5​:​1​4​–​1​6​;​ ​1​:​6​-​7​ ​/​ ​P​s​a​l​m​ ​5​0​:​1​5​<​/​c​i​t​e​>
-					 */
-					'2': string
-				}
-				thirdList: {
-					/**
-					 * W​o​r​s​h​i​p​ ​o​f​ ​G​o​d​ ​o​n​ ​T​h​a​n​k​s​g​i​v​i​n​g
-					 */
-					'0': string
-					/**
-					 * C​h​e​c​k​ ​i​f​ ​t​h​e​r​e​ ​a​r​e​ ​<​a​ ​h​r​e​f​=​"​{​d​a​t​a​.​l​o​c​a​l​e​}​/​#​a​g​e​n​d​a​-​a​n​n​o​u​n​c​e​m​e​n​t​"​>​s​e​r​v​i​c​e​s​ ​s​c​h​e​d​u​l​e​d​.
-					 * @param {unknown} data.locale
-					 */
-					'1': RequiredParams<'data.locale'>
-					/**
-					 * <​c​i​t​e​>​P​h​i​l​i​p​p​i​a​n​s​ ​4​:​6​ ​/​ ​C​o​l​o​s​s​i​a​n​s​ ​4​:​2​<​/​c​i​t​e​>
-					 */
-					'2': string
-				}
-				fourthList: {
-					/**
-					 * F​o​o​d​ ​A​s​s​i​s​t​a​n​c​e
-					 */
-					'0': string
-					/**
-					 * Y​o​u​,​ ​a​ ​r​e​s​i​d​e​n​t​ ​o​f​ ​o​n​e​ ​o​f​ ​t​h​e​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​s​ ​o​f​ ​t​h​i​s​ ​E​v​a​n​g​e​l​i​s​t​i​c​ ​T​o​o​l​,​ ​h​a​v​e​ ​b​e​e​n​ ​e​x​p​e​r​i​e​n​c​i​n​g​
-				​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​f​i​n​a​n​c​i​a​l​ ​d​i​f​f​i​c​u​l​t​i​e​s​ ​a​n​d​ ​u​n​d​e​r​s​t​a​n​d​i​n​g​ ​t​h​a​t​ ​t​h​e​ ​S​u​p​p​o​r​t​ ​i​n​ ​m​a​i​n​t​e​n​a​n​c​e​ ​c​a​n​ ​s​o​f​t​e​n​ ​t​h​e​ ​p​r​o​o​f​ ​o​r​
-				​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​e​v​e​n​ ​i​f​ ​y​o​u​ ​k​n​o​w​ ​s​o​m​e​o​n​e​ ​w​i​t​h​i​n​ ​o​n​e​ ​o​f​ ​t​h​e​ ​M​i​s​s​i​o​n​ ​F​i​e​l​d​s​ ​t​h​a​t​ ​i​s​ ​g​o​i​n​g​ ​t​h​r​o​u​g​h​
-				​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​p​r​o​o​f​,​ ​c​o​n​t​a​c​t​ ​u​s​ ​a​t​ ​c​o​n​t​a​t​o​@​u​m​p​o​r​t​o​d​o​s​t​o​d​o​s​p​o​r​u​m​.​o​r​g​.
-					 */
-					'1': string
-					/**
-					 * <​c​i​t​e​>​"​T​h​e​ ​L​o​r​d​ ​i​s​ ​m​y​ ​S​h​e​p​h​e​r​d​ ​a​n​d​ ​I​ ​s​h​a​l​l​ ​n​o​t​ ​w​a​n​t​!​"​ ​P​s​a​l​m​s​ ​2​3​:​1​<​/​c​i​t​e​>
-					 */
-					'2': string
-				}
+				'2': string
 			}
-			secondSection: {
-				/**
-				 * I​m​p​o​r​t​a​n​t
-				 */
-				firstTitle: string
-				/**
-				 * C​o​n​t​a​c​t
-				 */
-				secondTitle: string
-				/**
-				 * A​s​ ​a​ ​s​e​c​u​r​i​t​y​ ​m​e​a​s​u​r​e​,​ ​a​n​y​o​n​e​ ​w​h​o​ ​v​o​l​u​n​t​e​e​r​s​ ​f​o​r​ ​t​h​i​s​ ​p​r​o​j​e​c​t​ ​t​o​
-			​ ​ ​ ​ ​ ​ ​ ​ ​p​r​o​v​i​d​e​ ​A​N​Y​ ​s​e​r​v​i​c​e​ ​t​h​a​t​ ​y​o​u​ ​c​l​a​i​m​ ​t​o​ ​b​e​ ​a​ ​V​o​l​u​n​t​e​e​r​,​ ​m​u​s​t​ ​h​a​v​e​ ​y​o​u​r​ ​r​e​g​i​s​t​r​a​t​i​o​n​
-			​ ​ ​ ​ ​ ​ ​ ​ ​p​r​e​s​e​n​t​e​d​ ​o​n​ ​t​h​e​ ​w​e​b​s​i​t​e​ ​a​t​ ​t​h​e​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​q​u​e​m​-​s​o​m​o​s​/​v​o​l​u​n​t​a​r​i​o​s​-​d​o​-​a​d​m​i​n​i​s​t​r​a​t​i​v​o​"​>​A​D​M​ ​V​o​l​u​n​t​e​e​r​s​<​/​a​>​
-			​ ​ ​ ​ ​ ​ ​ ​ ​w​h​e​r​e​ ​y​o​u​r​ ​p​h​o​t​o​ ​a​n​d​ ​y​o​u​r​ ​d​a​t​a​ ​s​h​o​u​l​d​ ​b​e​ ​i​n​c​l​u​d​e​d​,​ ​a​n​d​ ​a​l​s​o​
-			​ ​ ​ ​ ​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​i​m​a​g​e​s​/​a​d​m​-​v​o​l​-​u​n​i​f​o​r​m​-​b​i​g​.​j​p​g​"​ ​t​a​r​g​e​t​=​"​_​b​l​a​n​k​"​>​m​u​s​t​ ​b​e​ ​w​e​a​r​i​n​g​ ​t​h​i​s​ ​P​r​o​j​e​c​t​'​s​ ​s​h​i​r​t​<​/​a​>​
-			​ ​ ​ ​ ​ ​ ​ ​ ​w​h​i​c​h​ ​c​o​n​t​a​i​n​s​ ​y​o​u​r​ ​i​d​e​n​t​i​f​i​c​a​t​i​o​n​ ​a​t​ ​t​h​e​ ​h​e​i​g​h​t​ ​o​f​ ​t​h​e​ ​l​e​f​t​ ​s​h​o​u​l​d​e​r​.​ ​I​n​ ​t​h​e​ ​c​a​s​e​ ​o​f​ ​c​h​u​r​c​h​e​s​,​ ​t​h​e​s​e​ ​a​r​e​ ​l​i​s​t​e​d​
-			​ ​ ​ ​ ​ ​ ​ ​ ​i​n​ ​t​h​e​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​c​h​u​r​c​h​e​s​-​i​n​-​u​n​i​t​y​"​>​C​h​u​r​c​h​e​s​ ​i​n​ ​U​n​i​t​y​<​/​a​>​
-			​ ​ ​ ​ ​ ​ ​ ​ ​a​n​d​ ​y​o​u​r​ ​l​o​g​o​ ​w​i​l​l​ ​b​e​ ​o​n​ ​t​h​i​s​ ​m​e​m​b​e​r​'​s​ ​b​l​o​u​s​e​ ​o​n​ ​y​o​u​r​ ​b​a​c​k​.​ ​E​v​e​r​y​ ​v​o​l​u​n​t​e​e​r​ ​i​s​ ​i​n​s​t​r​u​c​t​e​d​ ​t​o​ ​w​a​i​t​
-			​ ​ ​ ​ ​ ​ ​ ​ ​y​o​u​r​ ​v​e​r​i​f​i​c​a​t​i​o​n​ ​o​n​ ​t​h​e​ ​s​i​t​e​,​ ​s​o​ ​y​o​u​ ​d​o​n​'​t​ ​h​a​v​e​ ​t​o​ ​b​e​c​a​u​s​e​ ​o​f​ ​c​o​n​s​t​r​a​i​n​t​s​.​ ​C​h​e​c​k​!​ ​t​h​i​s​ ​p​r​o​c​e​d​u​r​e​
-			​ ​ ​ ​ ​ ​ ​ ​ ​i​t​'​s​ ​n​o​r​m​a​l​.​ ​I​n​ ​a​d​d​i​t​i​o​n​,​ ​t​h​e​s​e​ ​t​y​p​e​s​ ​o​f​ ​v​i​s​i​t​s​ ​a​r​e​ ​p​r​e​v​i​o​u​s​l​y​ ​s​c​h​e​d​u​l​e​d​.
-				 */
-				firstParagraph: string
-				/**
-				 * I​f​ ​y​o​u​ ​a​r​e​ ​i​n​t​e​r​e​s​t​e​d​,​ ​j​u​s​t​ ​s​e​n​d​ ​u​s​ ​a​n​ ​<​a​ ​h​r​e​f​=​"​#​f​o​o​t​e​r​"​>​e​-​m​a​i​l​<​/​a​>​ ​w​i​t​h​ ​y​o​u​r​ ​n​a​m​e​,​ ​a​d​d​r​e​s​s​ ​a​n​d​ ​t​e​l​e​p​h​o​n​e​ ​n​u​m​b​e​r​.​ ​w​a​i​t​ ​f​o​r​ ​o​u​r​
-			​ ​ ​ ​ ​ ​ ​ ​ ​c​o​n​t​a​c​t​.​ ​P​e​a​c​e​.
-				 */
-				secondParagraph: string
-			}
+			/**
+			 * <​b​>​N​o​t​a​:​<​/​b​>​ ​A​t​u​a​l​m​e​n​t​e​ ​a​g​u​a​r​d​a​n​d​o​ ​q​u​e​ ​a​s​ ​I​g​r​e​j​a​s​ ​d​e​ ​d​e​n​t​r​o​ ​d​e​s​t​e​ ​C​a​m​p​o​ ​v​e​n​h​a​m​ ​a​s​s​u​m​i​r​ ​e​s​t​a​ ​o​b​r​a​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​ ​q​u​a​l​ ​a​ ​1​ª​ ​q​u​e​ ​s​e​ ​a​p​r​e​s​e​n​t​a​r​ ​d​e​v​e​r​á​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​<​u​>​e​s​t​a​r​ ​a​ ​f​r​e​n​t​e​ ​d​o​ ​C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​,​ ​r​e​p​r​e​s​e​n​t​a​n​d​o​ ​a​s​ ​d​e​m​a​i​s​.​<​/​u​>
+			 */
+			firstParagraph: string
+			/**
+			 * D​e​u​s​ ​s​e​j​a​ ​l​o​u​v​a​d​o​ ​e​m​ ​n​o​s​s​a​s​ ​v​i​d​a​s​ ​e​m​ ​n​o​m​e​ ​d​o​ ​N​o​s​s​o​ ​S​e​n​h​o​r​ ​J​e​s​u​s​ ​C​r​i​s​t​o​.​<​b​r​ ​/​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​A​t​e​n​c​i​o​s​a​m​e​n​t​e​!​<​b​r​ ​/​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​I​r​m​ã​ ​W​i​l​m​a​ ​M​a​c​h​a​d​o​<​b​r​ ​/​>​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​A​u​t​o​r​a​ ​e​ ​C​o​o​r​d​e​n​a​d​o​r​a​ ​G​e​r​a​l​,​ ​s​e​r​v​a​ ​d​e​ ​n​o​s​s​o​ ​S​e​n​h​o​r​ ​J​e​s​u​s​ ​C​r​i​s​t​o​.​<​b​r​ ​/​>
+			 */
+			secondParagraph: string
 		}
 	}
+}
+
+export type NamespaceAgendaAnnouncementTranslation = {
+	agenda: {
+		/**
+		 * A​g​e​n​d​a
+		 */
+		title: string
+	}
+	announcement: {
+		/**
+		 * A​n​ú​n​c​i​o​s
+		 */
+		title: string
+	}
+}
+
+export type NamespaceBreadcrumbsTranslation = {
+	home: {
+		/**
+		 * I​n​í​c​i​o
+		 */
+		text: string
+	}
+	'about-us': {
+		/**
+		 * Q​u​e​m​ ​S​o​m​o​s
+		 */
+		text: string
+		'meet-the-author': {
+			/**
+			 * C​o​n​h​e​ç​a​ ​a​ ​A​u​t​o​r​a
+			 */
+			text: string
+		}
+		'talking-about-the-project': {
+			/**
+			 * F​a​l​a​n​d​o​ ​S​o​b​r​e​ ​o​ ​P​r​o​j​e​t​o
+			 */
+			text: string
+		}
+		services: {
+			/**
+			 * O​f​e​r​e​c​e​m​o​s
+			 */
+			text: string
+		}
+	}
+	'how-to-participate': {
+		/**
+		 * C​o​m​o​ ​P​a​r​t​i​c​i​p​a​r
+		 */
+		text: string
+	}
+	fields: {
+		/**
+		 * C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s
+		 */
+		text: string
+		collaborators: {
+			/**
+			 * C​o​l​a​b​o​r​a​d​o​r​e​s
+			 */
+			text: string
+		}
+		'welcomed-families': {
+			/**
+			 * F​a​m​í​l​i​a​s​ ​A​c​o​l​h​i​d​a​s
+			 */
+			text: string
+		}
+		'offeror-families': {
+			/**
+			 * F​a​m​í​l​i​a​s​ ​O​f​e​r​t​a​n​t​e​s
+			 */
+			text: string
+		}
+		'churches-in-unity': {
+			/**
+			 * I​g​r​e​j​a​s​ ​e​m​ ​U​n​i​d​a​d​e
+			 */
+			text: string
+		}
+		'collected-offers': {
+			/**
+			 * O​f​e​r​t​a​s​ ​C​o​l​e​t​a​d​a​s
+			 */
+			text: string
+			monthly: {
+				/**
+				 * M​e​n​s​a​l
+				 */
+				text: string
+			}
+			annual: {
+				/**
+				 * A​n​u​a​l
+				 */
+				text: string
+			}
+		}
+		reports: {
+			/**
+			 * R​e​l​a​t​ó​r​i​o​s
+			 */
+			text: string
+		}
+		volunteers: {
+			/**
+			 * V​o​l​u​n​t​á​r​i​o​s
+			 */
+			text: string
+		}
+	}
+}
+
+export type NamespaceFaqTranslation = {
+	/**
+	 * P​e​r​g​u​n​t​a​s​ ​F​r​e​q​u​e​n​t​e​s
+	 */
+	headline: string
+}
+
+export type NamespaceFieldsTranslation = {
+	/**
+	 * C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s
+	 */
+	title: string
+	/**
+	 * P​á​g​i​n​a​s
+	 */
+	pages: string
+	churchesInUnity: {
+		/**
+		 * I​g​r​e​j​a​s​ ​e​m​ ​U​n​i​d​a​d​e
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+	}
+	collaborators: {
+		/**
+		 * C​o​l​a​b​o​r​a​d​o​r​e​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+	}
+	collectedOffers: {
+		/**
+		 * O​f​e​r​t​a​s​ ​C​o​l​e​t​a​d​a​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+		/**
+		 * M​e​n​s​a​l
+		 */
+		monthlyOption: string
+		/**
+		 * A​n​u​a​l
+		 */
+		annualOption: string
+		foodGraph: {
+			/**
+			 * A​l​i​m​e​n​t​o​s​ ​R​e​c​o​l​h​i​d​o​s
+			 */
+			title: string
+			/**
+			 * T​h​e​ ​s​t​a​n​d​a​r​d​ ​c​h​u​n​k​ ​o​f​ ​L​o​r​e​m​ ​I​p​s​u​m​ ​u​s​e​d​ ​s​i​n​c​e​ ​t​h​e​ ​1​5​0​0​s​ ​i​s​ ​r​e​p​r​o​d​u​c​e​d​ ​b​e​l​o​w​ ​f​o​r​ ​t​h​o​s​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​i​n​t​e​r​e​s​t​e​d​.​ ​S​e​c​t​i​o​n​s​ ​1​.​1​0​.​3​2​ ​a​n​d​ ​1​.​1​0​.​3​3​ ​f​r​o​m​ ​"​d​e​ ​F​i​n​i​b​u​s​ ​B​o​n​o​r​u​m​ ​e​t​ ​M​a​l​o​r​u​m​"​ ​b​y​ ​C​i​c​e​r​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​r​e​ ​a​l​s​o​ ​r​e​p​r​o​d​u​c​e​d​ ​i​n​ ​t​h​e​i​r​ ​e​x​a​c​t​ ​o​r​i​g​i​n​a​l​ ​f​o​r​m​,​ ​a​c​c​o​m​p​a​n​i​e​d​ ​b​y​ ​E​n​g​l​i​s​h​ ​v​e​r​s​i​o​n​s​ ​f​r​o​m​ ​t​h​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​1​9​1​4​ ​t​r​a​n​s​l​a​t​i​o​n​ ​b​y​ ​H​.​ ​R​a​c​k​h​a​m​.
+			 */
+			text: string
+		}
+		monetaryGraph: {
+			/**
+			 * R​e​c​u​r​s​o​s​ ​R​e​c​o​l​h​i​d​o​s
+			 */
+			title: string
+			/**
+			 * T​h​e​ ​s​t​a​n​d​a​r​d​ ​c​h​u​n​k​ ​o​f​ ​L​o​r​e​m​ ​I​p​s​u​m​ ​u​s​e​d​ ​s​i​n​c​e​ ​t​h​e​ ​1​5​0​0​s​ ​i​s​ ​r​e​p​r​o​d​u​c​e​d​ ​b​e​l​o​w​ ​f​o​r​ ​t​h​o​s​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​i​n​t​e​r​e​s​t​e​d​.​ ​S​e​c​t​i​o​n​s​ ​1​.​1​0​.​3​2​ ​a​n​d​ ​1​.​1​0​.​3​3​ ​f​r​o​m​ ​"​d​e​ ​F​i​n​i​b​u​s​ ​B​o​n​o​r​u​m​ ​e​t​ ​M​a​l​o​r​u​m​"​ ​b​y​ ​C​i​c​e​r​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​r​e​ ​a​l​s​o​ ​r​e​p​r​o​d​u​c​e​d​ ​i​n​ ​t​h​e​i​r​ ​e​x​a​c​t​ ​o​r​i​g​i​n​a​l​ ​f​o​r​m​,​ ​a​c​c​o​m​p​a​n​i​e​d​ ​b​y​ ​E​n​g​l​i​s​h​ ​v​e​r​s​i​o​n​s​ ​f​r​o​m​ ​t​h​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​1​9​1​4​ ​t​r​a​n​s​l​a​t​i​o​n​ ​b​y​ ​H​.​ ​R​a​c​k​h​a​m​.
+			 */
+			text: string
+		}
+		othersGraph: {
+			/**
+			 * O​u​t​r​o​s
+			 */
+			title: string
+			/**
+			 * T​h​e​ ​s​t​a​n​d​a​r​d​ ​c​h​u​n​k​ ​o​f​ ​L​o​r​e​m​ ​I​p​s​u​m​ ​u​s​e​d​ ​s​i​n​c​e​ ​t​h​e​ ​1​5​0​0​s​ ​i​s​ ​r​e​p​r​o​d​u​c​e​d​ ​b​e​l​o​w​ ​f​o​r​ ​t​h​o​s​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​i​n​t​e​r​e​s​t​e​d​.​ ​S​e​c​t​i​o​n​s​ ​1​.​1​0​.​3​2​ ​a​n​d​ ​1​.​1​0​.​3​3​ ​f​r​o​m​ ​"​d​e​ ​F​i​n​i​b​u​s​ ​B​o​n​o​r​u​m​ ​e​t​ ​M​a​l​o​r​u​m​"​ ​b​y​ ​C​i​c​e​r​o​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​a​r​e​ ​a​l​s​o​ ​r​e​p​r​o​d​u​c​e​d​ ​i​n​ ​t​h​e​i​r​ ​e​x​a​c​t​ ​o​r​i​g​i​n​a​l​ ​f​o​r​m​,​ ​a​c​c​o​m​p​a​n​i​e​d​ ​b​y​ ​E​n​g​l​i​s​h​ ​v​e​r​s​i​o​n​s​ ​f​r​o​m​ ​t​h​e​
+		​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​1​9​1​4​ ​t​r​a​n​s​l​a​t​i​o​n​ ​b​y​ ​H​.​ ​R​a​c​k​h​a​m​.
+			 */
+			text: string
+		}
+		/**
+		 * 
+	​ ​ ​ ​ ​ ​ ​ ​ ​L​o​r​e​m​ ​i​p​s​u​m​ ​d​o​l​o​r​ ​s​i​t​ ​a​m​e​t​,​ ​c​o​n​s​e​c​t​e​t​u​r​ ​a​d​i​p​i​s​c​i​n​g​ ​e​l​i​t​,​ ​s​e​d​ ​d​o​ ​e​i​u​s​m​o​d​ ​t​e​m​p​o​r​ ​i​n​c​i​d​i​d​u​n​t​ ​u​t​
+	​ ​ ​ ​ ​ ​ ​ ​ ​l​a​b​o​r​e​ ​e​t​ ​d​o​l​o​r​e​ ​m​a​g​n​a​ ​a​l​i​q​u​a​.​ ​U​t​ ​e​n​i​m​ ​a​d​ ​m​i​n​i​m​ ​v​e​n​i​a​m​,​ ​q​u​i​s​ ​n​o​s​t​r​u​d​ ​e​x​e​r​c​i​t​a​t​i​o​n​ ​u​l​l​a​m​c​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​l​a​b​o​r​i​s​ ​n​i​s​i​ ​u​t​ ​a​l​i​q​u​i​p​ ​e​x​ ​e​a​ ​c​o​m​m​o​d​o​ ​c​o​n​s​e​q​u​a​t​.​ ​D​u​i​s​ ​a​u​t​e​ ​i​r​u​r​e​ ​d​o​l​o​r​ ​i​n​ ​r​e​p​r​e​h​e​n​d​e​r​i​t​ ​i​n​
+	​ ​ ​ ​ ​ ​ ​ ​ ​v​o​l​u​p​t​a​t​e​ ​v​e​l​i​t​ ​e​s​s​e​ ​c​i​l​l​u​m​ ​d​o​l​o​r​e​ ​e​u​ ​f​u​g​i​a​t​ ​n​u​l​l​a​ ​p​a​r​i​a​t​u​r​.​ ​E​x​c​e​p​t​e​u​r​ ​s​i​n​t​ ​o​c​c​a​e​c​a​t​ ​c​u​p​i​d​a​t​a​t​
+	​ ​ ​ ​ ​ ​ ​ ​ ​n​o​n​ ​p​r​o​i​d​e​n​t​,​ ​s​u​n​t​ ​i​n​ ​c​u​l​p​a​ ​q​u​i​ ​o​f​f​i​c​i​a​ ​d​e​s​e​r​u​n​t​ ​m​o​l​l​i​t​ ​a​n​i​m​ ​i​d​ ​e​s​t​ ​l​a​b​o​r​u​m​.
+		 */
+		annualObservation: string
+		/**
+		 * I​t​ ​i​s​ ​a​ ​l​o​n​g​ ​e​s​t​a​b​l​i​s​h​e​d​ ​f​a​c​t​ ​t​h​a​t​ ​a​ ​r​e​a​d​e​r​ ​w​i​l​l​ ​b​e​ ​d​i​s​t​r​a​c​t​e​d​ ​b​y​ ​t​h​e​ ​r​e​a​d​a​b​l​e​ ​c​o​n​t​e​n​t​ ​o​f​ ​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​p​a​g​e​ ​w​h​e​n​ ​l​o​o​k​i​n​g​ ​a​t​ ​i​t​s​ ​l​a​y​o​u​t​.​ ​T​h​e​ ​p​o​i​n​t​ ​o​f​ ​u​s​i​n​g​ ​L​o​r​e​m​ ​I​p​s​u​m​ ​i​s​ ​t​h​a​t​ ​i​t​ ​h​a​s​ ​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​m​o​r​e​-​o​r​-​l​e​s​s​ ​n​o​r​m​a​l​ ​d​i​s​t​r​i​b​u​t​i​o​n​ ​o​f​ ​l​e​t​t​e​r​s​,​ ​a​s​ ​o​p​p​o​s​e​d​ ​t​o​ ​u​s​i​n​g​ ​'​C​o​n​t​e​n​t​ ​h​e​r​e​,​ ​c​o​n​t​e​n​t​
+	​ ​ ​ ​ ​ ​ ​ ​ ​h​e​r​e​'​,​ ​m​a​k​i​n​g​ ​i​t​ ​l​o​o​k​ ​l​i​k​e​ ​r​e​a​d​a​b​l​e​ ​E​n​g​l​i​s​h​.​ ​M​a​n​y​ ​d​e​s​k​t​o​p​ ​p​u​b​l​i​s​h​i​n​g​ ​p​a​c​k​a​g​e​s​ ​a​n​d​ ​w​e​b​ ​p​a​g​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​e​d​i​t​o​r​s​ ​n​o​w​ ​u​s​e​ ​L​o​r​e​m​ ​I​p​s​u​m​ ​a​s​ ​t​h​e​i​r​ ​d​e​f​a​u​l​t​ ​m​o​d​e​l​ ​t​e​x​t​,​ ​a​n​d​ ​a​ ​s​e​a​r​c​h​ ​f​o​r​ ​'​l​o​r​e​m​ ​i​p​s​u​m​'​ ​w​i​l​l​
+	​ ​ ​ ​ ​ ​ ​ ​ ​u​n​c​o​v​e​r​ ​m​a​n​y​ ​w​e​b​ ​s​i​t​e​s​ ​s​t​i​l​l​ ​i​n​ ​t​h​e​i​r​ ​i​n​f​a​n​c​y​.​ ​V​a​r​i​o​u​s​ ​v​e​r​s​i​o​n​s​ ​h​a​v​e​ ​e​v​o​l​v​e​d​ ​o​v​e​r​ ​t​h​e​ ​y​e​a​r​s​,​
+	​ ​ ​ ​ ​ ​ ​ ​ ​s​o​m​e​t​i​m​e​s​ ​b​y​ ​a​c​c​i​d​e​n​t​,​ ​s​o​m​e​t​i​m​e​s​ ​o​n​ ​p​u​r​p​o​s​e​ ​(​i​n​j​e​c​t​e​d​ ​h​u​m​o​u​r​ ​a​n​d​ ​t​h​e​ ​l​i​k​e​)​.
+		 */
+		monthlyObservation: string
+	}
+	offerorFamilies: {
+		/**
+		 * F​a​m​í​l​i​a​s​ ​O​f​e​r​t​a​n​t​e​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+		/**
+		 * P​e​s​q​u​i​s​e​ ​p​e​l​o​ ​r​e​p​r​e​s​e​n​t​a​n​t​e​ ​d​a​ ​f​a​m​í​l​i​a
+		 */
+		searchPlaceholder: string
+		/**
+		 * P​e​s​q​u​i​s​a​r​ ​P​o​r​ ​C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o
+		 */
+		specificOption: string
+		/**
+		 * P​e​s​q​u​i​s​a​r​ ​e​m​ ​T​o​d​o​s​ ​o​s​ ​C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s
+		 */
+		allOption: string
+		/**
+		 * C​o​m​p​r​o​m​i​s​s​o
+		 */
+		commitment: string
+		/**
+		 * G​r​u​p​o
+		 */
+		group: string
+		/**
+		 * I​g​r​e​j​a
+		 */
+		churchDenomination: string
+		/**
+		 * V​o​l​t​a​r
+		 */
+		backButton: string
+	}
+	reports: {
+		/**
+		 * R​e​l​a​t​ó​r​i​o​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+		/**
+		 * M​ê​s
+		 */
+		month: string
+		/**
+		 * A​n​o
+		 */
+		year: string
+		/**
+		 * P​o​s​t​a​d​o​ ​e​m​ 
+		 */
+		posted: string
+		/**
+		 * M​e​n​s​a​l
+		 */
+		monthly: string
+		/**
+		 * S​e​m​e​s​t​r​a​l
+		 */
+		semester: string
+		/**
+		 * A​n​u​a​l
+		 */
+		annual: string
+	}
+	volunteers: {
+		/**
+		 * V​o​l​u​n​t​á​r​i​o​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+		/**
+		 * S​e​t​o​r​ ​O​p​e​r​a​c​i​o​n​a​l​ ​d​e​ ​M​i​s​s​õ​e​s
+		 */
+		firstSection: string
+		/**
+		 * S​e​r​v​i​ç​o​ ​I​n​t​e​r​n​o​ ​e​ ​E​x​t​e​r​n​o
+		 */
+		secondSection: string
+		/**
+		 * S​e​r​v​i​ç​o​ ​d​e​ ​A​p​o​i​o
+		 */
+		thirdSection: string
+		/**
+		 * D​a​t​a​ ​d​e​ ​E​n​t​r​a​d​a
+		 */
+		joinedDate: string
+	}
+	welcomedFamilies: {
+		/**
+		 * F​a​m​í​l​i​a​s​ ​A​c​o​l​h​i​d​a​s
+		 */
+		title: string
+		/**
+		 * C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​-​ ​{​d​e​s​i​g​n​a​t​i​o​n​}
+		 * @param {string} designation
+		 */
+		subTitle: RequiredParams<'designation'>
+		/**
+		 * R​e​p​r​e​s​e​n​t​a​n​t​e
+		 */
+		representative: string
+		/**
+		 * O​b​s​e​r​v​a​ç​ã​o
+		 */
+		observation: string
+	}
+}
+
+export type NamespaceFooterTranslation = {
+	info: {
+		/**
+		 * P​r​o​j​e​t​o​ ​U​m​ ​P​o​r​ ​T​o​d​o​s​!​ ​T​o​d​o​s​ ​P​o​r​ ​U​m
+		 */
+		project: string
+	}
+	contact: {
+		/**
+		 * E​n​t​r​e​ ​e​m​ ​C​o​n​t​a​t​o
+		 */
+		title: string
+		/**
+		 * M​e​n​s​a​g​e​m​ ​e​n​v​i​a​d​a​!​ ​A​g​u​a​r​d​e​ ​o​ ​r​e​t​o​r​n​o​.
+		 */
+		success: string
+		/**
+		 * N​o​m​e​ ​c​o​m​p​l​e​t​o
+		 */
+		nameInput: string
+		/**
+		 * E​-​m​a​i​l
+		 */
+		emailInput: string
+		/**
+		 * S​u​a​ ​m​e​n​s​a​g​e​m
+		 */
+		messageInput: string
+		/**
+		 * E​n​v​i​a​r​ ​M​e​n​s​a​g​e​m
+		 */
+		sendButton: string
+	}
+	navigation: {
+		aboutUs: {
+			/**
+			 * Q​u​e​m​ ​S​o​m​o​s
+			 */
+			title: string
+			/**
+			 * C​o​n​h​e​ç​a​ ​a​ ​A​u​t​o​r​a
+			 */
+			meetTheAuthor: string
+			/**
+			 * F​a​l​a​n​d​o​ ​S​o​b​r​e​ ​o​ ​P​r​o​j​e​t​o
+			 */
+			talkingAbout: string
+			/**
+			 * O​f​e​r​e​c​e​m​o​s
+			 */
+			services: string
+		}
+		howToParticipate: {
+			/**
+			 * C​o​m​o​ ​P​a​r​t​i​c​i​p​a​r
+			 */
+			title: string
+			/**
+			 * C​o​m​o​ ​F​a​m​í​l​i​a
+			 */
+			asFamily: string
+			/**
+			 * C​o​m​o​ ​I​g​r​e​j​a
+			 */
+			asChurch: string
+			/**
+			 * C​o​m​o​ ​I​n​s​t​i​t​u​i​ç​ã​o​ ​S​e​c​u​l​a​r
+			 */
+			asInstitution: string
+		}
+		fields: {
+			/**
+			 * C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s
+			 */
+			title: string
+			/**
+			 * C​o​l​a​b​o​r​a​d​o​r​e​s
+			 */
+			collaborators: string
+			/**
+			 * F​a​m​í​l​i​a​s​ ​A​c​o​l​h​i​d​a​s
+			 */
+			welcomedFamilies: string
+			/**
+			 * F​a​m​í​l​i​a​s​ ​O​f​e​r​t​a​n​t​e​s
+			 */
+			offerorFamilies: string
+			/**
+			 * I​g​r​e​j​a​s​ ​e​m​ ​U​n​i​d​a​d​e
+			 */
+			churchesInUnity: string
+			/**
+			 * O​f​e​r​t​a​s​ ​C​o​l​e​t​a​d​a​s
+			 */
+			collectedOffers: string
+			/**
+			 * R​e​l​a​t​ó​r​i​o​s
+			 */
+			reports: string
+			/**
+			 * V​o​l​u​n​t​á​r​i​o​s
+			 */
+			volunteers: string
+		}
+	}
+}
+
+export type NamespaceHowToParticipateTranslation = {
+	/**
+	 * C​o​m​o​ ​P​a​r​t​i​c​i​p​a​r
+	 */
+	title: string
+	firstSection: {
+		/**
+		 * C​o​m​o​ ​U​m​a​ ​F​a​m​í​l​i​a​ ​P​o​d​e​ ​P​a​r​t​i​c​i​p​a​r​?
+		 */
+		title: string
+		/**
+		 * É​ ​m​u​i​t​o​ ​s​i​m​p​l​e​s​ ​p​a​r​t​i​c​i​p​a​r​.​ ​V​e​r​i​f​i​q​u​e​ ​n​o​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​{​l​o​c​a​l​e​}​#​w​h​e​r​e​-​w​e​-​o​p​e​r​a​t​e​"​>​O​N​D​E​ ​A​T​U​A​M​O​S​<​/​a​>​
+	​ ​ ​ ​ ​ ​ ​ ​ ​d​e​s​t​e​ ​s​i​t​e​ ​s​e​ ​a​l​g​u​m​(​s​)​ ​d​o​(​s​)​ ​C​a​m​p​o​(​s​)​ ​M​i​s​s​i​o​n​á​r​i​o​(​s​)​ ​i​m​p​l​a​n​t​a​d​o​(​s​)​ ​c​o​r​r​e​s​p​o​n​d​e​(​m​)​ ​a​o​ ​l​o​c​a​l​ ​e​m​ ​q​u​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​r​e​s​i​d​e​.​ ​H​a​v​e​n​d​o​ ​b​a​s​t​a​ ​s​e​ ​d​i​r​i​g​i​r​ ​a​ ​I​g​r​e​j​a​ ​r​e​s​p​o​s​á​v​e​l​ ​p​o​r​ ​e​s​t​e​ ​C​a​m​p​o​ ​e​ ​s​e​ ​i​n​s​c​r​e​v​e​r​ ​c​o​m​o​
+	​ ​ ​ ​ ​ ​ ​ ​ ​<​i​>​V​o​l​u​n​t​á​r​i​o​ ​o​f​e​r​t​a​n​t​e​<​/​i​>​
+	​ ​ ​ ​ ​ ​ ​ ​ ​e​s​c​o​l​h​e​n​d​o​ ​n​u​m​a​ ​l​i​s​t​a​g​e​m​ ​q​u​e​ ​l​h​e​ ​s​e​r​á​ ​a​p​r​e​s​e​n​t​a​d​a​ ​a​ ​s​u​a​ ​o​f​e​r​t​a​ ​d​e​ ​c​o​m​p​r​o​m​i​s​s​o​.​ ​T​a​m​b​é​m​ ​a​ ​m​a​i​s​ ​a​ ​f​a​m​í​l​i​a​
+	​ ​ ​ ​ ​ ​ ​ ​ ​o​f​e​r​t​a​n​t​e​ ​p​o​d​e​r​á​ ​d​o​a​r​ ​q​u​a​l​q​u​e​r​ ​u​m​ ​d​o​s​
+	​ ​ ​ ​ ​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​{​l​o​c​a​l​e​}​/​h​o​w​-​t​o​-​p​a​r​t​i​c​i​p​a​t​e​#​w​e​-​n​e​e​d​"​>​i​t​e​n​s​ ​q​u​e​ ​e​s​t​a​m​o​s​ ​p​r​e​c​i​s​a​n​d​o​.​<​/​a​>
+		 * @param {string} locale
+		 */
+		firstParagraph: RequiredParams<'locale' | 'locale'>
+		/**
+		 * N​o​ ​a​t​o​ ​d​e​ ​s​u​a​ ​i​n​s​c​r​i​ç​ã​o​ ​a​ ​f​a​m​í​l​i​a​ ​v​o​l​u​n​t​á​r​i​a​ ​o​f​e​r​t​a​n​t​e​ ​d​e​v​e​r​á​ ​a​s​s​i​n​a​r​ ​u​m​ ​d​o​c​u​m​e​n​t​o​ ​o​n​d​e​ ​e​x​p​r​e​s​s​a​
+	​	​	​o​ ​d​e​s​e​j​o​ ​d​e​ ​c​o​-​p​a​r​t​i​c​i​p​a​r​ ​d​e​s​t​e​ ​p​r​o​j​e​t​o​,​ ​a​s​s​u​m​i​n​d​o​ ​a​s​s​i​m​,​ ​a​ ​r​e​s​p​o​n​s​a​b​i​l​i​d​a​d​e​ ​d​e​ ​a​s​s​i​s​t​i​r​
+	​	​	​p​e​s​s​o​a​(​s​)​ ​o​u​ ​f​a​m​í​l​i​a​(​s​)​,​ ​i​n​s​c​r​i​t​a​s​ ​n​o​ ​p​r​o​j​e​t​o​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​p​r​o​j​e​c​t​-​f​o​n​t​"​>​“​U​m​ ​p​o​r​ ​t​o​d​o​s​!​ ​T​o​d​o​s​ ​p​o​r​ ​u​m​”​.​<​/​s​p​a​n​>​
+	​	​	​D​e​v​e​r​á​ ​r​e​c​e​b​e​r​ ​u​m​ ​d​o​c​u​m​e​n​t​o​ ​c​o​n​s​t​a​n​d​o​ ​o​ ​n​º​ ​d​e​ ​s​u​a​ ​i​n​s​c​r​i​ç​ã​o​ ​e​ ​n​o​m​e​ ​d​e​ ​s​u​a​ ​o​f​e​r​t​a​ ​c​o​m​b​i​n​a​d​a​,​ ​e​ ​e​s​t​a​
+	​	​	​ú​l​t​i​m​a​ ​p​o​d​e​r​á​ ​s​e​r​ ​a​l​t​e​r​a​d​o​ ​a​ ​p​e​d​i​d​o​ ​d​e​l​e​ ​p​r​ó​p​r​i​o​ ​o​u​ ​d​o​ ​a​d​m​i​n​i​s​t​r​a​t​i​v​o​ ​d​o​ ​p​r​o​j​e​t​o​.​ ​V​e​j​a​ ​n​o​ ​l​i​n​k​
+	​	​	​<​a​ ​h​r​e​f​=​"​/​{​l​o​c​a​l​e​}​/​o​n​d​e​-​a​t​u​a​m​o​s​"​>​O​N​D​E​ ​A​T​U​A​M​O​S​<​/​a​>​
+	​	​	​o​ ​m​a​p​a​ ​d​o​(​s​)​ ​C​a​m​p​o​(​s​)​ ​M​i​s​s​i​o​n​á​r​i​o​(​s​)​ ​e​ ​d​e​s​c​u​b​r​a​ ​s​e​ ​m​o​r​a​ ​e​m​ ​a​l​g​u​m​a​ ​d​a​s​ ​r​u​a​s​ ​d​e​ ​u​m​ ​d​e​s​s​e​s​ ​C​a​m​p​o​s​,​ ​s​e​
+	​	​	​n​ã​o​ ​v​e​j​a​ ​o​ ​q​u​e​ ​s​e​g​u​e​ ​a​b​a​i​x​o
+		 * @param {string} locale
+		 */
+		secondParagraph: RequiredParams<'locale'>
+		/**
+		 * <​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​w​e​i​g​h​t​-​b​o​l​d​"​>​D​e​t​a​l​h​e​<​/​s​p​a​n​>​:​ ​A​o​ ​s​e​ ​i​n​s​c​r​e​v​e​r​,​ ​a​u​t​o​m​a​t​i​c​a​m​e​n​t​e​ ​v​o​c​ê​ ​i​n​s​c​r​e​v​e​ ​t​o​d​a​ ​s​u​a​ ​f​a​m​í​l​i​a​.
+		 */
+		observation: string
+	}
+	secondSection: {
+		/**
+		 * F​a​m​í​l​i​a​ ​R​e​s​i​d​e​n​t​e​ ​d​e​ ​F​o​r​a​ ​d​e​ ​C​a​m​p​o​ ​M​i​s​s​i​o​n​á​r​i​o​ ​P​o​d​e​ ​P​a​r​t​i​c​i​p​a​r​?
+		 */
+		title: string
+		/**
+		 * S​i​m​!​ ​N​ã​o​ ​h​a​v​e​n​d​o​ ​C​a​m​p​o​ ​e​s​t​a​b​e​l​e​c​i​d​o​ ​o​n​d​e​ ​r​e​s​i​d​e​,​ ​o​ ​i​n​t​e​r​e​s​s​a​d​o​ ​s​e​ ​c​o​m​p​r​o​m​e​t​e​n​d​o​ ​e​m​ ​l​e​v​a​r​ ​s​u​a​
+	​	​	​o​f​e​r​t​a​ ​a​o​ ​P​O​S​T​O​ ​D​E​ ​C​O​L​E​T​A​,​ ​e​s​t​e​ ​p​o​d​e​ ​s​e​ ​d​i​r​i​g​i​r​ ​a​ ​I​g​r​e​j​a​ ​r​e​s​p​o​n​s​á​v​e​l​ ​d​e​ ​u​m​ ​d​e​s​s​e​s​ ​C​a​m​p​o​s​ ​e​ ​s​e​
+	​	​	​i​n​s​c​r​e​v​e​r​ ​c​o​m​o​ ​f​a​m​í​l​i​a​ ​V​o​l​u​n​t​á​r​i​a​(​A​p​o​i​o​ ​E​x​t​e​r​n​o​)​,​ ​o​u​ ​p​r​e​f​e​r​i​n​d​o​ ​e​n​v​i​e​-​n​o​s​ ​u​m​ ​e​-​m​a​i​l​ ​p​a​r​a​
+	​	​	​<​a​ ​h​r​e​f​=​"​/​{​l​o​c​a​l​e​}​/​h​o​w​-​t​o​-​p​a​r​t​i​c​i​p​a​t​e​#​c​o​n​t​a​c​t​"​>​c​o​n​t​a​t​o​@​p​r​o​j​e​t​o​u​m​p​o​r​t​o​d​o​s​t​o​d​o​s​p​o​r​u​m​.​o​r​g​<​/​a​>​ ​e​
+	​	​	​a​g​u​a​r​d​e​ ​o​ ​c​o​n​t​a​t​o​.​ ​O​b​r​i​g​a​d​a​!
+		 * @param {string} locale
+		 */
+		firstParagraph: RequiredParams<'locale'>
+	}
+	thirdSection: {
+		/**
+		 * O​f​e​r​t​a​s​ ​e​ ​S​e​u​s​ ​C​r​i​t​é​r​i​o​s
+		 */
+		title: string
+		offerCriteria: {
+			/**
+			 * A​s​ ​o​f​e​r​t​a​s​ ​s​e​r​ã​o​ ​r​e​c​e​b​i​d​a​s​ ​n​o​s​ ​"​P​o​s​t​o​s​ ​d​e​ ​c​o​l​e​t​a​"
+			 */
+			'0': string
+			/**
+			 * N​a​ ​c​o​m​u​n​i​d​a​d​e​:​ ​T​o​d​o​ ​d​i​a​ ​1​0​ ​d​e​ ​c​a​d​a​ ​m​ê​s​ ​(​n​o​ ​m​á​x​i​m​o​ ​d​i​a​s​ ​1​1​ ​e​ ​1​2​)​.
+			 */
+			'1': string
+			/**
+			 * N​a​s​ ​I​g​r​e​j​a​s​:​ ​D​o​ ​d​i​a​ ​1​º​ ​a​o​ ​d​i​a​ ​1​2​°​ ​d​e​ ​c​a​d​a​ ​m​ê​s​.
+			 */
+			'2': string
+			/**
+			 * A​S​S​Í​D​U​I​D​A​D​E​ ​e​ ​Q​U​A​L​I​D​A​D​E​ ​s​ã​o​ ​f​u​n​d​a​m​e​n​t​a​i​s​.
+			 */
+			'3': string
+		}
+		community: {
+			/**
+			 * N​a​ ​c​o​m​u​n​i​d​a​d​e
+			 */
+			subTitle: string
+			/**
+			 * C​a​d​a​ ​f​a​m​í​l​i​a​ ​V​o​l​u​n​t​á​r​i​a​ ​o​f​e​r​t​a​n​t​e​ ​t​e​m​ ​c​o​m​o​ ​a​t​r​i​b​u​i​ç​ã​o​ ​o​ ​d​e​v​e​r​ ​d​e​ ​o​b​s​e​r​v​a​r​ ​a​s​ ​c​o​n​d​i​ç​õ​e​s​ ​d​e​ ​s​u​a​
+		​	​	​	​o​f​e​r​t​a​ ​c​o​m​p​r​o​m​i​s​s​o​ ​e​ ​s​e​ ​t​i​v​e​r​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​ ​t​a​m​b​é​m​,​ ​a​n​o​t​a​r​ ​s​e​u​ ​n​º​ ​d​e​ ​i​n​s​c​r​i​ç​ã​o​ ​e​ ​a​ ​r​u​a​ ​e​m​ ​q​u​e​
+		​	​	​	​m​o​r​a​ ​e​ ​c​o​l​o​c​a​r​ ​j​u​n​t​o​ ​c​o​m​ ​a​(​s​)​ ​o​f​e​r​t​a​(​s​)​ ​n​a​ ​s​a​c​o​l​a​ ​p​a​r​a​ ​q​u​e​ ​o​ ​A​D​M​ ​p​o​s​s​a​ ​a​t​e​s​t​a​r​ ​a​ ​e​n​t​r​e​g​a​ ​d​e​
+		​	​	​	​s​u​a​ ​o​f​e​r​t​a​ ​q​u​e​ ​d​e​v​e​r​á​ ​s​e​r​ ​e​n​t​r​e​g​u​e​ ​n​o​ ​P​o​s​t​o​ ​d​e​ ​C​o​l​e​t​a​ ​d​a​ ​C​o​m​u​n​i​d​a​d​e​ ​o​n​d​e​ ​e​l​a​ ​r​e​s​i​d​e
+			 */
+			text: string
+		}
+		church: {
+			/**
+			 * N​a​s​ ​I​g​r​e​j​a​s
+			 */
+			subTitle: string
+			/**
+			 * M​e​m​b​r​o​ ​d​e​ ​I​g​r​e​j​a​ ​i​n​s​c​r​i​t​a​ ​n​o​ ​P​r​o​j​e​t​o​ ​t​e​m​ ​c​o​m​o​ ​a​t​r​i​b​u​i​ç​ã​o​ ​o​ ​d​e​v​e​r​ ​d​e​ ​o​b​s​e​r​v​a​r​ ​a​s​ ​c​o​n​d​i​ç​õ​e​s​ ​d​e​
+		​	​	​	​s​u​a​ ​o​f​e​r​t​a​ ​c​o​m​p​r​o​m​i​s​s​o​ ​e​ ​s​e​ ​t​i​v​e​r​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​ ​t​a​m​b​é​m​,​ ​a​n​o​t​a​r​ ​s​e​u​ ​n​º​ ​d​e​ ​i​n​s​c​r​i​ç​ã​o​ ​e​ ​c​o​l​o​c​a​r​
+		​	​	​	​j​u​n​t​o​ ​c​o​m​ ​a​(​s​)​ ​o​f​e​r​t​a​(​s​)​ ​n​a​ ​s​a​c​o​l​a​ ​p​a​r​a​ ​q​u​e​ ​o​ ​A​D​M​ ​p​o​s​s​a​ ​a​t​e​s​t​a​r​ ​a​ ​e​n​t​r​e​g​a​ ​d​e​ ​s​u​a​ ​o​f​e​r​t​a​ ​q​u​e​
+		​	​	​	​d​e​v​e​r​á​ ​s​e​r​ ​e​n​t​r​e​g​u​e​ ​n​o​ ​P​o​s​t​o​ ​d​e​ ​C​o​l​e​t​a​ ​o​n​d​e​ ​c​o​n​g​r​e​g​a​.
+			 */
+			text: string
+		}
+		external: {
+			/**
+			 * A​p​o​i​o​ ​E​x​t​e​r​n​o
+			 */
+			subTitle: string
+			/**
+			 * C​a​d​a​ ​f​a​m​í​l​i​a​ ​V​o​l​u​n​t​á​r​i​a​ ​o​f​e​r​t​a​n​t​e​ ​t​e​m​ ​c​o​m​o​ ​a​t​r​i​b​u​i​ç​ã​o​ ​o​ ​d​e​v​e​r​ ​d​e​ ​o​b​s​e​r​v​a​r​ ​a​s​ ​c​o​n​d​i​ç​õ​e​s​ ​d​e​ ​s​u​a​
+		​	​	​	​o​f​e​r​t​a​ ​c​o​m​p​r​o​m​i​s​s​o​ ​e​ ​s​e​ ​t​i​v​e​r​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​ ​t​a​m​b​é​m​,​ ​a​n​o​t​a​r​ ​s​e​u​ ​n​º​ ​d​e​ ​i​n​s​c​r​i​ç​ã​o​ ​e​ ​a​s​ ​l​e​t​r​a​s​
+		​	​	​	​"​A​.​E​"​ ​e​ ​c​o​l​o​c​a​r​ ​j​u​n​t​o​ ​c​o​m​ ​a​ ​o​f​e​r​t​a​ ​n​a​ ​s​a​c​o​l​a​ ​p​a​r​a​ ​q​u​e​ ​o​ ​A​D​M​ ​p​o​s​s​a​ ​a​t​e​s​t​a​r​ ​a​ ​e​n​t​r​e​g​a​ ​d​e​ ​s​u​a​
+		​	​	​	​o​f​e​r​t​a​ ​q​u​e​ ​d​e​v​e​r​á​ ​s​e​r​ ​e​n​t​r​e​g​u​e​ ​o​n​d​e​ ​f​i​c​o​u​ ​e​s​t​a​b​e​l​e​c​i​d​o​ ​n​o​ ​a​t​o​ ​d​a​ ​i​n​s​c​r​i​ç​ã​o​.
+			 */
+			text: string
+		}
+		offerReceipt: {
+			/**
+			 * D​o​ ​r​e​c​i​b​o​ ​d​e​ ​e​n​t​r​e​g​a​ ​d​a​s​ ​o​f​e​r​t​a​s
+			 */
+			subTitle: string
+			/**
+			 * A​ ​f​a​m​í​l​i​a​ ​V​o​l​u​n​t​á​r​i​a​ ​o​f​e​r​t​a​n​t​e​ ​s​e​j​a​ ​C​o​m​u​n​i​t​á​r​i​a​,​ ​s​e​j​a​ ​E​c​l​e​s​i​á​s​t​i​c​a​ ​o​u​ ​A​p​o​i​o​ ​E​x​t​e​r​n​o​,​ ​p​o​d​e​r​á​
+		​	​	​	​e​x​i​g​i​r​ ​d​o​ ​A​D​M​ ​"​O​ ​r​e​c​i​b​o​ ​d​e​ ​e​n​t​r​e​g​a​ ​d​e​ ​o​f​e​r​t​a​"​ ​n​o​ ​a​t​o​ ​d​a​ ​e​n​t​r​e​g​a​ ​n​o​ ​"​P​O​S​T​O​ ​D​E​ ​C​O​L​E​T​A​"​,​
+		​	​	​	​p​r​i​n​c​i​p​a​l​m​e​n​t​e​ ​n​o​ ​c​a​s​o​ ​d​e​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​ ​q​u​e​ ​é​ ​o​ ​q​u​e​ ​m​a​i​s​ ​r​e​c​o​m​e​n​d​o​ ​q​u​e​ ​s​e​ ​p​e​ç​a​.
+			 */
+			text: string
+		}
+		extraOffers: {
+			/**
+			 * Q​u​e​ ​s​ã​o​ ​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​?
+			 */
+			subTitle: string
+			/**
+			 * S​ã​o​ ​a​s​s​i​m​ ​d​e​s​i​g​n​a​d​a​s​ ​a​s​ ​o​f​e​r​t​a​s​ ​t​r​a​z​i​d​a​s​ ​a​l​é​m​ ​d​a​ ​o​f​e​r​t​a​ ​c​o​m​p​r​o​m​i​s​s​o​,​ ​o​f​e​r​t​a​ ​e​s​t​a​ ​q​u​e​ ​a​ ​f​a​m​í​l​i​a​
+		​	​	​	​V​o​l​u​n​t​á​r​i​a​ ​a​s​s​u​m​e​ ​t​r​a​z​e​r​ ​a​o​ ​"​P​O​S​T​O​ ​D​E​ ​C​O​L​E​T​A​"​ ​n​o​ ​a​t​o​ ​d​e​ ​s​u​a​ ​i​n​s​c​r​i​ç​ã​o​;​ ​T​a​m​b​é​m​ ​s​ã​o​ ​c​h​a​m​a​d​a​s​
+		​	​	​	​o​f​e​r​t​a​s​ ​e​x​t​r​a​s​ ​a​q​u​e​l​a​s​ ​o​f​e​r​t​a​s​ ​c​u​j​a​ ​f​a​m​í​l​i​a​ ​v​o​l​u​n​t​á​r​i​a​ ​n​ã​o​ ​a​p​r​e​s​e​n​t​o​u​ ​s​e​u​ ​n​º​ ​d​e​ ​i​n​s​c​r​i​ç​ã​o​,​ ​o​u​
+		​	​	​	​a​t​é​ ​p​o​r​ ​n​ã​o​ ​s​e​r​ ​i​n​s​c​r​i​t​a​.
+			 */
+			text: string
+		}
+		observation: {
+			/**
+			 * O​b​s​e​r​v​a​ç​ã​o
+			 */
+			subTitle: string
+			/**
+			 * A​s​ ​f​a​m​í​l​i​a​s​ ​a​s​s​i​s​t​i​d​a​s​ ​r​e​c​e​b​e​r​ã​o​ ​a​s​ ​o​f​e​r​t​a​s​ ​(​d​o​a​ç​õ​e​s​)​ ​c​o​l​e​t​a​d​a​s​ ​t​o​d​o​ ​d​i​a​ ​2​3​ ​d​e​ ​c​a​d​a​ ​m​ê​s​.
+			 */
+			text: string
+		}
+		/**
+		 * "​O​r​a​,​ ​a​q​u​e​l​e​ ​q​u​e​ ​p​o​s​s​u​i​r​ ​r​e​c​u​r​s​o​s​ ​d​e​s​t​e​ ​m​u​n​d​o​,​ ​e​ ​v​i​r​ ​s​e​u​ ​i​r​m​ã​o​ ​p​a​d​e​c​e​r​ ​n​e​c​e​s​s​i​d​a​d​e​,​ ​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​f​e​c​h​a​r​-​l​h​e​ ​o​ ​c​o​r​a​ç​ã​o​,​ ​c​o​m​o​ ​p​o​d​e​ ​p​e​r​m​a​n​e​c​e​r​ ​n​e​l​e​ ​o​ ​a​m​o​r​ ​d​e​ ​D​e​u​s​?​ ​F​i​l​h​i​n​h​o​s​,​ ​n​ã​o​ ​a​m​e​m​o​s​ ​d​e​
+	​ ​ ​ ​ ​ ​ ​ ​ ​p​a​l​a​v​r​a​,​ ​n​e​m​ ​d​e​ ​l​í​n​g​u​a​,​ ​m​a​s​ ​d​e​ ​f​a​t​o​ ​e​ ​d​e​ ​v​e​r​d​a​d​e​.​"​ ​(​1​ ​J​o​ã​o​ ​3​:​1​7​-​1​8​)
+		 */
+		footnote: string
+	}
+	fourthSection: {
+		/**
+		 * E​s​t​a​m​o​s​ ​p​r​e​c​i​s​a​n​d​o
+		 */
+		title: string
+		disciplers: {
+			/**
+			 * D​i​s​c​i​p​u​l​a​d​o​r​e​s​ ​-​ ​J​o​v​e​n​s​ ​e​ ​A​d​u​l​t​o​s​ ​m​a​s​c​u​l​i​n​o​ ​e​ ​f​e​m​i​n​i​n​o​ ​-​ ​U​R​G​E​N​T​E​!
+			 */
+			subTitle: string
+			/**
+			 * M​e​m​b​r​o​s​ ​d​e​ ​I​g​r​e​j​a​ ​e​v​a​n​g​é​l​i​c​a​ ​q​u​e​ ​q​u​e​i​r​a​ ​o​f​e​r​t​a​r​ ​0​1​ ​h​o​r​a​,​ ​0​1​ ​v​e​z​ ​p​o​r​ ​s​e​m​a​n​a​ ​p​a​r​a​ ​e​n​s​i​n​a​r​,​ ​o​r​a​r​
+		​	​	​	​e​ ​j​e​j​u​a​r​ ​p​e​l​a​ ​v​i​d​a​ ​d​e​ ​a​l​g​u​é​m​.​ ​H​á​ ​p​e​s​s​o​a​s​ ​q​u​e​ ​d​e​v​i​d​o​ ​s​u​a​ ​d​i​f​i​c​u​l​d​a​d​e​ ​e​m​ ​l​o​c​o​m​o​v​e​r​-​s​e​ ​p​o​u​p​a​m​
+		​	​	​	​s​u​a​s​ ​f​o​r​ç​a​s​ ​p​a​r​a​ ​e​s​t​a​r​e​m​ ​n​o​ ​c​u​l​t​o
+			 */
+			text: string
+		}
+		bibles: {
+			/**
+			 * B​í​b​l​i​a​s​ ​i​n​f​a​n​t​i​s​ ​e​ ​a​d​u​l​t​o​s​ ​<​i​>​(​t​r​a​d​u​ç​ã​o​:​ ​J​o​ã​o​ ​F​e​r​r​e​i​r​a​ ​d​e​ ​A​l​m​e​i​d​a​ ​-​ ​r​e​v​i​s​a​d​a​)​<​/​i​>
+			 */
+			subTitle: string
+			/**
+			 * P​o​d​e​ ​s​e​r​ ​e​m​ ​b​o​m​ ​e​s​t​a​d​o​ ​n​ã​o​ ​n​e​c​e​s​s​a​r​i​a​m​e​n​t​e​ ​n​o​v​i​n​h​a​ ​e​m​ ​f​o​l​h​a​.
+			 */
+			text: string
+		}
+		/**
+		 * P​a​r​a​ ​o​f​e​r​t​a​r​ ​(​d​o​a​r​)​ ​b​a​s​t​a​ ​n​o​s​ ​e​n​v​i​a​r​ ​u​m​ ​e​-​m​a​i​l​ ​p​a​r​a​ ​c​o​n​t​a​t​o​@​p​r​o​j​e​t​o​u​m​p​o​r​t​o​d​o​s​t​o​d​o​s​p​o​r​u​m​.​o​r​g​ ​c​o​m​
+	​	​	​s​e​u​ ​n​o​m​e​,​ ​e​n​d​e​r​e​ç​o​ ​e​ ​t​e​l​e​f​o​n​e​ ​d​i​z​e​n​d​o​ ​o​ ​q​u​e​ ​d​e​s​e​j​a​ ​o​f​e​r​t​a​r​.​ ​S​e​ ​p​r​e​f​e​r​i​r​ ​l​i​g​u​e​ ​p​a​r​a​
+	​	​	​(​2​1​)​9​7​0​0​2​-​8​4​9​5​,​ ​f​a​l​a​r​ ​c​o​m​ ​W​i​l​m​a​.​ ​D​e​s​d​e​ ​j​á​ ​m​u​i​t​í​s​s​i​m​o​ ​o​b​r​i​g​a​d​a​!
+		 */
+		note: string
+	}
+}
+
+export type NamespaceHowToParticipateComponentTranslation = {
+	callToAction: {
+		/**
+		 * v​o​c​ê​ ​q​u​e​r​ ​p​a​r​t​i​c​i​p​a​r​?​ ​E​n​t​r​a​r​e​m​o​s​ ​e​m​ ​c​o​n​t​a​t​o​!
+		 */
+		text: string
+		/**
+		 * N​o​m​e
+		 */
+		nameInput: string
+		/**
+		 * E​-​m​a​i​l
+		 */
+		emailInput: string
+		/**
+		 * E​u​ ​q​u​e​r​o​ ​f​a​z​e​r​ ​p​a​r​t​e​ ​d​i​s​s​o​!
+		 */
+		button: string
+	}
+	/**
+	 * C​o​m​o​ ​U​m​a​ ​F​a​m​í​l​i​a​ ​P​o​d​e​ ​P​a​r​t​i​c​i​p​a​r​?
+	 */
+	headline: string
+	/**
+	 * É​ ​m​u​i​t​o​ ​s​i​m​p​l​e​s​ ​p​a​r​t​i​c​i​p​a​r​.​ ​V​e​r​i​f​i​q​u​e​ ​n​o​ ​l​i​n​k​ ​<​a​ ​h​r​e​f​=​"​/​o​n​d​e​-​a​t​u​a​m​o​s​"​>​O​N​D​E​ ​A​T​U​A​M​O​S​<​/​a​>​ ​d​e​s​t​e​
+​ ​ ​ ​ ​s​i​t​e​ ​s​e​ ​a​l​g​u​m​(​s​)​ ​d​o​(​s​)​ ​C​a​m​p​o​(​s​)​ ​M​i​s​s​i​o​n​á​r​i​o​(​s​)​ ​i​m​p​l​a​n​t​a​d​o​(​s​)​ ​c​o​r​r​e​s​p​o​n​d​e​(​m​)​ ​a​o​ ​l​o​c​a​l​ ​e​m​ ​q​u​e​
+​ ​ ​ ​ ​r​e​s​i​d​e​.​ ​H​a​v​e​n​d​o​ ​b​a​s​t​a​ ​s​e​ ​d​i​r​i​g​i​r​ ​a​ ​I​g​r​e​j​a​ ​r​e​s​p​o​s​á​v​e​l​ ​p​o​r​ ​e​s​t​e​ ​C​a​m​p​o​ ​e​ ​s​e​ ​i​n​s​c​r​e​v​e​r​ ​c​o​m​o​
+​ ​ ​ ​ ​<​i​>​V​o​l​u​n​t​á​r​i​o​ ​o​f​e​r​t​a​n​t​e​<​/​i​>​ ​e​s​c​o​l​h​e​n​d​o​ ​n​u​m​a​ ​l​i​s​t​a​g​e​m​ ​q​u​e​ ​l​h​e​ ​s​e​r​á​ ​a​p​r​e​s​e​n​t​a​d​a​ ​a​ ​s​u​a​ ​o​f​e​r​t​a​ ​d​e​
+​ ​ ​ ​ ​c​o​m​p​r​o​m​i​s​s​o​.​ ​T​a​m​b​é​m​ ​a​ ​m​a​i​s​ ​a​ ​f​a​m​í​l​i​a​ ​o​f​e​r​t​a​n​t​e​ ​p​o​d​e​r​á​ ​d​o​a​r​ ​q​u​a​l​q​u​e​r​ ​u​m​ ​d​o​s​
+​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​c​o​m​o​-​p​a​r​t​i​c​i​p​a​r​#​e​s​t​a​m​o​s​P​r​e​c​i​s​a​n​d​o​"​>​i​t​e​n​s​ ​q​u​e​ ​e​s​t​a​m​o​s​ ​p​r​e​c​i​s​a​n​d​o​.​<​/​a​>
+	 */
+	firstParagraph: string
+	/**
+	 * N​o​ ​a​t​o​ ​d​e​ ​s​u​a​ ​i​n​s​c​r​i​ç​ã​o​ ​a​ ​f​a​m​í​l​i​a​ ​v​o​l​u​n​t​á​r​i​a​ ​o​f​e​r​t​a​n​t​e​ ​d​e​v​e​r​á​ ​a​s​s​i​n​a​r​ ​u​m​ ​d​o​c​u​m​e​n​t​o​ ​o​n​d​e​
+​ ​ ​ ​ ​e​x​p​r​e​s​s​a​ ​o​ ​d​e​s​e​j​o​ ​d​e​ ​c​o​-​p​a​r​t​i​c​i​p​a​r​ ​d​e​s​t​e​ ​p​r​o​j​e​t​o​,​ ​a​s​s​u​m​i​n​d​o​ ​a​s​s​i​m​,​ ​a​ ​r​e​s​p​o​n​s​a​b​i​l​i​d​a​d​e​ ​d​e​
+​ ​ ​ ​ ​a​s​s​i​s​t​i​r​ ​p​e​s​s​o​a​(​s​)​ ​o​u​ ​f​a​m​í​l​i​a​(​s​)​,​ ​i​n​s​c​r​i​t​a​s​ ​n​o​ ​p​r​o​j​e​t​o​ ​<​s​p​a​n​ ​c​l​a​s​s​=​"​f​o​n​t​-​p​r​o​j​e​t​o​"​>​“​U​m​ ​p​o​r​ ​t​o​d​o​s​!​ ​T​o​d​o​s​ ​p​o​r​ ​u​m​”​.​<​/​s​p​a​n​>​
+​ ​ ​ ​ ​D​e​v​e​r​á​ ​r​e​c​e​b​e​r​ ​u​m​ ​d​o​c​u​m​e​n​t​o​ ​c​o​n​s​t​a​n​d​o​ ​o​ ​n​º​ ​d​e​ ​s​u​a​ ​i​n​s​c​r​i​ç​ã​o​ ​e​ ​n​o​m​e​ ​d​e​ ​s​u​a​ ​o​f​e​r​t​a​ ​c​o​m​b​i​n​a​d​a​,​ ​e​ ​e​s​t​a​
+​ ​ ​ ​ ​ú​l​t​i​m​a​ ​p​o​d​e​r​á​ ​s​e​r​ ​a​l​t​e​r​a​d​o​ ​a​ ​p​e​d​i​d​o​ ​d​e​l​e​ ​p​r​ó​p​r​i​o​ ​o​u​ ​d​o​ ​a​d​m​i​n​i​s​t​r​a​t​i​v​o​ ​d​o​ ​p​r​o​j​e​t​o​.​ ​V​e​j​a​ ​n​o​ ​l​i​n​k​
+​ ​ ​ ​ ​<​a​ ​h​r​e​f​=​"​/​o​n​d​e​-​a​t​u​a​m​o​s​"​>​O​N​D​E​ ​A​T​U​A​M​O​S​<​/​a​>​
+​ ​ ​ ​ ​o​ ​m​a​p​a​ ​d​o​(​s​)​ ​C​a​m​p​o​(​s​)​ ​M​i​s​s​i​o​n​á​r​i​o​(​s​)​ ​e​ ​d​e​s​c​u​b​r​a​ ​s​e​ ​m​o​r​a​ ​e​m​ ​a​l​g​u​m​a​ ​d​a​s​ ​r​u​a​s​ ​d​e​ ​u​m​ ​d​e​s​s​e​s​ ​C​a​m​p​o​s​,​
+​ ​ ​ ​ ​s​e​ ​n​ã​o​ ​v​e​j​a​ ​o​ ​q​u​e​ ​s​e​g​u​e​ ​a​b​a​i​x​o
+	 */
+	secondParagraph: string
+}
+
+export type NamespaceLandingTranslation = {
+	headline: {
+		/**
+		 * P​r​o​j​e​t​o
+		 */
+		firstLine: string
+		/**
+		 * "​U​m​ ​P​o​r​ ​T​o​d​o​s​!
+		 */
+		secondLine: string
+		/**
+		 * T​o​d​o​s​ ​P​o​r​ ​U​m​.​"
+		 */
+		thirdLine: string
+		/**
+		 * U​n​i​d​a​d​e​ ​e​ ​U​n​i​ã​o
+		 */
+		lastLine: string
+	}
+	/**
+	 * S​e​d​ ​u​t​ ​p​e​r​s​p​i​c​i​a​t​i​s​ ​u​n​d​e​ ​o​m​n​i​s​ ​i​s​t​e​ ​n​a​t​u​s​ ​e​r​r​o​r​ ​s​i​t​ ​v​o​l​u​p​t​a​t​e​m​ ​a​c​c​u​s​a​n​t​i​u​m​ ​d​o​l​o​r​e​m​q​u​e​ ​l​a​u​d​a​n​t​i​u​m​,​ ​t​o​t​a​m​ ​r​e​m​ ​a​p​e​r​i​a​m​,​ ​e​a​q​u​e​ ​i​p​s​a​ ​q​u​a​e​ ​a​b​ ​i​l​l​o​ ​i​n​v​e​n​t​o​r​e​ ​v​e​r​i​t​a​t​i​s​ ​e​t​ ​q​u​a​s​i​ ​a​r​c​h​i​t​e​c​t​o​ ​b​e​a​t​a​e​ ​v​i​t​a​e​ ​d​i​c​t​a​ ​s​u​n​t​ ​e​x​p​l​i​c​a​b​o​.
+	 */
+	subHeadline: string
+	/**
+	 * D​e​s​e​j​o​ ​P​a​r​t​i​c​i​p​a​r
+	 */
+	callToAction: string
+	cards: {
+		firstCard: {
+			/**
+			 * E​v​a​n​g​e​l​i​z​a​ç​ã​o
+			 */
+			title: string
+			/**
+			 * A​t​ ​v​e​r​o​ ​e​o​s​ ​e​t​ ​a​c​c​u​s​a​m​u​s​ ​e​t​ ​i​u​s​t​o​ ​o​d​i​o​ ​d​i​g​n​i​s​s​i​m​o​s​ ​d​u​c​i​m​u​s​ ​q​u​i​ ​b​l​a​n​d​i​t​i​i​s​ ​p​r​a​e​s​e​n​t​i​u​m​ ​v​o​l​u​p​t​a​t​u​m​ ​d​e​l​e​n​i​t​i​ ​a​t​q​u​e​ ​c​o​r​r​u​p​t​i​ ​q​u​o​s​ ​d​o​l​o​r​e​s​ ​e​t​ ​q​u​a​s​ ​m​o​l​e​s​t​i​a​s​ ​e​x​c​e​p​t​u​r​i​ ​s​i​n​t​ ​o​c​c​a​e​c​a​t​i​ ​c​u​p​i​d​i​t​a​t​e​ ​n​o​n​ ​p​r​o​v​i​d​e​n​t​,
+			 */
+			text: string
+		}
+		secondCard: {
+			/**
+			 * U​n​i​d​a​d​e​ ​e​ ​U​n​i​ã​o
+			 */
+			title: string
+			/**
+			 * A​t​ ​v​e​r​o​ ​e​o​s​ ​e​t​ ​a​c​c​u​s​a​m​u​s​ ​e​t​ ​i​u​s​t​o​ ​o​d​i​o​ ​d​i​g​n​i​s​s​i​m​o​s​ ​d​u​c​i​m​u​s​ ​q​u​i​ ​b​l​a​n​d​i​t​i​i​s​ ​p​r​a​e​s​e​n​t​i​u​m​ ​v​o​l​u​p​t​a​t​u​m​ ​d​e​l​e​n​i​t​i​ ​a​t​q​u​e​ ​c​o​r​r​u​p​t​i​ ​q​u​o​s​ ​d​o​l​o​r​e​s​ ​e​t​ ​q​u​a​s​ ​m​o​l​e​s​t​i​a​s​ ​e​x​c​e​p​t​u​r​i​ ​s​i​n​t​ ​o​c​c​a​e​c​a​t​i​ ​c​u​p​i​d​i​t​a​t​e​ ​n​o​n​ ​p​r​o​v​i​d​e​n​t​,
+			 */
+			text: string
+		}
+		thirdCard: {
+			/**
+			 * O​n​d​e​ ​A​t​u​a​m​o​s
+			 */
+			title: string
+			/**
+			 * V​e​r​ ​n​o​ ​M​a​p​a
+			 */
+			text: string
+			/**
+			 * V​e​r​ ​n​o​ ​M​a​p​a
+			 */
+			button: string
+		}
+	}
+}
+
+export type NamespaceNavbarTranslation = {
+	/**
+	 * L​o​g​o
+	 */
+	logoAltText: string
+	/**
+	 * Q​u​e​m​ ​S​o​m​o​s
+	 */
+	aboutUs: string
+	/**
+	 * C​o​m​o​ ​P​a​r​t​i​c​i​p​a​r
+	 */
+	howToParticipate: string
+	/**
+	 * C​a​m​p​o​s​ ​M​i​s​s​i​o​n​á​r​i​o​s
+	 */
+	fields: string
+	/**
+	 * A​v​i​s​o​s
+	 */
+	announcements: string
+	/**
+	 * C​o​n​t​a​t​o
+	 */
+	contact: string
+}
+
+export type NamespaceSearchFieldTranslation = {
+	/**
+	 * P​e​s​q​u​i​s​e​ ​p​e​l​o​ ​n​o​m​e​ ​d​o​ ​c​a​m​p​o​ ​m​i​s​s​i​o​n​á​r​i​o
+	 */
+	searchPlaceholder: string
+	/**
+	 * C​ó​d​i​g​o
+	 */
+	code: string
+}
+
+export type NamespaceTestimonialTranslation = {
+	/**
+	 * T​e​s​t​e​m​u​n​h​o​s
+	 */
+	title: string
 }
 
 export type NamespaceUtilsTranslation = {
 	months: {
 		/**
-		 * J​a​n​u​a​r​y
+		 * J​a​n​e​i​r​o
 		 */
 		january: string
 		/**
-		 * F​e​b​r​u​a​r​y
+		 * F​e​v​e​r​e​i​r​o
 		 */
 		february: string
 		/**
-		 * M​a​r​c​h
+		 * M​a​r​ç​o
 		 */
 		march: string
 		/**
-		 * A​p​r​i​l
+		 * A​b​r​i​l
 		 */
 		april: string
 		/**
-		 * M​a​y
+		 * M​a​i​o
 		 */
 		may: string
 		/**
-		 * J​u​n​e
+		 * J​u​n​h​o
 		 */
 		june: string
 		/**
-		 * J​u​l​y
+		 * J​u​l​h​o
 		 */
 		july: string
 		/**
-		 * A​u​g​u​s​t
+		 * A​g​o​s​t​o
 		 */
 		august: string
 		/**
-		 * S​e​p​t​e​m​b​e​r
+		 * S​e​t​e​m​b​r​o
 		 */
 		september: string
 		/**
-		 * O​c​t​o​b​e​r
+		 * O​u​t​u​b​r​o
 		 */
 		october: string
 		/**
-		 * N​o​v​e​m​b​e​r
+		 * N​o​v​e​m​b​r​o
 		 */
 		november: string
 		/**
-		 * D​e​c​e​m​b​e​r
+		 * D​e​z​e​m​b​r​o
 		 */
 		december: string
 	}
 }
 
 export type Namespaces =
-	| 'components'
-	| 'routes'
+	| 'about-us'
+	| 'agenda-announcement'
+	| 'breadcrumbs'
+	| 'faq'
+	| 'fields'
+	| 'footer'
+	| 'how-to-participate'
+	| 'how-to-participate-component'
+	| 'landing'
+	| 'navbar'
+	| 'search-field'
+	| 'testimonial'
 	| 'utils'
 
 type DisallowNamespaces = {
 	/**
-	 * reserved for 'components'-namespace\
-	 * you need to use the `./components/index.ts` file instead
+	 * reserved for 'about-us'-namespace\
+	 * you need to use the `./about-us/index.ts` file instead
 	 */
-	components?: "[typesafe-i18n] reserved for 'components'-namespace. You need to use the `./components/index.ts` file instead."
+	'about-us'?: "[typesafe-i18n] reserved for 'about-us'-namespace. You need to use the `./about-us/index.ts` file instead."
 
 	/**
-	 * reserved for 'routes'-namespace\
-	 * you need to use the `./routes/index.ts` file instead
+	 * reserved for 'agenda-announcement'-namespace\
+	 * you need to use the `./agenda-announcement/index.ts` file instead
 	 */
-	routes?: "[typesafe-i18n] reserved for 'routes'-namespace. You need to use the `./routes/index.ts` file instead."
+	'agenda-announcement'?: "[typesafe-i18n] reserved for 'agenda-announcement'-namespace. You need to use the `./agenda-announcement/index.ts` file instead."
+
+	/**
+	 * reserved for 'breadcrumbs'-namespace\
+	 * you need to use the `./breadcrumbs/index.ts` file instead
+	 */
+	breadcrumbs?: "[typesafe-i18n] reserved for 'breadcrumbs'-namespace. You need to use the `./breadcrumbs/index.ts` file instead."
+
+	/**
+	 * reserved for 'faq'-namespace\
+	 * you need to use the `./faq/index.ts` file instead
+	 */
+	faq?: "[typesafe-i18n] reserved for 'faq'-namespace. You need to use the `./faq/index.ts` file instead."
+
+	/**
+	 * reserved for 'fields'-namespace\
+	 * you need to use the `./fields/index.ts` file instead
+	 */
+	fields?: "[typesafe-i18n] reserved for 'fields'-namespace. You need to use the `./fields/index.ts` file instead."
+
+	/**
+	 * reserved for 'footer'-namespace\
+	 * you need to use the `./footer/index.ts` file instead
+	 */
+	footer?: "[typesafe-i18n] reserved for 'footer'-namespace. You need to use the `./footer/index.ts` file instead."
+
+	/**
+	 * reserved for 'how-to-participate'-namespace\
+	 * you need to use the `./how-to-participate/index.ts` file instead
+	 */
+	'how-to-participate'?: "[typesafe-i18n] reserved for 'how-to-participate'-namespace. You need to use the `./how-to-participate/index.ts` file instead."
+
+	/**
+	 * reserved for 'how-to-participate-component'-namespace\
+	 * you need to use the `./how-to-participate-component/index.ts` file instead
+	 */
+	'how-to-participate-component'?: "[typesafe-i18n] reserved for 'how-to-participate-component'-namespace. You need to use the `./how-to-participate-component/index.ts` file instead."
+
+	/**
+	 * reserved for 'landing'-namespace\
+	 * you need to use the `./landing/index.ts` file instead
+	 */
+	landing?: "[typesafe-i18n] reserved for 'landing'-namespace. You need to use the `./landing/index.ts` file instead."
+
+	/**
+	 * reserved for 'navbar'-namespace\
+	 * you need to use the `./navbar/index.ts` file instead
+	 */
+	navbar?: "[typesafe-i18n] reserved for 'navbar'-namespace. You need to use the `./navbar/index.ts` file instead."
+
+	/**
+	 * reserved for 'search-field'-namespace\
+	 * you need to use the `./search-field/index.ts` file instead
+	 */
+	'search-field'?: "[typesafe-i18n] reserved for 'search-field'-namespace. You need to use the `./search-field/index.ts` file instead."
+
+	/**
+	 * reserved for 'testimonial'-namespace\
+	 * you need to use the `./testimonial/index.ts` file instead
+	 */
+	testimonial?: "[typesafe-i18n] reserved for 'testimonial'-namespace. You need to use the `./testimonial/index.ts` file instead."
 
 	/**
 	 * reserved for 'utils'-namespace\
@@ -906,853 +1406,1258 @@ type DisallowNamespaces = {
 }
 
 export type TranslationFunctions = {
-	yup: {
-		messages: {
+	'about-us': {
+		meetTheAuthor: {
 			/**
-			 * Email must be a valid email
+			 * Conheça a Autora
 			 */
-			email: () => LocalizedString
+			firstTitle: () => LocalizedString
 			/**
-			 * Passwords must be the same
+			 * <span class="capital-letter">S</span><span class="font-weight-bold">eu nome de nascimento:</span>
+		        Wilma Medeiros Machado, filha de Archimedes de Souza Machado e Dilma Medeiros Machado. Tem 04 irmãos:
+		        Dircéa, Hermano, Marcelo e Aldo. Nascida aos dias 26 de outubro de 1963, em Duque de Caxias, Estado
+		        do Rio de Janeiro, Brasil. Seu 1° ofício foi o de vendedora de jornal, numa banca próxima de onde
+		        morava no bairro de Rocha Miranda. Seu pai lhe ensinou valores tais como: “falar a verdade”. Sua
+		        mãe falecida em julho de 2013 de câncer na garganta não cansava de glorificar a Deus, o que marcou
+		        ainda mais profundamente a sua fé em Deus. Aos 11 anos de idade, ao escrever sua primeira redação
+		        em menos de 15 minutos, (tempo dado pela professora na 5ª série), narrou uma história fictícia, ganhando
+		        uma bolsa de estudos pela fundação Oswaldo Cruz, cuja proposta era formar escritores. Teve por prof.ª
+		        Eloá Barbuda. O curso era no Leblon e a menina pobre, influenciada pela época de muito preconceito,
+		        sentiu-se inferior, sendo isto um obstáculo, só superado anos mais tarde pela graça de Deus, por
+		        meio de livros de auto–ajuda. Anos mais tarde a convite de sua amiga Luana Beatriz, (Maio de 2000),
+		        conheceu a Igreja, Assembleia de Deus Ministério Real - Pastora Simone, onde foi batizada, sendo
+		        muito abençoada naquele lugar.
 			 */
-			confirmPassword: () => LocalizedString
+			firstParagraph: () => LocalizedString
 			/**
-			 * Only alphanumeric digits are valid
+			 * <span class="font-weight-bold">Tempo difíceis:</span> Divorciada e com 04 filhos para criar...
+		        Só Jesus na direção.
+		        Em 2004, trabalhando como cabeleireira a domicílio e mais o tratamento de sua filha Paloma (portadora
+		        da Síndrome de Down). Diante de muitas responsabilidades etc., sentindo porém, muita gratidão a Deus,
+		        pediu à Ele que lhe concedesse ser sua escritora. Disse ela: “Pequenas mensagens, Deus. Quem sabe
+		        poderá ser colocado no boletim da Igreja...” (Nosso Pr. Incentivava-nos a escrever para este boletim).
+		        No que Deus de imediato lhe respondeu, que aquele espaço, Ele não lhe concedia, pois era para que
+		        o Pastor completasse suas mensagens para a Igreja. Mas, o Senhor só faz coisas grandes e profundas
+		        e não foi diferente com Wilma Machado. Vieram as músicas, uma história para videoclipe, uma peça
+		        teatral cantada, "A volta de Jesus", uma coletânea de poemas, o Projeto
+		        <span class=".project-font">“Um por todos! Todos por um”</span>
+		        o qual dentro desta obra evangelística foi apresentado em 23 de novembro de 2013 no “Varandão”, o
+		        musical "Pelas ruas do Rio... " que contou com o apoio da Igreja Assembleia de Deus Ministério Shekinah
+		        – Pastor Aldo, Ronaldo e Pastor Sergio.
+		        Atualmente, dedica-se aos filhos Rafael (27anos), Renato (24anos), Renan (21 anos), Paloma (16 anos)
+		        e seu “esposo da promessa” Marcio Luiz que entende ela como sendo compromisso natural com Deus, e
+		        dedica – se ao seu ministério: “O da escrita”, na qual envolve obras com: músicas, peças teatrais,
+		        Projeto e outros afins. Retornou ao curso de GRADUAÇÃO LIVRE EM TEOLOGIA (Bacharel em Teologia) no:
 			 */
-			tokenMatch: () => LocalizedString
+			secondParagraph: () => LocalizedString
+			firstList: {
+				/**
+				 * INSTITUTO BÍBLICO EBENÉZER / SEMINÁRIO MAIOR DE ENSINO TEOLÓGICO
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Av. Santa Cruz, nº 3403 - Bangu, CEP 21.810-140. Rio de Janeiro – RJ. Brasil.
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Tel. (0XX21) 3335-8968 (falar com Suzana)
+				 */
+				'2': () => LocalizedString
+				/**
+				 * E-mail: ibebangu@clic.com.br
+				 */
+				'3': () => LocalizedString
+			}
+			secondList: {
+				/**
+				 * Atualmente congrega na
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Assembléia de Deus Ministério Shekinah
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Pastor Presidente: Aldo da Silva Gomes Filho
+				 */
+				'2': () => LocalizedString
+				/**
+				 * Pastor Vice-Presidente: Sérgio de Macena Machado
+				 */
+				'3': () => LocalizedString
+				/**
+				 * Local: Rua Marliéria, lote 01. Condomínio Airton Senna. Bairro: Jardim Bangu
+				 */
+				'4': () => LocalizedString
+				/**
+				 * Rio de Janeiro – Brasil. CEP: 21830 420. Contato: (021) 2402 – 3323
+				 */
+				'5': () => LocalizedString
+			}
+			/**
+			 * Minha amada Igreja
+			 */
+			secondTitle: () => LocalizedString
+			thirdList: {
+				/**
+				 * Dias de culto
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Terças-feiras às 19:30Hs (Estudo da Palavra)
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Quintas-feiras às 9:00Hs (Consagração)
+				 */
+				'2': () => LocalizedString
+				/**
+				 * Domingos às 9:00Hs (E.B.D) e 19:00Hs (Culto da Família)
+				 */
+				'3': () => LocalizedString
+				/**
+				 * Venha nos visitar! Será uma alegria tê-lo conosco adorando ao Senhor
+				 */
+				'4': () => LocalizedString
+			}
+			/**
+			 * Autora
+			 */
+			authorImageAlt: () => LocalizedString
+			/**
+			 * Igreja
+			 */
+			churchImageAlt: () => LocalizedString
 		}
-		templates: {
+		services: {
+			firstSection: {
+				/**
+				 * Oferecemos às Famílias
+				 */
+				mainTitle: () => LocalizedString
+				/**
+				 * Igrejas em UNIDADE - "Cristo em casa"
+				 */
+				title: () => LocalizedString
+				/**
+				 * (Isaias 61:1–3 / 1 Coríntios 12:1–31 / Efésios 4:1–13, 15-16/ Eclesiastes 4:12 / Marcos 16:15)
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * <cite>"Comunicai com os santos suas necessidades" —Romanos 12:13</cite>. Igrejas (Pós Martinho
+			                Lutero) estabelecidas neste Campo Missionário acima; cujo propósito é expandir o Reino de Cristo
+			                <u>agindo em UNIDADE, por meio dessa ferramenta evangelística</u>, disponibiliza uma equipe de
+			                homens e mulheres de Deus para:
+				 */
+				paragraph: () => LocalizedString
+				firstList: {
+					/**
+					 * Discipular
+					 */
+					'0': () => LocalizedString
+					/**
+					 * Ensino da Palavra de Deus uma vez por semana, durante 1 hora para àquele que por algum motivo
+				                esteja impossibilitado de frequentar a E.B.D na Igreja.
+					 */
+					'1': () => LocalizedString
+					/**
+					 * <cite>Mateus 22:29 / 2 Timóteo 3:16 / Salmos 119:11</cite>
+					 */
+					'2': () => LocalizedString
+				}
+				secondList: {
+					/**
+					 * Orar pelos enfermos
+					 */
+					'0': () => LocalizedString
+					/**
+					 * Oração e unção com óleo em nome do Senhor Jesus Cristo realizados pelos presbíteros.
+					 */
+					'1': () => LocalizedString
+					/**
+					 * <cite>Tiago 5:14–16; 1:6-7 / Salmos 50:15</cite>
+					 */
+					'2': () => LocalizedString
+				}
+				thirdList: {
+					/**
+					 * Culto a Deus em Ações de Graças
+					 */
+					'0': () => LocalizedString
+					/**
+					 * Verifique se há cultos <a href="{data.locale}/#agenda-announcement">agendados.
+					 */
+					'1': (arg: { data.locale: unknown }) => LocalizedString
+					/**
+					 * <cite>Filipenses 4:6 / Colossenses 4:2</cite>
+					 */
+					'2': () => LocalizedString
+				}
+				fourthList: {
+					/**
+					 * Auxílio em alimento
+					 */
+					'0': () => LocalizedString
+					/**
+					 * Você morador de um dos Campos Missionários desta Ferramenta Evangelística vindo a experimentar
+				                dificuldades financeiras e entendendo que o Auxílio em alimentos pode lhe suavizar a prova ou
+				                mesmo se você conhecendo alguém dentro de algum dos Campos Missionários que esteja passando
+				                essa prova, entre em contato conosco no e-mail contato@umportodostodosporum.org.
+					 */
+					'1': () => LocalizedString
+					/**
+					 * <cite>"O Senhor é o meu Pastor e nada me faltará!" Salmos 23:1</cite>
+					 */
+					'2': () => LocalizedString
+				}
+			}
+			secondSection: {
+				/**
+				 * Importante
+				 */
+				firstTitle: () => LocalizedString
+				/**
+				 * Contato
+				 */
+				secondTitle: () => LocalizedString
+				/**
+				 * Por medida de segurança, qualquer pessoa que se apresentar como voluntária deste projeto para
+			            prestar QUAISQUER serviço que seja se dizendo Voluntária deste, deverá ter seu registro
+			            apresentado no site no link <a href="/quem-somos/voluntarios-do-administrativo">Voluntários do ADM</a>
+			            onde deverá constar sua foto e seus respectivos dados, e ainda
+			            <a href="/images/adm-vol-uniform-big.jpg" target="_blank">deverá estar usando a blusa deste Projeto</a>
+			            que contém sua identificação na altura do ombro esquerdo. No caso das Igrejas, estas estão listadas
+			            no link <a href="/igrejas-em-unidade">Igrejas em Unidade</a>
+			            e sua logomarca estará na blusa deste seu membro nas costas. Todo voluntário é orientado a aguardar
+			            sua verificação no site, então não tem do porque de constrangimentos. Verifique! Esse procedimento
+			            é normal. Além do que estes tipos de visitas são previamente agendadas.
+				 */
+				firstParagraph: () => LocalizedString
+				/**
+				 * Aos interessados basta que nos envie um <a href="#footer">e-mail</a> com seu nome, endereço e telefone. Aguarde nosso
+			            contato. Paz.
+				 */
+				secondParagraph: () => LocalizedString
+			}
+		}
+		talkingAboutTheProject: {
+			firstSection: {
+				/**
+				 * Falando do Projeto
+				 */
+				title: () => LocalizedString
+				/**
+				 * <span class="h5">O Projeto <span class="special-font">“Um por todos! Todos por um”</span></span
+			            >, nada mais é do que uma ferramenta de evangelização acrescida de ação social. Em forma de
+			            sistema organizacional de valores éticos cristãos, têm seus princípios administrativos pautado
+			            na palavra de Deus de Gênesis a Apocalipse respaldado no evangelho de
+			            <cite>Mateus 25:34–36.</cite>
+			            Por ser de cunho evangelístico têm sua autoria e administração inspirada pelo Espírito Santo,
+			            <cite>João 14:16-17; 16:7-14</cite>
+			            cujo propósito maior é anunciar o evangelho, reerguendo pessoa(s) ou família(s) destituída da fé
+			            e da esperança; que se encontra em necessidades materiais e espirituais gritantes.
+				 */
+				firstParagraph: () => LocalizedString
+				/**
+				 * Tendo por base o amor ao próximo; amor este exemplificado pelo próprio Cristo, a cabeça de sua
+			            igreja e naturalmente o dono deste Projeto. Representa–o uma liderança, cujas raízes são
+			            fincadas na linha cristã pós-reforma <cite>(Martinho Lutero)</cite> bem como a “autora” agindo
+			            estes por meio da UNIDADE e da UNIÃO; assim, dentro de uma ação conjunta, resgatam princípios e
+			            conduta de uma vida cristã vivenciados em <cite>Atos 2:42-47</cite>. Aqui toda a comunidade pode
+			            e deve participar. Aqui é Deus por todos e a comunidade por um ou mais membros de sua
+			            comunidade, no exercício do amor segundo
+			            <cite>1 João 3:16-18</cite>.
+				 */
+				secondtParagraph: () => LocalizedString
+				/**
+				 * Concluindo... <span class="special-font">“Um por todos!”</span> Significa dizer: “Deus por
+			            todos!” (O Pai, o Filho e o Espírito Santo por todos)
+			            <span class="special-font">“Todos por um.”</span>
+			            Significa dizer: (Todos = comunidade). Isto é: A comunidade em ação conjunta, por meio de uma liderança
+			            eclesiástica representando a pessoa de Cristo, em prol das necessidades espirituais e também, materiais
+			            quando gritante; de determinada(s) pessoa(s), ou família(s) residente dentro desta comunidade, ou
+			            melhor, dentro deste Campo. Campo este onde as igrejas atuam em “UNIDADE” Isto é, se unem para o
+			            propósito a qual foi designada sem deixar suas peculiaridades.
+			            <cite>
+			                [ATOS 2:42–47 / OSÉIAS 4:6 / MATEUS 4:4 / MARCOS 16:15–16 / MATEUS 28:18–20 / MATEUS 18:10–11
+			                / 1 JOÃO 2:3–6; 3:16–18 / MATEUS 25:34–36]
+			            </cite>
+				 */
+				thirdParagraph: () => LocalizedString
+			}
+			secondSection: {
+				/**
+				 * Como originou este Projeto?
+				 */
+				title: () => LocalizedString
+				/**
+				 * Decorrido alguns meses de trabalho evangelístico, e social realizado num determinada casa por
+			            mim, e o Diácono Umaracir da Conceição Ribeiro, evangelista experiente; observei que esta
+			            família precisava bem mais do que estávamos a lhe oferecer. Ajudávamos; porém esse auxílio não
+			            correspondia as suas necessidades mais profundas. (Refiro–me as necessidades materiais... Pois
+			            que não se deve dispensar a oração e o jejum, imprescindível para a eficácia de qualquer
+			            trabalho de cunho evangelístico.) Pensei... Mas de quem? Onde estão? Busquei ao Senhor e creio
+			            que Ele me levou a ver que eu e o Diácono não tínhamos este a mais que esta família precisava.
+			            Porém... Olhei em volta... Ali estava o tempo todo. Os vizinhos daquela família... A comunidade
+			            – família; as igrejas locais. Se juntar um pouquinho daqui e acolá... Imaginem numa comunidade
+			            com 305 lares. Se cada família se comprometer com a oferta de 01 item (01 alimento não
+			            perecível). 01 item por família, isto sem contar com as ofertas extras, o apoio externo (ofertas
+			            oriundas de moradores de fora). As igrejas cooperando. Imaginem!
+				 */
+				firstParagraph: () => LocalizedString
+				/**
+				 * Percebi então que o sucesso de nosso trabalho dependia de uma ação conjunta. Comecei... Retornei
+			            até essa família, e lhes falei do projeto, e se poderíamos iniciar com ela esse apoio maior, em
+			            que a comunidade por meio de suas ofertas (doações) num todo participa. A família recebeu com
+			            gratidão a ideia. Ocorreu então, a inscrição da 1ª família a ser assistida por este Projeto bem
+			            no seio da comunidade Banguense, Condomínio Ayrton Senna. Anotei seus primeiros dados, e
+			            prossegui imediatamente percorrendo as casas mais próximas. Das famílias que busquei, naquele
+			            entardecer ninguém houve que não quisesse participar. E porque não mencionar as três primeiras
+			            famílias Voluntárias ofertantes representadas respectivamente:
+				 */
+				secondtParagraph: () => LocalizedString
+				/**
+				 * Esse método de obter recursos pelas proximidades da(s) família(s) necessitada(s) é operoso
+			            porque se todos, não a conhecem, poderão conhecê-la (discretamente) sem ter a necessidade de
+			            pegar um veículo para tanto. <b
+			                >Assim, a comunidade exercita seu amor ao próximo e vendo seus resultados cresce na fé e no
+			                amor de Cristo.</b
+			            >
+				 */
+				thirdParagraph: () => LocalizedString
+				table: {
+					/**
+					 * Primeiras famílias voluntárias
+					 */
+					caption: () => LocalizedString
+					columns: {
+						/**
+						 * N° de inscrição
+						 */
+						'0': () => LocalizedString
+						/**
+						 * Representante da família
+						 */
+						'1': () => LocalizedString
+						/**
+						 * Oferta
+						 */
+						'2': () => LocalizedString
+					}
+					rows: {
+						'0': {
+							/**
+							 * 01
+							 */
+							'0': () => LocalizedString
+							/**
+							 * Priscila da Silva Souza
+							 */
+							'1': () => LocalizedString
+							/**
+							 * Sabonete
+							 */
+							'2': () => LocalizedString
+						}
+						'1': {
+							/**
+							 * 02
+							 */
+							'0': () => LocalizedString
+							/**
+							 * Angela Fully
+							 */
+							'1': () => LocalizedString
+							/**
+							 * Cloro
+							 */
+							'2': () => LocalizedString
+						}
+						'2': {
+							/**
+							 * 03
+							 */
+							'0': () => LocalizedString
+							/**
+							 * Ednaldo C. Demétrio
+							 */
+							'1': () => LocalizedString
+							/**
+							 * Papel higiênico
+							 */
+							'2': () => LocalizedString
+						}
+					}
+				}
+			}
+			thirdSection: {
+				/**
+				 * Da Fundação
+				 */
+				title: () => LocalizedString
+				list: {
+					/**
+					 * <b>Inaugurado</b> no <u>dia 18 de março de 2011</u>
+					 */
+					'0': () => LocalizedString
+					/**
+					 * <b>Antiga SEDE:</b> Rua Adelaide, nº 05, apart 203. Condomínio Ayrton Senna. Bairro: Jardim Bangu – RJ- Brasil
+					 */
+					'1': () => LocalizedString
+					/**
+					 * <b>Cartório de Registro:</b> 14ª C.R.C.P. N–Bangu RJ.Tel:(021) 2401-3500 Cód: 03026FEE4790-SUCSHX63366. RJ, 27/05/2011
+					 */
+					'2': () => LocalizedString
+				}
+				/**
+				 * <b>Nota:</b> Atualmente aguardando que as Igrejas de dentro deste Campo venham assumir esta obra
+			            a qual a 1ª que se apresentar deverá
+			            <u>estar a frente do Campo Missionário, representando as demais.</u>
+				 */
+				firstParagraph: () => LocalizedString
+				/**
+				 * Deus seja louvado em nossas vidas em nome do Nosso Senhor Jesus Cristo.<br />
+			            Atenciosamente!<br />
+			            Irmã Wilma Machado<br />
+			            Autora e Coordenadora Geral, serva de nosso Senhor Jesus Cristo.<br />
+				 */
+				secondParagraph: () => LocalizedString
+			}
+		}
+	}
+	'agenda-announcement': {
+		agenda: {
 			/**
-			 * {0} it is a mandatory field.
+			 * Agenda
 			 */
-			REQUIRED: (arg0: unknown) => LocalizedString
+			title: () => LocalizedString
+		}
+		announcement: {
 			/**
-			 * You must choose one of the values: {0}.
+			 * Anúncios
 			 */
-			ONE_OF: (arg0: unknown) => LocalizedString
-			/**
-			 * {0} must have at least {1} characters.
-			 */
-			MIN: (arg0: unknown, arg1: unknown) => LocalizedString
+			title: () => LocalizedString
 		}
 	}
 	breadcrumbs: {
 		home: {
 			/**
-			 * Home
+			 * Início
 			 */
 			text: () => LocalizedString
-			aboutUs: {
+		}
+		'about-us': {
+			/**
+			 * Quem Somos
+			 */
+			text: () => LocalizedString
+			'meet-the-author': {
 				/**
-				 * About Us
+				 * Conheça a Autora
 				 */
 				text: () => LocalizedString
-				meetTheAuthor: {
+			}
+			'talking-about-the-project': {
+				/**
+				 * Falando Sobre o Projeto
+				 */
+				text: () => LocalizedString
+			}
+			services: {
+				/**
+				 * Oferecemos
+				 */
+				text: () => LocalizedString
+			}
+		}
+		'how-to-participate': {
+			/**
+			 * Como Participar
+			 */
+			text: () => LocalizedString
+		}
+		fields: {
+			/**
+			 * Campos Missionários
+			 */
+			text: () => LocalizedString
+			collaborators: {
+				/**
+				 * Colaboradores
+				 */
+				text: () => LocalizedString
+			}
+			'welcomed-families': {
+				/**
+				 * Famílias Acolhidas
+				 */
+				text: () => LocalizedString
+			}
+			'offeror-families': {
+				/**
+				 * Famílias Ofertantes
+				 */
+				text: () => LocalizedString
+			}
+			'churches-in-unity': {
+				/**
+				 * Igrejas em Unidade
+				 */
+				text: () => LocalizedString
+			}
+			'collected-offers': {
+				/**
+				 * Ofertas Coletadas
+				 */
+				text: () => LocalizedString
+				monthly: {
 					/**
-					 * Meet the Author
+					 * Mensal
 					 */
 					text: () => LocalizedString
 				}
-				talkingAbout: {
+				annual: {
 					/**
-					 * Talking About The Project
-					 */
-					text: () => LocalizedString
-				}
-				services: {
-					/**
-					 * Services
+					 * Anual
 					 */
 					text: () => LocalizedString
 				}
 			}
-			howToParticipate: {
+			reports: {
 				/**
-				 * How To Participate
+				 * Relatórios
 				 */
 				text: () => LocalizedString
+			}
+			volunteers: {
+				/**
+				 * Voluntários
+				 */
+				text: () => LocalizedString
+			}
+		}
+	}
+	faq: {
+		/**
+		 * Perguntas Frequentes
+		 */
+		headline: () => LocalizedString
+	}
+	fields: {
+		/**
+		 * Campos Missionários
+		 */
+		title: () => LocalizedString
+		/**
+		 * Páginas
+		 */
+		pages: () => LocalizedString
+		churchesInUnity: {
+			/**
+			 * Igrejas em Unidade
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+		}
+		collaborators: {
+			/**
+			 * Colaboradores
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+		}
+		collectedOffers: {
+			/**
+			 * Ofertas Coletadas
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+			/**
+			 * Mensal
+			 */
+			monthlyOption: () => LocalizedString
+			/**
+			 * Anual
+			 */
+			annualOption: () => LocalizedString
+			foodGraph: {
+				/**
+				 * Alimentos Recolhidos
+				 */
+				title: () => LocalizedString
+				/**
+				 * The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+			            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+			            are also reproduced in their exact original form, accompanied by English versions from the
+			            1914 translation by H. Rackham.
+				 */
+				text: () => LocalizedString
+			}
+			monetaryGraph: {
+				/**
+				 * Recursos Recolhidos
+				 */
+				title: () => LocalizedString
+				/**
+				 * The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+			            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+			            are also reproduced in their exact original form, accompanied by English versions from the
+			            1914 translation by H. Rackham.
+				 */
+				text: () => LocalizedString
+			}
+			othersGraph: {
+				/**
+				 * Outros
+				 */
+				title: () => LocalizedString
+				/**
+				 * The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+			            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+			            are also reproduced in their exact original form, accompanied by English versions from the
+			            1914 translation by H. Rackham.
+				 */
+				text: () => LocalizedString
+			}
+			/**
+			 * 
+		        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+		        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			 */
+			annualObservation: () => LocalizedString
+			/**
+			 * It is a long established fact that a reader will be distracted by the readable content of a
+		        page when looking at its layout. The point of using Lorem Ipsum is that it has a
+		        more-or-less normal distribution of letters, as opposed to using 'Content here, content
+		        here', making it look like readable English. Many desktop publishing packages and web page
+		        editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+		        uncover many web sites still in their infancy. Various versions have evolved over the years,
+		        sometimes by accident, sometimes on purpose (injected humour and the like).
+			 */
+			monthlyObservation: () => LocalizedString
+		}
+		offerorFamilies: {
+			/**
+			 * Famílias Ofertantes
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+			/**
+			 * Pesquise pelo representante da família
+			 */
+			searchPlaceholder: () => LocalizedString
+			/**
+			 * Pesquisar Por Campo Missionário
+			 */
+			specificOption: () => LocalizedString
+			/**
+			 * Pesquisar em Todos os Campos Missionários
+			 */
+			allOption: () => LocalizedString
+			/**
+			 * Compromisso
+			 */
+			commitment: () => LocalizedString
+			/**
+			 * Grupo
+			 */
+			group: () => LocalizedString
+			/**
+			 * Igreja
+			 */
+			churchDenomination: () => LocalizedString
+			/**
+			 * Voltar
+			 */
+			backButton: () => LocalizedString
+		}
+		reports: {
+			/**
+			 * Relatórios
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+			/**
+			 * Mês
+			 */
+			month: () => LocalizedString
+			/**
+			 * Ano
+			 */
+			year: () => LocalizedString
+			/**
+			 * Postado em 
+			 */
+			posted: () => LocalizedString
+			/**
+			 * Mensal
+			 */
+			monthly: () => LocalizedString
+			/**
+			 * Semestral
+			 */
+			semester: () => LocalizedString
+			/**
+			 * Anual
+			 */
+			annual: () => LocalizedString
+		}
+		volunteers: {
+			/**
+			 * Voluntários
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+			/**
+			 * Setor Operacional de Missões
+			 */
+			firstSection: () => LocalizedString
+			/**
+			 * Serviço Interno e Externo
+			 */
+			secondSection: () => LocalizedString
+			/**
+			 * Serviço de Apoio
+			 */
+			thirdSection: () => LocalizedString
+			/**
+			 * Data de Entrada
+			 */
+			joinedDate: () => LocalizedString
+		}
+		welcomedFamilies: {
+			/**
+			 * Famílias Acolhidas
+			 */
+			title: () => LocalizedString
+			/**
+			 * Campo Missionário - {designation}
+			 */
+			subTitle: (arg: { designation: string }) => LocalizedString
+			/**
+			 * Representante
+			 */
+			representative: () => LocalizedString
+			/**
+			 * Observação
+			 */
+			observation: () => LocalizedString
+		}
+	}
+	footer: {
+		info: {
+			/**
+			 * Projeto Um Por Todos! Todos Por Um
+			 */
+			project: () => LocalizedString
+		}
+		contact: {
+			/**
+			 * Entre em Contato
+			 */
+			title: () => LocalizedString
+			/**
+			 * Mensagem enviada! Aguarde o retorno.
+			 */
+			success: () => LocalizedString
+			/**
+			 * Nome completo
+			 */
+			nameInput: () => LocalizedString
+			/**
+			 * E-mail
+			 */
+			emailInput: () => LocalizedString
+			/**
+			 * Sua mensagem
+			 */
+			messageInput: () => LocalizedString
+			/**
+			 * Enviar Mensagem
+			 */
+			sendButton: () => LocalizedString
+		}
+		navigation: {
+			aboutUs: {
+				/**
+				 * Quem Somos
+				 */
+				title: () => LocalizedString
+				/**
+				 * Conheça a Autora
+				 */
+				meetTheAuthor: () => LocalizedString
+				/**
+				 * Falando Sobre o Projeto
+				 */
+				talkingAbout: () => LocalizedString
+				/**
+				 * Oferecemos
+				 */
+				services: () => LocalizedString
+			}
+			howToParticipate: {
+				/**
+				 * Como Participar
+				 */
+				title: () => LocalizedString
+				/**
+				 * Como Família
+				 */
+				asFamily: () => LocalizedString
+				/**
+				 * Como Igreja
+				 */
+				asChurch: () => LocalizedString
+				/**
+				 * Como Instituição Secular
+				 */
+				asInstitution: () => LocalizedString
 			}
 			fields: {
 				/**
-				 * Fields
+				 * Campos Missionários
+				 */
+				title: () => LocalizedString
+				/**
+				 * Colaboradores
+				 */
+				collaborators: () => LocalizedString
+				/**
+				 * Famílias Acolhidas
+				 */
+				welcomedFamilies: () => LocalizedString
+				/**
+				 * Famílias Ofertantes
+				 */
+				offerorFamilies: () => LocalizedString
+				/**
+				 * Igrejas em Unidade
+				 */
+				churchesInUnity: () => LocalizedString
+				/**
+				 * Ofertas Coletadas
+				 */
+				collectedOffers: () => LocalizedString
+				/**
+				 * Relatórios
+				 */
+				reports: () => LocalizedString
+				/**
+				 * Voluntários
+				 */
+				volunteers: () => LocalizedString
+			}
+		}
+	}
+	'how-to-participate': {
+		/**
+		 * Como Participar
+		 */
+		title: () => LocalizedString
+		firstSection: {
+			/**
+			 * Como Uma Família Pode Participar?
+			 */
+			title: () => LocalizedString
+			/**
+			 * É muito simples participar. Verifique no link <a href="/{locale}#where-we-operate">ONDE ATUAMOS</a>
+		        deste site se algum(s) do(s) Campo(s) Missionário(s) implantado(s) corresponde(m) ao local em que
+		        reside. Havendo basta se dirigir a Igreja resposável por este Campo e se inscrever como
+		        <i>Voluntário ofertante</i>
+		        escolhendo numa listagem que lhe será apresentada a sua oferta de compromisso. Também a mais a família
+		        ofertante poderá doar qualquer um dos
+		        <a href="/{locale}/how-to-participate#we-need">itens que estamos precisando.</a>
+			 */
+			firstParagraph: (arg: { locale: string }) => LocalizedString
+			/**
+			 * No ato de sua inscrição a família voluntária ofertante deverá assinar um documento onde expressa
+				o desejo de co-participar deste projeto, assumindo assim, a responsabilidade de assistir
+				pessoa(s) ou família(s), inscritas no projeto <span class="project-font">“Um por todos! Todos por um”.</span>
+				Deverá receber um documento constando o nº de sua inscrição e nome de sua oferta combinada, e esta
+				última poderá ser alterado a pedido dele próprio ou do administrativo do projeto. Veja no link
+				<a href="/{locale}/onde-atuamos">ONDE ATUAMOS</a>
+				o mapa do(s) Campo(s) Missionário(s) e descubra se mora em alguma das ruas de um desses Campos, se
+				não veja o que segue abaixo
+			 */
+			secondParagraph: (arg: { locale: string }) => LocalizedString
+			/**
+			 * <span class="font-weight-bold">Detalhe</span>: Ao se inscrever, automaticamente você inscreve toda sua família.
+			 */
+			observation: () => LocalizedString
+		}
+		secondSection: {
+			/**
+			 * Família Residente de Fora de Campo Missionário Pode Participar?
+			 */
+			title: () => LocalizedString
+			/**
+			 * Sim! Não havendo Campo estabelecido onde reside, o interessado se comprometendo em levar sua
+				oferta ao POSTO DE COLETA, este pode se dirigir a Igreja responsável de um desses Campos e se
+				inscrever como família Voluntária(Apoio Externo), ou preferindo envie-nos um e-mail para
+				<a href="/{locale}/how-to-participate#contact">contato@projetoumportodostodosporum.org</a> e
+				aguarde o contato. Obrigada!
+			 */
+			firstParagraph: (arg: { locale: string }) => LocalizedString
+		}
+		thirdSection: {
+			/**
+			 * Ofertas e Seus Critérios
+			 */
+			title: () => LocalizedString
+			offerCriteria: {
+				/**
+				 * As ofertas serão recebidas nos "Postos de coleta"
+				 */
+				'0': () => LocalizedString
+				/**
+				 * Na comunidade: Todo dia 10 de cada mês (no máximo dias 11 e 12).
+				 */
+				'1': () => LocalizedString
+				/**
+				 * Nas Igrejas: Do dia 1º ao dia 12° de cada mês.
+				 */
+				'2': () => LocalizedString
+				/**
+				 * ASSÍDUIDADE e QUALIDADE são fundamentais.
+				 */
+				'3': () => LocalizedString
+			}
+			community: {
+				/**
+				 * Na comunidade
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * Cada família Voluntária ofertante tem como atribuição o dever de observar as condições de sua
+						oferta compromisso e se tiver ofertas extras também, anotar seu nº de inscrição e a rua em que
+						mora e colocar junto com a(s) oferta(s) na sacola para que o ADM possa atestar a entrega de
+						sua oferta que deverá ser entregue no Posto de Coleta da Comunidade onde ela reside
 				 */
 				text: () => LocalizedString
-				collaborators: {
-					/**
-					 * Collaborators
-					 */
-					text: () => LocalizedString
-				}
-				welcomedFamilies: {
-					/**
-					 * Welcomed Families
-					 */
-					text: () => LocalizedString
-				}
-				offerorFamilies: {
-					/**
-					 * Offeror Families
-					 */
-					text: () => LocalizedString
-				}
-				churchesInUnity: {
-					/**
-					 * Churches in Unity
-					 */
-					text: () => LocalizedString
-				}
-				collectedOffers: {
-					/**
-					 * Collected Offers
-					 */
-					text: () => LocalizedString
-					monthly: {
-						/**
-						 * Monthly
-						 */
-						text: () => LocalizedString
-					}
-					annual: {
-						/**
-						 * Annual
-						 */
-						text: () => LocalizedString
-					}
-				}
-				reports: {
-					/**
-					 * Reports
-					 */
-					text: () => LocalizedString
-				}
-				volunteers: {
-					/**
-					 * Volunteers
-					 */
-					text: () => LocalizedString
-				}
+			}
+			church: {
+				/**
+				 * Nas Igrejas
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * Membro de Igreja inscrita no Projeto tem como atribuição o dever de observar as condições de
+						sua oferta compromisso e se tiver ofertas extras também, anotar seu nº de inscrição e colocar
+						junto com a(s) oferta(s) na sacola para que o ADM possa atestar a entrega de sua oferta que
+						deverá ser entregue no Posto de Coleta onde congrega.
+				 */
+				text: () => LocalizedString
+			}
+			external: {
+				/**
+				 * Apoio Externo
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * Cada família Voluntária ofertante tem como atribuição o dever de observar as condições de sua
+						oferta compromisso e se tiver ofertas extras também, anotar seu nº de inscrição e as letras
+						"A.E" e colocar junto com a oferta na sacola para que o ADM possa atestar a entrega de sua
+						oferta que deverá ser entregue onde ficou estabelecido no ato da inscrição.
+				 */
+				text: () => LocalizedString
+			}
+			offerReceipt: {
+				/**
+				 * Do recibo de entrega das ofertas
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * A família Voluntária ofertante seja Comunitária, seja Eclesiástica ou Apoio Externo, poderá
+						exigir do ADM "O recibo de entrega de oferta" no ato da entrega no "POSTO DE COLETA",
+						principalmente no caso de ofertas extras que é o que mais recomendo que se peça.
+				 */
+				text: () => LocalizedString
+			}
+			extraOffers: {
+				/**
+				 * Que são ofertas extras?
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * São assim designadas as ofertas trazidas além da oferta compromisso, oferta esta que a família
+						Voluntária assume trazer ao "POSTO DE COLETA" no ato de sua inscrição; Também são chamadas
+						ofertas extras aquelas ofertas cuja família voluntária não apresentou seu nº de inscrição, ou
+						até por não ser inscrita.
+				 */
+				text: () => LocalizedString
+			}
+			observation: {
+				/**
+				 * Observação
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * As famílias assistidas receberão as ofertas (doações) coletadas todo dia 23 de cada mês.
+				 */
+				text: () => LocalizedString
+			}
+			/**
+			 * "Ora, aquele que possuir recursos deste mundo, e vir seu irmão padecer necessidade, e
+		        fechar-lhe o coração, como pode permanecer nele o amor de Deus? Filhinhos, não amemos de
+		        palavra, nem de língua, mas de fato e de verdade." (1 João 3:17-18)
+			 */
+			footnote: () => LocalizedString
+		}
+		fourthSection: {
+			/**
+			 * Estamos precisando
+			 */
+			title: () => LocalizedString
+			disciplers: {
+				/**
+				 * Discipuladores - Jovens e Adultos masculino e feminino - URGENTE!
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * Membros de Igreja evangélica que queira ofertar 01 hora, 01 vez por semana para ensinar, orar
+						e jejuar pela vida de alguém. Há pessoas que devido sua dificuldade em locomover-se poupam
+						suas forças para estarem no culto
+				 */
+				text: () => LocalizedString
+			}
+			bibles: {
+				/**
+				 * Bíblias infantis e adultos <i>(tradução: João Ferreira de Almeida - revisada)</i>
+				 */
+				subTitle: () => LocalizedString
+				/**
+				 * Pode ser em bom estado não necessariamente novinha em folha.
+				 */
+				text: () => LocalizedString
+			}
+			/**
+			 * Para ofertar (doar) basta nos enviar um e-mail para contato@projetoumportodostodosporum.org com
+				seu nome, endereço e telefone dizendo o que deseja ofertar. Se preferir ligue para
+				(21)97002-8495, falar com Wilma. Desde já muitíssimo obrigada!
+			 */
+			note: () => LocalizedString
+		}
+	}
+	'how-to-participate-component': {
+		callToAction: {
+			/**
+			 * você quer participar? Entraremos em contato!
+			 */
+			text: () => LocalizedString
+			/**
+			 * Nome
+			 */
+			nameInput: () => LocalizedString
+			/**
+			 * E-mail
+			 */
+			emailInput: () => LocalizedString
+			/**
+			 * Eu quero fazer parte disso!
+			 */
+			button: () => LocalizedString
+		}
+		/**
+		 * Como Uma Família Pode Participar?
+		 */
+		headline: () => LocalizedString
+		/**
+		 * É muito simples participar. Verifique no link <a href="/onde-atuamos">ONDE ATUAMOS</a> deste
+	    site se algum(s) do(s) Campo(s) Missionário(s) implantado(s) corresponde(m) ao local em que
+	    reside. Havendo basta se dirigir a Igreja resposável por este Campo e se inscrever como
+	    <i>Voluntário ofertante</i> escolhendo numa listagem que lhe será apresentada a sua oferta de
+	    compromisso. Também a mais a família ofertante poderá doar qualquer um dos
+	    <a href="/como-participar#estamosPrecisando">itens que estamos precisando.</a>
+		 */
+		firstParagraph: () => LocalizedString
+		/**
+		 * No ato de sua inscrição a família voluntária ofertante deverá assinar um documento onde
+	    expressa o desejo de co-participar deste projeto, assumindo assim, a responsabilidade de
+	    assistir pessoa(s) ou família(s), inscritas no projeto <span class="font-projeto">“Um por todos! Todos por um”.</span>
+	    Deverá receber um documento constando o nº de sua inscrição e nome de sua oferta combinada, e esta
+	    última poderá ser alterado a pedido dele próprio ou do administrativo do projeto. Veja no link
+	    <a href="/onde-atuamos">ONDE ATUAMOS</a>
+	    o mapa do(s) Campo(s) Missionário(s) e descubra se mora em alguma das ruas de um desses Campos,
+	    se não veja o que segue abaixo
+		 */
+		secondParagraph: () => LocalizedString
+	}
+	landing: {
+		headline: {
+			/**
+			 * Projeto
+			 */
+			firstLine: () => LocalizedString
+			/**
+			 * "Um Por Todos!
+			 */
+			secondLine: () => LocalizedString
+			/**
+			 * Todos Por Um."
+			 */
+			thirdLine: () => LocalizedString
+			/**
+			 * Unidade e União
+			 */
+			lastLine: () => LocalizedString
+		}
+		/**
+		 * Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+		 */
+		subHeadline: () => LocalizedString
+		/**
+		 * Desejo Participar
+		 */
+		callToAction: () => LocalizedString
+		cards: {
+			firstCard: {
+				/**
+				 * Evangelização
+				 */
+				title: () => LocalizedString
+				/**
+				 * At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+				 */
+				text: () => LocalizedString
+			}
+			secondCard: {
+				/**
+				 * Unidade e União
+				 */
+				title: () => LocalizedString
+				/**
+				 * At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+				 */
+				text: () => LocalizedString
+			}
+			thirdCard: {
+				/**
+				 * Onde Atuamos
+				 */
+				title: () => LocalizedString
+				/**
+				 * Ver no Mapa
+				 */
+				text: () => LocalizedString
+				/**
+				 * Ver no Mapa
+				 */
+				button: () => LocalizedString
 			}
 		}
 	}
-	components: {
-		'public': {
-			navbar: {
-				navItems: {
-					/**
-					 * About Us
-					 */
-					aboutUs: () => LocalizedString
-					/**
-					 * How To Participate
-					 */
-					howToParticipate: () => LocalizedString
-					/**
-					 * Missionary Fields
-					 */
-					fields: () => LocalizedString
-					/**
-					 * Contact
-					 */
-					contact: () => LocalizedString
-				}
-			}
-			landing: {
-				headline: {
-					/**
-					 * Project
-					 */
-					firstLine: () => LocalizedString
-					/**
-					 * One for All!
-					 */
-					secondLine: () => LocalizedString
-					/**
-					 * All for One.
-					 */
-					lastLine: () => LocalizedString
-				}
-				/**
-				 * Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-				 */
-				subHeadline: () => LocalizedString
-				/**
-				 * I Want To Participate
-				 */
-				callToAction: () => LocalizedString
-				cards: {
-					firstCard: {
-						/**
-						 * Evangelization
-						 */
-						title: () => LocalizedString
-						/**
-						 * Lorem Ipsum
-						 */
-						text: () => LocalizedString
-					}
-					secondCard: {
-						/**
-						 * Unity and Unity
-						 */
-						title: () => LocalizedString
-						/**
-						 * Lorem Ipsum
-						 */
-						text: () => LocalizedString
-					}
-					thirdCard: {
-						/**
-						 * Where We Operate
-						 */
-						title: () => LocalizedString
-						/**
-						 * See on Map
-						 */
-						text: () => LocalizedString
-						/**
-						 * See on Map
-						 */
-						button: () => LocalizedString
-					}
-				}
-			}
-			howToParticipate: {
-				callToAction: {
-					/**
-					 * Do you want to participate? We'll be in touch!
-					 */
-					text: () => LocalizedString
-					/**
-					 * Name
-					 */
-					nameInput: () => LocalizedString
-					/**
-					 * E-mail
-					 */
-					emailInput: () => LocalizedString
-					/**
-					 * I want to be part of it!
-					 */
-					button: () => LocalizedString
-				}
-				/**
-				 * How Can a Family Participate?
-				 */
-				headline: () => LocalizedString
-				/**
-				 * It is very simple to participate. Check the link <a href="/onde-atuamos">WHERE WE OPERATE</a> of this
-			    site if any of the deployed Mission Field(s) correspond(s) to the place where
-			    resides. If there is, it is enough to go to the Church responsible for this Field and register as
-			    <i>Volunteer offerer</i> choosing from a list that will be presented your offer of
-			    commitment. Furthermore, the offering family may donate any of the
-			    <a href="/como-participar#estamosNeeding">items we need.</a>
-				 */
-				firstParagraph: () => LocalizedString
-				/**
-				 * When registering, the offering volunteer family must sign a document in which
-			    expresses the desire to co-participate in this project, thus assuming the responsibility of
-			    assist person(s) or family(ies) enrolled in the project <span class="font-project">“One for all! All for one.”</span>
-			    You should receive a document containing your registration number and the name of your combined offer, and this
-			    the latter may be changed at his own request or by the project administrator. See the link
-			    <a href="/onde-atuamos">WHERE WE OPERATE</a>
-			    the map of the Mission Field(s) and find out if you live on any of the streets in one of these Fields,
-			    if not see what follows below
-				 */
-				secondParagraph: () => LocalizedString
-			}
-			faq: {
-				/**
-				 * Frequently Asked Questions
-				 */
-				headline: () => LocalizedString
-			}
-			agendaAnnouncement: {
-				/**
-				 * Agenda
-				 */
-				agendaTitle: () => LocalizedString
-				/**
-				 * Announcements
-				 */
-				announcementTitle: () => LocalizedString
-			}
-			footer: {
-				info: {
-					/**
-					 * Project One for All! All for One
-					 */
-					project: () => LocalizedString
-				}
-				contact: {
-					/**
-					 * Get in Touch
-					 */
-					title: () => LocalizedString
-					/**
-					 * Message sent! Wait for the answer.
-					 */
-					success: () => LocalizedString
-					/**
-					 * Full Name
-					 */
-					nameInput: () => LocalizedString
-					/**
-					 * E-mail
-					 */
-					emailInput: () => LocalizedString
-					/**
-					 * Your message
-					 */
-					messageInput: () => LocalizedString
-					/**
-					 * Send Message
-					 */
-					sendButton: () => LocalizedString
-				}
-				navigation: {
-					aboutUs: {
-						/**
-						 * About Us
-						 */
-						title: () => LocalizedString
-						/**
-						 * Meet The Author
-						 */
-						meetTheAuthor: () => LocalizedString
-						/**
-						 * Talking About The Project
-						 */
-						talkingAbout: () => LocalizedString
-						/**
-						 * Services
-						 */
-						services: () => LocalizedString
-					}
-					howToParticipate: {
-						/**
-						 * How To Participate
-						 */
-						title: () => LocalizedString
-						/**
-						 * As Family
-						 */
-						asFamily: () => LocalizedString
-						/**
-						 * As Church
-						 */
-						asChurch: () => LocalizedString
-						/**
-						 * As Secular Institution
-						 */
-						asInstitution: () => LocalizedString
-					}
-					fields: {
-						/**
-						 * Fields
-						 */
-						title: () => LocalizedString
-						/**
-						 * Collaborators
-						 */
-						collaborators: () => LocalizedString
-						/**
-						 * Welcomed Families
-						 */
-						welcomedFamilies: () => LocalizedString
-						/**
-						 * Offeror Families
-						 */
-						offerorFamilies: () => LocalizedString
-						/**
-						 * Churches in Unity
-						 */
-						churchesInUnity: () => LocalizedString
-						/**
-						 * Collected Offers
-						 */
-						collectedOffers: () => LocalizedString
-						/**
-						 * Reports
-						 */
-						reports: () => LocalizedString
-						/**
-						 * Volunteers
-						 */
-						volunteers: () => LocalizedString
-					}
-				}
-			}
-		}
+	navbar: {
+		/**
+		 * Logo
+		 */
+		logoAltText: () => LocalizedString
+		/**
+		 * Quem Somos
+		 */
+		aboutUs: () => LocalizedString
+		/**
+		 * Como Participar
+		 */
+		howToParticipate: () => LocalizedString
+		/**
+		 * Campos Missionários
+		 */
+		fields: () => LocalizedString
+		/**
+		 * Avisos
+		 */
+		announcements: () => LocalizedString
+		/**
+		 * Contato
+		 */
+		contact: () => LocalizedString
 	}
-	routes: {
-		aboutUs: {
-			meetTheAuthor: {
-				/**
-				 * Meet The Author
-				 */
-				firstTitle: () => LocalizedString
-				/**
-				 * My Beloved Church
-				 */
-				secondTitle: () => LocalizedString
-				/**
-				 * <span style="font-family:vivaldi;font-size:40pt;color:#F00">S</span>
-			    <span class="font-weight-bold">my birth name:</span>
-			    Wilma Medeiros Machado, daughter of Archimedes de Souza Machado and Dilma Medeiros Machado. Has 4 brothers:
-			    Dircéa, Hermano, Marcelo and Aldo. Born on October 26, 1963, in Duque de Caxias, State
-			    from Rio de Janeiro, Brazil. Her 1st job was that of a newspaper seller, at a newsstand close to where
-			    lived in the neighborhood of Rocha Miranda. His father taught him values ​​such as: "speaking the truth". Your
-			    mother, who died in July 2013 of throat cancer, never tired of glorifying God, which marked
-			    your faith in God even deeper. At the age of 11, when writing his first essay
-			    in less than 15 minutes (time given by the teacher in the 5th grade), she narrated a fictional story, earning
-			    a scholarship from the Oswaldo Cruz Foundation, whose proposal was to train writers. Had by prof.
-			    Eloá Barbuda. The course was in Leblon and the poor girl, influenced by the time of much prejudice,
-			    felt inferior, this being an obstacle, only overcome years later by the grace of God, by
-			    through self-help books. Years later, at the invitation of her friend Luana Beatriz, (May 2000),
-			    met the Church, Assembly of God Royal Ministry - Pastora Simone, where she was baptized, being
-			    very blessed in that place.
-				 */
-				firstParagraph: () => LocalizedString
-				/**
-				 * <span class="font-weight-bold">Tough times:</span> Divorced with 04 kids to raise...
-			    Only Jesus in the direction.<br />
-			    In 2004, working as a hairdresser at home and treating her daughter Paloma (carrier
-			    of Down Syndrome). Faced with many responsibilities, etc., feeling, however, a lot of gratitude to God,
-			    asked Him to grant her to be his writer. She said, “Little messages, God. Who knows
-			    may be placed in the Church bulletin...” (Our Pastor encouraged us to write for this bulletin).
-			    In what God immediately answered him, that that space, He did not grant him, because it was for
-			    the Pastor to complete his messages to the Church. But, the Lord only does big and deep things
-			    and it was no different with Wilma Machado. Then came the songs, a story for a music video, a play
-			    theatrical performance, "A volta de Jesus", a collection of poems, the Project
-			    <span class="font-project">“One for all! All for one”</span>
-			    which within this evangelistic work was presented on November 23, 2013 at “Varandão”, the
-			    musical "Pelas Ruas do Rio..." which had the support of the Assembly of God Ministry Shekinah Church
-			    – Pastor Aldo, Ronaldo and Pastor Sergio.<br />
-			    She is currently dedicated to her children Rafael (27 years old), Renato (24 years old), Renan (21 years old), Paloma (16 years old)
-			    and her “husband of the promise” Marcio Luiz, who understands her as a natural commitment to God, and
-			    dedicates himself to his ministry: “The one of writing”, in which he involves works with: songs, theatrical plays,
-			    Design and such. He returned to the FREE GRADUATION IN THEOLOGY course (Bachelor of Theology) at:
-				 */
-				secondParagraph: () => LocalizedString
-				firstList: {
-					/**
-					 * INSTITUTO BÍBLICO EBENÉZER / SEMINÁRIO MAIOR DE ENSINO TEOLÓGICO
-					 */
-					'0': () => LocalizedString
-					/**
-					 * Av. Santa Cruz, nº 3403 - Bangu, CEP 21.810-140. Rio de Janeiro – RJ. Brasil.
-					 */
-					'1': () => LocalizedString
-					/**
-					 * Tel. (0XX21) 3335-8968 (falar com Suzana)
-					 */
-					'2': () => LocalizedString
-					/**
-					 * E-mail: ibebangu@clic.com.br
-					 */
-					'3': () => LocalizedString
-				}
-				secondList: {
-					/**
-					 * Currently Congregates in
-					 */
-					'0': () => LocalizedString
-					/**
-					 * Assembléia de Deus Ministério Shekinah
-					 */
-					'1': () => LocalizedString
-					/**
-					 * President Pastor: Aldo da Silva Gomes Filho
-					 */
-					'2': () => LocalizedString
-					/**
-					 * Vice-Presidente Pastor: Sérgio de Macena Machado
-					 */
-					'3': () => LocalizedString
-					/**
-					 * Address: Rua Marliéria, lote 01. Condomínio Airton Senna. Bairro: Jardim Bangu
-					 */
-					'4': () => LocalizedString
-					/**
-					 * Rio de Janeiro – Brasil. CEP: 21830 420. Contato: (021) 2402 – 3323
-					 */
-					'5': () => LocalizedString
-				}
-				thirdList: {
-					/**
-					 * Worship Days
-					 */
-					'0': () => LocalizedString
-					/**
-					 * Tuesdays at 7:30 pm (Bible Study)
-					 */
-					'1': () => LocalizedString
-					/**
-					 * Thursdays at 9:00 am (Consecration)
-					 */
-					'2': () => LocalizedString
-					/**
-					 * Sundays at 9:00 am (E.B.D) and 7:00 pm (Family Worship)
-					 */
-					'3': () => LocalizedString
-					/**
-					 * Come visit us! It will be a joy to have you with us worshiping the Lord.
-					 */
-					'4': () => LocalizedString
-				}
-				/**
-				 * Autora
-				 */
-				authorImageAlt: () => LocalizedString
-				/**
-				 * Igreja
-				 */
-				churchImageAlt: () => LocalizedString
-			}
-			talkingAbout: {
-				firstSection: {
-					/**
-					 * Talking About The Project
-					 */
-					title: () => LocalizedString
-					/**
-					 * <span class="h5">The <span class="special-font">“One for all! All for one”</span></span
-						>, is nothing more than an evangelization tool plus social action. shaped like
-						organizational system of Christian ethical values, have their administrative principles based on
-						in the word of God from Genesis to Revelation backed by the gospel of
-						<cite>Matthew 25:34–36.</cite>
-						Since they are evangelistic in nature, they are authored and administered by the Holy Spirit,
-						<cite>John 14:16-17; 16:7-14</cite>
-						whose main purpose is to announce the gospel, rebuilding person(s) or family(ies) deprived of the faith
-						and of hope; which finds itself in glaring material and spiritual needs.
-					 */
-					firstParagraph: () => LocalizedString
-					/**
-					 * Based on love of neighbor; love exemplified by Christ himself, the head of his
-						church and naturally the owner of this Project. It represents leadership, whose roots are
-						embedded in the post-reformation Christian line <cite>(Martin Luther)</cite> as well as the “author” acting
-						these by means of UNITY and UNION; thus, within a joint action, they rescue principles and
-						conduct of a Christian life experienced in <cite>Acts 2:42-47</cite>. Here the whole community can
-						and must participate. Here it is God for all and the community for one or more members of its
-						community, in the exercise of love according to
-						<cite>1 John 3:16-18</cite>.
-					 */
-					secondtParagraph: () => LocalizedString
-					/**
-					 * In conclusion... <span class="special-font">“One for all!”</span> It means to say: “God for
-						all!" (The Father, the Son and the Holy Spirit for all)
-						<span class="special-font">“All for one.”</span>
-						It means to say: (All = community). That is: The community in joint action, through leadership
-						church representing the person of Christ, in favor of spiritual and also material needs
-						when screaming; of certain person(s), or family(ies) residing within this community, or
-						better, within this Field. This field where the churches act in "UNITY" That is, they unite for the
-						purpose for which it was designed without leaving its peculiarities.
-						<quote>
-						[ACTS 2:42–47 / HOSEA 4:6 / MATTHEW 4:4 / MARK 16:15–16 / MATTHEW 28:18–20 / MATTHEW 18:10–11
-						/ 1 JOHN 2:3–6; 3:16–18 / MATTHEW 25:34–36]
-						</quote>
-					 */
-					thirdParagraph: () => LocalizedString
-				}
-				secondSection: {
-					/**
-					 * How did this Project originate?
-					 */
-					title: () => LocalizedString
-					/**
-					 * After a few months of evangelistic and social work carried out in a certain house by
-						me, and Deacon Umaracir da Conceição Ribeiro, an experienced evangelist; I noticed that this
-						family needed much more than we were offering. We helped; However, this aid
-						matched their deepest needs. (I am referring to material needs...
-						that prayer and fasting should not be dispensed with, essential for the effectiveness of any
-						evangelistic work.) I thought... But whose? Where are? I sought the Lord and I believed
-						that He led me to see that the Deacon and I did not have this extra that this family needed.
-						However... I looked around... It was there the whole time. The neighbors of that family... The community
-						- family; the local churches. If you join a little bit here and there... Imagine a community
-						with 305 homes. If each family commits to offering 01 item (01 food not
-						perishable). 01 item per family, not counting extra offers, external support (offers
-						from outside residents). Churches cooperating. Just imagine!
-					 */
-					firstParagraph: () => LocalizedString
-					/**
-					 * I realized then that the success of our work depended on joint action. I started... I returned
-						to this family, and I told them about the project, and if we could start this greater support with them, in
-						that the community participates through its offers (donations) as a whole. The family received
-						thanks for the idea. Then, the registration of the 1st family to be assisted by this well-known Project
-						within the Banguense community, Condomínio Ayrton Senna. I wrote down your first data, and
-						I immediately proceeded through the nearest houses. Of the families I sought, in that
-						evening there was no one who did not want to participate. And why not mention the first three
-						Offeror Volunteer families represented respectively:
-					 */
-					secondtParagraph: () => LocalizedString
-					/**
-					 * This method of obtaining resources through proximity to the needy family(ies) is effective
-						because if everyone doesn't know her, they will be able to know her (discretely) without having the need to
-						get a vehicle for that. <b>
-						>Thus, the community exercises its love of neighbor and, seeing the results, grows in faith and in
-						love of Christ.</b>
-					 */
-					thirdParagraph: () => LocalizedString
-					table: {
-						/**
-						 * First Volunteer Families
-						 */
-						caption: () => LocalizedString
-						columns: {
-							/**
-							 * Registration Number
-							 */
-							'0': () => LocalizedString
-							/**
-							 * Family Representative
-							 */
-							'1': () => LocalizedString
-							/**
-							 * Offer
-							 */
-							'2': () => LocalizedString
-						}
-						rows: {
-							'0': {
-								/**
-								 * 01
-								 */
-								'0': () => LocalizedString
-								/**
-								 * Priscila da Silva Souza
-								 */
-								'1': () => LocalizedString
-								/**
-								 * Soap
-								 */
-								'2': () => LocalizedString
-							}
-							'1': {
-								/**
-								 * 02
-								 */
-								'0': () => LocalizedString
-								/**
-								 * Angela Fully
-								 */
-								'1': () => LocalizedString
-								/**
-								 * Chlorine
-								 */
-								'2': () => LocalizedString
-							}
-							'2': {
-								/**
-								 * 03
-								 */
-								'0': () => LocalizedString
-								/**
-								 * Ednaldo C. Demétrio
-								 */
-								'1': () => LocalizedString
-								/**
-								 * Toilet Paper
-								 */
-								'2': () => LocalizedString
-							}
-						}
-					}
-				}
-				thirdSection: {
-					/**
-					 * Foundation
-					 */
-					title: () => LocalizedString
-					list: {
-						/**
-						 * <b>Inaugurated</b> on <u>March 18, 2011</u>
-						 */
-						'0': () => LocalizedString
-						/**
-						 * <b>Former HEADQUARTERS:</b> Rua Adelaide, nº 05, apart 203. Condomínio Ayrton Senna. Neighborhood: Jardim Bangu – RJ- Brazil
-						 */
-						'1': () => LocalizedString
-						/**
-						 * <b>Registration Office:</b> 14th C.R.C.P. N–Bangu RJ. Tel:(021) 2401-3500 Code: 03026FEE4790-SUCSHX63366. RJ, 05/27/2011
-						 */
-						'2': () => LocalizedString
-					}
-					/**
-					 * <b>Note:</b> Currently waiting for the Churches within this Field to come and take up this work
-						which the 1st to present should
-						<u>being in front of the Mission Field, representing the others.</u>
-					 */
-					firstParagraph: () => LocalizedString
-					/**
-					 * God be praised in our lives in the name of our Lord Jesus Christ.<br />
-						Best regards!<br />
-						Sister Wilma Machado<br />
-						Author and General Coordinator, servant of our Lord Jesus Christ<br />
-					 */
-					secondParagraph: () => LocalizedString
-				}
-			}
-			services: {
-				firstSection: {
-					/**
-					 * We offer to families
-					 */
-					mainTitle: () => LocalizedString
-					/**
-					 * Churches in UNITY - "Christ at home"
-					 */
-					title: () => LocalizedString
-					/**
-					 * (Isaiah 61:1–3 / 1 Corinthians 12:1–31 / Ephesians 4:1–13, 15-16 / Ecclesiastes 4:12 / Mark 16:15)
-					 */
-					subTitle: () => LocalizedString
-					/**
-					 * <cite>"Communicate with the saints in their needs" —Romans 12:13</cite>. Churches (Post Martin
-				            Luther) established in this Mission Field above; whose purpose is to expand the Kingdom of Christ
-				            <u>acting in UNITY, through this evangelistic tool</u>, provides a team of
-				            men and women of God to:
-					 */
-					paragraph: () => LocalizedString
-					firstList: {
-						/**
-						 * Discipleship
-						 */
-						'0': () => LocalizedString
-						/**
-						 * Teaching the Word of God once a week, for 1 hour for those who for some reason
-					            is unable to attend the E.B.D in the Church.
-						 */
-						'1': () => LocalizedString
-						/**
-						 * <cite>Matthew 22:29 / 2 Timothy 3:16 / Psalm 119:11</cite>
-						 */
-						'2': () => LocalizedString
-					}
-					secondList: {
-						/**
-						 * Pray For The Sick
-						 */
-						'0': () => LocalizedString
-						/**
-						 * Prayer and anointing with oil in the name of the Lord Jesus Christ performed by the elders.
-						 */
-						'1': () => LocalizedString
-						/**
-						 * <cite>James 5:14–16; 1:6-7 / Psalm 50:15</cite>
-						 */
-						'2': () => LocalizedString
-					}
-					thirdList: {
-						/**
-						 * Worship of God on Thanksgiving
-						 */
-						'0': () => LocalizedString
-						/**
-						 * Check if there are <a href="{data.locale}/#agenda-announcement">services scheduled.
-						 */
-						'1': (arg: { data.locale: unknown }) => LocalizedString
-						/**
-						 * <cite>Philippians 4:6 / Colossians 4:2</cite>
-						 */
-						'2': () => LocalizedString
-					}
-					fourthList: {
-						/**
-						 * Food Assistance
-						 */
-						'0': () => LocalizedString
-						/**
-						 * You, a resident of one of the Mission Fields of this Evangelistic Tool, have been experiencing
-					            financial difficulties and understanding that the Support in maintenance can soften the proof or
-					            even if you know someone within one of the Mission Fields that is going through
-					            proof, contact us at contato@umportodostodosporum.org.
-						 */
-						'1': () => LocalizedString
-						/**
-						 * <cite>"The Lord is my Shepherd and I shall not want!" Psalms 23:1</cite>
-						 */
-						'2': () => LocalizedString
-					}
-				}
-				secondSection: {
-					/**
-					 * Important
-					 */
-					firstTitle: () => LocalizedString
-					/**
-					 * Contact
-					 */
-					secondTitle: () => LocalizedString
-					/**
-					 * As a security measure, anyone who volunteers for this project to
-				        provide ANY service that you claim to be a Volunteer, must have your registration
-				        presented on the website at the link <a href="/quem-somos/voluntarios-do-administrativo">ADM Volunteers</a>
-				        where your photo and your data should be included, and also
-				        <a href="/images/adm-vol-uniform-big.jpg" target="_blank">must be wearing this Project's shirt</a>
-				        which contains your identification at the height of the left shoulder. In the case of churches, these are listed
-				        in the link <a href="/churches-in-unity">Churches in Unity</a>
-				        and your logo will be on this member's blouse on your back. Every volunteer is instructed to wait
-				        your verification on the site, so you don't have to because of constraints. Check! this procedure
-				        it's normal. In addition, these types of visits are previously scheduled.
-					 */
-					firstParagraph: () => LocalizedString
-					/**
-					 * If you are interested, just send us an <a href="#footer">e-mail</a> with your name, address and telephone number. wait for our
-				        contact. Peace.
-					 */
-					secondParagraph: () => LocalizedString
-				}
-			}
-		}
+	'search-field': {
+		/**
+		 * Pesquise pelo nome do campo missionário
+		 */
+		searchPlaceholder: () => LocalizedString
+		/**
+		 * Código
+		 */
+		code: () => LocalizedString
+	}
+	testimonial: {
+		/**
+		 * Testemunhos
+		 */
+		title: () => LocalizedString
 	}
 	utils: {
 		months: {
 			/**
-			 * January
+			 * Janeiro
 			 */
 			january: () => LocalizedString
 			/**
-			 * February
+			 * Fevereiro
 			 */
 			february: () => LocalizedString
 			/**
-			 * March
+			 * Março
 			 */
 			march: () => LocalizedString
 			/**
-			 * April
+			 * Abril
 			 */
 			april: () => LocalizedString
 			/**
-			 * May
+			 * Maio
 			 */
 			may: () => LocalizedString
 			/**
-			 * June
+			 * Junho
 			 */
 			june: () => LocalizedString
 			/**
-			 * July
+			 * Julho
 			 */
 			july: () => LocalizedString
 			/**
-			 * August
+			 * Agosto
 			 */
 			august: () => LocalizedString
 			/**
-			 * September
+			 * Setembro
 			 */
 			september: () => LocalizedString
 			/**
-			 * October
+			 * Outubro
 			 */
 			october: () => LocalizedString
 			/**
-			 * November
+			 * Novembro
 			 */
 			november: () => LocalizedString
 			/**
-			 * December
+			 * Dezembro
 			 */
 			december: () => LocalizedString
 		}
