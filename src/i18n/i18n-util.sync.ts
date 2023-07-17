@@ -8,24 +8,64 @@ import { loadedFormatters, loadedLocales, locales } from './i18n-util'
 import en from './en'
 import pt_BR from './pt-BR'
 
-import en_components from './en/components'
-import en_routes from './en/routes'
+import en_about_us from './en/about-us'
+import en_agenda_announcement from './en/agenda-announcement'
+import en_breadcrumbs from './en/breadcrumbs'
+import en_faq from './en/faq'
+import en_fields from './en/fields'
+import en_footer from './en/footer'
+import en_how_to_participate from './en/how-to-participate'
+import en_how_to_participate_component from './en/how-to-participate-component'
+import en_landing from './en/landing'
+import en_navbar from './en/navbar'
+import en_search_field from './en/search-field'
+import en_testimonial from './en/testimonial'
 import en_utils from './en/utils'
-import pt_BR_components from './pt-BR/components'
-import pt_BR_routes from './pt-BR/routes'
+import pt_BR_about_us from './pt-BR/about-us'
+import pt_BR_agenda_announcement from './pt-BR/agenda-announcement'
+import pt_BR_breadcrumbs from './pt-BR/breadcrumbs'
+import pt_BR_faq from './pt-BR/faq'
+import pt_BR_fields from './pt-BR/fields'
+import pt_BR_footer from './pt-BR/footer'
+import pt_BR_how_to_participate from './pt-BR/how-to-participate'
+import pt_BR_how_to_participate_component from './pt-BR/how-to-participate-component'
+import pt_BR_landing from './pt-BR/landing'
+import pt_BR_navbar from './pt-BR/navbar'
+import pt_BR_search_field from './pt-BR/search-field'
+import pt_BR_testimonial from './pt-BR/testimonial'
 import pt_BR_utils from './pt-BR/utils'
 
 const localeTranslations = {
 	en: {
 		...en,
-		components: en_components,
-		routes: en_routes,
+		'about-us': en_about_us,
+		'agenda-announcement': en_agenda_announcement,
+		breadcrumbs: en_breadcrumbs,
+		faq: en_faq,
+		fields: en_fields,
+		footer: en_footer,
+		'how-to-participate': en_how_to_participate,
+		'how-to-participate-component': en_how_to_participate_component,
+		landing: en_landing,
+		navbar: en_navbar,
+		'search-field': en_search_field,
+		testimonial: en_testimonial,
 		utils: en_utils
 	},
 	'pt-BR': {
 		...pt_BR,
-		components: pt_BR_components,
-		routes: pt_BR_routes,
+		'about-us': pt_BR_about_us,
+		'agenda-announcement': pt_BR_agenda_announcement,
+		breadcrumbs: pt_BR_breadcrumbs,
+		faq: pt_BR_faq,
+		fields: pt_BR_fields,
+		footer: pt_BR_footer,
+		'how-to-participate': pt_BR_how_to_participate,
+		'how-to-participate-component': pt_BR_how_to_participate_component,
+		landing: pt_BR_landing,
+		navbar: pt_BR_navbar,
+		'search-field': pt_BR_search_field,
+		testimonial: pt_BR_testimonial,
 		utils: pt_BR_utils
 	},
 }

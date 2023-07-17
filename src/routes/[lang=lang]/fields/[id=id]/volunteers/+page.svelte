@@ -1,19 +1,22 @@
 <script lang="ts">
+	import '$lib/scss/routes/fields/volunteers.scss';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import type { Namespaces } from '$i18n/i18n-types';
-	import MainNavbar from '$lib/components/public/navbar.svelte';
-	import Footer from '$lib/components/public/footer.svelte';
+	import MainNavbar from '$lib/components/navbar.svelte';
+	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	import { fromPaginationToQuery, sortVolunteersByOccupations } from '$lib/utils/functions';
 	import type { Pagination, VolunteerDto } from '$lib/types';
 	import axios from '$lib/axios';
 	import Axios from 'axios';
 	import { Occupation } from '$lib/enums';
 
+	// i18n
+	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	$: i18n = $LL['fields'].volunteers;
+
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
 
 	let isLoading = false;
 	let volunteers: VolunteerDto[] = [];
@@ -28,8 +31,7 @@
 	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation));
 
 	onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		await loadNamespaceAsync(data.locale, 'fields');
 		setLocale(data.locale);
 
 		await loadData();
@@ -83,27 +85,14 @@
 
 <MainNavbar locale={data.locale} />
 <section id="main">
-	<ul class="breadcrumb">
-		<li><a href="/{data.locale}/">{$LL.breadcrumbs.home.text()}</a></li>
-		<li>
-			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/{data.field.id}">{data.field.designation}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/{data.field.id}/volunteers"
-				>{$LL.breadcrumbs.home.fields.volunteers.text()}</a
-			>
-		</li>
-	</ul>
+	<Breadcrumbs locale={data.locale} field={data.field} />
 
-	<h1>Voluntários</h1>
-	<h2>Campo Missionário - {data.field.designation}</h2>
+	<h1>{i18n.title()}</h1>
+	<h2>{i18n.subTitle({ designation: data.field.designation })}</h2>
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
 
 	<div class="volunteers">
-		<h3>Setor Operacional de Missões</h3>
+		<h3>{i18n.firstSection()}</h3>
 		{#each firstSectionVols as volunteer}
 			<div class="volunteer">
 				<div class="head">
@@ -115,7 +104,7 @@
 					<ul>
 						<li>{volunteer.church}</li>
 						<li>{volunteer.priest}</li>
-						<li>Data de Entrada: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
+						<li>{i18n.joinedDate()}: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
 					</ul>
 				</div>
 				<div class="footer">
@@ -123,7 +112,7 @@
 				</div>
 			</div>
 		{/each}
-		<h3>Serviço Interno e Externo</h3>
+		<h3>{i18n.secondSection()}</h3>
 		{#each secondSectionVols as volunteer}
 			<div class="volunteer">
 				<div class="head">
@@ -133,9 +122,9 @@
 				</div>
 				<div class="body">
 					<ul>
-						<li>{new Date(volunteer.joinedDate).toLocaleDateString()}</li>
 						<li>{volunteer.church}</li>
 						<li>{volunteer.priest}</li>
+						<li>{i18n.joinedDate()}: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
 					</ul>
 				</div>
 				<div class="footer">
@@ -143,7 +132,7 @@
 				</div>
 			</div>
 		{/each}
-		<h3>Serviço de Apoio</h3>
+		<h3>{i18n.thirdSection()}</h3>
 		{#each thirdSectionVols as volunteer}
 			<div class="volunteer">
 				<div class="head">
@@ -153,9 +142,9 @@
 				</div>
 				<div class="body">
 					<ul>
-						<li>{new Date(volunteer.joinedDate).toLocaleDateString()}</li>
 						<li>{volunteer.church}</li>
 						<li>{volunteer.priest}</li>
+						<li>{i18n.joinedDate()}: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
 					</ul>
 				</div>
 				<div class="footer">
@@ -165,131 +154,4 @@
 		{/each}
 	</div>
 </section>
-<Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	@import '$lib/scss/_shared';
-
-	h1,
-	h2 {
-		margin-bottom: 0.2rem;
-	}
-
-	h2 {
-		margin-top: 0;
-		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
-	}
-
-	h3:not(:first-of-type) {
-		margin-top: 4rem;
-	}
-
-	.volunteer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		color: var(--contrast-primary-background);
-		background-color: var(--primary-background);
-
-		padding: 2rem 1rem;
-		margin-bottom: 1rem;
-
-		border-radius: 0.4rem;
-
-		@include for-md-devices {
-			display: grid;
-			grid-template-areas:
-				'img .'
-				'img name'
-				'img occupation'
-				'img body'
-				'img footer';
-			grid-template-columns: 30% 70%;
-		}
-
-		@include for-lg-devices {
-			width: 680px;
-		}
-
-		.head {
-			width: 300px;
-
-			@include for-md-devices {
-				width: 100%;
-				display: contents;
-			}
-
-			img {
-				height: 300px;
-				width: 200px;
-				object-fit: cover;
-
-				padding: 0.5rem;
-				background-color: var(--contrast-primary-background);
-
-				display: block;
-				margin: 0 auto;
-
-				@include for-md-devices {
-					grid-area: img;
-					margin: initial;
-				}
-			}
-
-			h3 {
-				margin: 0.5rem 0 0.1rem 0;
-
-				@include for-md-devices {
-					grid-area: name;
-					margin-left: 1rem;
-				}
-			}
-
-			p {
-				text-indent: 0;
-				margin-top: 0;
-				font-size: 0.9rem;
-
-				@include for-md-devices {
-					grid-area: occupation;
-					margin-left: 1rem;
-				}
-			}
-		}
-
-		.body {
-			width: 300px;
-
-			@include for-md-devices {
-				grid-area: body;
-				width: 100%;
-				height: 100%;
-
-				margin-left: 1rem;
-			}
-
-			ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-		}
-
-		.footer {
-			width: 300px;
-
-			@include for-md-devices {
-				grid-area: footer;
-				width: 100%;
-				height: 100%;
-
-				margin-left: 1rem;
-			}
-
-			p {
-				text-indent: 0.5rem;
-			}
-		}
-	}
-</style>
+<Footer locale={data.locale} />

@@ -1,20 +1,22 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
 	import { onMount } from 'svelte';
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import type { Namespaces } from '$i18n/i18n-types';
 	import type { OfferorFamilyDto, Pagination as PaginationType } from '$lib/types';
 	import { fromPaginationToQuery } from '$lib/utils/functions';
-	import MainNavbar from '$lib/components/public/navbar.svelte';
-	import Footer from '$lib/components/public/footer.svelte';
-	import Pagination from '$lib/components/public/pagination.svelte';
-	import SearchBox from '$lib/components/public/search-box.svelte';
+	import MainNavbar from '$lib/components/navbar.svelte';
+	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
+	import Footer from '$lib/components/footer.svelte';
+	import Pagination from '$lib/components/pagination.svelte';
+	import SearchBox from '$lib/components/search-box.svelte';
 	import axios from '$lib/axios';
 	import Axios from 'axios';
 
+	// i18n
+	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	$: i18n = $LL['fields'].offerorFamilies;
+
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
 	const DEFAULT_PAGINATION = {
 		itemsPerPage: 20,
 		page: 1,
@@ -27,7 +29,6 @@
 	} as PaginationType;
 
 	const showDropdown = false;
-	const searchPlaceholder = 'Pesquise pelo representante da família';
 
 	let searchInput = '';
 	let isLoading = false;
@@ -48,8 +49,7 @@
 	$: pagination.search = searchInput;
 
 	onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		await loadNamespaceAsync(data.locale, 'fields');
 		setLocale(data.locale);
 
 		await loadData();
@@ -82,36 +82,23 @@
 
 <MainNavbar locale={data.locale} />
 <section id="main">
-	<ul class="breadcrumb">
-		<li><a href="/{data.locale}/">{$LL.breadcrumbs.home.text()}</a></li>
-		<li>
-			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/{data.field.id}">{data.field.designation}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/{data.field.id}/offeror-families"
-				>{$LL.breadcrumbs.home.fields.offerorFamilies.text()}</a
-			>
-		</li>
-	</ul>
+	<Breadcrumbs locale={data.locale} field={data.field} />
 
-	<h1>Famílias Ofertantes</h1>
-	<h2>Campo Missionário - {data.field.designation}</h2>
+	<h1>{i18n.title()}</h1>
+	<h2>{i18n.subTitle({ designation: data.field.designation })}</h2>
 	<p class="sub-title no-text-indent">{data.field.abbreviation}</p>
 
 	<div class="centered">
-		<SearchBox bind:searchInput {showDropdown} {searchPlaceholder} {loadData} />
+		<SearchBox bind:searchInput {showDropdown} searchPlaceholder={i18n.searchPlaceholder()} {loadData} />
 		<div class="data-items">
 			{#each offerorFamilies as offerorFamily (offerorFamily.id)}
 				<div class="data-item">
 					<ul class="simple-ulist">
 						<li>{offerorFamily.representative}</li>
-						<li>Compromisso: {offerorFamily.commitment}</li>
-						<li>Grupo: {offerorFamily.group}</li>
+						<li>{i18n.commitment()}: {offerorFamily.commitment}</li>
+						<li>{i18n.group()}: {offerorFamily.group}</li>
 						{#if offerorFamily.chuchDenomination}
-							<li>Igreja: {offerorFamily.chuchDenomination}</li>
+							<li>{i18n.chuchDenomination()}: {offerorFamily.chuchDenomination}</li>
 						{/if}
 					</ul>
 				</div>
@@ -121,16 +108,4 @@
 		<Pagination bind:page={pagination.page} maxPage={totalPages} on:pageChange={loadData} />
 	</div>
 </section>
-<Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	h1,
-	h2 {
-		margin-bottom: 0.2rem;
-	}
-
-	h2 {
-		margin-top: 0;
-		font-size: calc(var(--h1-font-size) - 0.6rem) !important;
-	}
-</style>
+<Footer locale={data.locale} />

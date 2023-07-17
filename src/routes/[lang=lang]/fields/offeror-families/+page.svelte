@@ -1,31 +1,33 @@
 <script lang="ts">
+	import '$lib/scss/routes/fields/oferror-families.scss';
 	import type { PageData } from './$types';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import type { Namespaces } from '$i18n/i18n-types';
-	import SearchBox from '$lib/components/public/search-box.svelte';
-	import Pagination from '$lib/components/public/pagination.svelte';
-	import SearchField from '$lib/components/public/search-field.svelte';
-	import MainNavbar from '$lib/components/public/navbar.svelte';
-	import Footer from '$lib/components/public/footer.svelte';
+	import SearchBox from '$lib/components/search-box.svelte';
+	import Pagination from '$lib/components/pagination.svelte';
+	import SearchField from '$lib/components/search-field.svelte';
+	import MainNavbar from '$lib/components/navbar.svelte';
+	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	import { SearchOption } from '$lib/enums';
 	import type { OfferorFamilyDto, Pagination as PaginationType } from '$lib/types';
 	import { fromPaginationToQuery } from '$lib/utils/functions';
 	import axios from '$lib/axios';
 	import Axios from 'axios';
 
+	// i18n
+	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	$: i18n = $LL['fields'].offerorFamilies;
+
 	// Component Specifics
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
 
 	let option: SearchOption | null;
 	let isLoading = false;
 
 	onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		await loadNamespaceAsync(data.locale, 'fields');
 		setLocale(data.locale);
 
 		await loadData();
@@ -100,24 +102,13 @@
 
 <MainNavbar locale={data.locale} />
 <section id="main">
-	<ul class="breadcrumb">
-		<li><a href="/{data.locale}/">{$LL.breadcrumbs.home.text()}</a></li>
-		<li>
-			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/offeror-families"
-				>{$LL.breadcrumbs.home.fields.offerorFamilies.text()}</a
-			>
-		</li>
-		
-	</ul>
+	<Breadcrumbs locale={data.locale} />
 
-	<h1>Famílias Ofertantes</h1>
+	<h1>{i18n.title()}</h1>
 
 	{#if option === SearchOption.ALL}
 		<div class="reset-option">
-			<button on:click={resetOption}>Voltar</button>
+			<button on:click={resetOption}>{i18n.backButton()}</button>
 		</div>
 
 		<div class="centered">
@@ -132,10 +123,10 @@
 					<div class="data-item">
 						<ul class="simple-ulist">
 							<li>{offerorFamily.representative}</li>
-							<li>Compromisso: {offerorFamily.commitment}</li>
-							<li>Grupo: {offerorFamily.group}</li>
+							<li>{i18n.commitment()}: {offerorFamily.commitment}</li>
+							<li>{i18n.group()}: {offerorFamily.group}</li>
 							{#if offerorFamily.chuchDenomination}
-								<li>Igreja: {offerorFamily.chuchDenomination}</li>
+								<li>{i18n.churchDenomination()}: {offerorFamily.chuchDenomination}</li>
 							{/if}
 						</ul>
 					</div>
@@ -146,90 +137,14 @@
 		</div>
 	{:else if option === SearchOption.SPECIFIC}
 		<div class="reset-option">
-			<button on:click={resetOption}>Voltar</button>
+			<button on:click={resetOption}>{i18n.backButton()}</button>
 		</div>
 		<SearchField locale={data.locale} {onFieldSelection} />
 	{:else}
 		<div class="option-container">
-			<button class="option" on:click={onSpecifOption}>Pesquisar Por Campo Missionário</button>
-			<button class="option" on:click={onAllOption}
-				>Pesquisar em Todos os Campos Missionários</button
-			>
+			<button class="option" on:click={onSpecifOption}>{i18n.specificOption()}</button>
+			<button class="option" on:click={onAllOption}>{i18n.allOption()}</button>
 		</div>
 	{/if}
 </section>
-<Footer locale={data.locale} {namespaces} />
-
-<style lang="scss">
-	@import '$lib/scss/_shared';
-
-	.reset-option {
-		@include for-lg-devices {
-			margin: 0 auto;
-			width: 60%;
-		}
-
-		@include for-xl-devices {
-			width: 50%;
-		}
-
-		button {
-			margin-bottom: 0.5rem;
-			padding: 0.2rem 0.5rem;
-
-			background-color: var(--primary-background);
-			color: var(--contrast-primary-background);
-
-			border-radius: 0.3rem;
-			border: 0.2rem solid rgba(0, 0, 0, 0);
-
-			@include for-lg-devices {
-				cursor: pointer;
-
-				&:hover {
-					color: var(--link-font-color);
-				}
-			}
-		}
-	}
-
-	.option-container {
-		min-height: 200px;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		.option {
-			font-size: 1rem;
-			margin-right: 0.5rem;
-			padding: 0.2rem 0.5rem;
-
-			background-color: var(--primary-background);
-			color: var(--contrast-primary-background);
-
-			border-radius: 0.3rem;
-			border: 0.2rem solid rgba(0, 0, 0, 0);
-
-			@include for-md-devices {
-				padding: 0.4rem 1rem;
-			}
-
-			@include for-lg-devices {
-				cursor: pointer;
-
-				&:hover {
-					color: var(--link-font-color);
-				}
-			}
-		}
-	}
-
-	#main {
-		min-height: 300px;
-
-		@include for-xl-devices {
-			min-height: 60vh;
-		}
-	}
-</style>
+<Footer locale={data.locale} />

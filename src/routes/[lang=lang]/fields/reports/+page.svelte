@@ -1,20 +1,21 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	import MainNavbar from '$lib/components/public/navbar.svelte';
-	import Footer from '$lib/components/public/footer.svelte';
+	import MainNavbar from '$lib/components/navbar.svelte';
+	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	import { onMount } from 'svelte';
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import type { Namespaces } from '$i18n/i18n-types';
-	import SearchField from '$lib/components/public/search-field.svelte';
+	import SearchField from '$lib/components/search-field.svelte';
 	import { goto } from '$app/navigation';
 
+	// i18n
+	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
+	$: i18n = $LL['fields'].reports;
+
 	export let data: PageData;
-	const namespaces: Namespaces[] = ['components', 'routes'];
 
 	onMount(async () => {
-		await loadNamespaceAsync(data.locale, 'routes');
-		await loadNamespaceAsync(data.locale, 'components');
+		await loadNamespaceAsync(data.locale, 'fields');
 		setLocale(data.locale);
 	});
 
@@ -25,18 +26,9 @@
 
 <MainNavbar locale={data.locale} />
 <section id="main">
-	<ul class="breadcrumb">
-		<li><a href="/{data.locale}/">{$LL.breadcrumbs.home.text()}</a></li>
-		<li>
-			<a href="/{data.locale}/fields">{$LL.breadcrumbs.home.fields.text()}</a>
-		</li>
-		<li>
-			<a href="/{data.locale}/fields/reports">{$LL.breadcrumbs.home.fields.reports.text()}</a>
-		</li>
-		
-	</ul>
+	<Breadcrumbs locale={data.locale} />
 
-	<h1>Relatórios</h1>
+	<h1>{i18n.title()}</h1>
 	<SearchField locale={data.locale} {onFieldSelection} />
 </section>
-<Footer locale={data.locale} {namespaces} />
+<Footer locale={data.locale} />
