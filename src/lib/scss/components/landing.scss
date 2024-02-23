@@ -1,4 +1,4 @@
-@import "$lib/scss/_shared";
+@import "$scss/_shared";
 
 #landing {
     width: 100vw;
@@ -35,7 +35,7 @@
         height: 100vh;
 
         opacity: .6;
-        background-image: url(/images/landing-backgroud.webp);
+        background-image: url('$assets/images/landing-backgroud.webp');
         background-size: cover;
         background-position: center center;
         z-index: -1;

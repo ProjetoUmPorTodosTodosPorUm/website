@@ -1,22 +1,9 @@
 <script lang="ts">
 	import '$scss/components/faq.scss';
-	import { onMount } from 'svelte';
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FiChevronDown from 'svelte-icons-pack/fi/FiChevronDown';
-
-	// i18n
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	$: i18n = $LL['faq'];
-
-	export let locale: Locales;
-
-	onMount(async () => {
-		await loadNamespaceAsync(locale, 'faq');
-		setLocale(locale);
-	});
 
 	function onQuestionToggle(event: Event) {
 		// @ts-ignore
@@ -38,7 +25,7 @@
 </script>
 
 <section id="faq">
-	<h1>{i18n.headline()}</h1>
+	<h1>Perguntas Frequentes</h1>
 
 	<div class="questions">
 		<div class="question-block">

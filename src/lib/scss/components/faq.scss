@@ -1,5 +1,5 @@
-@import "$lib/scss/_shared";
-@import "$lib/scss/_variables";
+@import "$scss/_shared";
+@import "$scss/_variables";
 
 #faq {
     position: relative;
@@ -41,7 +41,7 @@
         height: 100vh;
 
         opacity: .1;
-        background-image: url(/images/faq-background.webp);
+        background-image: url('$assets/images/faq-background.webp');
         background-attachment: fixed;
         background-size: cover;
         background-position: center center;

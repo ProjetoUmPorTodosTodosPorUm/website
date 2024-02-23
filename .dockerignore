@@ -24,7 +24,6 @@ Dockerfile
 prisma.dockerfile
 TODO
 
-!typesafe-i18n.json
 !package-lock.json
 !package.json
 !svelte.config.js
