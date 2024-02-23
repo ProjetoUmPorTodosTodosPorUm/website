@@ -1,23 +1,19 @@
 <script lang="ts">
 	import '$scss/components/agenda.scss';
-	import type { AgendaDto } from '$lib/types';
-	import { fromPaginationToQuery } from '$lib/utils/functions';
+	import { Modal } from '$components';
+	import type { AgendaDto, ApiResponseDto } from '$types';
+	import { easyFetch, fromPaginationToQuery } from '$utils'
+	import { PUBLIC_API_URL } from '$env/static/public'
 	import Calendar from '@event-calendar/core';
 	import DayGrid from '@event-calendar/day-grid';
-	import Modal from './modal.svelte';
-	import axios from '$lib/axios';
-	import Axios from 'axios';
-
-	export let locale: Locales;
 
 	// https://github.com/vkurko/calendar
 	let calendar: any;
 
-	let isLoading = false;
 	let events: AgendaDto[] = [];
 	let plugins = [DayGrid];
 	let options = {
-		locale,
+		locale: 'pt-BR',
 		height: '90%',
 		view: 'dayGridMonth',
 		events: [],
@@ -29,29 +25,23 @@
 						gte: fetchInfo.startStr
 					});
 
-					try {
-						isLoading = true;
-						events = (await axios.get(`/agenda/range?${queryString}`)).data.data;
-						isLoading = false;
+					const res = await easyFetch(fetch, { url: `${PUBLIC_API_URL}/agenda/range?${queryString}`})
+					
+					if(res && res.status !== 200 || !res) {
+						return []
+					} else {
+						const resJson = await res.json() as ApiResponseDto
+						events = resJson.data
 
-						return events.length > 0
-							? events.map((e) => ({
-									id: e.id,
-									allDay: true,
-									title: e.title,
-									start: new Date(e.date),
-									end: new Date(e.date)
-							  }))
-							: [];
-					} catch (error) {
-						isLoading = false;
-
-						if (error instanceof Axios.AxiosError) {
-							console.warn(error);
-						}
-						console.warn(error);
-
-						return [];
+						return resJson.data.length > 0
+							? resJson.data.map((event: AgendaDto) => ({
+								id: event.id,
+								allDay: true,
+								title: event.title,
+								start: new Date(event.date),
+								end: new Date(event.date)
+							}))
+							: []
 					}
 				}
 			}

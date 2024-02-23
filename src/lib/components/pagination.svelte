@@ -1,45 +1,56 @@
 <script lang="ts">
 	import '$scss/components/pagination.scss';
-	import { createEventDispatcher } from 'svelte';
+	import { onMount } from 'svelte'
+	import { page as pageSvelte } from '$app/stores'
+	import { goto, invalidate } from '$app/navigation'
+	import { DEPENDENCY_URLS } from '$constants'
 
+	// Icons
 	import Icon from 'svelte-icons-pack';
-	import FiChevronLeft from 'svelte-icons-pack/fi/FiChevronLeft';
-	import FiChevronRight from 'svelte-icons-pack/fi/FiChevronRight';
+	import FiChevronLeft from 'svelte-icons-pack/fi/FiChevronLeft'
+	import FiChevronRight from 'svelte-icons-pack/fi/FiChevronRight'
 
-	const dispatch = createEventDispatcher();
+	// Constants
+	const PAGES_AROUND_CURRENT = 1
 
-	export let page = 1;
-	export let maxPage = 1;
+	// Component Data
+	export let maxPage = 1
+	export let invalidateString = DEPENDENCY_URLS.listLoad
 
-	const PAGES_AROUND_CURRENT = 1;
+	let page = 1
+	let pages = Array(maxPage)
 
-	$: maxPage, updatePages();
-	$: page, onPageChange();
-	let pages = Array(maxPage);
+	$: maxPage, updatePages()
+	$: page, updatePages()
+
+	onMount(async () => {
+		const currentPage = Number($pageSvelte.url.searchParams.get('page')) || 1
+		if (currentPage !== page) {
+			page = currentPage
+		}
+	})
 
 	// svelte cant handle just using Array(maxPage)
 	function updatePages() {
-		pages = [];
+		pages = []
 		for (let i = 0; i < maxPage; i++) {
-			pages = [...pages, 0];
+			pages = [...pages, 0]
 		}
 	}
 
-	function onPreviousPage() {
-		page = page > 1 ? page - 1 : page;
+	async function onPreviousPage() {
+		page = page > 1 ? page - 1 : page
+		await navigateToPage(page)
 	}
 
-	function onNextPage() {
-		page = page < maxPage ? page + 1 : page;
+	async function onNextPage() {
+		page = page < maxPage ? page + 1 : page
+		await navigateToPage(page)
 	}
 
-	function onPageSelect(selectedPage: number) {
-		page = selectedPage;
-	}
-
-	function onPageChange() {
-		updatePages();
-		dispatch('pageChange');
+	async function onPageSelect(selectedPage: number) {
+		page = selectedPage
+		await navigateToPage(page)
 	}
 
 	function isPrintablePage(pageNumber: number) {
@@ -54,6 +65,12 @@
 		return (
 			pageNumber <= page + PAGES_AROUND_CURRENT + 1 && pageNumber >= page - PAGES_AROUND_CURRENT - 1
 		);
+	}
+
+	async function navigateToPage(page: number) {
+		$pageSvelte.url.searchParams.set('page', String(page))
+		await goto($pageSvelte.url.href)
+		await invalidate(invalidateString)
 	}
 </script>
 

@@ -1,30 +1,19 @@
 <script lang="ts">
 	import '$scss/components/agenda-announcement.scss';
-	import Agenda from './agenda.svelte';
-	import Announcement from './announcement.svelte';
+	import { Agenda, Announcement } from '$components'
+	import type { AnnouncementDto } from '$types'
 
-	// i18n
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	import { onMount } from 'svelte';
-	$: i18n = $LL['agenda-announcement'];
-
-	export let locale: Locales;
-
-	onMount(async () => {
-		await loadNamespaceAsync(locale, 'agenda-announcement');
-		setLocale(locale);
-	});
+	export let announcements: AnnouncementDto[]
 </script>
 
 <section id="agenda-announcement">
 	<div class="container">
-		<h1>{i18n.agenda.title()}</h1>
-		<Agenda {locale} />
+		<h1>Agenda</h1>
+		<Agenda />
 	</div>
 
 	<div class="container">
-		<h1>{i18n.announcement.title()}</h1>
-		<Announcement />
+		<h1>Anúncios</h1>
+		<Announcement {announcements} />
 	</div>
 </section>

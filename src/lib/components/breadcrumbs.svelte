@@ -1,70 +1,51 @@
 <script lang="ts">
-	import '$lib/scss/components/breadcrumbs.scss';
-	import { onMount } from 'svelte';
+	import '$scss/components/breadcrumbs.scss';
+	import { page } from '$app/stores'
 	import { afterNavigate } from '$app/navigation';
 	import type { Navigation } from '@sveltejs/kit';
+	import type { FieldDto } from '$types';
+	import { BREADCRUMBS_LABELS } from '$constants'
 
-	// i18n
-	import { loadNamespaceAsync } from '$i18n/i18n-util.async';
-	import LL, { setLocale } from '$i18n/i18n-svelte';
-	import type { FieldDto } from '$lib/types';
-	$: i18n = $LL['breadcrumbs'];
+	$: field = $page.data.field as FieldDto || null 
 
-	export let locale: Locales;
-	export let field: FieldDto | null = null;
+	let routeLevelTwo: string
+	let routeLevelThree: string
+	let routeLevelFour: string
+	let routeLevelFive: string
 
-	let routeIdLevels: number;
-	let routeLevelTwo: string;
-	let selectFieldPage: string;
-	let specificFieldRoute: string;
-	let collectedOffersOption: string;
-
-	onMount(async () => {
-		await loadNamespaceAsync(locale, 'breadcrumbs');
-		setLocale(locale);
-	});
+	$: levelTwoRouteText = routeLevelTwo ? BREADCRUMBS_LABELS[routeLevelTwo]?.text : ''
+	$: levelThreeRouteText = routeLevelThree && !field ? BREADCRUMBS_LABELS[routeLevelTwo][routeLevelThree]?.text : ''
+	$: levelFourRouteText = routeLevelFour && !field && BREADCRUMBS_LABELS[routeLevelTwo][routeLevelThree] ? BREADCRUMBS_LABELS[routeLevelTwo][routeLevelThree][routeLevelFour]?.text : ''
+	$: levelFourRouteFieldText= routeLevelFour && field ? BREADCRUMBS_LABELS[routeLevelTwo][routeLevelFour]?.text : ''
+	$: levelFiveRouteText = routeLevelFive && BREADCRUMBS_LABELS[routeLevelTwo][routeLevelFour] ? BREADCRUMBS_LABELS[routeLevelTwo][routeLevelFour][routeLevelFive]?.text : ''
 
 	afterNavigate(async (navigation: Navigation) => {
-		const routeId = navigation.to?.route.id;
-		// -2 discounts '' & '[lang=lang]' items from routeId array
-		routeIdLevels = (routeId?.split('/').length || 0) - 2;
-		routeLevelTwo = routeId?.split('/')[2] || '';
-
-		// field page, may or not be seeing detailed info
-		if (routeIdLevels >= 2) {
-			selectFieldPage = routeId?.split('/')[3] || '';
-			specificFieldRoute = routeId?.split('/')[4] || '';
-			collectedOffersOption = routeId?.split('/')[5] || '';
-		}
+		// -2 discounts '' and (breadcrumbs) item from routeId array (from split('/'))
+		// 2 as padding for accessing the route hierarchy
+		const SPLIT_PADDING = 2
+		const routeId = navigation.to?.route.id
+		
+		routeLevelTwo = routeId?.split('/')[SPLIT_PADDING] || ''
+		routeLevelThree = routeId?.split('/')[SPLIT_PADDING + 1] || ''
+		routeLevelFour = routeId?.split('/')[SPLIT_PADDING + 2] || ''
+		routeLevelFive = routeId?.split('/')[SPLIT_PADDING + 3] || ''
 	});
 </script>
 
 <ul class="breadcrumb">
-	<li><a href="/{locale}/">{i18n.home.text()}</a></li>
-	<li><a href="/{locale}/{routeLevelTwo}">{i18n[routeLevelTwo].text()}</a></li>
-	{#if routeIdLevels >= 2}
-		{#if field}
-			<li><a href="/{locale}/{routeLevelTwo}/{field?.id}">{field?.designation}</a></li>
-		{:else}
-			<li><a href="/{locale}/{routeLevelTwo}/{selectFieldPage}">{i18n[routeLevelTwo][selectFieldPage].text()}</a></li>
-		{/if}
-
-		{#if specificFieldRoute}
-			<li>
-				<a href="/{locale}/{routeLevelTwo}/{field?.id}/{specificFieldRoute}"
-					>{i18n[routeLevelTwo][specificFieldRoute].text()}</a
-				>
-			</li>
-		{/if}
-
-		{#if collectedOffersOption}
-			<li>
-				<a
-					href="/{locale}/{routeLevelTwo}/{field?.id}/{specificFieldRoute}/{collectedOffersOption}"
-				>
-					{i18n[routeLevelTwo][specificFieldRoute][collectedOffersOption].text()}
-				</a>
-			</li>
-		{/if}
+	<li><a href="/">{BREADCRUMBS_LABELS.home.text}</a></li>
+	<li><a href="/{routeLevelTwo}">{levelTwoRouteText}</a></li>
+	{#if routeLevelThree && !field}
+		<li><a href="/{routeLevelTwo}/{routeLevelThree}">{levelThreeRouteText}</a></li>
+	{:else if field}
+		<li><a href="/{routeLevelTwo}/{field?.id}">{field?.designation}</a></li>
+	{/if}
+	{#if routeLevelFour && !field}
+		<li><a href="/{routeLevelTwo}/{routeLevelThree}/{routeLevelFour}">{levelFourRouteText}</a></li>
+	{:else if routeLevelFour && field}
+		<li><a href="/{routeLevelTwo}/{field?.id}/{routeLevelFour}">{levelFourRouteFieldText}</a></li>
+	{/if}
+	{#if routeLevelFive}
+	<li><a href="/{routeLevelTwo}/{field?.id}/{routeLevelFour}/{routeLevelFive}">{levelFiveRouteText}</a></li>
 	{/if}
 </ul>

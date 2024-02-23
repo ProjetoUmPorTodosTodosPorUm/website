@@ -1,0 +1,48 @@
+@import '$scss/_shared';
+
+.toast {
+	min-width: 90%;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	margin-bottom: 0.25rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include for-md-devices {
+		min-width: 300px;
+	}
+}
+
+.toast-body {
+	width: fit-content;
+
+	p {
+		white-space: nowrap;
+		margin: 0;
+	}
+}
+
+.toast-close {
+	cursor: pointer;
+	font-size: 0.8rem;
+}
+
+.bg-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.bg-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9;
+}
+
+.bg-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
