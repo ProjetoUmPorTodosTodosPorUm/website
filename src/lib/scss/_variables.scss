@@ -1,14 +1,22 @@
+// colors
+$--dominant: --dominant;
+$--complementary: --complementary;
+$--accent: --accent;
+$--font-color: --font-color;
+
 $--primary: --primary;
 $--secondary: --secondary;
 $--primary-background: --primary-background;
 $--secondary-background: --secondary-background;
-$--font-color: --font-color;
 $--info-font-color: --info-font-color;
 $--link-font-color: --link-font-color;
 $--contrast-primary-background: --contrast-primary-background;
 $--svg-color: --svg-color;
 
-// used directly
-$h1-font-size: --h1-font-size;
-$h2-font-size: --h2-font-size;
-$h3-font-size: --h3-font-size;
+// font sizes
+$--h1-font-size: --h1-font-size;
+$--h2-font-size: --h2-font-size;
+$--h3-font-size: --h3-font-size;
+
+// others
+$--max-screen-width: --max-screen-width;

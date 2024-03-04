@@ -1,0 +1,44 @@
+@import '$scss/_shared';
+
+.church {
+    width: 100%;
+
+    &:not(:first-of-type) {
+        margin-bottom: 1rem;
+
+        @include for-md-devices {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .image {
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+
+            @include for-lg-devices {
+                width: 80%;
+            }
+        }
+    }
+
+    .content {
+        .title {
+            font-size: calc(var(--h3-font-size) - .1rem);
+            margin: .5rem 0 .5rem;
+
+            @include for-lg-devices {
+                width: 80%;
+            }
+        }
+
+        .text {
+            width: 100%;
+
+            @include for-lg-devices {
+                width: 80%;
+            }
+        }
+    }
+}

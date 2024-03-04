@@ -1,4 +1,3 @@
-
 export type PeriodDto = {
-    [key: string]: string[]
+	[key: string]: number[]
 }

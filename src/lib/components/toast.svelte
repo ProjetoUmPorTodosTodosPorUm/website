@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition'
 
 	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import HiOutlineX from 'svelte-icons-pack/hi/HiOutlineX'
+	import FiX from 'svelte-icons-pack/fi/FiX'
 
 	export let id = 0
 	export let message = ''
@@ -13,7 +13,8 @@
 
 	export let isOpen = true
 	export let autoHide = true
-	export let duration = 3 // in seconds
+	export let duration = 5 // in seconds
+	export let delay = 0 // in ms
 
 	onMount(async () => {
 		if (silent) {
@@ -36,13 +37,13 @@
 </script>
 
 {#if isOpen && !silent}
-	<div in:fade out:fade class={`toast bg-${variant}`}>
+	<div in:fade={{ delay }} out:fade class={`toast bg-${variant}`}>
 		<div class="toast-body">
 			<p>{message}</p>
 		</div>
 		<!-- svelte-ignore a11y-invalid-attribute -->
 		<a href="#" on:click|preventDefault={close}>
-			<Icon src={HiOutlineX} className="btn-close toast-close" />
+			<Icon src={FiX} className="toast-close" />
 		</a>
 	</div>
 {/if}

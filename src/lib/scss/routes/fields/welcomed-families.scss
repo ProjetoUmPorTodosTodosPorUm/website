@@ -1,34 +1,45 @@
 @import '$scss/_shared';
 
-.welcomed-families table {
-    width: 100%;
+.welcomed-families {
+	width: 100%;
 
-    color: var(--contrast-primary-background);
-    background-color: var(--primary-background);
-    border-collapse: collapse;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 
-    @include for-lg-devices {
-        margin-top: 2rem;
-        width: 80%;
-    }
+	.welcomed-family {
+		height: fit-content;
+		width: 100%;
 
-    @include for-xl-devices {
-        width: 60%;
-    }
+		color: var(--complementary);
+		padding: 0.4rem 0.8rem;
+		border-radius: 0.3rem;
+		margin-bottom: 1rem;
+		box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
 
-    td,
-    th {
-        border: 0.1rem solid var(--link-font-color);
-        padding: 0.2rem 0.4rem;
-        text-align: left;
-    }
+		@include for-lg-devices {
+			width: min-content;
+			min-width: 26rem;
+			margin: 0.5rem;
+		}
 
-    th {
-        font-size: 1.2rem;
-        padding: 0.4rem !important;
-    }
+		.family {
+			font-size: 1.2rem;
+		}
 
-    .rep {
-        white-space: nowrap;
-    }
+		.family-sub {
+			font-size: .8rem;
+			opacity: .6;
+		}
+	}
+
+	.text-placeholder {
+		width: 100%;
+
+		p {
+			text-align: center;
+		}
+	}
 }

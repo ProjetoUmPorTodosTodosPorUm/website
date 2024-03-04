@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '$scss/components/testimonial.scss';
+	import '$scss/components/testimonial.scss'
 	import type { TestimonialDto } from '../types'
-	import Carousel from './carousel.svelte';
-	
-	export let testimonials: TestimonialDto[];
+	import Carousel from './carousel.svelte'
+
+	export let testimonials: TestimonialDto[]
 </script>
 
 <section id="testimonials">
@@ -12,15 +12,18 @@
 		<Carousel>
 			{#each testimonials as testimonial (testimonial.id)}
 				<div class="testimonial">
-					<div class="avatar">
-						<img src="https://via.placeholder.com/350x350.webp" alt="Avatar" />
-					</div>
 					<div class="content">
-						<p class="text">{testimonial.text}</p>
+						<div class="text">{@html testimonial.text}</div>
 						<p class="name">–{testimonial.name}</p>
 					</div>
 				</div>
 			{/each}
 		</Carousel>
+	{:else}
+		<div class="testimonial-placeholder">
+			<div class="content">
+				<div class="text">Ainda não foi registrado nenhum testemunho.</div>
+			</div>
+		</div>
 	{/if}
 </section>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$scss/routes/fields/oferror-families.scss';
+	import '$scss/routes/fields/oferror-families.scss'
 	import { SearchField } from '$components'
 </script>
 

@@ -1,102 +1,108 @@
-<script lang="ts">
-	import projectInfo from '$assets/images/project-info.png'
-</script>
-
 <h1>Falando do Projeto</h1>
-<p><span class="h5">O Projeto <span class="special-font">“Um por todos! Todos por um”</span></span
-	>, nada mais é do que uma ferramenta de evangelização acrescida de ação social. Em forma de
-	sistema organizacional de valores éticos cristãos, têm seus princípios administrativos pautado
-	na palavra de Deus de Gênesis a Apocalipse respaldado no evangelho de
-	<cite>Mateus 25:34–36.</cite>
-	Por ser de cunho evangelístico têm sua autoria e administração inspirada pelo Espírito Santo,
-	<cite>João 14:16-17; 16:7-14</cite>
-	cujo propósito maior é anunciar o evangelho, reerguendo pessoa(s) ou família(s) destituída da fé
-	e da esperança; que se encontra em necessidades materiais e espirituais gritantes.</p>
-<p>Tendo por base o amor ao próximo; amor este exemplificado pelo próprio Cristo, a cabeça de sua
-    igreja e naturalmente o dono deste Projeto. Representa–o uma liderança, cujas raízes são
-    fincadas na linha cristã pós-reforma <cite>(Martinho Lutero)</cite> bem como a “autora” agindo
-    estes por meio da UNIDADE e da UNIÃO; assim, dentro de uma ação conjunta, resgatam princípios e
-    conduta de uma vida cristã vivenciados em <cite>Atos 2:42-47</cite>. Aqui toda a comunidade pode
-    e deve participar. Aqui é Deus por todos e a comunidade por um ou mais membros de sua
-    comunidade, no exercício do amor segundo
-    <cite>1 João 3:16-18</cite>.</p>
-<p>Concluindo... <span class="special-font">“Um por todos!”</span> Significa dizer: “Deus por
-	todos!” (O Pai, o Filho e o Espírito Santo por todos)
-	<span class="special-font">“Todos por um.”</span>
-	Significa dizer: (Todos = comunidade). Isto é: A comunidade em ação conjunta, por meio de uma liderança
-	eclesiástica representando a pessoa de Cristo, em prol das necessidades espirituais e também, materiais
-	quando gritante; de determinada(s) pessoa(s), ou família(s) residente dentro desta comunidade, ou
-	melhor, dentro deste Campo. Campo este onde as igrejas atuam em “UNIDADE” Isto é, se unem para o
-	propósito a qual foi designada sem deixar suas peculiaridades.
-	<cite>
-		[ATOS 2:42–47 / OSÉIAS 4:6 / MATEUS 4:4 / MARCOS 16:15–16 / MATEUS 28:18–20 / MATEUS 18:10–11
-		/ 1 JOÃO 2:3–6; 3:16–18 / MATEUS 25:34–36]
-	</cite></p>
-<h2>Como originou este Projeto?</h2>
-<p>Decorrido alguns meses de trabalho evangelístico, e social realizado num determinada casa por
-	mim, e o Diácono Umaracir da Conceição Ribeiro, evangelista experiente; observei que esta
-	família precisava bem mais do que estávamos a lhe oferecer. Ajudávamos; porém esse auxílio não
-	correspondia as suas necessidades mais profundas. (Refiro–me as necessidades materiais... Pois
-	que não se deve dispensar a oração e o jejum, imprescindível para a eficácia de qualquer
-	trabalho de cunho evangelístico.) Pensei... Mas de quem? Onde estão? Busquei ao Senhor e creio
-	que Ele me levou a ver que eu e o Diácono não tínhamos este a mais que esta família precisava.
-	Porém... Olhei em volta... Ali estava o tempo todo. Os vizinhos daquela família... A comunidade
-	– família; as igrejas locais. Se juntar um pouquinho daqui e acolá... Imaginem numa comunidade
-	com 305 lares. Se cada família se comprometer com a oferta de 01 item (01 alimento não
-	perecível). 01 item por família, isto sem contar com as ofertas extras, o apoio externo (ofertas
-	oriundas de moradores de fora). As igrejas cooperando. Imaginem!</p>
-<p>Percebi então que o sucesso de nosso trabalho dependia de uma ação conjunta. Comecei... Retornei
-    até essa família, e lhes falei do projeto, e se poderíamos iniciar com ela esse apoio maior, em
-    que a comunidade por meio de suas ofertas (doações) num todo participa. A família recebeu com
-    gratidão a ideia. Ocorreu então, a inscrição da 1ª família a ser assistida por este Projeto bem
-    no seio da comunidade Banguense, Condomínio Ayrton Senna. Anotei seus primeiros dados, e
-    prossegui imediatamente percorrendo as casas mais próximas. Das famílias que busquei, naquele
-    entardecer ninguém houve que não quisesse participar. E porque não mencionar as três primeiras
-    famílias Voluntárias ofertantes representadas respectivamente:</p>
-<table class="table table-striped">
-	<caption>Primeiras famílias voluntárias</caption>
-	<thead>
-		<tr>
-			<th>N° de inscrição</th>
-			<th>Representante da família</th>
-			<th>Oferta</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>01</td>
-			<td>Priscila da Silva Souza</td>
-			<td>Sabonete</td>
-		</tr>
-		<tr>
-			<td>02</td>
-			<td>Angela Fully</td>
-			<td>Cloro</td>
-		</tr>
-		<tr>
-			<td>03</td>
-			<td>Ednaldo C. Demétrio</td>
-			<td>Papel higiênico</td>
-		</tr>
-	</tbody>
-</table>
-<p>Esse método de obter recursos pelas proximidades da(s) família(s) necessitada(s) é operoso
-	porque se todos, não a conhecem, poderão conhecê-la (discretamente) sem ter a necessidade de
-	pegar um veículo para tanto. <b>Assim, a comunidade exercita seu amor ao próximo e vendo seus resultados cresce na fé e no
-	amor de Cristo.</b></p>
-<h2>Da Fundação</h2>
-<ul class="simple-ulist">
-	<li><b>Inaugurado</b> no <u>dia 18 de março de 2011</u></li>
-	<li><b>Antiga SEDE:</b> Rua Adelaide, nº 05, apart 203. Condomínio Ayrton Senna. Bairro: Jardim Bangu – RJ- Brasil</li>
-	<li><b>Cartório de Registro:</b> 14ª C.R.C.P. N–Bangu RJ.Tel:(021) 2401-3500 Cód: 03026FEE4790-SUCSHX63366. RJ, 27/05/2011</li>
-</ul>
-<img class="responsive" src={projectInfo} width="847" alt="cabeçalho" />
-<p class="img-description">
-	<b>Nota:</b> Atualmente aguardando que as Igrejas de dentro deste Campo venham assumir esta obra
-    a qual a 1ª que se apresentar deverá <u>estar a frente do Campo Missionário, representando as demais.</u>
+
+<h2>O Que É</h2>
+<p>
+	O Projeto “Um por todos! Todos por um”, <b>nada mais</b> é do que o novo
+	<b><i>“Sistema de Evangelização Acrescido de Ação Social”</i></b>; cuja característica própria é a UNIDADE e UNIÃO. No
+	sentido mais amplo é, sem dúvida alguma uma nova <i>“Ferramenta Missionária”</i> ou se preferir pode-se dizer que é
+	uma <i>“Ferramenta de Evangelização”</i> ou ainda melhor dizendo é uma imensa; <i>“Rede de Pescar”</i> com várias pontas,
+	lançada sobre todas as nações.
 </p>
-<p>Deus seja louvado em nossas vidas em nome do Nosso Senhor Jesus Cristo.<br />
-	Atenciosamente!<br />
-	Irmã Wilma Machado<br />
-	Autora e Coordenadora Geral, serva de nosso Senhor Jesus Cristo.<br />
+
+<h2>Significado</h2>
+<p>
+	“Um por todos!” <i>SIGNIFICA</i> dizer: “Deus por todos!” (O Pai, o Filho e o Espírito Santo por TODOS) “Todos por um”
+	significa dizer: (A comunidade numa ação conjunta, por meio de uma liderança eclesiástica agindo em prol de uma ou mais
+	família desta mesma comunidade).
+</p>
+
+<h2>Princípios</h2>
+<p>
+	O Projeto “Um por todos! Todos por um”, nesta forma de Sistema Organizacional de Valores Éticos Cristãos, têm seus <i
+		>PRINCÍPIOS</i
+	> administrativos pautados na Palavra de Deus de Gênesis a Apocalipse, e, precisamente respaldado no Evangelho de Mateus
+	25: 34 – 36. Por ser de cunho evangelístico têm sua autoria e administração inspirada pelo Espírito Santo, (João 14: 16-17;
+	16: 7-14).
+</p>
+
+<h2>Base e Destino</h2>
+<p>
+	A base bíblica onde se apoia especificamente o Projeto “Um por todos! Todos por um” encontram-se em: <i
+		>(MARCOS 16: 15 – 16 / MATEUS 28:18 – 20 / JOÃO 3: 16 – 18 / OSÉIAS 4:6 / MATEUS 18:10 – 14 / MATEUS 4:4 / MATEUS
+		25:34 – 36 / Efésios 2: 8 -10 / Tiago 2: 14 – 26 / 1 JOÃO 3: 16 – 18 / ATOS 2: 42 – 47)</i
+	>.
+</p>
+<p>
+	Tendo por base o amor ao próximo; amor este exemplificado pelo próprio Cristo, a cabeça de sua Igreja; o Projeto “Um
+	por todos! Todos por um” cuja característica; repito, é a UNIDADE e UNIÃO, e, cujas raízes aprofundam-se, nos ensinos
+	dos Apóstolos do Senhor Jesus Cristo, seguindo a linha cristã pós- reforma (Martinho Lutero); bem como segue sua
+	“autora” que experimentou cada documento que ia escrevendo durante sete anos; à medida que também exercia sua função
+	de Coordenadora Geral no Campo Missionário EXPERIMENTAL, com seus respectivos Postos de Coletas na COMUNIDADE em que
+	viveu por mais de 12 anos; sim, este Projeto, <b><i>DESTINA-SE</i></b> à TODAS as NAÇÕES de todos os seis CONTINENTES.
+</p>
+
+<h2>Origem</h2>
+<p>
+	O Projeto “Um por todos! Todos por um”, nasceu numa tardinha, dos dias dezoito do mês de março do ano de dois mil e
+	onze (18/03/2011) por volta das 17:00hs, ali num pequeno apartamento da rua Adelaide, nº5 apart 203, <b
+		>Condomínio Ayrton Senna</b
+	> - Jd Bangu. Sim, foi no bairro simples de Bangu, no Estado do Rio de Janeiro-Brasil, que a então, Wilma Medeiros Machado,
+	pseudônimo: Wilma Machado, iniciou a escrita desta obra salvífica.
+</p>
+<p>
+	<i
+		>“Decorrido alguns meses de trabalho evangelístico, e social realizado numa determinada casa por mim, e o então, <b
+			>Diácono Umaracir da Conceição Ribeiro, Evangelista experiente</b
+		>
+		(19/9/1954 - 18/02/2020); observei que esta família precisava bem mais do que estávamos a lhe oferecer. Ajudávamos; porém,
+		esse auxílio não correspondia as suas necessidades mais profundas. Refiro-me, as necessidades materiais... pois que não
+		se deve dispensar a oração e o jejum imprescindível para a eficácia de qualquer trabalho de cunho evangelístico. Pensei...
+		Como ajudar de fato e de verdade? Eu e o Diácono não tínhamos o suficiente materialmente falando... Foi após uma oração
+		já em meu apartamento que o <b>Dono da Obra</b> me mostrou a solução. Ali estava a resposta o tempo todo,
+		<b>Ele</b>, me levando a sacada do apê, me mostrou. Meus vizinhos, vizinhos daquela família. A COMUNIDADE. As
+		Igrejas locais. Se juntar um pouquinho de um e de outro... Só ali 305 lares. Sem contar as numerosas Igrejas. Se
+		cada família se <b>comprometer mensalmente com uma</b> (01) item alimentício, uma única <b>oferta</b>
+		aos pequeninos do Senhor Jesus. Isto sem contar a oferta extra que o amor, a generosidade suscita. <b>Percebi</b>. O
+		sucesso depende de uma ação conjunta. Retornei aquela família lhe falei da proposta, e se poderíamos iniciar com
+		ela. A matriarca da família SANDRA REGINA, acolheu com semblante renovado a ideia. Saindo dali comecei então, a
+		inscrever as primeiras “Famílias Voluntárias Ofertantes-COMUNIDADE” sendo <b>01</b>- Priscila da Silva Souza –
+		sabonete / <b>02</b>- Angela Fully – Cloro / <b>03</b>- Ednaldo C. Demétrio – Papel higiênico, e muitas outras
+		famílias inscrevi naquele dia”.</i
+	> (Texto extraído do documento de registro em cartório).
+</p>
+<p>
+	Esta obra brasileiríssima teve na autora, além de Escritora, sua Coordenadora Geral, no período de sete anos, tempo de
+	experimento da Obra, e, tempo em que cada documento que a compõe foi sendo gerado, no que restou a autora, revisar, e
+	gerar seu documento de REGIMENTO INTERNO, a fim de poder conceder para “USUFRUTO” a quem de destino. <b
+		>Detalhe: O registro da Obra em cartório</b
+	>
+	data dos dias vinte e sete do mês de maio do ano de dois mil e onze <b>(27/05/2011)</b>.
+</p>
+
+<h2>Propósito</h2>
+<p>
+	AO <i>PROPÓSITO</i> maior do Projeto “Um por todos! Todos por um” é anunciar o Evangelho a TODA criatura
+	<b>(Lucas 9: 51-56; 19:10)</b>, entretanto, é na <i>FORMA DE ANUNCIAR</i> que este, evidencia toda a diferença, pois
+	que propõe resgatar princípios e valores; conduta de uma vida cristã vivenciados em <i>Atos 2: 42 – 47</i>. É, na
+	formação <b>sistematizada</b> de Campos Missionários; Campos Missionários estes onde as Igrejas locais, em seu Campo
+	Missionário agem em “UNIDADE”, <b>unidade ininterrupta</b>, ou seja, se unem sem cessar, sem trégua, sem deixar espaço
+	para o mal, seguindo o propósito para a qual foi designada; e, isto tudo sem perda de suas peculiaridades.<br /><br />
+	<b>Veja:</b>
+	<i>Os dedos da mão não são iguais, porém se faltar um só dedo, isto não afetará o desempenho desta mão!?</i>
+</p>
+
+<h2>Detalhe</h2>
+<p>
+	Nos dias dois de outubro de dois mil e onze <b>(02/10/2011)</b>, a Igreja Assembleia de Deus Ministério Shekinah,
+	conforme documentos em arquivos da autora podem comprovar <u>passou a ser a Igreja SEDE do Projeto</u> “Um por todos!
+	Todos por um”; porém, a mesma veio a desvincular-se, também por meio de documento entregue a autora denominado:
+	<i>“DECISÃO MINISTERIAL”</i>
+	nos dias sete do mês de janeiro do ano de dois mil e catorze
+	<b>(07/01/2014)</b>.
+</p>
+<p>
+	No período da escrita e experimento do Projeto “Um por todos! Todos por um”, a bem da verdade, a Igreja que o abraçou, <b
+		>e nem mesmo eu</b
+	>, que o escrevia sabíamos da proporção desta “Rede de Pescar”, vindo eu, a se dar conta, mesmo somente após o término
+	da composição dos principais documentos administrativos.
 </p>

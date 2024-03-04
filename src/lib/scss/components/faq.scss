@@ -1,118 +1,117 @@
-@import "$scss/_shared";
-@import "$scss/_variables";
+@import '$scss/_shared';
+@import '$scss/_variables';
 
 #faq {
-    position: relative;
-    width: 100vw;
-    min-height: fit-content;
+	position: relative;
+	width: 100vw;
+	min-height: fit-content;
 
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
 
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
+	// hides background
+	overflow: hidden;
 
-    // hides background
-    overflow: hidden;
+	margin-top: 1rem;
 
-    @include for-md-devices {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+	@include for-md-devices {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 
-    @include for-lg-devices {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
+	@include for-xl-devices {
+		max-width: var(--max-screen-width);
+		margin: 0 auto;
+	}
 
-    @include for-xl-devices {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+		opacity: 0.04;
+		background-image: url('https://assets.projetoumportodostodosporum.org/web/images/faq-background.webp'),
+			url('https://assets.localhost/web/images/faq-background.webp');
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center center;
+	}
 
-        opacity: .1;
-        background-image: url('$assets/images/faq-background.webp');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
-        z-index: -1;
-    }
-}
-
-h1 {
-    margin: 1rem 0;
-    font-size: $h1-font-size;
+	h1 {
+		z-index: 1;
+		width: 100%;
+		font-size: var(--h1-font-size);
+		text-align: center;
+	}
 }
 
 .questions {
-    width: 100%;
+	z-index: 1;
+	width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .question-block {
-    height: fit-content;
-    width: 100%;
+	z-index: inherit;
+	height: fit-content;
+	width: 100%;
 
-    background-color: var(--primary-background);
-    color: var(--contrast-primary-background);
-    padding: .4rem .8rem;
-    border-radius: .3rem;
+	color: var(--complementary);
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.3rem;
+	margin-bottom: 1rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
 
-    margin-bottom: 1rem;
-
-    @include for-xl-devices {
-        width: min-content;
-        min-width: 26rem;
-        margin: .5rem;
-    }
+	@include for-lg-devices {
+		width: min-content;
+		min-width: 26rem;
+		margin: 0.5rem;
+	}
 }
 
 .question {
-    margin: 0;
-    font-size: calc($h2-font-size - .8rem);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
 
-    @include for-md-devices {
-        display: flex;
-    }
+	h2 {
+		font-size: calc(var(--h2-font-size) - 0.4rem);
+		margin: 0;
+		width: 96%;
+	}
 
-    @include for-lg-devices {
-        white-space: nowrap;
-        cursor: pointer;
-    }
+	.icon {
+		font-size: 1.2rem;
+		height: 1.5rem;
+		width: 1.5rem;
+		margin-bottom: -0.23rem;
+		margin-left: auto;
+		transition: transform 0.2s ease-out;
 
-    @include for-xl-devices {
-        width: 100%;
-    }
-
-    .icon {
-        transition: transform .2s ease-out;
-
-        @include for-md-devices {
-            margin-left: auto;
-        }
-
-        &.open {
-            transform: rotate(-180deg);
-        }
-    }
+		&.open {
+			transform: rotate(-180deg);
+		}
+	}
 }
 
 .answer {
-    transition: max-height 0.2s ease-out;
-    text-align: justify;
+	transition: max-height 0.2s ease-out;
+	text-align: justify;
 
-    max-height: 0;
-    overflow: hidden;
+	max-height: 0;
+	overflow: hidden;
+
+	a {
+		color: var(--dominant);
+		text-decoration: underline;
+	}
 }

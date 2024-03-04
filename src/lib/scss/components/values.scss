@@ -1,0 +1,95 @@
+@import '$scss/_shared';
+@import '$scss/_variables';
+
+#values {
+	width: 100vw;
+	padding-top: 1rem;
+
+	@include for-md-devices {
+		padding-top: 2rem;
+	}
+
+	@include for-lg-devices {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	@include for-xl-devices {
+		max-width: var(--max-screen-width);
+		margin: 0 auto;
+	}
+}
+
+.cards {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	@include for-lg-devices {
+		flex-direction: row;
+		margin: 0 auto;
+	}
+}
+
+.card {
+	background-color: var(--accent);
+	color: var(--dominant);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	height: fit-content;
+	width: 96%;
+
+	padding: 1rem;
+	margin: 0 auto 1rem;
+	border-radius: 0.4rem;
+
+	@include for-md-devices {
+		width: 60%;
+	}
+
+	@include for-lg-devices {
+		width: 32%;
+	}
+
+	.icon {
+		font-size: 2.5rem;
+
+		@include for-md-devices {
+			font-size: 3rem;
+		}
+
+		@include for-lg-devices {
+			font-size: 3.2rem;
+		}
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+		margin-bottom: 0;
+
+		@include for-lg-devices {
+			font-size: 1.2rem;
+		}
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		@include for-md-devices {
+			font-size: 1rem;
+		}
+	}
+
+	a {
+		color: var(--dominant);
+		text-decoration: underline;
+	}
+}

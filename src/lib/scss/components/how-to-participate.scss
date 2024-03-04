@@ -1,111 +1,131 @@
-@import "$scss/_shared";
-@import "$scss/_variables";
+@import '$scss/_shared';
+@import '$scss/_variables';
 
 #how-to-participate {
-    width: 100vw;
-    padding-top: 65rem;
-    padding-bottom: 4rem;
+	width: 100vw;
 
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
 
-    @include for-md-devices {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+	@include for-md-devices {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
 
-    @include for-lg-devices {
-        padding-left: 4rem;
-        padding-right: 4rem;
-        padding-top: 24rem;
+	@include for-lg-devices {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    @include for-xl-devices {
-        padding-left: 8rem;
-        padding-right: 8rem;
-        padding-top: 36rem;
-    }
+	@include for-xl-devices {
+		max-width: var(--max-screen-width);
+		margin: 0 auto;
+	}
 }
 
 .form {
-    width: 100%;
-    padding: 0 .2rem;
+	width: 100%;
+	padding: 0 0.2rem;
 
-    @include for-lg-devices {
-        width: 80%;
-        padding: 0 2rem;
-    }
+	@include for-md-devices {
+		margin-top: 2rem;
+		width: 80%;
+	}
 
-    @include for-xl-devices {
-        width: 32rem;
-    }
+	@include for-xl-devices {
+		width: 45%;
+	}
 
+	h2 {
+		text-align: center;
+		margin: 0 0 1rem 0;
 
-    h2 {
-        font-size: $h2-font-size;
-        margin: 0 0 1rem 0;
-    }
+		@include for-lg-devices {
+			text-align: left;
+		}
+	}
 
-    form {
-        display: flex;
-        flex-direction: column;
+	form {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0 auto;
 
-        input {
-            width: 100%;
-            height: 2.3rem;
-            color: var(--contrast-primary-background);
-            background-color: var(--primary-background);
-            border: .1rem solid var(--secondary-background);
-            padding: .4rem .75rem;
-            margin-bottom: .4rem;
+		@include for-lg-devices {
+			flex-direction: column;
+		}
 
-            &::placeholder {
-                color: var(--contrast-primary-background);
-            }
-        }
+		input {
+			width: 100%;
+			height: 2.3rem;
+			color: var(--complementary);
+			border: 0.1rem solid var(--accent);
+			padding: 0.4rem 0.75rem;
+			margin-bottom: 0.4rem;
 
-        button {
-            display: block;
-            margin: .4rem auto;
-            padding: .8rem 1.2rem;
-            border: .2rem solid rgba(0, 0, 0, 0);
+			&::placeholder {
+				color: var(--complementary);
+			}
 
-            background-color: var(--primary-background);
-            color: var(--contrast-primary-background);
+			@include for-lg-devices {
+				width: 80%;
+			}
+		}
 
-            cursor: pointer;
-            transition: opacity .2s ease-out;
+		button {
+			margin: 0.4rem auto;
+			padding: 0.8rem 1.2rem;
 
-            @include for-lg-devices {
-                &:hover {
-                    background-color: var(--contrast-primary-background);
-                    color: var(--primary-background);
+			background-color: var(--accent);
+			color: var(--dominant);
 
-                    border: .2rem solid var(--primary-background);
-                }
-            }
-        }
-    }
+			font-size: 1.1rem;
+			letter-spacing: 0;
+			border: 0.2rem solid rgba(0, 0, 0, 0);
+			border-radius: 0.3rem;
+
+			cursor: pointer;
+			transition: opacity 0.2s ease-out;
+
+			@include for-lg-devices {
+				width: 80%;
+				margin: 0.4rem 0;
+
+				&:hover {
+					background-color: transparent;
+					color: var(--accent);
+
+					border: 0.2rem solid var(--accent);
+				}
+			}
+		}
+
+		.icon {
+			font-size: 1rem;
+			@include icon-spinner;
+		}
+	}
 }
 
 .text {
-    padding: 0 .2rem;
-    width: 100%;
+	padding: 0 0.2rem;
+	width: 100%;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    @include for-xl-devices {
-        width: 46rem;
-    }
+	@include for-xl-devices {
+		width: 55%;
+	}
 
-    .headline {
-        margin: 0;
-        font-size: $h1-font-size;
-    }
+	.headline {
+		text-align: center;
+		margin: 0;
+		font-size: var(--h1-font-size);
+	}
+
+	p:last-child {
+		margin-top: 0;
+	}
 }
