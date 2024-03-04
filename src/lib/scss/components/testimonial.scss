@@ -1,71 +1,57 @@
-@import "$scss/_shared";
+@import '$scss/_shared';
 
 #testimonials {
-    width: 100vw;
-    padding: 2rem .2rem 4rem;
+	width: 100vw;
+	padding-top: 1rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-    h1 {
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
+	@include for-md-devices {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 
-    @include for-md-devices {
-        .sc-carousel__carousel-container {
-            width: 90% !important;
-        }
-    }
-
-    @include for-lg-devices {
-        .sc-carousel__carousel-container {
-            width: 60% !important;
-        }
-    }
-
-    @include for-xl-devices {
-        .sc-carousel__carousel-container {
-            width: 50% !important;
-        }
-    }
+	@include for-lg-devices {
+		max-width: 700px;
+		margin: 0 auto;
+	}
 }
 
 // class not id
 .testimonial {
-    display: flex;
+	.content {
+		display: flex;
+		flex-direction: column;
 
+		.text {
+			display: initial;
+			width: 100%;
+			text-align: justify;
+		}
 
-    .avatar {
-        height: 100px;
-        width: 100px;
+		.name {
+			text-align: right;
+			margin-top: 0;
+			padding-right: 0.5rem;
+		}
+	}
+}
 
-        @include for-md-devices {
-            height: 150px;
-            width: 150px;
-        }
+.testimonial-placeholder {
+	.content {
+		min-height: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-        img {
-            height: 100%;
-            width: fit-content;
-        }
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        padding-left: .5rem;
-
-        .text {
-            display: initial;
-            width: 100%;
-            text-align: justify;
-        }
-
-        .name {
-            text-align: right;
-        }
-    }
+		.text {
+			display: initial;
+			width: 100%;
+			p {
+				text-align: center;
+			}
+		}
+	}
 }

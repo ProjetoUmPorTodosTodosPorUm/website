@@ -1,27 +1,61 @@
-@import "$scss/_shared";
+@import '$scss/_shared';
 
 .data-items {
-    width: 100%;
-    margin: .5rem auto;
+	width: 100%;
+	margin: 0.5rem auto;
 
-    @include for-lg-devices {
-        width: 60%;
-    }
+	@include for-lg-devices {
+		width: 60%;
+	}
 
-    @include for-xl-devices {
-        width: 50%;
-    }
+	@include for-xl-devices {
+		width: 50%;
+	}
 }
 
 .data-item {
-    margin-bottom: .2rem;
-    padding: 0.5rem;
-    cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	transition: 0.2s ease-out;
 
-    color: var(--contrast-primary-background);
-    background-color: var(--primary-background);
+	padding: 0.5rem;
+	margin-bottom: 0.2rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+
+	.designation {
+		font-size: 1.2rem;
+
+		a {
+			color: var(--complementary);
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.location,
+	.abbreviation {
+		font-size: 0.8rem;
+		opacity: 0.8;
+	}
 }
 
-.data-item:hover {
-    opacity: .9;
+.data-item-placeholder {
+	display: flex;
+	flex-direction: column;
+	transition: 0.2s ease-out;
+
+	padding: 0.5rem;
+	margin-bottom: 0.2rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+
+	p {
+		font-size: 0.8rem;
+		opacity: 0.8;
+		text-align: center;
+	}
+}
+
+h1 + div.centered {
+	margin-top: 1rem;
 }

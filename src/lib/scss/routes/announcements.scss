@@ -1,0 +1,22 @@
+@import '$scss/_shared';
+
+.message-wrap {
+	@include for-xl-devices {
+		width: 80%;
+	}
+}
+
+.attachments-wrap {
+	margin-top: 0.5rem;
+
+	@include for-xs-devices {
+		margin-bottom: 1rem;
+	}
+
+	.attachment {
+		a {
+			color: var(--complementary);
+			text-decoration: underline;
+		}
+	}
+}

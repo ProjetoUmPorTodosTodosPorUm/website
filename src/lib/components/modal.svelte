@@ -1,51 +1,55 @@
 <script lang="ts">
-	import { createEventDispatcher, onDestroy } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import '$scss/components/modal.scss';
+	import { createEventDispatcher, onDestroy } from 'svelte'
+	import { fade } from 'svelte/transition'
+	import '$scss/components/modal.scss'
 
-	const FADE_TIME = 150; // ms
+	// icon
+	import Icon from 'svelte-icons-pack/Icon.svelte'
+	import FiX from 'svelte-icons-pack/fi/FiX'
 
-	const dispatch = createEventDispatcher();
-	const close = () => dispatch('close');
+	const FADE_TIME = 150 // ms
 
-	export let show = false;
-	let modal: HTMLDivElement;
-	$: visibility = show ? 'visible' : 'hidden';
+	const dispatch = createEventDispatcher()
+	const close = () => dispatch('close')
+
+	export let show = false
+	let modal: HTMLDivElement
+	$: visibility = show ? 'visible' : 'hidden'
 
 	const handle_keydown = (e: KeyboardEvent) => {
-		if (!show) return;
+		if (!show) return
 
 		if (e.key === 'Escape') {
-			close();
-			return;
+			close()
+			return
 		}
 
 		if (e.key === 'Tab') {
-			if (!show) return;
+			if (!show) return
 
 			// trap focus
-			const nodes = modal.querySelectorAll<HTMLDivElement>('*');
-			const tabbable = Array.from(nodes).filter((n) => n.tabIndex >= 0);
+			const nodes = modal.querySelectorAll<HTMLDivElement>('*')
+			const tabbable = Array.from(nodes).filter((n) => n.tabIndex >= 0)
 
 			// @ts-ignore
-			let index = tabbable.indexOf(document.activeElement);
-			if (index === -1 && e.shiftKey) index = 0;
+			let index = tabbable.indexOf(document.activeElement)
+			if (index === -1 && e.shiftKey) index = 0
 
-			index += tabbable.length + (e.shiftKey ? -1 : 1);
-			index %= tabbable.length;
+			index += tabbable.length + (e.shiftKey ? -1 : 1)
+			index %= tabbable.length
 
-			tabbable[index].focus();
-			e.preventDefault();
+			tabbable[index].focus()
+			e.preventDefault()
 		}
-	};
+	}
 
-	const previously_focused = typeof document !== 'undefined' && document.activeElement;
+	const previously_focused = typeof document !== 'undefined' && document.activeElement
 
 	if (previously_focused) {
 		onDestroy(() => {
 			// @ts-ignore
-			previously_focused.focus();
-		});
+			previously_focused.focus()
+		})
 	}
 </script>
 
@@ -71,7 +75,10 @@
 >
 	<div class="modal-header">
 		<slot name="header" />
-		<button on:click={close} class="btn-close" type="button" />
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div on:click={close} class="wrap-btn-close">
+			<Icon src={FiX} className="btn-close" />
+		</div>
 	</div>
 	<slot />
 </div>

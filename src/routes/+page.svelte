@@ -1,27 +1,25 @@
 <script lang="ts">
-	import { Navbar, Landing, HowToParticipate, Faq, AgendaAnnouncement, WhereWeOperate, Testimonial, Footer, MessagesContainer } from '$components'
+	import { Navbar, Landing, Values, HowToParticipate, Faq, AgendaAnnouncement, Testimonial } from '$components'
 	import type { ActionData, PageData } from './$types'
 
 	export let data: PageData
 	export let form: ActionData
-	let isSending = false
+	let isSendingParticipate = false
 	$: messages = form?.messages ?? []
 	$: messages, postActionCallback()
 
-	async function postActionCallback() {
+	function postActionCallback() {
 		// ignore first loading triggering
-		if (isSending && messages.length > 0) {
-			isSending = false
+		if (isSendingParticipate && messages.length > 0) {
+			isSendingParticipate = false
 		}
 	}
 </script>
 
-<Navbar />
+<Navbar announcementsCount={data.announcements.length} />
 <Landing />
-<HowToParticipate />
+<Values />
+<HowToParticipate bind:isSendingParticipate />
 <Faq />
 <AgendaAnnouncement announcements={data.announcements} />
-<WhereWeOperate />
 <Testimonial testimonials={data.testimonials} />
-<Footer {isSending} />
-<MessagesContainer />

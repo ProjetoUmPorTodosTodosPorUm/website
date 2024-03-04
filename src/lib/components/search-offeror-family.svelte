@@ -1,33 +1,39 @@
 <script lang="ts">
-	import '$scss/components/search-field.scss';
-	import type { OfferorFamilyDto } from '$types';
+	import '$scss/components/search-offeror-family.scss'
+	import type { OfferorFamilyDto } from '$types'
 	import { SearchBox, Pagination } from '$components'
-	
-	export let offerorFamilies: OfferorFamilyDto[] = [];
+	import { OFFEROR_FAMILY_GROUP } from '$constants'
+
+	export let offerorFamilies: OfferorFamilyDto[] = []
 	export let totalPages: number = 1
+	export let totalCount: number = 0
 </script>
 
 <div class="centered">
 	<SearchBox
-		showDropdown={false}
 		placeholder="Pesquise pelo representante da família"
-        orderKey="representative"
-        orderValue="asc"
+		orderKey="representative"
+		orderValue="asc"
+		{totalCount}
 	/>
 
 	<div class="data-items">
-		{#each offerorFamilies as offerorFamily (offerorFamily.id)}
-			<div class="data-item">
-				<ul class="simple-ulist">
-					<li>{offerorFamily.representative}</li>
-					<li>Compromisso: {offerorFamily.commitment}</li>
-					<li>Grupo: {offerorFamily.group}</li>
+		{#if offerorFamilies.length > 0}
+			{#each offerorFamilies as offerorFamily (offerorFamily.id)}
+				<div class="data-item">
+					<span class="representative">{offerorFamily.representative}</span>
 					{#if offerorFamily.chuchDenomination}
-						<li>Igreja: {offerorFamily.chuchDenomination}</li>
+						<span class="church">Igreja: {offerorFamily.chuchDenomination}</span>
 					{/if}
-				</ul>
+					<span class="commitment">Compromisso: {offerorFamily.commitment}</span>
+					<span class="group">Grupo: {OFFEROR_FAMILY_GROUP[offerorFamily.group.toLowerCase()]}</span>
+				</div>
+			{/each}
+		{:else}
+			<div class="data-item-placeholder">
+				<p>Ainda não foi registrada nenhuma família ofertante.</p>
 			</div>
-		{/each}
+		{/if}
 	</div>
 
 	<Pagination maxPage={totalPages} />

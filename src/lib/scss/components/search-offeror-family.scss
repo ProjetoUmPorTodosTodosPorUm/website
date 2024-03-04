@@ -1,0 +1,58 @@
+@import '$scss/_shared';
+
+.data-items {
+	width: 100%;
+	margin: 0.5rem auto;
+
+	@include for-lg-devices {
+		width: 60%;
+	}
+
+	@include for-xl-devices {
+		width: 50%;
+	}
+}
+
+.data-item {
+	display: flex;
+	flex-direction: column;
+	transition: 0.2s ease-out;
+
+	padding: 0.5rem;
+	margin-bottom: 0.2rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+
+	.representative {
+		font-size: 1.2rem;
+
+		a {
+			color: var(--complementary);
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.commitment,
+	.group,
+	.church {
+		font-size: 0.8rem;
+		opacity: 0.8;
+	}
+}
+
+.data-item-placeholder {
+	display: flex;
+	flex-direction: column;
+	transition: 0.2s ease-out;
+
+	padding: 0.5rem;
+	margin-bottom: 0.2rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+
+	p {
+		font-size: 0.8rem;
+		opacity: 0.8;
+		text-align: center;
+	}
+}

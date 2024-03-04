@@ -1,21 +1,76 @@
-@import "$scss/_shared";
+@import '$scss/_shared';
 
 .ec-event {
-    background-color: var(--primary-background) !important;
+	background-color: var(--accent) !important;
 
-    // fixes above navbar
-    z-index: 0 !important;
-    display: block;
+	// fixes above navbar
+	z-index: 0 !important;
+	display: block;
 }
 
 .ec-event-title {
-    cursor: pointer;
+	cursor: pointer;
 
-    background-color: var(--primary-background) !important;
-    color: var( --contrast-primary-background) !important;
+	background-color: var(---accent) !important;
+	color: var(--dominant) !important;
 }
 
 .ec-today {
-    background-color: var(--primary-background) !important;
-    color: var( --contrast-primary-background) !important;
+	background-color: var(--accent) !important;
+	color: var(--dominant) !important;
+}
+
+.modal {
+	.info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		font-size: 0.8rem;
+
+		.attachments {
+			width: fit-content;
+
+			a {
+				color: var(--dominant);
+				text-decoration: underline;
+				margin-right: 0.2rem;
+			}
+
+			.icon {
+				position: relative;
+				top: 0.1rem;
+			}
+		}
+
+		.pill {
+			background-color: var(--complementary);
+			color: var(--dominant);
+			padding: 0.2rem 0.3rem;
+			border-radius: 0.5rem;
+
+			&:last-child {
+				margin-top: 0.2rem;
+			}
+		}
+	}
+}
+
+.modal-header {
+	h1 {
+		margin: 0;
+	}
+}
+
+.date {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+
+	margin-top: 0.2rem;
+
+	.icon {
+		margin-bottom: -0.2rem;
+		margin-right: 0.2rem;
+	}
 }

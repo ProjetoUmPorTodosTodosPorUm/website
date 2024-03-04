@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Navbar, Breadcrumbs, Footer } from '$components'
+	import { Navbar, Breadcrumbs } from '$components'
 </script>
 
 <Navbar />
 <section id="main">
-	<Breadcrumbs  />
+	<Breadcrumbs />
 	<slot />
 </section>
-<Footer/>

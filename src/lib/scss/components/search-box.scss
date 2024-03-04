@@ -1,86 +1,63 @@
-@import "$scss/_shared";
+@import '$scss/_shared';
 
 .search-box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
 
-    @include for-lg-devices {
-        width: 60%;
-    }
+	@include for-lg-devices {
+		width: 60%;
+	}
 
-    @include for-xl-devices {
-        width: 50%;
-    }
+	@include for-xl-devices {
+		width: 50%;
+	}
 
-    .search {
-        width: 100%;
-        display: grid;
-        grid-template-areas: 'input button';
-        grid-template-columns: 90% auto;
+	.search {
+		width: 100%;
+		display: grid;
+		grid-template-areas: 'input button';
+		grid-template-columns: 90% auto;
 
-        input {
-            grid-area: input;
-            min-height: 2.5rem;
-            padding: 0.4rem 0.75rem;
+		input {
+			grid-area: input;
+			min-height: 2.5rem;
+			padding: 0.4rem 0.75rem;
 
-            outline: none;
-            //font-size: 1.1rem;
+			outline: none;
+			//font-size: 1.1rem;
 
-            color: var(--contrast-primary-background);
-            background-color: var(--secondary-background);
-            border: .1rem solid var(--secondary-background);
+			color: var(--complementary);
+			border: 0.2rem solid var(--complementary);
 
-            &::placeholder {
-                color: var(--contrast-primary-background);
-            }
-        }
+			&::placeholder {
+				color: var(--complementary);
+			}
+		}
 
-        button {
-            grid-area: button;
-            cursor: pointer;
-            min-height: 2.5rem;
-            padding: 0.4rem 0.75rem;
-            position: relative;
-            left: -1px;
+		button {
+			grid-area: button;
+			cursor: pointer;
+			min-height: 2.5rem;
+			padding: 0.4rem 0.75rem;
+			position: relative;
+			left: -1px;
 
-            color: var(--contrast-primary-background);
-            background-color: var(--secondary-background);
-            border: .1rem solid var(--secondary-background);
+			color: var(--dominant);
+			background-color: var(--complementary);
+			border: 0.1rem solid var(--complementary);
 
-            &:disabled {
-                cursor: not-allowed;
-            }
-        }
-    }
+			&:disabled {
+				cursor: not-allowed;
+			}
+		}
+	}
 
-    .res-items {
-        position: absolute;
-        top: 2.5rem;
-        width: 40%;
-        max-height: 0px;
-        transition: max-height 0.6s ease-in-out;
-        overflow-y: auto;
-
-        display: flex;
-        flex-direction: column;
-
-        &.open {
-            max-height: 600px;
-        }
-
-        .res-item {
-            background-color: #fff;
-            padding: 0.2rem 0.5rem;
-            border-top: 1px solid #515458;
-
-            cursor: pointer;
-
-            &:hover {
-                opacity: 0.9;
-            }
-        }
-    }
+	.info {
+		font-size: 0.8rem;
+		opacity: 0.6;
+		padding: 0.1rem 0.2rem;
+	}
 }

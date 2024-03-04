@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '$scss/routes/fields/volunteers.scss';
-	import type { PageData } from './$types';
+	import '$scss/routes/fields/volunteers.scss'
+	import type { PageData } from './$types'
+	import { sortVolunteersByOccupations } from '$utils'
+	import type { VolunteerDto } from '$types'
+	import { Occupation } from '$enums'
+	import { Volunteer } from '$components'
 
-	import { sortVolunteersByOccupations } from '$utils';
-	import type { FieldDto, VolunteerDto } from '$types';
-	import { Occupation } from '$enums';
-
-	export let data: PageData;
+	export let data: PageData
 
 	const firstSectionOccs = [
 		Occupation.PRESIDENT,
@@ -24,89 +24,51 @@
 		Occupation.EXECUTIVE_SECRETARY,
 		Occupation.AUXILIARY_SECRETARY
 	]
-
-	const secondSectionOccs = [
-		Occupation.COORDINATOR_02,
-		Occupation.INFIELD_COORDINATOR,
-		Occupation.OUTFIELD_COORDINATOR
-	]
-
+	const secondSectionOccs = [Occupation.COORDINATOR_02, Occupation.INFIELD_COORDINATOR, Occupation.OUTFIELD_COORDINATOR]
 	const thirdSectionOccs = [Occupation.COLLECTOR, Occupation.SUPPORT_SERVICE]
 
-	$: field = data.field as FieldDto
 	$: volunteers = sortVolunteersByOccupations(data.apiData, [
 		...firstSectionOccs,
 		...secondSectionOccs,
 		...thirdSectionOccs
 	]) as VolunteerDto[]
 
-
-	$: firstSectionVols = volunteers.filter((vol) => firstSectionOccs.includes(vol.occupation));
-	$: secondSectionVols = volunteers.filter((vol) => secondSectionOccs.includes(vol.occupation));
-	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation));
+	$: firstSectionVols = volunteers.filter((vol) => firstSectionOccs.includes(vol.occupation))
+	$: secondSectionVols = volunteers.filter((vol) => secondSectionOccs.includes(vol.occupation))
+	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation))
 </script>
 
 <div class="volunteers">
-	<h3>Setor Operacional de Missões</h3>
-	{#each firstSectionVols as volunteer}
-		<div class="volunteer">
-			<div class="head">
-				<img src="https://via.placeholder.com/300x300.webp" alt="Profile" />
-				<h3>{`${volunteer.firstName} ${volunteer.lastName}`}</h3>
-				<p>{volunteer.occupation}</p>
-			</div>
-			<div class="body">
-				<ul>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
-					<li>Data de Entrada: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
-				</ul>
-			</div>
-			<div class="footer">
-				<p>{volunteer.observation}</p>
-			</div>
-		</div>
-	{/each}
-	
-	<h3>Serviço Interno e Externo</h3>
-	{#each secondSectionVols as volunteer}
-		<div class="volunteer">
-			<div class="head">
-				<img src="https://via.placeholder.com/300x300.webp" alt="Profile" />
-				<h3>{`${volunteer.firstName} ${volunteer.lastName}`}</h3>
-				<p>{volunteer.occupation}</p>
-			</div>
-			<div class="body">
-				<ul>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
-					<li>Data de Entrada: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
-				</ul>
-			</div>
-			<div class="footer">
-				<p>{volunteer.observation}</p>
-			</div>
-		</div>
-	{/each}
+	{#if firstSectionVols.length > 0}
+		<h3>Setor Operacional de Missões</h3>
+	{/if}
+	<div class="volunteers-wrap">
+		{#each firstSectionVols as volunteer}
+			<Volunteer {volunteer} />
+		{/each}
+	</div>
 
-	<h3>Serviço de Apoio</h3>
-	{#each thirdSectionVols as volunteer}
-		<div class="volunteer">
-			<div class="head">
-				<img src="https://via.placeholder.com/300x300.webp" alt="Profile" />
-				<h3>{`${volunteer.firstName} ${volunteer.lastName}`}</h3>
-				<p>{volunteer.occupation}</p>
-			</div>
-			<div class="body">
-				<ul>
-					<li>{volunteer.church}</li>
-					<li>{volunteer.priest}</li>
-					<li>Data de Entrada: {new Date(volunteer.joinedDate).toLocaleDateString()}</li>
-				</ul>
-			</div>
-			<div class="footer">
-				<p>{volunteer.observation}</p>
-			</div>
+	{#if secondSectionVols.length > 0}
+		<h3>Serviço Interno e Externo</h3>
+	{/if}
+	<div class="volunteers-wrap">
+		{#each secondSectionVols as volunteer}
+			<Volunteer {volunteer} />
+		{/each}
+	</div>
+
+	{#if thirdSectionVols.length > 0}
+		<h3>Serviço de Apoio</h3>
+	{/if}
+	<div class="volunteers-wrap">
+		{#each thirdSectionVols as volunteer}
+			<Volunteer {volunteer} />
+		{/each}
+	</div>
+
+	{#if data.apiData.length == 0}
+		<div class="text-placeholder">
+			<p>Ainda não foi registrado nenhum voluntário administrativo.</p>
 		</div>
-	{/each}
+	{/if}
 </div>

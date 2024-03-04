@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$scss/routes/fields/oferror-families.scss';
+	import '$scss/routes/fields/oferror-families.scss'
 </script>
 
 <h1>Famílias Ofertantes</h1>

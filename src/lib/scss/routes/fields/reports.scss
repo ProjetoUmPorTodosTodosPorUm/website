@@ -1,134 +1,50 @@
 @import '$scss/_shared';
 
-h1,
-h2 {
-    margin-bottom: 0.2rem;
-}
-
-h2 {
-    margin-top: 0;
-    font-size: calc(var(--h1-font-size) - 0.6rem) !important;
-}
-
 .date-picker {
-    min-height: 200px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	@include for-lg-devices {
+		margin-bottom: 2rem;
+	}
 
-    button {
-        font-size: 1.4rem;
-        margin-right: 0.2rem;
-        padding: 0.2rem 0.5rem;
+	@include for-xl-devices {
+		margin-bottom: 4rem;
+	}
 
-        background-color: var(--primary-background);
-        color: var(--contrast-primary-background);
+	button {
+		font-size: 1.4rem;
+		margin-right: 0.2rem;
+		margin-bottom: 0.2rem;
+		padding: 0.2rem 0.5rem;
 
-        border-radius: 0.3rem;
-        border: 0.2rem solid rgba(0, 0, 0, 0);
+		color: var(--dominant);
+		background-color: var(--complementary);
 
-        outline: none;
+		border-radius: 0.3rem;
+		border: 0.2rem solid rgba(0, 0, 0, 0);
 
-        &.active {
-            color: var(--link-font-color);
-        }
+		outline: none;
 
-        @include for-md-devices {
-            padding: 0.4rem 1rem;
-        }
+		@include for-md-devices {
+			padding: 0.4rem 1rem;
+		}
 
-        @include for-lg-devices {
-            margin-right: 0.5rem;
+		a {
+			color: var(--dominant);
 
-            cursor: pointer;
+			@include for-lg-devices {
+				cursor: pointer;
 
-            &:hover {
-                color: var(--link-font-color);
-            }
-        }
-    }
-}
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 
-.report {
-    background-color: var(--primary-background);
-    color: var(--contrast-primary-background);
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.3rem;
-
-    margin-bottom: 0.5rem;
-
-    @include for-lg-devices {
-        width: 80%;
-    }
-
-    @include for-xl-devices {
-        width: 60%;
-    }
-
-    .head {
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-        padding: 0.5rem;
-
-        h4 {
-            margin: 0;
-            display: inline-block;
-            font-size: calc(var(--h3-font-size) - 0.7rem);
-        }
-
-        .icon {
-            transition: transform 0.2s ease-out;
-
-            &.open {
-                transform: rotate(-180deg);
-            }
-        }
-    }
-
-    .body {
-        max-height: 0px;
-        overflow-y: hidden;
-        padding: 0.2rem 0.4rem;
-
-        transition: all 0.6s ease-in-out;
-
-        .text {
-            margin: 0;
-        }
-
-        .data {
-            list-style: none;
-            padding: 0;
-        }
-
-        .attachments {
-            display: flex;
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .icon {
-                margin-top: 0.1rem;
-                margin-right: 0.2rem;
-            }
-        }
-
-        &.open {
-            //padding: 0.2rem 0.4rem !important;
-            max-height: 500px !important;
-        }
-    }
-}
-
-#main {
-    min-height: 300px;
-
-    @include for-xl-devices {
-        min-height: 60vh;
-    }
+		&.active {
+			text-decoration: underline;
+		}
+	}
 }

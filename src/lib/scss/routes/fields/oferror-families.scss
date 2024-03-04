@@ -1,71 +1,69 @@
 @import '$scss/_shared';
 
 .reset-option {
-    @include for-lg-devices {
-        margin: 0 auto;
-        width: 60%;
-    }
+	@include for-lg-devices {
+		margin: 0 auto;
+		width: 60%;
+	}
 
-    @include for-xl-devices {
-        width: 50%;
-    }
+	@include for-xl-devices {
+		width: 50%;
+	}
 
-    button {
-        margin-bottom: 0.5rem;
-        padding: 0.2rem 0.5rem;
+	button {
+		margin-bottom: 0.5rem;
+		padding: 0.2rem 0.5rem;
 
-        background-color: var(--primary-background);
-        color: var(--contrast-primary-background);
+		background-color: var(--complementary);
 
-        border-radius: 0.3rem;
-        border: 0.2rem solid rgba(0, 0, 0, 0);
+		border-radius: 0.3rem;
+		border: 0.2rem solid rgba(0, 0, 0, 0);
 
-        @include for-lg-devices {
-            cursor: pointer;
+		a {
+			color: var(--dominant);
 
-            &:hover {
-                color: var(--link-font-color);
-            }
-        }
-    }
+			@include for-lg-devices {
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
 
 .option-container {
-    min-height: 200px;
+	min-height: 200px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    .option {
-        font-size: 1rem;
-        margin-right: 0.5rem;
-        padding: 0.2rem 0.5rem;
+	.option {
+		font-size: 1rem;
+		margin-right: 0.5rem;
+		padding: 0.2rem 0.5rem;
 
-        background-color: var(--primary-background);
-        color: var(--contrast-primary-background);
+		background-color: var(--complementary);
 
-        border-radius: 0.3rem;
-        border: 0.2rem solid rgba(0, 0, 0, 0);
+		border-radius: 0.3rem;
+		border: 0.2rem solid rgba(0, 0, 0, 0);
 
-        @include for-md-devices {
-            padding: 0.4rem 1rem;
-        }
+		@include for-md-devices {
+			padding: 0.4rem 1rem;
+		}
 
-        @include for-lg-devices {
-            cursor: pointer;
+		a {
+			color: var(--dominant);
 
-            &:hover {
-                color: var(--link-font-color);
-            }
-        }
-    }
-}
+			@include for-lg-devices {
+				cursor: pointer;
 
-#main {
-    min-height: 300px;
-
-    @include for-xl-devices {
-        min-height: 60vh;
-    }
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }

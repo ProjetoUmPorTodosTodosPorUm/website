@@ -8,10 +8,7 @@ type easyFetchOptions = {
 }
 
 // Only Server Side
-export async function easyFetch(
-	svelteKitFetch: typeof fetch,
-	options: easyFetchOptions
-) {
+export async function easyFetch(svelteKitFetch: typeof fetch, options: easyFetchOptions) {
 	// Seting defaults if empty
 	options.method = options.method ?? 'GET'
 	options.isJson = options.isJson ?? true
