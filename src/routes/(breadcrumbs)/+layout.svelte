@@ -4,7 +4,7 @@
 
 <Navbar />
 <section id="main">
-	<Breadcrumbs  />
+	<Breadcrumbs />
 	<slot />
 </section>
-<Footer/>
+<Footer />

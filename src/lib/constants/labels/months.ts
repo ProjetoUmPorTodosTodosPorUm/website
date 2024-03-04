@@ -1,5 +1,5 @@
 export const MONTHS_LABELS = {
-    january: 'Janeiro',
+	january: 'Janeiro',
 	february: 'Fevereiro',
 	march: 'Março',
 	april: 'Abril',

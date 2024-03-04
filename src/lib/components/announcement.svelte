@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '$scss/components/announcement.scss';
+	import '$scss/components/announcement.scss'
 	import type { AnnouncementDto } from '../types'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip';
-	import BsPinAngle from 'svelte-icons-pack/bs/BsPinAngle';
-	
+	import Icon from 'svelte-icons-pack/Icon.svelte'
+	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip'
+	import BsPinAngle from 'svelte-icons-pack/bs/BsPinAngle'
+
 	export let announcements: AnnouncementDto[]
 </script>
 

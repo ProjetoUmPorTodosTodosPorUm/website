@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '$scss/routes/fields/page.scss'
-	import type { PageData } from './$types';
+	import type { PageData } from './$types'
 	import type { FieldDto } from '$types'
-	import { Navbar , Breadcrumbs, Footer } from '$components'
+	import { Navbar, Breadcrumbs, Footer } from '$components'
 
-	export let data: PageData;
+	export let data: PageData
 	$: field = data.field as FieldDto
 </script>
 
@@ -35,7 +35,7 @@
 		</li>
 		<li><a href="/fields/{field.id}/reports">Relatórios</a></li>
 		<li>
-			<a href="/fields/{field.id}/volunteers">Voluntários</a>
+			<a href="/fields/{field.id}/volunteers">Voluntários Administrativos</a>
 		</li>
 	</ul>
 </section>

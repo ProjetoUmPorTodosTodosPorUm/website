@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$scss/components/agenda-announcement.scss';
+	import '$scss/components/agenda-announcement.scss'
 	import { Agenda, Announcement } from '$components'
 	import type { AnnouncementDto } from '$types'
 

@@ -1,33 +1,33 @@
 <script lang="ts">
-	import '$scss/components/navbar.scss';
+	import '$scss/components/navbar.scss'
 	import logo from '$assets/images/logo.png'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import FiMenu from 'svelte-icons-pack/fi/FiMenu';
+	import Icon from 'svelte-icons-pack/Icon.svelte'
+	import FiMenu from 'svelte-icons-pack/fi/FiMenu'
 
-	let navRef: HTMLElement;
-	let navToggleIconRef: HTMLDivElement;
-	let navResponsiveRef: HTMLDivElement;
+	let navRef: HTMLElement
+	let navToggleIconRef: HTMLDivElement
+	let navResponsiveRef: HTMLDivElement
 
 	function onNavToggle() {
-		navResponsiveRef.classList.toggle('open');
-		navToggleIconRef.classList.toggle('open');
-		navRef.classList.toggle('open');
+		navResponsiveRef.classList.toggle('open')
+		navToggleIconRef.classList.toggle('open')
+		navRef.classList.toggle('open')
 	}
 
 	function onLinkClick(sectionId: string) {
-		const animationTime = 300; // ms
-		navResponsiveRef.classList.remove('open');
+		const animationTime = 300 // ms
+		navResponsiveRef.classList.remove('open')
 
 		setTimeout(() => {
-			const navbarHeight = navRef.offsetHeight;
-			const sectionRef: HTMLDivElement | null = document.querySelector(sectionId);
+			const navbarHeight = navRef.offsetHeight
+			const sectionRef: HTMLDivElement | null = document.querySelector(sectionId)
 
 			if (sectionRef) {
-				window.scrollTo({ top: sectionRef.offsetTop - navbarHeight, behavior: 'smooth' });
+				window.scrollTo({ top: sectionRef.offsetTop - navbarHeight, behavior: 'smooth' })
 			}
-		}, animationTime);
+		}, animationTime)
 	}
 </script>
 
@@ -48,7 +48,9 @@
 				<a href="/about-us">Quem Somos</a>
 			</li>
 			<li class="nav-item">
-				<a href="#how-to-participate" on:click|preventDefault={() => onLinkClick('#how-to-participate')}>Como Participar</a>
+				<a href="#how-to-participate" on:click|preventDefault={() => onLinkClick('#how-to-participate')}
+					>Como Participar</a
+				>
 			</li>
 			<li class="nav-item">
 				<a href="/fields">Campos Missionários</a>

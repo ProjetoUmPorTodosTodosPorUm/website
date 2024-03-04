@@ -1,8 +1,8 @@
 <script lang="ts">
 	// @ts-ignore
-	import Carousel from 'svelte-carousel';
-	import { browser } from '$app/environment';
-	import '$scss/components/carousel.scss';
+	import Carousel from 'svelte-carousel'
+	import { browser } from '$app/environment'
+	import '$scss/components/carousel.scss'
 </script>
 
 {#if browser}
@@ -10,7 +10,9 @@
 		<slot />
 
 		<!-- Custom Arrows -->
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div slot="prev" on:click={showPrevPage} class="custom-arrow left" />
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div slot="next" on:click={showNextPage} class="custom-arrow right" />
 	</Carousel>
 {/if}

@@ -1,31 +1,31 @@
 <script lang="ts">
 	import '$scss/routes/fields/reports.scss'
 	import type { PageData } from './$types'
-	import { onMount } from 'svelte';
+	import { onMount } from 'svelte'
 	import { page } from '$app/stores'
 	import { goto, invalidate } from '$app/navigation'
 
-	import type { FieldDto,ReportDto } from '$types';
-	import { ReportType } from '$enums';
+	import type { FieldDto, ReportDto } from '$types'
+	import { ReportType } from '$enums'
 	import { DEPENDENCY_URLS } from '$constants'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip';
-	import FiChevronDown from 'svelte-icons-pack/fi/FiChevronDown';
-	
-	export let data: PageData;
+	import Icon from 'svelte-icons-pack/Icon.svelte'
+	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip'
+	import FiChevronDown from 'svelte-icons-pack/fi/FiChevronDown'
+
+	export let data: PageData
 
 	$: field = data.field as FieldDto
 	$: years = data.years as number[]
-	$: reports = data.apiData as ReportDto[];
+	$: reports = data.apiData as ReportDto[]
 	let currentYear = '0'
 
 	onMount(() => {
 		// Validate user input
 		currentYear = $page.url.searchParams.get('year') || '0'
 
-		if(years.length > 0 && !years.includes(Number(currentYear))) {
+		if (years.length > 0 && !years.includes(Number(currentYear))) {
 			$page.url.searchParams.set('year', String(years[0]))
 			currentYear = String(years[0])
 		} else if (years.length <= 0) {
@@ -34,26 +34,21 @@
 		goto(`/fields/${field.id}/reports?year=${currentYear}`)
 	})
 
-	$: monthlyReports = reports
-		? reports.filter((report) => report.type === ReportType.ORDINARY)
-		: [];
-	$: annualReports = reports ? reports.filter((report) => report.type === ReportType.ANNUAL) : [];
-	$: semesterReports = reports
-		? reports?.filter((report) => report.type === ReportType.SEMESTER)
-		: [];
-
+	$: monthlyReports = reports ? reports.filter((report) => report.type === ReportType.ORDINARY) : []
+	$: annualReports = reports ? reports.filter((report) => report.type === ReportType.ANNUAL) : []
+	$: semesterReports = reports ? reports?.filter((report) => report.type === ReportType.SEMESTER) : []
 
 	function onToggleReport(event: Event) {
 		// @ts-ignore
-		const reportElement = event.currentTarget.parentNode;
-		const bodyElement = reportElement.querySelector('.body');
-		const iconElem = reportElement.querySelector('.head .icon');
-		toggleReport(bodyElement, iconElem);
+		const reportElement = event.currentTarget.parentNode
+		const bodyElement = reportElement.querySelector('.body')
+		const iconElem = reportElement.querySelector('.head .icon')
+		toggleReport(bodyElement, iconElem)
 	}
 
 	function toggleReport(bodyElement: HTMLDivElement, iconElem: SVGElement) {
-		iconElem.classList.toggle('open');
-		bodyElement.classList.toggle('open');
+		iconElem.classList.toggle('open')
+		bodyElement.classList.toggle('open')
 	}
 
 	async function onYearChange(year: number) {
@@ -64,7 +59,7 @@
 
 <div class="date-picker">
 	{#each years as year}
-		<button class:active={currentYear == String(year)} on:click|preventDefault={() => onYearChange(year)} >
+		<button class:active={currentYear == String(year)} on:click|preventDefault={() => onYearChange(year)}>
 			<a href={`/fields/${field.id}/reports?year=${year}`}>{year}</a>
 		</button>
 	{/each}
@@ -80,7 +75,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="head" on:click={onToggleReport}>
 				<h4>
-					{report.title} | Postado em 
+					{report.title} | Postado em
 					{new Date(report.createdAt).toLocaleDateString()}
 				</h4>
 				<Icon src={FiChevronDown} className="icon" />
@@ -98,8 +93,7 @@
 					<ul>
 						{#each report.attachments as attachment}
 							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
-								>
+								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
 							</li>
 						{/each}
 					</ul>
@@ -116,7 +110,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="head" on:click={onToggleReport}>
 				<h4>
-					{report.title} | Postado em 
+					{report.title} | Postado em
 					{new Date(report.createdAt).toLocaleDateString()}
 				</h4>
 				<Icon src={FiChevronDown} className="icon" />
@@ -134,8 +128,7 @@
 					<ul>
 						{#each report.attachments as attachment}
 							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
-								>
+								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
 							</li>
 						{/each}
 					</ul>
@@ -152,7 +145,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="head" on:click={onToggleReport}>
 				<h4>
-					{report.title} | Postado em 
+					{report.title} | Postado em
 					{new Date(report.createdAt).toLocaleDateString()}
 				</h4>
 				<Icon src={FiChevronDown} className="icon" />
@@ -170,8 +163,7 @@
 					<ul>
 						{#each report.attachments as attachment}
 							<li>
-								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a
-								>
+								<a href={`/static/${attachment}`} target="_blank" rel="noreferrer">{attachment}</a>
 							</li>
 						{/each}
 					</ul>

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '$scss/components/testimonial.scss';
+	import '$scss/components/testimonial.scss'
 	import type { TestimonialDto } from '../types'
-	import Carousel from './carousel.svelte';
-	
-	export let testimonials: TestimonialDto[];
+	import Carousel from './carousel.svelte'
+
+	export let testimonials: TestimonialDto[]
 </script>
 
 <section id="testimonials">

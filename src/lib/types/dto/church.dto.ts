@@ -1,18 +1,17 @@
 import type { FieldDto } from './field.dto'
-import type { ChurchType } from '../../enums';
-
+import type { ChurchType } from '../../enums'
 
 export type ChurchDto = {
-    id: string;
-    name: string;
-    description: string;
-    images: string[];
-    type: ChurchType;
+	id: string
+	name: string
+	description: string
+	images: string[]
+	type: ChurchType
 
-    createdAt: Date;
-    updatedAt: Date;
-    deleted?: Date;
+	createdAt: Date
+	updatedAt: Date
+	deleted?: Date
 
-    fieldId?: string;
-    field?: FieldDto;
+	fieldId?: string
+	field?: FieldDto
 }

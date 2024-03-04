@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '$scss/routes/fields/volunteers.scss';
-	import type { PageData } from './$types';
+	import '$scss/routes/fields/volunteers.scss'
+	import type { PageData } from './$types'
 
-	import { sortVolunteersByOccupations } from '$utils';
-	import type { FieldDto, VolunteerDto } from '$types';
-	import { Occupation } from '$enums';
+	import { sortVolunteersByOccupations } from '$utils'
+	import type { FieldDto, VolunteerDto } from '$types'
+	import { Occupation } from '$enums'
 
-	export let data: PageData;
+	export let data: PageData
 
 	const firstSectionOccs = [
 		Occupation.PRESIDENT,
@@ -25,11 +25,7 @@
 		Occupation.AUXILIARY_SECRETARY
 	]
 
-	const secondSectionOccs = [
-		Occupation.COORDINATOR_02,
-		Occupation.INFIELD_COORDINATOR,
-		Occupation.OUTFIELD_COORDINATOR
-	]
+	const secondSectionOccs = [Occupation.COORDINATOR_02, Occupation.INFIELD_COORDINATOR, Occupation.OUTFIELD_COORDINATOR]
 
 	const thirdSectionOccs = [Occupation.COLLECTOR, Occupation.SUPPORT_SERVICE]
 
@@ -40,10 +36,9 @@
 		...thirdSectionOccs
 	]) as VolunteerDto[]
 
-
-	$: firstSectionVols = volunteers.filter((vol) => firstSectionOccs.includes(vol.occupation));
-	$: secondSectionVols = volunteers.filter((vol) => secondSectionOccs.includes(vol.occupation));
-	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation));
+	$: firstSectionVols = volunteers.filter((vol) => firstSectionOccs.includes(vol.occupation))
+	$: secondSectionVols = volunteers.filter((vol) => secondSectionOccs.includes(vol.occupation))
+	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation))
 </script>
 
 <div class="volunteers">
@@ -67,7 +62,7 @@
 			</div>
 		</div>
 	{/each}
-	
+
 	<h3>Serviço Interno e Externo</h3>
 	{#each secondSectionVols as volunteer}
 		<div class="volunteer">

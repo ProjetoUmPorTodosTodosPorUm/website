@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '$scss/routes/fields/welcomed-families.scss';
-	import type { PageData } from './$types';
-	import type { WelcomedFamilyDto } from '$types';
+	import '$scss/routes/fields/welcomed-families.scss'
+	import type { PageData } from './$types'
+	import type { WelcomedFamilyDto } from '$types'
 
-	export let data: PageData;
+	export let data: PageData
 	$: welcomedFamilies = data.apiData as WelcomedFamilyDto[]
 </script>
 

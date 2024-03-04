@@ -1,17 +1,17 @@
-import type { OfferorFamilyGroup } from "../../enums";
-import type { FieldDto } from "./field.dto";
+import type { OfferorFamilyGroup } from '../../enums'
+import type { FieldDto } from './field.dto'
 
 export type OfferorFamilyDto = {
-    id: string;
-    representative: string;
-    commitment: string;
-    chuchDenomination?: string;
-    group: OfferorFamilyGroup;
+	id: string
+	representative: string
+	commitment: string
+	chuchDenomination?: string
+	group: OfferorFamilyGroup
 
-    createdAt: Date;
-    updatedAt: Date;
-    deleted?: Date;
+	createdAt: Date
+	updatedAt: Date
+	deleted?: Date
 
-    fieldId: string;
-    field: FieldDto;
+	fieldId: string
+	field: FieldDto
 }

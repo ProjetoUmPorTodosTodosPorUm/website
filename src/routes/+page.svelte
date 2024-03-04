@@ -1,5 +1,15 @@
 <script lang="ts">
-	import { Navbar, Landing, HowToParticipate, Faq, AgendaAnnouncement, WhereWeOperate, Testimonial, Footer, MessagesContainer } from '$components'
+	import {
+		Navbar,
+		Landing,
+		HowToParticipate,
+		Faq,
+		AgendaAnnouncement,
+		WhereWeOperate,
+		Testimonial,
+		Footer,
+		MessagesContainer
+	} from '$components'
 	import type { ActionData, PageData } from './$types'
 
 	export let data: PageData

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import '$scss/routes/fields/collected-offers.scss';
-	import type { PageData } from './$types';
-	import type { FieldDto } from '$types';
+	import '$scss/routes/fields/collected-offers.scss'
+	import type { PageData } from './$types'
+	import type { FieldDto } from '$types'
 
 	export let data: PageData
 	$: field = data.field as FieldDto

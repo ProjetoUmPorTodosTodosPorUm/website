@@ -3,11 +3,7 @@ import { generateMessages, easyFetch } from '$utils'
 import { PUBLIC_API_URL } from '$env/static/public'
 
 // Only Server Side
-export async function getLoad(
-	apiPathname: RequestInfo,
-	svelteKitFetch: typeof fetch,
-	params: any
-) {
+export async function getLoad(apiPathname: RequestInfo, svelteKitFetch: typeof fetch, params: any) {
 	const res = await easyFetch(svelteKitFetch, {
 		url: `${PUBLIC_API_URL}/${apiPathname}/${params.id}`
 	})

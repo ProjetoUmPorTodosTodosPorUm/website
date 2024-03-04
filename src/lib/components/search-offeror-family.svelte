@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '$scss/components/search-field.scss';
-	import type { OfferorFamilyDto } from '$types';
+	import '$scss/components/search-field.scss'
+	import type { OfferorFamilyDto } from '$types'
 	import { SearchBox, Pagination } from '$components'
-	
-	export let offerorFamilies: OfferorFamilyDto[] = [];
+
+	export let offerorFamilies: OfferorFamilyDto[] = []
 	export let totalPages: number = 1
 </script>
 
@@ -11,8 +11,8 @@
 	<SearchBox
 		showDropdown={false}
 		placeholder="Pesquise pelo representante da família"
-        orderKey="representative"
-        orderValue="asc"
+		orderKey="representative"
+		orderValue="asc"
 	/>
 
 	<div class="data-items">

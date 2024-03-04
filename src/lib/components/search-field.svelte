@@ -1,10 +1,10 @@
 <script lang="ts">
-	import '$scss/components/search-field.scss';
+	import '$scss/components/search-field.scss'
 	import { page } from '$app/stores'
 	import { SearchBox, Pagination } from '$components'
-	import type { FieldDto } from '$types';
-	
-	$: fields = $page.data.apiData as FieldDto[] || []
+	import type { FieldDto } from '$types'
+
+	$: fields = ($page.data.apiData as FieldDto[]) || []
 	$: totalPages = $page.data.totalPages || 1
 	$: subRoute = $page.data.searchFieldSubRoute || ''
 
@@ -18,10 +18,7 @@
 </script>
 
 <div class="centered">
-	<SearchBox
-		showDropdown={false}
-		placeholder="Pesquise pelo nome do campo missionário"
-	/>
+	<SearchBox showDropdown={false} placeholder="Pesquise pelo nome do campo missionário" />
 
 	<div class="data-items">
 		{#each fields as field (field.id)}

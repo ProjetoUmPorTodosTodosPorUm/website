@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { page } from '$app/stores'
-    import type { FieldDto } from '$types';
+	import { page } from '$app/stores'
+	import type { FieldDto } from '$types'
 
-    $: pageTitle = $page.data.pageTitle || ''
-    $: field = $page.data.field as FieldDto
+	$: pageTitle = $page.data.pageTitle || ''
+	$: field = $page.data.field as FieldDto
 </script>
 
 <h1>{pageTitle}</h1>

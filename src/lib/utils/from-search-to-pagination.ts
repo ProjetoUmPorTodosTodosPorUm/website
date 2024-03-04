@@ -12,6 +12,6 @@ export function fromSearchToPagination(url: URL) {
 		searchSpecificField: url.searchParams.get('searchSpecificField') || '',
 		searchSpecificValue: url.searchParams.get('searchSpecificValue') || '',
 		// Not from original Pagination but needed to use this function with list-load.ts
-		field: url.searchParams.get('field') || '',
+		field: url.searchParams.get('field') || ''
 	} as Pagination
 }

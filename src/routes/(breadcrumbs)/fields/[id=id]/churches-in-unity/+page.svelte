@@ -1,10 +1,10 @@
 <script lang="ts">
-	import '$scss/routes/fields/churches-in-unity.scss';
-	import type { PageData } from './$types';
+	import '$scss/routes/fields/churches-in-unity.scss'
+	import type { PageData } from './$types'
 	import { Carousel } from '$components'
-	import type { ChurchDto } from '$types';
+	import type { ChurchDto } from '$types'
 
-	export let data: PageData;
+	export let data: PageData
 	$: churches = data.apiData as ChurchDto[]
 </script>
 
@@ -14,10 +14,7 @@
 			{#each churches as church (church.id)}
 				<div class="church">
 					<div class="image">
-						<img
-							src={church.images[0] ?? 'https://via.placeholder.com/500x500.webp'}
-							alt="Collaborator Logo"
-						/>
+						<img src={church.images[0] ?? 'https://via.placeholder.com/500x500.webp'} alt="Collaborator Logo" />
 					</div>
 					<div class="content">
 						<h3 class="title">{church.name}</h3>
@@ -28,4 +25,3 @@
 		</Carousel>
 	{/if}
 </div>
-

@@ -1,17 +1,16 @@
 <script lang="ts">
-	import '$scss/routes/fields/oferror-families.scss';
+	import '$scss/routes/fields/oferror-families.scss'
 	import type { PageData } from './$types'
-	import type { OfferorFamilyDto } from '$types';
+	import type { OfferorFamilyDto } from '$types'
 
-	import SearchOfferorFamily from '$lib/components/search-offeror-family.svelte';
+	import SearchOfferorFamily from '$lib/components/search-offeror-family.svelte'
 
-	export let data: PageData;
+	export let data: PageData
 
 	$: offerorFamilyData = data.apiData as OfferorFamilyDto[]
 	$: totalCount = data.totalCount
 	$: totalPages = data.totalPages
 </script>
-
 
 <h1>Famílias Ofertantes</h1>
 <div class="reset-option">

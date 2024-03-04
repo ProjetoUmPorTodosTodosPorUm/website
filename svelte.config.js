@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-node';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import adapter from '@sveltejs/adapter-node'
+import { vitePreprocess } from '@sveltejs/kit/vite'
 import * as child_process from 'node:child_process'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -25,11 +25,19 @@ const config = {
 		csp: {
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self', 'strict-dynamic', 'https:', 'unsafe-eval', 'blob:'],
+				'script-src': ['self', 'https:', 'unsafe-eval', 'blob:'],
 				'frame-src': ['self', 'youtube.com', 'www.youtube.com', '*.google.com'],
 				'style-src': ['self', 'fonts.googleapis.com', 'unsafe-inline'],
 				'font-src': ['self', 'fonts.gstatic.com'],
-				'img-src': ['self', 'data:', 'via.placeholder.com', 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com', '*.googleusercontent.com'],
+				'img-src': [
+					'self',
+					'data:',
+					'via.placeholder.com',
+					'https://*.googleapis.com',
+					'https://*.gstatic.com',
+					'*.google.com',
+					'*.googleusercontent.com'
+				],
 				'connect-src': [
 					'self',
 					'data:',
@@ -39,17 +47,25 @@ const config = {
 					'projetoumportodostodosporum.org',
 					'https://*.googleapis.com',
 					'*.google.com',
-					'https://*.gstatic.com',
+					'https://*.gstatic.com'
 				],
 				'worker-src': ['self', 'blob:']
 			},
 			reportOnly: {
 				'default-src': ['self'],
-				'script-src': ['self', 'strict-dynamic', 'https:', 'unsafe-eval', 'blob:'],
+				'script-src': ['self', 'https:', 'unsafe-eval', 'blob:'],
 				'frame-src': ['self', 'youtube.com', 'www.youtube.com', '*.google.com'],
 				'style-src': ['self', 'fonts.googleapis.com', 'unsafe-inline'],
 				'font-src': ['self', 'fonts.gstatic.com'],
-				'img-src': ['self', 'data:', 'via.placeholder.com', 'https://*.googleapis.com', 'https://*.gstatic.com', '*.google.com', '*.googleusercontent.com'],
+				'img-src': [
+					'self',
+					'data:',
+					'via.placeholder.com',
+					'https://*.googleapis.com',
+					'https://*.gstatic.com',
+					'*.google.com',
+					'*.googleusercontent.com'
+				],
 				'connect-src': [
 					'self',
 					'data:',
@@ -59,7 +75,7 @@ const config = {
 					'projetoumportodostodosporum.org',
 					'https://*.googleapis.com',
 					'*.google.com',
-					'https://*.gstatic.com',
+					'https://*.gstatic.com'
 				],
 				'worker-src': ['self', 'blob:'],
 				'report-to': ['api.projetoumportodostodosporum.org/csp-report']
@@ -69,6 +85,6 @@ const config = {
 			name: child_process.execSync('git rev-parse HEAD').toString().trim()
 		}
 	}
-};
+}
 
-export default config;
+export default config

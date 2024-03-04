@@ -1,7 +1,7 @@
 <script lang="ts">
-    import '$scss/components/messages-container.scss'
-    import { page } from '$app/stores'
-    import { Toast } from '$components'
+	import '$scss/components/messages-container.scss'
+	import { page } from '$app/stores'
+	import { Toast } from '$components'
 
 	$: messages = $page.form?.messages ?? []
 </script>

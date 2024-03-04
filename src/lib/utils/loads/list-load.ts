@@ -3,11 +3,7 @@ import { generateMessages, easyFetch, fromSearchToPagination, fromPaginationToQu
 import { PUBLIC_API_URL } from '$env/static/public'
 
 // Only Server Side
-export async function listLoad(
-	apiPathname: RequestInfo,
-	svelteKitFetch: typeof fetch,
-	url: URL
-) {
+export async function listLoad(apiPathname: RequestInfo, svelteKitFetch: typeof fetch, url: URL) {
 	// do not trust user input
 	const pagination = fromSearchToPagination(url)
 	const queryString = fromPaginationToQuery(pagination)
