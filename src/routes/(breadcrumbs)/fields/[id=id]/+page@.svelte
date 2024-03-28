@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types'
 	import type { FieldDto } from '$types'
-	import { Navbar, Breadcrumbs, Footer } from '$components'
+	import { Navbar, Breadcrumbs } from '$components'
 
 	export let data: PageData
 	$: field = data.field as FieldDto
