@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 vite dev --port 3001 --strictPort --host",
 		"build": "vite build",
-		"build:docker:preview": "docker build --target preview-image -t project/web:preview .",
+		"build:docker:preview": "docker build --no-cache --target preview-image -t project/web:preview .",
 		"build:docker": "docker build --target prod-image -t renangalvao/project-web:latest .",
 		"postbuild:docker": "docker push renangalvao/project-web:latest",
 		"preview": "vite preview --port 3001 --strictPort --host",

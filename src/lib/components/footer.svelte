@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '$scss/components/footer.scss'
 	import { enhance } from '$app/forms'
-	import { page } from '$app/stores'
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte'
@@ -106,7 +105,7 @@
 			</form>
 		</div>
 		<div class="info">
-			<div class="text">© 2024 Projeto Um Por Todos! Todos Por Um.</div>
+			<div class="text">© 2024 Projeto "Um Por Todos! Todos Por Um"</div>
 		</div>
 	</div>
 </section>
