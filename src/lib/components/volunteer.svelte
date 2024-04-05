@@ -2,7 +2,7 @@
 	import '$scss/components/volunteer.scss'
 	import type { VolunteerDto } from '../types'
 	import { VOLUNTEERS_OCCUPATIONS } from '$constants'
-    import { PUBLIC_FILES_URL, PUBLIC_ASSETS_URL } from '$env/static/public'
+    import { PUBLIC_FILES_URL } from '$env/static/public'
 
 	export let volunteer: VolunteerDto
 	const occupations = [

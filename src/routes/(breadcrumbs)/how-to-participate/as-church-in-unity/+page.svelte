@@ -100,5 +100,45 @@
 		disser: Ide em paz, aquecei-vos e fartai-vos, sem, contudo, lhes dar o necessário para o corpo, qual é o proveito
 		disso? Assim também a fé, se não tiver obras, por si só está morta”</i
 	><br />
-	<b>(Tiago 2: 14-17)</b>
+	<b>(Tiago 2:14-17)</b>
+</p>
+
+<h2>DIRECIONAMENTO ESTRATÉGICOS</h2>
+<span class="sub-title no-text-indent" style="display:block; margin-bottom: 1rem !important;">Extraído do <a href="{PUBLIC_ASSETS_URL}/documents/administrative-documents/2-internal-regiment.pdf" target="_blank">“REGIMENTO INTERNO”</a></span>
+
+<h3 class="no-margin-bottom">MISSÃO</h3>
+<span class="sub-title no-text-indent">(Marcos 16:15-16)</span>
+<p>
+	Pregar o Evangelho, fazendo o <i>“IDE”</i> <u>de dentro para fora</u>; numa ação ininterrupta percorrendo ruas, bairros no Estado, País e Continente donde está
+	sua <b>INSERÇÃO</b> ou <b>ARROLAMENTO</b>; e, assim trazendo consigo as diversas Denominações eclesiásticas encontradas no caminho, promovendo, e
+	incentivando a virem segurar numa das pontas desta imensa <i>“Rede de Pescar”</i>; e, juntas como um grande <i>“Cordão de Três Dobras”</i> analisando os
+	conflitos advinda de quaisquer ordens que esteja a afetar a família, a comunidade, a nação trazendo solução quando da aplicação da Palavra de
+	Deus, do amor Dele; exemplificando Cristo, para Cristo, e, em Cristo a ininterrupta UNIDADE entre Igrejas. Em suma: Em UNIDADE, preparar os
+	<i>“Eleitos”</i> para aquele grande dia. O dia do julgamento final.
+</p>
+
+<h3 class="no-margin-bottom">VISÃO</h3>
+<span class="sub-title no-text-indent">(Eclesiastes 4:12) <i>“Um cordão de três dobras não se rompe facilmente”.</i></span>
+<p>
+	Afirmar-se no mundo como Igreja da UNIDADE. UNIDADE entre todas a Igrejas do Senhor Jesus Cristo <u>na terra</u>. UNIDADE ininterrupta, como o
+	cordão de três dobras; e, assim com forças redobradas, obter a UNIÃO entre as famílias da COMUNIDADE, incentivando a empatia em tempos onde o amor	
+	já vem se esfriando.
+</p>
+
+<h3 class="no-margin-bottom">VALORES</h3>
+<span class="sub-title no-text-indent">(Salmos 51:10-13)</span>
+<ul>
+	<li>Ética cristã exercida em todas as suas prerrogativas;</li>
+	<li>Transparência nas ações de ordem sociais;</li>
+	<li>Confiabilidade quando das prestações de contas no site da Ferramenta
+		Missionária.</li>
+</ul>
+
+<h3 class="no-margin-bottom">BLOCO DE QUALIDADE</h3>
+<span class="sub-title no-text-indent">(Tito 2: 11-14; 1 Timóteo 3: 1-13)</span>
+<p>
+	Homens, mulheres; jovens cristãos, em toda parte do mundo quando da aplicação deste NOVO <b><i>“Sistema de Evangelização Acrescido de
+	Ação Social”</i></b> oferecem dupla prestação de serviço comunitário. A prestação de serviço social, acompanhada da prestação de serviço espiritual, ou vice e
+	versa; donde a Igreja do Senhor Jesus, Igreja local em UNIDADE com as demais Igrejas locais, porém, numa hegemonia mundial, convida, abraça e traz
+	à família, a COMUNIDADE, a possibilidade de obter mais do que o pão da terra; sobretudo, obter o <i>PÃO VIVO</i> que desceu do céu.
 </p>
