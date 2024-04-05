@@ -11,6 +11,10 @@
 
 	padding-top: 4rem;
 
+	@include for-xs-devices {
+		min-height: 850px;
+	}
+
 	@include for-md-devices {
 		padding: 8rem 4rem 0 4rem;
 		align-items: start;
@@ -20,6 +24,7 @@
 		max-width: var(--max-screen-width);
 		margin: 0 auto;
 		padding: 10rem 0rem 0 0rem;
+		flex-wrap: wrap;
 	}
 
 	&::before {
@@ -36,6 +41,10 @@
 		background-attachment: fixed;
 		background-size: cover;
 		background-position: center center;
+
+		@include for-xs-devices {
+			min-height: 850px;
+		}
 	}
 }
 
@@ -113,7 +122,7 @@
 	background-color: var(--accent);
 	color: var(--dominant);
 
-	margin: 1.2rem 0 auto 0;
+	margin: 1.2rem 0 1.2rem 0;
 	padding: 1rem 2.3rem;
 	border-radius: 0.3rem;
 
@@ -124,7 +133,7 @@
 	transition: 0.2s ease-out;
 
 	@include for-md-devices {
-		margin: 2rem 0 auto 0;
+		margin: 2rem 0 2rem 0;
 	}
 
 	@include for-lg-devices {
@@ -135,4 +144,45 @@
 			border: 0.2rem solid var(--accent);
 		}
 	}
+}
+
+.citations {
+	font-size: .9rem;
+	font-weight: lighter;
+	opacity: .7;
+	text-align: justify;
+	padding: 0 0.4rem;
+	margin-top: auto;
+	margin-bottom: 1.2rem;
+
+	@include for-md-devices {
+		width: 60%;
+		align-self: flex-end;
+		margin-bottom: 2rem;
+	}
+
+	@include for-xl-devices {
+		width: 40%;
+	}
+
+	.item {
+		@include for-md-devices {
+			&:first-of-type {
+				p {
+					margin-top: 0;
+				}	
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		i {
+			font-weight: normal;	
+			font-size: .8rem;
+		}
+	}
+
+
 }
