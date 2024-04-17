@@ -8,10 +8,10 @@
 
 .author-image {
 	float: left;
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 
 	@include for-md-devices {
-		margin: 0 .5rem .5rem 0;
+		margin: 0 0.5rem 0.5rem 0;
 	}
 
 	@include for-lg-devices {
@@ -20,7 +20,7 @@
 }
 
 p {
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 
 	&:first-of-type {
 		margin-top: 0;

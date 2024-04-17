@@ -2,9 +2,10 @@
 
 .modal-background {
 	position: fixed;
-	z-index: 1;
+	z-index: 999;
 	inset: 0px;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(var(--complementary-rgb), 0.2);
+	backdrop-filter: blur(0.12rem);
 
 	display: flex;
 	justify-content: center;
@@ -12,14 +13,14 @@
 }
 
 .modal {
-	z-index: 2;
+	z-index: 999;
 	position: fixed;
 	left: 50%;
 	top: 50%;
 
 	padding: 1em;
 	border-radius: 0.2em;
-	background: #fff;
+	background: var(--dominant);
 	border-radius: 0.5rem;
 	transform: translate(-50%, -50%);
 

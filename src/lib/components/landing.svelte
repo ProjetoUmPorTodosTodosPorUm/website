@@ -29,12 +29,18 @@
 	<a href="#how-to-participate" class="call-to-action">Desejo Participar</a>
 	<div class="citations">
 		<div class="item">
-			<p>"Jesus, porém, conhecendo os seus pensamentos, disse-lhes: Todo o reino dividido contra si mesmo é devastado; e toda a cidade, ou casa, dividida contra si mesma não subsistirá."</p>
+			<p>
+				"Jesus, porém, conhecendo os seus pensamentos, disse-lhes: Todo o reino dividido contra si mesmo é devastado; e
+				toda a cidade, ou casa, dividida contra si mesma não subsistirá."
+			</p>
 			<i>(Mateus 12:25)</i>
 		</div>
 
 		<div class="item">
-			<p>"[...] Ide por todo omundo, pregai o evangelho a toda criatura. Quem crer e for batizado será salvo; mas quem não crer será condenado."</p>
+			<p>
+				"[...] Ide por todo omundo, pregai o evangelho a toda criatura. Quem crer e for batizado será salvo; mas quem
+				não crer será condenado."
+			</p>
 			<i>(Marcos 15:15-16)</i>
 		</div>
 	</div>

@@ -1,5 +1,27 @@
 @import '$scss/_shared';
 
+:root.dark #main-nav {
+	.nav-brand a {
+		background-color: transparent;
+	}
+
+	.nav-item {
+		a {
+			background-color: transparent;
+
+			&:hover {
+				color: var(--dominant);
+				background-color: var(--complementary);
+			}
+		}
+	}
+
+	.nav-link.active {
+		color: var(--dominant);
+		background-color: var(--complementary);
+	}
+}
+
 #main-nav {
 	position: absolute;
 	z-index: 2;
@@ -209,8 +231,8 @@
 #main-nav .nav-link {
 	font-size: 1.2rem;
 	transition: color 0.2s ease-out;
-}
 
-#main-nav .nav-link-active {
-	color: var(--accent);
+	&.active {
+		color: var(--accent);
+	}
 }

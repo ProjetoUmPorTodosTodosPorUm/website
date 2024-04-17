@@ -33,10 +33,9 @@
 	Missionário formado; <b>porém</b>, desejando muito participar com <b>oferta em alimentos não perecíveis</b>; esta
 	família não se incomoda de levar a oferta ao POSTO DE COLETA, cuja comunidade tenha Campo Missionário.
 	<b>Como procede esta família, então?</b>
-	Muito simples. Basta fazer contato aqui no site mesmo expressando a vontade de participar que um (a) Voluntário Adm,
-	Coordenador(a) de Campo -Externo devidamente uniformizado fará contato para proceder esta inscrição que será numa
-	pasta exclusiva para esta família fora do Campo. Estamos a falar da “Família Voluntária Ofertante-APOIO EXTERNO”.<br
-	/><br />
+	Muito simples. Basta fazer contato aqui no site mesmo expressando a vontade de participar que um (a) Voluntário Adm, Coordenador(a)
+	de Campo -Externo devidamente uniformizado fará contato para proceder esta inscrição que será numa pasta exclusiva para
+	esta família fora do Campo. Estamos a falar da “Família Voluntária Ofertante-APOIO EXTERNO”.<br /><br />
 </p>
 
 <h2>Eclesiastíca</h2>

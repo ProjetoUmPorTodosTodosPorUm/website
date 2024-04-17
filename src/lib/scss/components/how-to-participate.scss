@@ -1,6 +1,24 @@
 @import '$scss/_shared';
 @import '$scss/_variables';
 
+:root.dark #how-to-participate {
+	.form form {
+		button {
+			background-color: var(--complementary);
+			color: var(--accent);
+
+			@include for-lg-devices {
+				&:hover {
+					background-color: transparent;
+					color: var(--complementary);
+
+					border: 0.2rem solid var(--accent);
+				}
+			}
+		}
+	}
+}
+
 #how-to-participate {
 	width: 100vw;
 
@@ -21,6 +39,28 @@
 	@include for-xl-devices {
 		max-width: var(--max-screen-width);
 		margin: 0 auto;
+	}
+
+	.text {
+		padding: 0 0.2rem;
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		@include for-xl-devices {
+			width: 55%;
+		}
+
+		.headline {
+			text-align: center;
+			margin: 0;
+			font-size: var(--h1-font-size);
+		}
+
+		p:last-child {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -59,8 +99,9 @@
 		input {
 			width: 100%;
 			height: 2.3rem;
+			background-color: var(--dominant);
 			color: var(--complementary);
-			border: 0.1rem solid var(--accent);
+			border: 0.1rem solid var(--complementary);
 			padding: 0.4rem 0.75rem;
 			margin-bottom: 0.4rem;
 
@@ -80,7 +121,7 @@
 			background-color: var(--accent);
 			color: var(--dominant);
 
-			font-size: 1.1rem;
+			font-size: 1.2rem;
 			letter-spacing: 0;
 			border: 0.2rem solid rgba(0, 0, 0, 0);
 			border-radius: 0.3rem;
@@ -105,27 +146,5 @@
 			font-size: 1rem;
 			@include icon-spinner;
 		}
-	}
-}
-
-.text {
-	padding: 0 0.2rem;
-	width: 100%;
-
-	display: flex;
-	flex-direction: column;
-
-	@include for-xl-devices {
-		width: 55%;
-	}
-
-	.headline {
-		text-align: center;
-		margin: 0;
-		font-size: var(--h1-font-size);
-	}
-
-	p:last-child {
-		margin-top: 0;
 	}
 }

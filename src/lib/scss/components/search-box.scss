@@ -1,5 +1,11 @@
 @import '$scss/_shared';
 
+:root.dark .search-box .search {
+	input {
+		background-color: var(--dominant);
+	}
+}
+
 .search-box {
 	width: 100%;
 	display: flex;

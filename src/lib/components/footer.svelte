@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '$scss/components/footer.scss'
 	import { enhance } from '$app/forms'
+	import { SwitchTheme } from '$components'
+	import { PUBLIC_CMS_URL } from '$env/static/public'
 
 	//icons
 	import Icon from 'svelte-icons-pack/Icon.svelte'
@@ -105,7 +107,13 @@
 			</form>
 		</div>
 		<div class="info">
-			<div class="text">© 2024 Projeto "Um Por Todos! Todos Por Um"</div>
+			<SwitchTheme />
+			<div class="text">
+				<div class="line">© 2024 Projeto "Um Por Todos! Todos Por Um" | <a href={PUBLIC_CMS_URL}>Painel</a></div>
+				<div class="line">
+					Orgulhosamente feito por <a href="https://github.com/RenanGalvao" target="_blank">@RenanGalvão</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

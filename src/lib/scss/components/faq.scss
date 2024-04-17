@@ -1,6 +1,16 @@
 @import '$scss/_shared';
 @import '$scss/_variables';
 
+:root.dark #faq {
+	.wrap {
+		padding: 1rem 0 1rem;
+	}
+
+	.question-block {
+		box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+	}
+}
+
 #faq {
 	position: relative;
 	width: 100vw;
@@ -11,28 +21,25 @@
 	align-items: start;
 	justify-content: start;
 
-	// hides background
-	overflow: hidden;
-
 	margin-top: 1rem;
 
-	@include for-md-devices {
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
+	.wrap {
+		@include for-md-devices {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
 
-	@include for-xl-devices {
-		max-width: var(--max-screen-width);
-		margin: 0 auto;
+		@include for-xl-devices {
+			max-width: var(--max-screen-width);
+			margin: 0 auto;
+		}
 	}
 
 	&::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100vw;
-		height: 100vh;
+		height: 100%;
 
 		opacity: 0.04;
 		background-image: url('https://assets.projetoumportodostodosporum.org/web/images/faq-background.webp'),

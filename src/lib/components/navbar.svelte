@@ -20,6 +20,10 @@
 		navToggleIconRef.classList.toggle('open')
 		navRef.classList.toggle('open')
 	}
+
+	function isActive(url: URL, path: string) {
+		return url.toString().indexOf(path) >= 0
+	}
 </script>
 
 <nav bind:this={navRef} id="main-nav">
@@ -39,13 +43,15 @@
 		<div bind:this={navResponsiveRef} class="nav-responsive">
 			<ul class="nav-items">
 				<li class="nav-item">
-					<a class="nav-link" href="/about-us">Quem Somos</a>
+					<a class="nav-link" class:active={isActive($page.url, 'about-us')} href="/about-us">Quem Somos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/how-to-participate">Como Participar</a>
+					<a class="nav-link" class:active={isActive($page.url, 'how-to-participate')} href="/how-to-participate"
+						>Como Participar</a
+					>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/fields">Campos Missionários</a>
+					<a class="nav-link" class:active={isActive($page.url, 'fields')} href="/fields">Campos Missionários</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/#agenda-announcement">Avisos</a>

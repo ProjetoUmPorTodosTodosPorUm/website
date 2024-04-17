@@ -26,6 +26,7 @@ FROM base-image as preview-image
 ARG PUBLIC_API_URL=https://api.localhost
 ARG PUBLIC_FILES_URL=https://files.localhost
 ARG PUBLIC_ASSETS_URL=https://assets.localhost/web
+ARG PUBLIC_CMS_URL=https://cms.localhost
 ARG PUBLIC_GOOGLE_MAP_API=AIzaSyABC1AW8m5olqyHRUgAlTli8kPzj1iij_0
 
 ENV NODE_TLS_REJECT_UNAUTHORIZED 0
@@ -50,6 +51,7 @@ FROM base-image as prod-image
 ARG PUBLIC_API_URL=https://api.projetoumportodostodosporum.org
 ARG PUBLIC_FILES_URL=https://files.projetoumportodostodosporum.org
 ARG PUBLIC_ASSETS_URL=https://assets.projetoumportodostodosporum.org/web
+ARG PUBLIC_CMS_URL=https://cms.projetoumportodostodosporum.org
 ARG PUBLIC_GOOGLE_MAP_API=AIzaSyABC1AW8m5olqyHRUgAlTli8kPzj1iij_0
 
 ENV BODY_SIZE_LIMIT 0
