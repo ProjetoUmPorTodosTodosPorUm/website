@@ -30,7 +30,7 @@
 			border-bottom-left-radius: 4px;
 
 			&:hover {
-				&>svg {
+				& > svg {
 					transform: scale(1.2);
 				}
 			}
@@ -41,7 +41,7 @@
 			border-bottom-right-radius: 4px;
 
 			&:hover {
-				&>svg {
+				& > svg {
 					transform: scale(1.2);
 				}
 			}

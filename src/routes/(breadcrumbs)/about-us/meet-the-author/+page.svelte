@@ -4,7 +4,11 @@
 </script>
 
 <h1>Conheça a Autora</h1>
-<img src="{PUBLIC_ASSETS_URL}/images/meet-the-author/wilma-machado.webp" class="responsive author-image" alt="Autora do Projeto" />
+<img
+	src="{PUBLIC_ASSETS_URL}/images/meet-the-author/wilma-machado.webp"
+	class="responsive author-image"
+	alt="Autora do Projeto"
+/>
 
 <h2>Sua Origem</h2>
 <p>

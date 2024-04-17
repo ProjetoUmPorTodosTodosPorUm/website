@@ -1,5 +1,9 @@
 @import '$scss/_shared';
 
+:root.dark .welcomed-families .welcomed-family {
+	box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
 .welcomed-families {
 	width: 100%;
 
@@ -30,8 +34,8 @@
 		}
 
 		.family-sub {
-			font-size: .8rem;
-			opacity: .6;
+			font-size: 0.8rem;
+			opacity: 0.6;
 		}
 	}
 

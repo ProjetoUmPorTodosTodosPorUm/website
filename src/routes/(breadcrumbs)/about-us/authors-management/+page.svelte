@@ -9,6 +9,7 @@
 </svelte:head>
 
 <h1>Gestão da Autora</h1>
+<p class="sub-title no-text-indent">Período Março de 2011 a Março de 2018</p>
 <h3 class="pages">Documentos</h3>
 <ul class="pages">
 	<li>
@@ -57,8 +58,8 @@
 			>9- Relatório final (2018)</a
 		>
 	</li>
-	<li><a href="#video-report-todo" target="_blank">10- Relatório em Vídeo</a></li>
-	<li><a href="{PUBLIC_ASSETS_URL}/documents/authors-management/11-mapa.pdf" target="_blank">11- Mapa</a></li>
+	<li><a href="https://www.youtube.com/watch?v=0lQ_Nk1EO84" target="_blank">10- Relatório em Vídeo</a></li>
+	<li><a href="{PUBLIC_ASSETS_URL}/documents/authors-management/11-mapa.webp" target="_blank">11- Mapa</a></li>
 </ul>
 
 <h3 class="pages">Galeria</h3>
@@ -68,10 +69,10 @@
 			href="{PUBLIC_ASSETS_URL}/images/authors-management/headquarter-church/hq-church.webp"
 			class="fresco"
 			data-fresco-group="headquarter-church"
-			data-fresco-caption="Igreja SEDE Projeto Assembleia de Deus Ministério Shekinah - Pr.Pres. Aldo da Silva Gomes Filho - Jd. Bangu"
+			data-fresco-caption="Igreja SEDE (experimental) Projeto Assembleia de Deus Ministério Shekinah - Pr.Pres. Aldo da Silva Gomes Filho - Jd. Bangu"
 			data-fresco-group-options="loop: true"
 		>
-			Igreja SEDE
+			Igreja SEDE (experimental)
 		</a>
 	</li>
 	<li>
@@ -279,7 +280,7 @@
 	href="{PUBLIC_ASSETS_URL}/images/authors-management/volunteers/amebrrj-01-01-07-rosangela-maria-silva-de-almeida-f1.webp"
 	class="fresco hidden"
 	data-fresco-group="volunteers"
-	data-fresco-caption="Rosângela Maria Silva de Almeida (Coletora F-1)"
+	data-fresco-caption="Rosângela Maria Silva de Almeida (Coletora F-1, Agosto de 2016 a Fevereiro de 2018)"
 >
 	Image
 </a>
@@ -320,15 +321,6 @@
 	class="fresco hidden"
 	data-fresco-group="others"
 	data-fresco-caption="Blusa Projeto Igreja SEDE - 2012"
->
-	Image
-</a>
-<a
-	href="#video-others-todo"
-	class="fresco hidden"
-	data-fresco-group="others"
-	data-fresco-caption="Posto de Coleta - Ir. Rosângela Almeida - Rua Roque Barbosa, 674 22/Nov/2018"
-	data-fresco-type="youtube"
 >
 	Image
 </a>
@@ -392,7 +384,7 @@
 	href="{PUBLIC_ASSETS_URL}/images/authors-management/others/10-1-presentation-musical-nov-2015.webp"
 	class="fresco hidden"
 	data-fresco-group="others"
-	data-fresco-caption="Renato, Wilma, Suzana, Gabriel e artista plástico Junior - 1º apres musical Nov/2015"
+	data-fresco-caption="Renato, Wilma e artista plástico Junior - 1º apres musical Nov/2015"
 >
 	Image
 </a>

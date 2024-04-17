@@ -1,0 +1,29 @@
+@import '$scss/_shared';
+
+.switch-theme {
+	margin-top: 1rem;
+	align-self: center;
+
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 2.8rem;
+		height: 1.4rem;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	}
+
+	.icon {
+		font-size: 1.4rem;
+		margin: 0 0.2rem -0.4rem;
+
+		@include for-xl-devices {
+			margin: 0;
+		}
+	}
+}

@@ -49,7 +49,7 @@
 				</p>
 				<p>Conheça o mapa do primeiro Campo Missionário do Projeto ”Um por todos! Todos por um”.</p>
 			</div>
-			<a target="_blank" href="{PUBLIC_ASSETS_URL}/documents/authors-management/11-mapa.pdf">Ver Mapa</a>
+			<a target="_blank" href="{PUBLIC_ASSETS_URL}/documents/authors-management/11-mapa.webp">Ver Mapa</a>
 		</div>
 	</div>
 </section>

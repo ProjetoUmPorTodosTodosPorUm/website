@@ -1,7 +1,7 @@
 <script lang="ts">
-    import '$scss/components/church.scss'
+	import '$scss/components/church.scss'
 	import type { ChurchDto } from '../types'
-    import { PUBLIC_FILES_URL, PUBLIC_ASSETS_URL } from '$env/static/public'
+	import { PUBLIC_FILES_URL, PUBLIC_ASSETS_URL } from '$env/static/public'
 
 	export let church: ChurchDto
 </script>

@@ -1,5 +1,35 @@
 @import '$scss/_shared';
 
+:root.dark {
+	.ec-event {
+		background-color: var(--complementary) !important;
+	}
+
+	.ec-event-title {
+		background-color: var(--complementary) !important;
+		color: var(--accent) !important;
+	}
+
+	.ec-today.ec-day {
+		background-color: var(--complementary) !important;
+	}
+
+	.modal {
+		.info {
+			.attachments {
+				a {
+					color: var(--dominant);
+				}
+			}
+
+			.pill {
+				background-color: var(--complementary);
+				color: var(--dominant);
+			}
+		}
+	}
+}
+
 .ec-event {
 	background-color: var(--accent) !important;
 
@@ -16,8 +46,20 @@
 }
 
 .ec-today {
-	background-color: var(--accent) !important;
-	color: var(--dominant) !important;
+	background-color: var(--dominant) !important;
+
+	.ec-day-head {
+		color: var(--accent) !important;
+	}
+}
+
+.ec-button {
+	background-color: var(--dominant) !important;
+	color: var(--complementary) !important;
+
+	:after {
+		border-color: var(--complementary) !important;
+	}
 }
 
 .modal {

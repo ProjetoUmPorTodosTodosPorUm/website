@@ -1,6 +1,10 @@
 @import '$scss/_shared';
 @import '$scss/_variables';
 
+:root.dark #footer {
+	background-color: rgba(var(--complementary-rgb), 0.8);
+}
+
 #footer {
 	background-color: var(--complementary);
 	color: var(--dominant);
@@ -42,16 +46,34 @@
 
 	.info {
 		grid-area: info;
-		padding: 0 0.2rem;
 		margin-top: 1rem;
 
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: column-reverse;
 
 		.text {
 			width: 100%;
 			text-align: center;
+			align-self: center;
+
+			a {
+				color: var(--dominant);
+				background-color: transparent;
+			}
+
+			.line:last-of-type {
+				font-size: 0.8rem;
+				opacity: 0.8;
+
+				a {
+					text-decoration: underline;
+				}
+			}
+
+			@include for-xl-devices {
+				padding-right: 2.8rem;
+			}
 		}
 	}
 }
@@ -109,11 +131,11 @@
 			color: var(--dominant);
 
 			@include for-lg-devices {
-				padding: 0.2rem 0.2rem;
+				padding: 0.2rem 0.2rem !important;
 				transition: 0.2s ease-out;
 
 				&:hover {
-					color: var(--accent);
+					color: var(--complementary);
 					background-color: var(--dominant);
 				}
 			}
@@ -126,11 +148,11 @@
 				color: var(--dominant);
 
 				@include for-lg-devices {
-					padding: 0.2rem 0.2rem;
+					padding: 0.2rem 0.2rem !important;
 					transition: 0.2s ease-out;
 
 					&:hover {
-						color: var(--accent);
+						color: var(--complementary);
 						background-color: var(--dominant);
 					}
 				}
@@ -196,6 +218,7 @@
 
 		input {
 			height: 2.3rem;
+			background-color: var(--dominant);
 			color: var(--complementary);
 			border: 0.1rem solid var(--complementary);
 
@@ -207,6 +230,7 @@
 		textarea {
 			min-height: 7rem;
 			resize: none;
+			background-color: var(--dominant);
 			color: var(--complementary);
 			border: 0.1rem solid var(--complementary);
 

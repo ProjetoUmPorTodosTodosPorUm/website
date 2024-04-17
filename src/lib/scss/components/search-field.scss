@@ -1,5 +1,13 @@
 @import '$scss/_shared';
 
+:root.dark .data-item {
+	box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+
+	.designation a {
+		background-color: transparent;
+	}
+}
+
 .data-items {
 	width: 100%;
 	margin: 0.5rem auto;
