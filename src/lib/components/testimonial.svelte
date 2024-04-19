@@ -4,12 +4,13 @@
 	import Carousel from './carousel.svelte'
 
 	export let testimonials: TestimonialDto[]
+	const autoplayDuration = 15 * 1000 // ms
 </script>
 
 <section id="testimonials">
 	<h1>Testemunhos</h1>
 	{#if testimonials?.length > 0}
-		<Carousel>
+		<Carousel {autoplayDuration}>
 			{#each testimonials as testimonial (testimonial.id)}
 				<div class="testimonial">
 					<div class="content">

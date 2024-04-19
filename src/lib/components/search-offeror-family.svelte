@@ -21,7 +21,8 @@
 		{#if offerorFamilies.length > 0}
 			{#each offerorFamilies as offerorFamily (offerorFamily.id)}
 				<div class="data-item">
-					<span class="representative">{offerorFamily.representative}</span>
+					<span class="family">{offerorFamily.familyName}</span>
+					<span class="representative">representada por: {offerorFamily.representative}</span>
 					{#if offerorFamily.chuchDenomination}
 						<span class="church">Igreja: {offerorFamily.chuchDenomination}</span>
 					{/if}

@@ -71,4 +71,8 @@
 	{#each annualReports as report}
 		<Report {report} />
 	{/each}
+{:else}
+	<div class="text-placeholder">
+		<p>Ainda não foi registrada nenhum relatório.</p>
+	</div>
 {/if}

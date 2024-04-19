@@ -13,7 +13,7 @@
 
 	export let isOpen = true
 	export let autoHide = true
-	export let duration = 5 // in seconds
+	export let duration = 5 * 1000 // in ms
 	export let delay = 0 // in ms
 
 	onMount(async () => {
@@ -32,7 +32,7 @@
 	if (autoHide) {
 		setTimeout(() => {
 			close()
-		}, duration * 1000)
+		}, duration)
 	}
 </script>
 

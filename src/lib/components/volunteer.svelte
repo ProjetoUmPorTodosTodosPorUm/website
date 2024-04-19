@@ -44,8 +44,8 @@
 		<p class="sub-title no-text-indent">{occupations.filter((occ) => occ.value == volunteer.occupation)[0].text}</p>
 	</div>
 	<div class="body">
-		<span class="church">{volunteer.church}</span>
-		<span class="priest">{volunteer.priest}</span>
-		<span class="joined-date">Desde: {new Date(volunteer.joinedDate).toLocaleDateString()}</span>
+		{#if volunteer.church}<span class="church">Igreja: {volunteer.church}</span>{/if}
+		{#if volunteer.priest}<span class="priest">Pastor: {volunteer.priest}</span>{/if}
+		<span class="joined-date">Desde: {new Date(volunteer.joinedDate).toLocaleDateString('pt-BR')}</span>
 	</div>
 </div>
