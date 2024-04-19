@@ -142,6 +142,10 @@ h3 {
 	h1 {
 		font-size: var(--h1-font-size);
 		margin-bottom: 0;
+
+		+ h3.pages {
+			opacity: 0.6;
+		}
 	}
 
 	h2 {

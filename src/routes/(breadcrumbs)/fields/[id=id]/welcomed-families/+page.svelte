@@ -14,8 +14,8 @@
 	{#if welcomedFamilies.length > 0}
 		{#each welcomedFamilies as welcomedFamily (welcomedFamily.id)}
 			<div class="welcomed-family">
-				<div class="family">{welcomedFamily.representative}</div>
-				<div class="family-sub">Família representada por</div>
+				<div class="family">{welcomedFamily.familyName}</div>
+				<div class="family-sub">Família representada por {welcomedFamily.representative}</div>
 			</div>
 		{/each}
 	{:else}

@@ -3,6 +3,7 @@ import type { FieldDto } from './field.dto'
 
 export type OfferorFamilyDto = {
 	id: string
+	familyName: string
 	representative: string
 	commitment: string
 	chuchDenomination?: string

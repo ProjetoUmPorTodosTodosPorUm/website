@@ -3,6 +3,6 @@ export type Message = {
 	message: string
 	variant: 'danger' | 'success' | 'info'
 	silent?: boolean
-	duration?: number
+	duration: number
 	delay?: number
 }
