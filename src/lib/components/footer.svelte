@@ -110,9 +110,6 @@
 			<SwitchTheme />
 			<div class="text">
 				<div class="line">© 2024 Projeto "Um Por Todos! Todos Por Um" | <a href={PUBLIC_CMS_URL}>Painel</a></div>
-				<div class="line">
-					Orgulhosamente feito por <a href="https://github.com/RenanGalvao" target="_blank">@RenanGalvão</a>
-				</div>
 			</div>
 		</div>
 	</div>
