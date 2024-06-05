@@ -13,7 +13,7 @@
 		<div class="headline">
 			<h2>Projeto</h2>
 			<h1>"Um Por Todos!</h1>
-			<h1>Todos Por Um."</h1>
+			<h1>Todos Por Um"</h1>
 			<h3>UNIDADE E UNIÃO</h3>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 
 		<div class="item">
 			<p>
-				"[...] Ide por todo omundo, pregai o evangelho a toda criatura. Quem crer e for batizado será salvo; mas quem
+				"[...] Ide por todo o mundo, pregai o evangelho a toda criatura. Quem crer e for batizado será salvo; mas quem
 				não crer será condenado."
 			</p>
 			<i>(Marcos 15:15-16)</i>
