@@ -37,7 +37,7 @@
 				</div>
 				<div class="answer">
 					<p>
-						Assistir aos <a
+						Assistir aos 12 <a
 							target="_blank"
 							href="https://www.youtube.com/playlist?list=PLaLszpCW39WOCGGp5NKGgWk3SpOi1wy81"
 						>
