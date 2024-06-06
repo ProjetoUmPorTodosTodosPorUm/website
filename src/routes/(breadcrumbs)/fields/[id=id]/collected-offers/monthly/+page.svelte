@@ -10,9 +10,9 @@
 	import { MONTHS_LABELS, DEPENDENCY_URLS } from '$constants'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import BiDonateHeart from 'svelte-icons-pack/bi/BiDonateHeart'
-	import FiPackage from 'svelte-icons-pack/fi/FiPackage'
+	import { Icon } from 'svelte-icons-pack'
+	import { BiDonateHeart } from 'svelte-icons-pack/bi'
+	import { FiPackage } from 'svelte-icons-pack/fi'
 
 	export let data: PageData
 

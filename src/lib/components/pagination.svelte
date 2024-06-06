@@ -6,9 +6,8 @@
 	import { DEPENDENCY_URLS } from '$constants'
 
 	// Icons
-	import Icon from 'svelte-icons-pack'
-	import FiChevronLeft from 'svelte-icons-pack/fi/FiChevronLeft'
-	import FiChevronRight from 'svelte-icons-pack/fi/FiChevronRight'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiChevronLeft, FiChevronRight } from 'svelte-icons-pack/fi'
 
 	// Constants
 	const PAGES_AROUND_CURRENT = 1

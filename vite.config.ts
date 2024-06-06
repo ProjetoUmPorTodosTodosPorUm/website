@@ -12,6 +12,9 @@ export default defineConfig(() => {
 
 	return {
 		plugins: [sveltekit()],
+		ssr: {
+			noExternal: ['@googlemaps/js-api-loader']
+		},
 		test: {
 			include: ['src/**/*.{test,spec}.{js,ts}']
 		},

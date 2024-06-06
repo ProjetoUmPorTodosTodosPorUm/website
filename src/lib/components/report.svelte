@@ -5,9 +5,8 @@
 	import { PUBLIC_FILES_URL } from '$env/static/public'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip'
-	import FiChevronDown from 'svelte-icons-pack/fi/FiChevronDown'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiPaperclip, FiChevronDown } from 'svelte-icons-pack/fi'
 
 	export let report: ReportDto
 

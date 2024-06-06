@@ -3,10 +3,8 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 
 	//Icons
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiBookOpen from 'svelte-icons-pack/fi/FiBookOpen'
-	import FiHeart from 'svelte-icons-pack/fi/FiHeart'
-	import FiGlobe from 'svelte-icons-pack/fi/FiGlobe'
+	import { Icon } from 'svelte-icons-pack'
+	import  { FiBookOpen, FiHeart, FiGlobe } from 'svelte-icons-pack/fi'
 </script>
 
 <section id="values">

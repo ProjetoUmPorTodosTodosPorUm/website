@@ -6,8 +6,8 @@
 	import type { Pagination } from '$types'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiSearch from 'svelte-icons-pack/fi/FiSearch'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiSearch } from 'svelte-icons-pack/fi'
 
 	// Constants
 	const TYPING_COOL_DOWN = 300 // in MS

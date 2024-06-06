@@ -4,8 +4,8 @@
 	import '$scss/components/modal.scss'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiX from 'svelte-icons-pack/fi/FiX'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiX } from 'svelte-icons-pack/fi'
 
 	const FADE_TIME = 150 // ms
 

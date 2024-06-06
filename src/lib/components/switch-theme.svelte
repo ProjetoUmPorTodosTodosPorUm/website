@@ -3,9 +3,8 @@
 	import { onMount } from 'svelte'
 
 	//icons
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiMoon from 'svelte-icons-pack/fi/FiMoon'
-	import FiSun from 'svelte-icons-pack/fi/FiSun'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiMoon, FiSun } from 'svelte-icons-pack/fi'
 
 	let checked: boolean
 

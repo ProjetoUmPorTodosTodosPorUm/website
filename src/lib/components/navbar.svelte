@@ -4,8 +4,8 @@
 	import { page } from '$app/stores'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiMenu from 'svelte-icons-pack/fi/FiMenu'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiMenu } from 'svelte-icons-pack/fi'
 
 	export let announcementsCount = 0
 
