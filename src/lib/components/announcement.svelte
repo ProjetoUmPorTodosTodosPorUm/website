@@ -5,9 +5,8 @@
 	import { PUBLIC_FILES_URL } from '$env/static/public'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip'
-	import FiBookmark from 'svelte-icons-pack/fi/FiBookmark'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiPaperclip, FiBookmark } from 'svelte-icons-pack/fi'
 
 	export let announcements: AnnouncementDto[]
 	const MAX_MESSAGE_CHAR_COUNT = 300

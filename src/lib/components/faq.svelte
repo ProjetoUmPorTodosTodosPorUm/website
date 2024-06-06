@@ -2,8 +2,8 @@
 	import '$scss/components/faq.scss'
 
 	//icons
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiChevronDown from 'svelte-icons-pack/fi/FiChevronDown'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiChevronDown } from 'svelte-icons-pack/fi'
 
 	function onQuestionToggle(event: Event) {
 		// @ts-ignore

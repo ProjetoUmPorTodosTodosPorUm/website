@@ -8,9 +8,8 @@
 	import DayGrid from '@event-calendar/day-grid'
 
 	// icon
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiCalendar from 'svelte-icons-pack/fi/FiCalendar'
-	import FiPaperclip from 'svelte-icons-pack/fi/FiPaperclip'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiCalendar, FiPaperclip } from 'svelte-icons-pack/fi'
 
 	// https://github.com/vkurko/calendar
 	let calendar: any

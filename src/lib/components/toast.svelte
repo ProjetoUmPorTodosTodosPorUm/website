@@ -3,8 +3,8 @@
 	import { createEventDispatcher, onMount } from 'svelte'
 	import { fade } from 'svelte/transition'
 
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import FiX from 'svelte-icons-pack/fi/FiX'
+	import { Icon } from 'svelte-icons-pack'
+	import { FiX } from 'svelte-icons-pack/fi'
 
 	export let id = 0
 	export let message = ''

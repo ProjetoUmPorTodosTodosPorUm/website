@@ -5,8 +5,8 @@
 	import { PUBLIC_CMS_URL } from '$env/static/public'
 
 	//icons
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import AiOutlineLoading from 'svelte-icons-pack/ai/AiOutlineLoading'
+	import { Icon } from 'svelte-icons-pack'
+	import { AiOutlineLoading } from 'svelte-icons-pack/ai'
 
 	export let isSendingContact = false
 

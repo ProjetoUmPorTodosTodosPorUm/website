@@ -1,7 +1,7 @@
 ###################
 # BASE IMAGE
 ###################
-FROM node:19.4-alpine as base-image
+FROM node:21.7-alpine as base-image
 
 # Needed for build
 RUN apk add git
@@ -30,7 +30,7 @@ ARG PUBLIC_CMS_URL=https://cms.localhost
 ARG PUBLIC_GOOGLE_MAP_API=AIzaSyABC1AW8m5olqyHRUgAlTli8kPzj1iij_0
 
 ENV NODE_TLS_REJECT_UNAUTHORIZED 0
-ENV BODY_SIZE_LIMIT 0
+ENV BODY_SIZE_LIMIT Infinity
 ENV ORIGIN https://localhost
 ENV NODE_ENV preview
 WORKDIR /usr/src/app
@@ -54,7 +54,7 @@ ARG PUBLIC_ASSETS_URL=https://assets.projetoumportodostodosporum.org/web
 ARG PUBLIC_CMS_URL=https://cms.projetoumportodostodosporum.org
 ARG PUBLIC_GOOGLE_MAP_API=AIzaSyABC1AW8m5olqyHRUgAlTli8kPzj1iij_0
 
-ENV BODY_SIZE_LIMIT 0
+ENV BODY_SIZE_LIMIT Infinity
 ENV ORIGIN https://projetoumportodostodosporum.org
 ENV NODE_ENV production
 WORKDIR /usr/src/app

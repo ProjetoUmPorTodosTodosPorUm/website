@@ -3,8 +3,8 @@
 	import '$scss/components/how-to-participate.scss'
 
 	//icons
-	import Icon from 'svelte-icons-pack/Icon.svelte'
-	import AiOutlineLoading from 'svelte-icons-pack/ai/AiOutlineLoading'
+	import { Icon } from 'svelte-icons-pack'
+	import { AiOutlineLoading } from 'svelte-icons-pack/ai'
 
 	export let isSendingParticipate = false
 	let spinnerColor = 'var(--dominant)'
