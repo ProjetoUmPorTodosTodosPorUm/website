@@ -7,13 +7,12 @@
 <section id="landing">
 	<div class="wrap-logo-headline">
 		<div class="logo">
-			<img in:fade out:fade src="{PUBLIC_ASSETS_URL}/images/logo.webp" alt="Logo" />
+			<img in:fade out:fade src="{PUBLIC_ASSETS_URL}/images/logo.webp" width="99" height="200" alt="Logo" />
 		</div>
 		<div class="separator" />
 		<div class="headline">
 			<h2>Projeto</h2>
-			<h1>"Um Por Todos!</h1>
-			<h1>Todos Por Um"</h1>
+			<h1>"Um Por Todos! <br/>Todos Por Um"</h1>
 			<h3>UNIDADE E UNIÃO</h3>
 		</div>
 	</div>
