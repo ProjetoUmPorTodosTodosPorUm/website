@@ -106,13 +106,10 @@
 	h1 {
 		font-size: 2rem;
 		margin: 0;
-
-		&:first-of-type {
-			margin: 0 0 -0.4rem 0;
-		}
+		line-height: 2.1rem;
 
 		@include for-md-devices {
-			margin: 0;
+			margin: .2rem 0 .2rem;
 		}
 	}
 
@@ -128,7 +125,7 @@
 	width: 100%;
 
 	font-size: 1.2rem;
-	font-weight: lighter;
+	font-weight: 300;
 	margin-top: 1rem;
 	padding: 0 0.4rem;
 	text-align: justify;
