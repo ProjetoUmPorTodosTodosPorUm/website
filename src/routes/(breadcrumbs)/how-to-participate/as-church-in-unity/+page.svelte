@@ -36,7 +36,7 @@
 	</li>
 	<li>
 		<a
-			href="{PUBLIC_ASSETS_URL}/documents/church-insertion/2-research-planning-open-missionary-field.pdf"
+			href="{PUBLIC_ASSETS_URL}/documents/church-insertion/2-research-planning-open-missionary-field.pdf?v=1"
 			target="_blank">2- Pesquisa e planejamento - Abert. Campo Missionário</a
 		>
 	</li>

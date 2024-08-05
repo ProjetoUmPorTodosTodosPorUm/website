@@ -26,7 +26,7 @@
 	$: search, updateSearch()
 
 	// Typing
-	let typingTimer: NodeJS.Timeout
+	let typingTimer: number
 
 	function startTypingCountDown() {
 		clearTimeout(typingTimer)
