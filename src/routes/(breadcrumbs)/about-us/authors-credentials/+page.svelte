@@ -2,6 +2,13 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Credenciais da Autora</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Credenciais da Autora" />
+	<meta name="description" content="Credenciais da autora do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="credenciais, curriculo, autora, wilma machado, projeto">
+</svelte:head>
+
 <h1>Credenciais da Autora</h1>
 <h3 class="pages">Documentos</h3>
 <ul class="pages">

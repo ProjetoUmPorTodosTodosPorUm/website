@@ -41,6 +41,13 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Relatórios ({field.designation})</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Relatórios ({field.designation})" />
+	<meta name="description" content="Relatórios do campo missionário {field.designation}." />
+	<meta name="keywords" content="{field.designation.toLowerCase()}, relatórios, projeto">
+</svelte:head>
+
 <div class="date-picker">
 	{#each years as year}
 		<button class:active={currentYear == String(year)} on:click|preventDefault={() => onYearChange(String(year))}>

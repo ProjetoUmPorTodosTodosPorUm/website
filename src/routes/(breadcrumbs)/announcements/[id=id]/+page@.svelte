@@ -14,6 +14,13 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Anúncio ({announcement.title})</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Anúncio ({announcement.title})" />
+	<meta name="description" content="Anúncio do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="anúncio, evento, projeto">
+</svelte:head>
+
 <Navbar />
 <section id="main">
 	<Breadcrumbs documentId={announcement.id} />

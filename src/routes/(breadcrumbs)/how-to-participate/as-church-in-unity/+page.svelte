@@ -2,6 +2,13 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Como Igreja em Unidade</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Como Igreja em Unidade" />
+	<meta name="description" content="Como participar do Projeto &quot;Um Por Todos! Todos Por Um&quot; como Igreja em Unidade." />
+	<meta name="keywords" content="igreja em unidade, pioneira, subsede, distrital, apoio, direcionamento estratégico, projeto">
+</svelte:head>
+
 <h1>Como Igreja em Unidade</h1>
 <p>
 	Nesta “Rede de Pescar” de muitas pontas têm a Igreja do Senhor Jesus Cristo, quatro posições a ocupar para se

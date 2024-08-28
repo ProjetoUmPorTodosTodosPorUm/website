@@ -55,13 +55,15 @@
 
 <svelte:window on:keydown={handle_keydown} />
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	in:fade={{ delay: FADE_TIME }}
 	out:fade
 	on:click={close}
+	on:keypress={close}
 	style="visibility: {visibility}"
 	class="modal-background"
+	role="button"
+	tabindex="0"
 />
 
 <div
@@ -75,8 +77,7 @@
 >
 	<div class="modal-header">
 		<slot name="header" />
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div on:click={close} class="wrap-btn-close">
+		<div on:click={close} on:keypress={close} class="wrap-btn-close" role="button" tabindex="0">
 			<Icon src={FiX} className="btn-close" />
 		</div>
 	</div>

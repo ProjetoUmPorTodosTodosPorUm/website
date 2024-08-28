@@ -215,6 +215,13 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Ofertas Coletadas Anual ({field.designation})</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Ofertas Coletadas Anual ({field.designation})" />
+	<meta name="description" content="Encontre as ofertas coletadas anuais do campo missionário {field.designation}." />
+	<meta name="keywords" content="{field.designation.toLowerCase()}, ofertas coletadas, dados, gráfico, alimentos, valores, anual, relatório, projeto">
+</svelte:head>
+
 <div class="date-picker">
 	<div class="years">
 		{#each years as year}

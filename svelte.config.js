@@ -12,22 +12,25 @@ const baseDirectives = {
 	'img-src': [
 		'self',
 		'data:',
+		'placehold.co',
 		'https://*.googleapis.com',
 		'https://*.gstatic.com',
 		'*.google.com',
 		'*.googleusercontent.com',
+		'www.googletagmanager.com',
 		'*.projetoumportodostodosporum.org',
-		'placehold.co',
 		'*.localhost'
 	],
 	'connect-src': [
 		'self',
 		'data:',
 		'blob:',
-		'*.projetoumportodostodosporum.org',
 		'https://*.googleapis.com',
 		'*.google.com',
 		'https://*.gstatic.com',
+		'www.google-analytics.com',
+		'www.googletagmanager.com',
+		'*.projetoumportodostodosporum.org',
 		'*.localhost',
 		'wss://localhost'
 	],

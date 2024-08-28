@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Como Colaborador Autônomo</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Como Colaborador Autônomo" />
+	<meta name="description" content="Como participar do Projeto &quot;Um Por Todos! Todos Por Um&quot; como Colaborador Autônomo." />
+	<meta name="keywords" content="colaborador autônomo, como proceder, projeto">
+</svelte:head>
+
 <h1>Como Colaborador Autônomo</h1>
 <p>
 	Nesta “Rede de Pescar” de muitas pontas todos são convidados a participarem. Os Colaboradores Autônomos, quem são?

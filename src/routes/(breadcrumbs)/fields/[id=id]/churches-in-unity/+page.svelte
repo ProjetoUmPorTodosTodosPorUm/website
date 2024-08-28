@@ -1,12 +1,14 @@
 <script lang="ts">
 	import '$scss/routes/fields/churches-in-unity.scss'
+	import { page } from '$app/stores'
 	import type { PageData } from './$types'
-	import type { ChurchDto } from '$types'
+	import type { ChurchDto, FieldDto } from '$types'
 	import { Church } from '$components'
 	import { ChurchType } from '$enums'
 	import { CHURCH_TYPES } from '$constants'
 
 	export let data: PageData
+	$: field = $page.data.field as FieldDto
 	$: churches = data.apiData as ChurchDto[]
 	$: mainChurch = churches.filter((church) =>
 		[ChurchType.PIONEER, ChurchType.EXPANSION, ChurchType.RESPONSIBLE].includes(church.type)
@@ -18,6 +20,13 @@
 		{ value: 'RESPONSIBLE', text: CHURCH_TYPES.responsible }
 	]
 </script>
+
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Igrejas em Unidade ({field.designation})</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Igrejas em Unidade ({field.designation})" />
+	<meta name="description" content="Igrejas em unidade do campo missionário {field.designation}." />
+	<meta name="keywords" content="{field.designation.toLowerCase()}, igrejas em unidade, sede, apoio, projeto">
+</svelte:head>
 
 <div class="churches">
 	{#if churches.length > 0}
