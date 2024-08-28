@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Falando do Projeto</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Falando do Projeto" />
+	<meta name="description" content="Explicação e detalhamento do Projeto &quot;Um Por Todos! Todos Por Um&quot;, sua criação e propósito." />
+	<meta name="keywords" content="o que é, princípios, base e destino, origem, propósito, projeto">
+</svelte:head>
+
 <h1>Falando do Projeto</h1>
 
 <h2>O Que É</h2>

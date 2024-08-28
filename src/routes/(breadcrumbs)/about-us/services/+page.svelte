@@ -2,6 +2,19 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Oferecemos às Famílias Voluntárias Ofertantes</title>
+	<meta
+		name="title"
+		content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Oferecemos às Famílias Voluntárias Ofertantes"
+	/>
+	<meta
+		name="description"
+		content="Que tipos de serviços oferecemos às famílias voluntárias ofertantes do Projeto &quot;Um Por Todos! Todos Por Um&quot;"
+	/>
+	<meta name="keywords" content="oferecemos, serviços, famílias voluntárias, oferecemos, projeto" />
+</svelte:head>
+
 <h1>Oferecemos às Famílias Voluntárias Ofertantes</h1>
 <h2 class="sub-title">"Cristo em casa" (Isaias 61:1–3)</h2>
 

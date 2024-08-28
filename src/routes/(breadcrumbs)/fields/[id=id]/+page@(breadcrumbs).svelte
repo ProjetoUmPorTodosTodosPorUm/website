@@ -6,6 +6,13 @@
 	$: field = data.field as FieldDto
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Campo Missionário {field.designation}</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Campo Missionário {field.designation}" />
+	<meta name="description" content="Páginas referentes ao campo missionário {field.designation} do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="{field.designation.toLowerCase()}, famílias acolhidas, famílias ofertantes, igrejas em unidade, voluntários administrativos, colaboradores, casas de recuperação, ofertas coletadas, relatórios, projeto">
+</svelte:head>
+
 <h1>{field.designation}</h1>
 <h2>{field.country} - {field.state}</h2>
 <p class="sub-title no-text-indent">{field.abbreviation.toUpperCase()}</p>

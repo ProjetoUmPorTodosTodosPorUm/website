@@ -16,6 +16,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um"</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="description"
+		content="Website oficial do projeto &quot;Um Por Todos! Todos Por Um&quot;. Saiba como funciona esta nova ferramenta missionária e como participar." />
+	<meta name="keywords" content="projeto, institucional, evangelho, ferramenta missionária, unidade e união">
+</svelte:head>
+
 <Navbar announcementsCount={data.announcements.length} />
 <Landing />
 <Values />

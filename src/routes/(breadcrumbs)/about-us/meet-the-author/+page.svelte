@@ -3,6 +3,13 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Conheça a Autora</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Conheça a Autora" />
+	<meta name="description" content="Conheça a história e valores da autora do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="conheça, origem, valores, infância, trabalho, casamento, autora, wilma machado, projeto">
+</svelte:head>
+
 <h1>Conheça a Autora</h1>
 <img
 	src="{PUBLIC_ASSETS_URL}/images/meet-the-author/wilma-machado.webp"

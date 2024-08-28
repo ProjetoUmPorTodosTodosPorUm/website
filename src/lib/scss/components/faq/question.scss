@@ -1,0 +1,68 @@
+@import '$scss/_shared';
+@import '$scss/_variables';
+
+:root.dark #faq {
+	.question-block {
+		box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+	}
+}
+
+.question-block {
+	z-index: inherit;
+	height: fit-content;
+	width: 100%;
+
+	color: var(--complementary);
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.3rem;
+	margin-bottom: 1rem;
+	box-shadow: 0.2rem 0.2rem 0.3rem lightgray;
+
+	@include for-lg-devices {
+		width: min-content;
+		min-width: 26rem;
+		margin: 0.5rem;
+	}
+
+	.question {
+		display: flex;
+		align-items: center;
+		min-height: 4rem;
+		cursor: pointer;
+		
+	
+		h2 {
+			font-size: calc(var(--h2-font-size) - 0.4rem);
+			margin: 0;
+			width: 96%;
+			
+		}
+	
+		.icon {
+			font-size: 1.2rem;
+			height: 1.5rem;
+			width: 1.5rem;
+			margin-bottom: -0.23rem;
+			margin-left: auto;
+			transition: transform 0.2s ease-out;
+	
+			&.open {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	
+	.answer {
+		transition: max-height 0.2s ease-out;
+		text-align: justify;
+	
+		max-height: 0;
+		overflow: hidden;
+	
+		a {
+			color: var(--complementary);
+			text-decoration: underline;
+		}
+	}
+	
+}

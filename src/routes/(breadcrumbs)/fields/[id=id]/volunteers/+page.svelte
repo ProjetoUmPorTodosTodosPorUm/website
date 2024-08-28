@@ -1,12 +1,14 @@
 <script lang="ts">
 	import '$scss/routes/fields/volunteers.scss'
+	import { page } from '$app/stores'
 	import type { PageData } from './$types'
 	import { sortVolunteersByOccupations } from '$utils'
-	import type { VolunteerDto } from '$types'
+	import type { VolunteerDto, FieldDto } from '$types'
 	import { Occupation } from '$enums'
 	import { Volunteer } from '$components'
 
 	export let data: PageData
+	$: field = $page.data.field as FieldDto
 
 	const firstSectionOccs = [
 		Occupation.PRESIDENT,
@@ -37,6 +39,13 @@
 	$: secondSectionVols = volunteers.filter((vol) => secondSectionOccs.includes(vol.occupation))
 	$: thirdSectionVols = volunteers.filter((vol) => thirdSectionOccs.includes(vol.occupation))
 </script>
+
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Voluntários Administrativos ({field.designation})</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Voluntários Administrativos ({field.designation})" />
+	<meta name="description" content="Voluntários administrativos do campo missionário {field.designation}." />
+	<meta name="keywords" content="{field.designation.toLowerCase()}, voluntários administrativos, projeto">
+</svelte:head>
 
 <div class="volunteers">
 	{#if firstSectionVols.length > 0}

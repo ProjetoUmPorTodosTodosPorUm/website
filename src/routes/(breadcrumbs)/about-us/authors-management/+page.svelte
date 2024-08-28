@@ -3,6 +3,11 @@
 </script>
 
 <svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Gestão da Autora</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Gestão da Autora" />
+	<meta name="description" content="Documentos do período de gestão da autora do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="gestão, documentos, relatório, voluntários, autora, wilma machado, projeto">
+
 	<link rel="stylesheet" href="{PUBLIC_ASSETS_URL}/fresco/css/fresco.css" />
 	<script type="text/javascript" src="{PUBLIC_ASSETS_URL}/fresco/js/jquery-3.7.1.min.js" defer></script>
 	<script type="text/javascript" src="{PUBLIC_ASSETS_URL}/fresco/js/fresco.min.js" defer></script>

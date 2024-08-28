@@ -2,6 +2,13 @@
 	import { PUBLIC_ASSETS_URL } from '$env/static/public'
 </script>
 
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Documentos Administrativos</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Documentos Administrativos" />
+	<meta name="description" content="Documentos administrativos do Projeto &quot;Um Por Todos! Todos Por Um&quot;" />
+	<meta name="keywords" content="termo de compromisso, regimento interno, bloco hierárquico e atribuições, sede, subsede, distrital, projeto">
+</svelte:head>
+
 <h1>Documentos Administrativos</h1>
 
 <ul class="pages">

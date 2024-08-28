@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Como Família Voluntária Ofertante</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Como Família Voluntária Ofertante" />
+	<meta name="description" content="Como participar do Projeto &quot;Um Por Todos! Todos Por Um&quot; como Família Voluntária Ofertante." />
+	<meta name="keywords" content="família voluntária ofertante, comunidade, eclesiástica, projeto">
+</svelte:head>
+
 <h1>Como Família Voluntária Ofertante</h1>
 
 <h2>Comunidade</h2>

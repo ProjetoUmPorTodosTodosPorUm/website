@@ -42,8 +42,7 @@
 </script>
 
 <div class="report">
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="head" on:click={onToggleReport}>
+	<div class="head" on:click={onToggleReport} on:keypress={onToggleReport} role="button" tabindex="0">
 		<h4>
 			{report.title} | Postado em
 			{new Date(report.createdAt).toLocaleDateString()}

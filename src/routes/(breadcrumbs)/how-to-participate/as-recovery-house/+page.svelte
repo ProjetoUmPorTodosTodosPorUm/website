@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>Projeto "Um Por Todos! Todos Por Um" - Como Casa de Recuperação</title>
+	<meta name="title" content="Projeto &quot;Um Por Todos! Todos Por Um&quot; - Como Casa de Recuperação" />
+	<meta name="description" content="Como participar do Projeto &quot;Um Por Todos! Todos Por Um&quot; como Casa de Recuperação." />
+	<meta name="keywords" content="casa de recuperação, projeto">
+</svelte:head>
+
 <h1>Como Casa de Recuperação</h1>
 <p>
 	Nesta “Rede de Pescar” de muitas pontas as “Casas de Recuperação” participam desta obra com a Igreja do Senhor Jesus
